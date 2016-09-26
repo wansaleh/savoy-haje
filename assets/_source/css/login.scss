@@ -1,0 +1,209 @@
+@import 'https://fonts.googleapis.com/css?family=Oxygen:300,400,700';
+
+@import "../../../bower_components/Scut/dist/scut";
+@import "modules/helpers";
+@import "modules/colors";
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body.login {
+  font-family: 'Oxygen', apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+
+  background-image: url(/wp-content/uploads/2015/08/sign.jpg);
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+
+  &:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #111;
+    z-index: -10;
+    opacity: .9;
+  }
+
+  #login #login_error,
+  #login .message {
+    border: none;
+    background: $accent;
+    color: #fff;
+    box-shadow: none;
+    margin-bottom: 20px;
+    padding: 30px 40px;
+    font-size: 1rem;
+
+    a {
+      color: #fff;
+    }
+  }
+
+  #login #login_error {
+    background: $error;
+  }
+
+  #login {
+    max-width: 480px;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  #login h1 a {
+    background-image: url(../images/haje-accented-white.svg);
+    background-size: contain;
+    width: 100%;
+    margin-bottom: 2em;
+  }
+
+  #loginform, #registerform {
+    padding: 40px;
+    box-shadow: none;
+
+    label {
+      display: block;
+      font-size: .9em;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 1.5rem;
+      transition: all .2s ease;
+
+      input {
+        box-shadow: none !important;
+        margin: 5px 0 0;
+        padding: .2em .4em;
+        background: none;
+        border-color: $clr-grey-400;
+        font-size: 1.5rem;
+        font-weight: 500;
+        text-transform: none;
+        letter-spacing: 0;
+        transition: all .2s ease;
+      }
+
+      input[type=checkbox] {
+
+      }
+
+      input[type=checkbox]:checked {
+        border-color: $accent !important;
+        background: $accent !important;
+
+        &:before {
+          color: #fff !important;
+        }
+      }
+      input[type=checkbox]:focus {
+        border-color: tint($accent, 40);
+        background: tint($accent, 90);
+      }
+
+      &.focus {
+        color: $accent;
+
+        input {
+          border-color: tint($accent, 40);
+          background: tint($accent, 90);
+          color: shade($accent, 60);
+        }
+      }
+    }
+  }
+
+  #loginform p.forgetmenot label {
+    display: block;
+    line-height: 20px;
+    margin: 0;
+  }
+  #loginform p.forgetmenot input {
+    margin-top: -2px;
+  }
+
+  #registerform #reg_passmail {
+    text-align: center;
+    opacity: .6;
+  }
+
+  #loginform p.submit,
+  #registerform p.submit {
+    @include scut-clearfix;
+    clear: both;
+
+    .button-primary {
+      background: $accent;
+      border: none;
+      box-shadow: none;
+      text-shadow: none;
+      transition: all .2s ease;
+      border-radius: 0;
+      padding: .8em 1.5em;
+      height: auto;
+      width: 100%;
+      margin-top: 1.5rem;
+      text-transform: uppercase;
+      font-size: 1.5em;
+      letter-spacing: 2px;
+
+      &:hover {
+        background: $black;
+      }
+    }
+  }
+
+  #login #nav,
+  #login #backtoblog {
+    margin: 24px 10px 0;
+    padding: 0;
+    text-transform: uppercase;
+
+    color: #fff;
+    a {
+      color: #fff;
+      transition: all .2s ease;
+      display: inline-block;
+      padding: .3em 1em;
+      font-size: .75rem;
+
+      &:hover {
+        color: tint($accent, 30);
+      }
+    }
+
+    @include breakpoint(xs) {
+      width: 100%;
+      text-align: center;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  #login #nav {
+    float: left;
+    font-size: 0;
+
+    a:first-of-type {
+      display: inline-block;
+      border: 1px solid #fff;
+      border-radius: 3em;
+      padding: .3em 1em;
+
+      &:hover {
+        border-color: tint($accent, 30);
+      }
+    }
+  }
+
+  #login #backtoblog {
+    float: right;
+    font-size: 1rem;
+  }
+}

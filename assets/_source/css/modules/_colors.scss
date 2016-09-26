@@ -1,0 +1,62 @@
+@import 'mdc';
+@import 'colors-settings';
+
+$main: #777 !default;
+$black: #282828 !default;
+
+$accent: $clr-blue-a400 !default;
+
+$message: $clr-green-a700 !default;
+$notice: $clr-amber-a400 !default;
+$error: $clr-pink-a400 !default;
+
+/// Slightly lighten a color
+/// @access public
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+/// Slightly darken a color
+/// @access public
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+//
+// ::-moz-selection {
+//   background: $accent;
+//   /* WebKit/Blink Browsers */
+//   color: #fff;
+// }
+// ::selection {
+//   background: $accent;
+//   /* WebKit/Blink Browsers */
+//   color: #fff;
+// }
+// ::-moz-selection {
+//   background: $accent;
+//   /* Gecko Browsers */
+//   color: #fff;
+// }
+
+.text-accent {
+  color: $accent;
+}
+
+.bg-accent {
+  background: $accent;
+}
+
+.hajelogo-svg {
+  .st0 {
+    fill: $accent !important;
+  }
+  .st1 {
+    fill: #fff !important;
+  }
+}

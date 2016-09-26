@@ -1,0 +1,20 @@
+{
+  "name": "savoy-haje",
+  "authors": [
+    "Wan Saleh <wansaleh@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "Scut": "scut#^1.4.0"
+  }
+}

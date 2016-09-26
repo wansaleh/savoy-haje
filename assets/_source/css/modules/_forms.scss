@@ -1,0 +1,348 @@
+@mixin form-row {
+  label {
+    display: block;
+    // padding: .8em .8em 0;
+    // margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    color: tint($black, 40);
+    font-size: .85em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all .2s ease;
+  }
+
+  input, textarea {
+    transition: all .2s ease;
+  }
+
+  &.focus {
+    label {
+      color: $accent;
+    }
+
+    input, textarea {
+      border-color: tint($accent, 40);
+      background: tint($accent, 90);
+      color: shade($accent, 60);
+    }
+  }
+
+  &.form-group label {
+    display: inline-block;
+  }
+}
+
+@mixin form-row-boxed {
+  margin-bottom: 1em;
+  border: 1px solid #ccc;
+  background: none;
+  border-radius: 0;
+  transition: all .2s ease;
+
+  &.form-row-first,
+  &.form-row-last {
+    padding: 0;
+    // width: auto;
+    // float: none;
+  }
+
+  input, textarea {
+    background: none;
+    border: none;
+    padding: .8em .7em .5em;
+    line-height: 1.5;
+    // font-size: 1.1em;
+    height: auto;
+  }
+
+  label {
+    display: block;
+    padding: .8em .8em 0;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    color: tint($black, 40);
+    font-size: .8em;
+    font-weight: 500;
+    transition: all .2s ease;
+  }
+
+  input.input-checkbox {
+    line-height: 2;
+  }
+
+  label.checkbox {
+    line-height: 2;
+  }
+
+  &.focus {
+    border-color: tint($accent-2, 40);
+    background: tint($accent-2, 90);
+
+    label {
+      color: $accent;
+    }
+  }
+}
+
+input:disabled {
+  opacity: .5 !important;
+}
+
+.nm-custom-checkbox-label {
+  padding-left: 26px;
+}
+.nm-custom-checkbox-label:before {
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+}
+.nm-custom-checkbox:checked + .nm-custom-checkbox-label:before {
+  font-size: 16px;
+  line-height: 18px;
+  color: #000;
+  content: "\e116";
+}
+
+.form-row .nm-custom-checkbox-label:before {
+  top: 2px;
+}
+
+#customer_login {
+  .form-row {
+    @include form-row;
+  }
+}
+
+.woocommerce-cart {
+  // #nm-cart-continue-button {
+  //   background: $accent;
+  //   border-color: $accent;
+  //   color: #fff;
+  //   transition: all .3s ease;
+  //
+  //   &:hover {
+  //     background: $black;
+  //     border-color: $black;
+  //   }
+  // }
+}
+
+.woocommerce-checkout {
+  form[name="checkout"] {
+    .form-row {
+      @include form-row;
+    }
+
+    #order_comments_field {
+      padding-top: 36px;
+    }
+  }
+
+  form.login {
+    .form-row:not(.form-group) {
+      @include form-row;
+    }
+  }
+}
+
+.woocommerce-account {
+  form {
+    .form-row {
+      @include form-row;
+    }
+  }
+}
+
+#commentform {
+  [class^="comment-form-"] {
+    @include form-row;
+  }
+}
+
+.nm-order-track-form {
+  form {
+    .form-row {
+      @include form-row;
+    }
+  }
+}
+
+
+.nm-row .wpcf7 {
+  margin-left: 0;
+}
+
+.wpcf7-form {
+  p {
+    padding: 0 !important;
+    margin-bottom: 20px !important;
+  }
+
+  .form-row {
+    @include form-row;
+    // padding: 0 1em 2em 0;
+    clear: none !important;
+  }
+
+  input[type=submit] {
+    width: 100%;
+  }
+
+  .wpcf7-not-valid {
+    border-bottom-color: $error;
+  }
+
+  .wpcf7-mail-sent-ok {
+    color: $message;
+  }
+  .wpcf7-mail-sent-ng {
+    color: $error;
+  }
+  .wpcf7-spam-blocked {
+    color: $notice;
+  }
+  .wpcf7-validation-errors {
+    color: $error;
+  }
+  .wpcf7-form-control-wrap {
+    position: relative;
+    display: block;
+  }
+  .wpcf7-not-valid-tip {
+    color: $error;
+    margin-top: 3px;
+  }
+  .use-floating-validation-tip .wpcf7-not-valid-tip {
+    border: 1px solid $error;
+  }
+
+  .wpcf7-response-output {
+    margin: 1em 0;
+    padding: .8em 1.5em;
+  }
+
+  .wpcf7-mail-sent-ok {
+    border: 1px solid $message;
+  }
+
+  .wpcf7-mail-sent-ng {
+    border: 1px solid $error;
+  }
+
+  .wpcf7-spam-blocked {
+    border: 1px solid $notice;
+  }
+
+  .wpcf7-validation-errors {
+    border: 1px solid $error;
+  }
+}
+
+
+
+.mc4wp-form {
+  position: relative;
+  margin-bottom: 20px;
+
+  p {
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+  input[type="email"] {
+    background-color: rgba(#fff, 0.1);
+    border: 1px solid rgba(#fff, 0.3);
+    color: white;
+    width: 100%;
+    transition: all .3s ease;
+    line-height: 1;
+  }
+  input[type="email"]:focus {
+    border: 1px solid rgba(#fff, 0.8);
+  }
+  input[type="email"]:focus + input[type="submit"]:hover {
+    border-top: 1px solid rgba(#fff, 0.8);
+    border-right: 1px solid rgba(#fff, 0.8);
+    border-bottom: 1px solid rgba(#fff, 0.8);
+  }
+  input[type="submit"] {
+    width: 35px;
+    height: 35px;
+    border: none !important;
+    background-color: transparent !important;
+    border-top: 1px solid rgba(#fff, 0);
+    border-right: 1px solid rgba(#fff, 0);
+    border-bottom: 1px solid rgba(#fff, 0);
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 0;
+    background: url(../images/mailchimp-plus.png) no-repeat center;
+    opacity: 0.3;
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+  }
+  input[type="submit"]:hover {
+    opacity: 1;
+    border-top: 1px solid rgba(#fff, 0.3);
+    border-right: 1px solid rgba(#fff, 0.3);
+    border-bottom: 1px solid rgba(#fff, 0.3);
+  }
+  label {
+    display: none;
+  }
+  ::-webkit-input-placeholder {
+    color: white;
+  }
+  :-moz-placeholder {
+    /* Firefox 18- */
+    color: white;
+  }
+  ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: white;
+  }
+  :-ms-input-placeholder {
+    color: white;
+  }
+
+  .mc4wp-response {
+    margin-top: .4em;
+  }
+}
+
+.mailchimp-dark .mc4wp-form {
+  margin-bottom: 30px;
+
+  input[type="email"] {
+    border: 1px solid #e6e6e6;
+    color: #999;
+    height: 40px;
+  }
+  input[type="email"]:focus {
+    border-color: #cdcdcd;
+  }
+  input[type="submit"] {
+    background: url(../images/mailchimp-plus-gray.png) no-repeat center;
+    opacity: 1;
+  }
+  input[type="submit"]:hover {
+    opacity: 0.8;
+  }
+  ::-webkit-input-placeholder {
+    color: #999;
+  }
+  :-moz-placeholder {
+    /* Firefox 18- */
+    color: #999;
+  }
+  ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #999;
+  }
+  :-ms-input-placeholder {
+    color: #999;
+  }
+}

@@ -1,0 +1,50 @@
+.nm-header .nm-menu > li {
+  &.button {
+    padding: 0;
+    background: none;
+
+    > a {
+      border: 2px solid #888;
+      border-radius: 3em;
+      padding: 8px 12px;
+      margin-top: 6px;
+      transition: all .3s ease;
+
+      &:hover {
+        border-color: $black;
+      }
+    }
+  }
+}
+
+.nm-shop-menu ul {
+  li a {
+    // padding-bottom: 3px !important;
+  }
+  li.current-parent-cat,
+  li.current-cat {
+    a {
+      color: $accent;
+      // border-bottom: 2px solid $accent;
+    }
+  }
+}
+
+
+// .header-transparency:not(.header-on-scroll) {
+//   .nm-header-logo img.alt {
+//     display: none;
+//   }
+//
+//   .nm-menu {
+//     li {
+//       a {
+//         color: rgba(#fff, .7);
+//
+//         &:hover {
+//           color: #fff;
+//         }
+//       }
+//     }
+//   }
+// }

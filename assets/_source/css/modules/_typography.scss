@@ -1,0 +1,151 @@
+@import 'https://fonts.googleapis.com/css?family=Oxygen:300,500,700|Playfair+Display:400,400i,700,700i';
+@import 'myriad-set-pro.css';
+
+@mixin font-awesome {
+  content: "\f000";
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  padding-right: 0.2em;
+}
+
+$body-fonts: 'Oxygen', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$heading-fonts: $body-fonts;
+// $body-fonts: 'Myriad Set Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+// $heading-fonts: 'Myriad Set Pro', $body-fonts;
+
+body {
+  font-family: $body-fonts;
+  // font-weight: 500;
+}
+
+// h1 { font-size: 3.2rem; }
+// h2 { font-size: 2.8rem; }
+// h3 { font-size: 2.6rem; }
+// h4 { font-size: 2.3rem; }
+// h5 { font-size: 2rem; }
+// h6 { font-size: 1.6rem; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-fonts;
+}
+
+h1, h2 { font-weight: 300; }
+
+.jumbo {
+  h1 {
+    font-size: scut-rem(30px) + 2rem;
+    line-height: 1;
+    margin-bottom: .2em;
+  }
+  h2 { font-size: scut-rem(28px) + 1rem; }
+  h3 { font-size: scut-rem(24px) + .5rem; }
+  // h4 { font-size: scut-rem(22px) + 1rem; }
+  // h5 { font-size: scut-rem(18px) + 1rem; }
+  // h6 { font-size: scut-rem(16px) + 1rem; }
+}
+
+h4, h5, h6 {
+  font-family: $body-fonts;
+}
+
+.nm-products {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $body-fonts;
+  }
+}
+
+.playfair {
+  h1 {
+    font-family: $heading-fonts;
+    letter-spacing: -.025em;
+
+    em {
+      color: $accent;
+      font-style: normal;
+    }
+  }
+}
+
+.title-center {
+  @extend .jumbo;
+
+  text-align: center;
+
+  h1 {
+    font-family: $heading-fonts;
+    // margin-top: -.2em;
+    letter-spacing: -.025em;
+    text-transform: capitalize;
+    position: relative;
+    // padding-bottom: .5em;
+
+    // &:before {
+    //   content: "";
+    //   display: block;
+    //   position: absolute;
+    //   bottom: 0;
+    //   left: 50%;
+    //   transform: translateX(-50%);
+    //   width: 40px;
+    //   height: 3px;
+    //   background: $black;
+    //   opacity: .3;
+    // }
+
+    // &:after {
+    //   content: ".";
+    //   color: $accent;
+    //   font-weight: 700;
+    //   padding-left: .05em;
+    // }
+
+    em {
+      color: $accent;
+      font-style: normal;
+    }
+  }
+
+  h6 {
+    font-family: $body-fonts;
+    // font-size: 1.2rem;
+    opacity: .4;
+    // text-transform: uppercase;
+    // letter-spacing: 1px;
+  }
+}
+
+b, strong {
+  font-weight: 600;
+}
+
+address {
+  font-style: normal;
+}
+
+//
+// .dark {
+//   color: #fff;
+// }
+
+
+.nm-row.dark {
+  color: #fff;
+
+  // * {
+  //   color: inherit;
+  // }
+  h1, h2, h3, h4, h5, h6, p {
+    color: #fff;
+  }
+
+  a {
+    transition: all .3s ease;
+    opacity: .6;
+  }
+
+  a:hover {
+    opacity: 1;
+  }
+}
