@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $post, $product, $nm_theme_options;
 
 ?>
-<div class="product_flash">
+<div class="product-flash">
 <?php if ( $nm_theme_options['product_sale_flash'] && $product->is_on_sale() ) : ?>
 
 	<?php

@@ -6,8 +6,8 @@
     text-transform: uppercase;
     letter-spacing: 0;
     color: tint($black, 40);
-    font-size: .85em;
-    font-weight: 600;
+    font-size: 1.1rem;
+    font-weight: 700;
     letter-spacing: 1px;
     transition: all .2s ease;
   }
@@ -86,28 +86,55 @@
   }
 }
 
+input, textarea {
+  &:focus {
+    border-color: tint($accent, 40) !important;
+    background: tint($accent, 90);
+    color: shade($accent, 60);
+  }
+}
+
 input:disabled {
   opacity: .5 !important;
 }
 
+// CHECKBOX
 .nm-custom-checkbox-label {
   padding-left: 26px;
 }
 .nm-custom-checkbox-label:before {
-  top: 0;
+  top: 2px !important;
   left: 0;
   width: 20px;
   height: 20px;
+  font-size: 14px;
+  line-height: 18px;
+  transition: all .3s ease;
 }
 .nm-custom-checkbox:checked + .nm-custom-checkbox-label:before {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 18px;
-  color: #000;
+  background: $accent;
+  color: #fff;
+  border-color: $accent;
   content: "\e116";
 }
 
-.form-row .nm-custom-checkbox-label:before {
+// RADIO
+.nm-custom-radio-label {
+  padding-left: 26px;
+}
+.nm-custom-radio-label:before {
   top: 2px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  transition: all .3s ease;
+}
+.nm-custom-radio:checked + .nm-custom-radio-label:before {
+  border-color: $accent;
+  background-color: $accent;
 }
 
 #customer_login {
@@ -313,36 +340,33 @@ input:disabled {
   }
 }
 
-.mailchimp-dark .mc4wp-form {
+.light .mc4wp-form {
   margin-bottom: 30px;
 
   input[type="email"] {
-    border: 1px solid #e6e6e6;
-    color: #999;
-    height: 40px;
+    border: 1px solid rgba($black, .3);
+    color: $black;
   }
   input[type="email"]:focus {
-    border-color: #cdcdcd;
+    border-color: $black;
   }
   input[type="submit"] {
     background: url(../images/mailchimp-plus-gray.png) no-repeat center;
-    opacity: 1;
   }
   input[type="submit"]:hover {
-    opacity: 0.8;
   }
   ::-webkit-input-placeholder {
-    color: #999;
+    color: rgba($black, .7);
   }
   :-moz-placeholder {
     /* Firefox 18- */
-    color: #999;
+    color: rgba($black, .7);
   }
   ::-moz-placeholder {
     /* Firefox 19+ */
-    color: #999;
+    color: rgba($black, .7);
   }
   :-ms-input-placeholder {
-    color: #999;
+    color: rgba($black, .7);
   }
 }

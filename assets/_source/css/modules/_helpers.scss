@@ -97,3 +97,31 @@ $screen-md-max:              ($screen-lg-min - 1) !default;
     opacity: $opacity;
   }
 }
+
+@mixin swatch-color-style {
+  font-size: 0;
+  border-color: rgba(#000, .3);
+  box-shadow: inset 0 0 10px rgba(#000, .2);
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: -90%;
+    left: -60%;
+    width: 150%;
+    height: 150%;
+    background-color: #fff;
+    // background-image: radial-gradient(circle, rgba(#fff, 1) 30%, rgba(#fff, 0) 100%);
+    border-radius: 100%;
+    opacity: .1;
+    transition: all .3s ease
+  }
+
+  &:hover,
+  &.active {
+    box-shadow: none;
+    &:before {
+      opacity: 0;
+    }
+  }
+}

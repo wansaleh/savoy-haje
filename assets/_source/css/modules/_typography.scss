@@ -1,8 +1,8 @@
-@import 'https://fonts.googleapis.com/css?family=Oxygen:300,500,700|Playfair+Display:400,400i,700,700i';
+@import 'https://fonts.googleapis.com/css?family=Oxygen:300,400,700|Playfair+Display:400,400i,700,700i|Open+Sans:800,900';
 @import 'myriad-set-pro.css';
 
 @mixin font-awesome {
-  content: "\f000";
+  content: "";
   font-family: FontAwesome;
   font-style: normal;
   font-weight: normal;
@@ -10,14 +10,32 @@
   padding-right: 0.2em;
 }
 
+@mixin font-nm {
+  content: "";
+  font-family: 'nm-font' !important;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  padding-right: 0.2em;
+}
+
 $body-fonts: 'Oxygen', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$heading-fonts: $body-fonts;
 // $body-fonts: 'Myriad Set Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$heading-fonts: $body-fonts;
 // $heading-fonts: 'Myriad Set Pro', $body-fonts;
 
 body {
   font-family: $body-fonts;
-  // font-weight: 500;
+  font-weight: 400;
+}
+
+.accent {
+  color: $accent;
+}
+
+.bg-accent {
+  background: $accent;
+  color: #fff;
 }
 
 // h1 { font-size: 3.2rem; }
@@ -29,9 +47,10 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $heading-fonts;
+  font-weight: 300;
 }
 
-h1, h2 { font-weight: 300; }
+// h1, h2 { font-weight: 300; }
 
 .jumbo {
   h1 {
@@ -44,76 +63,37 @@ h1, h2 { font-weight: 300; }
   // h4 { font-size: scut-rem(22px) + 1rem; }
   // h5 { font-size: scut-rem(18px) + 1rem; }
   // h6 { font-size: scut-rem(16px) + 1rem; }
+
+  // h1, h2, h3, h4, h5, h6 {
+  //   font-weight: 300;
+  // }
+
+  h3, h4, h5, h6 {
+    opacity: .4;
+    font-weight: 400;
+  }
 }
 
 h4, h5, h6 {
   font-family: $body-fonts;
 }
 
-.nm-products {
-  h1, h2, h3, h4, h5, h6 {
-    font-family: $body-fonts;
-  }
-}
-
 .playfair {
   h1 {
-    font-family: $heading-fonts;
+    font-family: 'Playfair Display', $heading-fonts;
     letter-spacing: -.025em;
-
-    em {
-      color: $accent;
-      font-style: normal;
-    }
   }
 }
 
-.title-center {
-  @extend .jumbo;
+.nm-products {
+  h1, h2, h3, h4, h5, h6 {
+    // font-family: $body-fonts;
+    font-weight: 400;
+  }
+}
 
+.center {
   text-align: center;
-
-  h1 {
-    font-family: $heading-fonts;
-    // margin-top: -.2em;
-    letter-spacing: -.025em;
-    text-transform: capitalize;
-    position: relative;
-    // padding-bottom: .5em;
-
-    // &:before {
-    //   content: "";
-    //   display: block;
-    //   position: absolute;
-    //   bottom: 0;
-    //   left: 50%;
-    //   transform: translateX(-50%);
-    //   width: 40px;
-    //   height: 3px;
-    //   background: $black;
-    //   opacity: .3;
-    // }
-
-    // &:after {
-    //   content: ".";
-    //   color: $accent;
-    //   font-weight: 700;
-    //   padding-left: .05em;
-    // }
-
-    em {
-      color: $accent;
-      font-style: normal;
-    }
-  }
-
-  h6 {
-    font-family: $body-fonts;
-    // font-size: 1.2rem;
-    opacity: .4;
-    // text-transform: uppercase;
-    // letter-spacing: 1px;
-  }
 }
 
 b, strong {
@@ -131,14 +111,11 @@ address {
 
 
 .nm-row.dark {
-  color: #fff;
+  color: #ddd;
 
-  // * {
-  //   color: inherit;
+  // h1, h2, h3, h4, h5, h6, p {
+  //   color: #fff;
   // }
-  h1, h2, h3, h4, h5, h6, p {
-    color: #fff;
-  }
 
   a {
     transition: all .3s ease;
@@ -147,5 +124,46 @@ address {
 
   a:hover {
     opacity: 1;
+  }
+}
+
+
+.hj-heading {
+  position: relative;
+  padding-bottom: .5rem;
+  font-weight: 400;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 2rem;
+    height: 2px;
+    background: $accent;
+  }
+}
+
+.hipster-border {
+  position: relative;
+  padding: 4rem;
+  margin-bottom: 1.5rem;
+
+  &:before,
+  &:after {
+    position: absolute;
+    content: "";
+    border: 5px solid $accent;
+    top: -.5rem;
+    left: -.5rem;
+    width: 100%;
+    height: 100%;
+    opacity: .5;
+  }
+
+  &:after {
+    border: 5px solid $black;
+    top: .5rem;
+    left: .5rem;
   }
 }

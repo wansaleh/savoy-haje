@@ -1,6 +1,6 @@
 <?php
 
-$_haje_color_names = array(
+$haje_color_names = array(
   "000000" => "Black",
   "000080" => "Navy Blue",
   "0000C8" => "Dark Blue",
@@ -1568,3 +1568,13 @@ $_haje_color_names = array(
   "FFFFF0" => "Ivory",
   "FFFFFF" => "White"
 );
+
+$haje_color_names_flipped = array_flip( $haje_color_names );
+$haje_color_names_flipped_lowercase = array_change_key_case( $haje_color_names_flipped );
+
+// function colorFromName(color_name) {
+//   global $haje_color_names_flipped_lowercase;
+//
+//   for name in ntc.names
+//     return name[0] if compare.toLowerCase().trim() == name[1].toLowerCase()
+// }

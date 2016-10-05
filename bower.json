@@ -16,5 +16,10 @@
   ],
   "devDependencies": {
     "Scut": "scut#^1.4.0"
+  },
+  "dependencies": {
+    "tinycolor": "^1.4.1",
+    "jquery-storage-api": "^1.9.4",
+    "matchHeight": "^0.7.0"
   }
 }

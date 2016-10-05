@@ -32,6 +32,17 @@
         if (opt.selected)
           button.addClass("active");
 
+        // Copy all data- attributes
+        $.each(opt.attributes, function () {
+          if (this.specified && this.name.startsWith('data-')) {
+            button.attr(this.name, this.value);
+          }
+        });
+
+        if (settings.afterInit) {
+          settings.afterInit();
+        }
+
         // Return the button.
         return button[0];
       });
@@ -40,9 +51,9 @@
       // `active` class to simulate the toggle effect. And also change the
       // select selected option.
       buttons.each(function(index, btn) {
-        self.change(function() {
-          settings.onChange($(btn).val(), $(btn).text(), self);
-        });
+        // self.change(function() {
+        //   settings.onChange($(btn).val(), $(btn).text(), self);
+        // });
 
         $(btn).click(function() {
           // Retrieve all buttons siblings of the clicked one with an
@@ -78,6 +89,8 @@
 
           // Change selected options of the select.
           self.val(total).change();
+
+          settings.onChange($(btn).val(), $(btn).text(), self);
         });
       });
 
@@ -98,6 +111,7 @@
   // Set the defaults options of the plugin.
   $.fn.togglebutton.defaults = {
     removeFirst: false,
+    afterInit: $.noop,
     onChange: $.noop
   };
 

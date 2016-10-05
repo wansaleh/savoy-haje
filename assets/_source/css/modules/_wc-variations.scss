@@ -1,3 +1,31 @@
+@mixin swatch-color-style {
+  font-size: 0;
+  border-color: rgba(#000, .3);
+  box-shadow: inset 0 0 10px rgba(#000, .2);
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: -90%;
+    left: -60%;
+    width: 150%;
+    height: 150%;
+    background-color: #fff;
+    // background-image: radial-gradient(circle, rgba(#fff, 1) 30%, rgba(#fff, 0) 100%);
+    border-radius: 100%;
+    opacity: .1;
+    transition: all .3s ease
+  }
+
+  &:hover,
+  &.active {
+    box-shadow: none;
+    &:before {
+      opacity: 0;
+    }
+  }
+}
+
 .variations_form .variations tr .nm-variation-row {
   .label {
     width: 100%;
@@ -58,9 +86,9 @@
       display: none;
     }
 
-    select {
-      display: none;
-    }
+    // select {
+    //   display: none;
+    // }
 
     .swatch-group {
       opacity: 0;
@@ -91,7 +119,7 @@
   .swatch-group {
     display: flex;
     flex-flow: row wrap;
-    // justify-content: space-between;
+    justify-content: space-between;
     align-items: center;
     align-content: center;
 
@@ -120,34 +148,34 @@
         border: 2px solid #000 !important;
       }
     }
-  }
 
-  &[data-attribute_name="color"],
-  &[data-attribute_name="pa_color"] {
-    .swatch-group .swatch {
-      font-size: 0;
-      // border-color: rgba(#fff, .3);
-      box-shadow: inset 0 0 15px rgba(#000, .1);
+    &[data-attribute_name="color"],
+    &[data-attribute_name="pa_color"] {
+      .swatch {
+        font-size: 0;
+        border-color: rgba(#000, .3);
+        box-shadow: inset 0 0 10px rgba(#000, .2);
 
-      &:before {
-        content: "";
-        position: absolute;
-        top: -90%;
-        left: -60%;
-        width: 150%;
-        height: 150%;
-        background-color: #fff;
-        // background-image: radial-gradient(circle, rgba(#fff, 1) 30%, rgba(#fff, 0) 100%);
-        border-radius: 100%;
-        opacity: .1;
-        transition: all .3s ease
-      }
+        // &:before {
+        //   content: "";
+        //   position: absolute;
+        //   top: -90%;
+        //   left: -60%;
+        //   width: 150%;
+        //   height: 150%;
+        //   background-color: #fff;
+        //   // background-image: radial-gradient(circle, rgba(#fff, 1) 30%, rgba(#fff, 0) 100%);
+        //   border-radius: 100%;
+        //   opacity: .1;
+        //   transition: all .3s ease
+        // }
 
-      &:hover,
-      &.active {
-        box-shadow: none;
-        &:before {
-          // opacity: 0;
+        &:hover,
+        &.active {
+          box-shadow: none;
+          // &:before {
+          //   opacity: 0;
+          // }
         }
       }
     }

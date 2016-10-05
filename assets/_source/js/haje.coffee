@@ -18,18 +18,16 @@ findKey = (obj, keyToFind) ->
   result
 
 class window.Haje
-  constructor: ->
-    $('#nm-footer').bgOverlay()
 
-    # logolink = $('.header-transparency .nm-header-logo > a')
-    # $(logolink).children('img.nm-logo').clone().addClass('alt').appendTo(logolink)
-
-
-    # $(".wpb_wrapper h4").stick_in_parent({
-    #   parent: ''
-    #   offset_top: 200
-    # })
-
+class Haje.Home
+  # darkSlides = [2]
+  #
+  # constructor: ->
+  #   revapi1? && revapi1.bind 'revolution.slide.onchange', (e, data) ->
+  #     if darkSlides.indexOf(data.slideIndex) > -1
+  #       $('body').removeClass('header-dark').addClass('header-light')
+  #     else
+  #       $('body').removeClass('header-light').addClass('header-dark')
 
 class Haje.Alert
   constructor: ->
@@ -85,10 +83,31 @@ class Haje.WC.Forms
       .focus -> $(this).closest('p[class^="comment-form-"]').addClass('focus')
       .blur -> $(this).closest('p[class^="comment-form-"]').removeClass('focus')
 
+    $('form .wpas-form-group').find('input, textarea, select, label')
+      .focus -> $(this).closest('.wpas-form-group').addClass('focus')
+      .blur -> $(this).closest('.wpas-form-group').removeClass('focus')
+
+
+class Haje.WC.Filters
+  constructor: ->
+    @init()
+
+  init: ->
+    color_widget = $('.nm_widget_color_filter')
+    widget_title = $(color_widget).find('.nm-widget-title')
+    original_title = widget_title.text()
+    color_widget.data('original-title', original_title)
+
+    $(color_widget).find('.wc-layered-nav-term a').each ->
+      $(this).hover(
+        => widget_title.text($(this).children('i')[0].nextSibling.nodeValue)
+        => widget_title.text(color_widget.data('original-title'))
+      )
 
 class Haje.WC.VariationSwatches
   constructor: ->
-    @init($('#nm-product-summary'))
+    @init('#nm-product-summary')
+    Haje.WC_Variation_Swatches = this
 
   init: (parent) ->
     return if !$(parent).find('table.variations .nm-variation-row').length
@@ -121,31 +140,30 @@ class Haje.WC.VariationSwatches
       # Replace select box
       select = variation_value.children('select')
 
-      select.togglebutton {
+      select.togglebutton({
         removeFirst: true,
-        # onChange: (val, text) ->
-        #   if select.val()
-        #     # variation_label_display.addClass('active').text(text)
-        #     variation_label_display.text(text)
-        #     variation_label_display.data('original-label', text)
-        #   else
-        #     # variation_label_display.removeClass('active')
-        #     variation_label_display.data('original-label', '')
-      }
+        onChange: (val, text) ->
+          if select.val()
+            # variation_label_display.addClass('active').text(text)
+            variation_label_display.text(text)
+            variation_label_display.data('original-label', text)
+          else
+            # variation_label_display.removeClass('active')
+            variation_label_display.data('original-label', '')
+      })
 
       $.each select.data(), (attr_name, attr_val) ->
         if typeof attr_val == 'string'
           select.data('group').attr('data-' + attr_name, attr_val.replace(/^attribute_/, ''))
 
-      select.change ->
-        if select.val()
-          # variation_label_display.addClass('active')
-          variation_label_display.text(select.val())
-          variation_label_display.data('original-label', select.val())
-        else
-          # variation_label_display.removeClass('active')
-          variation_label_display.data('original-label', '')
-
+      # select.change ->
+      #   if select.val()
+      #     # variation_label_display.addClass('active')
+      #     variation_label_display.text(select.val())
+      #     variation_label_display.data('original-label', select.val())
+      #   else
+      #     # variation_label_display.removeClass('active')
+      #     variation_label_display.data('original-label', '')
 
       # Change label on hover
       select.data('buttons').hover(
@@ -163,10 +181,14 @@ class Haje.WC.VariationSwatches
 
         # Sort color by brightness
         select.data('buttons').sort (a, b) ->
-          a_value = $(a).attr('value')
-          a_color = tinycolor(_this.colorFromName(a_value))
-          b_value = $(b).attr('value')
-          b_color = tinycolor(_this.colorFromName(b_value))
+          # a_value = $(a).attr('value')
+          # a_color = tinycolor(_this.colorFromName(a_value))
+          a_color = tinycolor($(a).data('hex'))
+
+          # b_value = $(b).attr('value')
+          # b_color = tinycolor(_this.colorFromName(b_value))
+          # b_color = tinycolor(_this.colorFromName(b_value))
+          b_color = tinycolor($(b).data('hex'))
 
           b_color.getBrightness() - a_color.getBrightness()
           # hue_diff = a_color.toHsl().h - b_color.toHsl().h
@@ -184,7 +206,8 @@ class Haje.WC.VariationSwatches
     _this = this
 
     swatches.each ->
-      color = _this.colorFromName $(this).attr('value')
+      # color = _this.colorFromName $(this).attr('value')
+      color = $(this).data('hex')
       $(this).css( backgroundColor: "##{color}" )
 
   toggleVariations: (parent) ->
@@ -209,13 +232,13 @@ class Haje.WC.VariationSwatches
           variation_row.removeClass('open')
           ls.set('haje_open_variation_' + attr_name, false)
 
-  colorFromName: (compare) ->
-    if (_haje_hex?)
-      return tinycolor(findKey(_haje_hex, compare)).toHex()
-    else
-      for name in ntc.names
-        return name[0] if compare.toLowerCase().trim() == name[1].toLowerCase()
-    false
+  # colorFromName: (compare) ->
+  #   if (_haje_hex?)
+  #     return tinycolor(findKey(_haje_hex, compare)).toHex()
+  #   else
+  #     for name in ntc.names
+  #       return name[0] if compare.toLowerCase().trim() == name[1].toLowerCase()
+  #   false
 
 class Haje.WC.ColorCart
   constructor: ->
@@ -234,18 +257,19 @@ class Haje.WC.ColorCart
     $('.cart_item, .mini_cart_item').find('.variation-Color:last-child p').each ->
       value = $(this).html()
       product_id = $(this).closest('.cart_item, .mini_cart_item').attr('class').match(/product-id-(\d+)/)[1]
-      color = _this.colorFromName(value, product_id)
+      # color = _this.colorFromName(value, product_id)
+      color = $(this).parent().data('hex')
 
       $(this).parent().addClass( if tinycolor(color).getBrightness() < 180 then 'dark' else 'light' )
       $(this).parent().css( { background: "##{color}", borderColor: "##{color}" } )
 
-  colorFromName: (compare, product_id = null) ->
-    if (product_id and _haje_cart_hex? and _haje_cart_hex[product_id])
-      return tinycolor(_haje_cart_hex[product_id][compare]).toHex()
-    else
-      for name in ntc.names
-        return name[0] if $.trim(compare.toLowerCase()) == name[1].toLowerCase()
-    false
+  # colorFromName: (compare, product_id = null) ->
+  #   if (product_id and _haje_cart_hex? and _haje_cart_hex[product_id])
+  #     return tinycolor(_haje_cart_hex[product_id][compare]).toHex()
+  #   else
+  #     for name in ntc.names
+  #       return name[0] if $.trim(compare.toLowerCase()) == name[1].toLowerCase()
+  #   false
 
 class Haje.WC.PaymentMethods
   constructor: ->
@@ -260,12 +284,42 @@ class Haje.WC.PaymentMethods
       else
         $(this).children('ul').addClass('multiple-method')
 
+class Haje.Support
+  constructor: ->
+    $('.support-menu-button > a').bind 'click', (e) ->
+      e.preventDefault()
+      # Checkout page fix: Make sure the login form is visible
+      $('#nm-login-wrap').children('.login').css 'display', ''
+      $.magnificPopup.open
+        mainClass: 'nm-login-popup nm-mfp-fade-in'
+        alignTop: true
+        closeMarkup: '<a class="mfp-close nm-font nm-font-close2"></a>'
+        removalDelay: 180
+        items:
+          src: '#nm-login-popup-wrap'
+          type: 'inline'
+        callbacks: close: ->
+          # Make sure the login form is displayed when the modal is re-opened
+          $('#nm-login-wrap').addClass 'inline fade-in slide-up'
+          $('#nm-register-wrap').removeClass 'inline fade-in slide-up'
+          return
+      return
+
+
+
+# HS.beacon.config
+#   color: '#2979FF'
+#   icon: 'message'
+#   poweredBy: false
 
 $ ->
   new Haje
+  new Haje.Home
   new Haje.Alert
   new Haje.WC
   new Haje.WC.Forms
-  Haje.WC_Variation_Swatches = new Haje.WC.VariationSwatches
+  new Haje.WC.Filters
+  new Haje.WC.VariationSwatches
   new Haje.WC.ColorCart
   new Haje.WC.PaymentMethods
+  # new Haje.Support

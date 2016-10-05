@@ -120,36 +120,36 @@
 								$productForm.find(':submit').attr('disabled', 'disabled');
 							});*/
 
-							// WAN: get the color swatches
-							var hexAjaxUrl = wc_add_to_cart_params.wc_ajax_url.toString().replace('%%endpoint%%', 'haje_hex_terms');
-
-							window.haje_nm_qv_ajax_hex = $.ajax({
-								type: 'GET',
-								url: hexAjaxUrl,
-								data: { product_id: productId },
-								dataType: 'json',
-								cache: false,
-								headers: {'cache-control': 'no-cache'},
-								beforeSend: function() {
-									// Check previous requests
-									if (typeof window.haje_nm_qv_ajax_hex === 'object') {
-										window.haje_nm_qv_ajax_hex.abort();
-									}
-								},
-								error: function(XMLHttpRequest, textStatus, errorThrown) {
-									console.log('HAJE: NM: AJAX error - _qvLoadProduct() - ' + errorThrown);
-
-									// Remove 'auto' width
-									self.$html.css('width', '');
-
-									// Remove overlay
-									$qvOverlay.removeClass('mfp-ready mfp-removing').remove();
-								},
-								success: function(data) {
-									window._haje_hex = data;
-									Haje.WC_Variation_Swatches.init('#nm-qv-product-summary');
-								}
-							});
+							// // WAN: get the color swatches
+							// var hexAjaxUrl = wc_add_to_cart_params.wc_ajax_url.toString().replace('%%endpoint%%', 'haje_hex_terms');
+							//
+							// window.haje_nm_qv_ajax_hex = $.ajax({
+							// 	type: 'GET',
+							// 	url: hexAjaxUrl,
+							// 	data: { product_id: productId },
+							// 	dataType: 'json',
+							// 	cache: false,
+							// 	headers: {'cache-control': 'no-cache'},
+							// 	beforeSend: function() {
+							// 		// Check previous requests
+							// 		if (typeof window.haje_nm_qv_ajax_hex === 'object') {
+							// 			window.haje_nm_qv_ajax_hex.abort();
+							// 		}
+							// 	},
+							// 	error: function(XMLHttpRequest, textStatus, errorThrown) {
+							// 		console.log('HAJE: NM: AJAX error - _qvLoadProduct() - ' + errorThrown);
+							//
+							// 		// Remove 'auto' width
+							// 		self.$html.css('width', '');
+							//
+							// 		// Remove overlay
+							// 		$qvOverlay.removeClass('mfp-ready mfp-removing').remove();
+							// 	},
+							// 	success: function(data) {
+							// 		window._haje_hex = data;
+							// 		Haje.WC_Variation_Swatches.init('#nm-qv-product-summary');
+							// 	}
+							// });
 
 							_qvShowModal();
 
@@ -173,6 +173,9 @@
 					callbacks: {
 						open: function() {
 							$qvOverlay.removeClass('nm-loader'); // Hide 'loader'
+
+							// WAN
+							Haje.WC_Variation_Swatches.init('#nm-qv-product-summary');
 
 							_qvInitSlider();
 
