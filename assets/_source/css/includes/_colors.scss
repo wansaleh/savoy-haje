@@ -1,10 +1,11 @@
 @import 'mdc';
+@import 'open-color';
 @import 'colors-settings';
 
-$main: #777 !default;
-$black: #282828 !default;
-
-$accent: $clr-blue-a400 !default;
+// $clr-main: #777 !default;
+// $clr-heading: #282828 !default;
+//
+// $clr-highlight: $clr-blue-a400 !default;
 
 $message: $clr-green-a700 !default;
 $notice: $clr-amber-a400 !default;
@@ -29,24 +30,24 @@ $error: $clr-pink-a400 !default;
 }
 //
 // ::-moz-selection {
-//   background: $accent;
+//   background: $clr-highlight;
 //   /* WebKit/Blink Browsers */
 //   color: #fff;
 // }
 // ::selection {
-//   background: $accent;
+//   background: $clr-highlight;
 //   /* WebKit/Blink Browsers */
 //   color: #fff;
 // }
 // ::-moz-selection {
-//   background: $accent;
+//   background: $clr-highlight;
 //   /* Gecko Browsers */
 //   color: #fff;
 // }
 
 .hajelogo-svg {
   .st0 {
-    fill: $accent !important;
+    fill: $clr-highlight !important;
   }
   .st1 {
     fill: #fff !important;

@@ -28,9 +28,9 @@ $haje-assets: '/wp-content/themes/savoy-haje/assets';
   }
 }
 
-.nm-row-hidden {
-  display: none;
-}
+// .nm-row-hidden {
+//   display: none;
+// }
 
 .button {
   transition: all .2s ease;
@@ -113,15 +113,15 @@ $haje-assets: '/wp-content/themes/savoy-haje/assets';
       text-align: right;
       a {
         display: inline-block;
-        color: $accent;
+        color: $clr-highlight;
         padding: .3em 1em;
-        border: 1px solid $accent;
+        border: 1px solid $clr-highlight;
         border-radius: 5em;
         // transition: all .2s ease;
 
         &:hover {
-          background: $accent;
-          border-color: $accent;
+          background: $clr-highlight;
+          border-color: $clr-highlight;
           color: #fff;
         }
       }
@@ -131,7 +131,7 @@ $haje-assets: '/wp-content/themes/savoy-haje/assets';
   // .widget-panel-dark & {
   //   background: rgba(#fff, .7);
   //   .haje-alert {
-  //     background: $black;
+  //     background: $clr-heading;
   //     color: #eee;
   //   }
   // }
@@ -157,9 +157,9 @@ footer#nm-footer {
   //   opacity: .7;
   // }
 
-  .nm-footer-bar-logo {
-    // margin-right: 2rem;
-  }
+  // .nm-footer-bar-logo {
+  //   margin-right: 2rem;
+  // }
 
   // .nm-footer-widgets {
   //   background: none;
@@ -170,7 +170,8 @@ footer#nm-footer {
 
   .nm-footer-widgets {
     // padding: 80px 0 30px;
-    padding: 100px 0 30px;
+    // padding: 100px 0 30px;
+    padding: 80px 0 40px;
 
     h3 {
       font-weight: 700;
@@ -272,18 +273,22 @@ footer#nm-footer {
 
     .widget_product_tag_cloud {
       .tagcloud {
-        margin-left: -10px;
+        // margin-left: -10px;
 
         a {
+          // padding: .3em .6em;
+          background: $clr-heading;
+          margin: 0 3px 3px 0;
           transition: all .2s ease;
+
+          &:hover {
+            background: $clr-highlight;
+          }
         }
       }
     }
 
     .newsletter {
-      // background: #444;
-      // padding: 2em;
-
       form {
         margin-bottom: 1em;
       }
@@ -297,33 +302,6 @@ footer#nm-footer {
         opacity: .6;
       }
     }
-
-    //
-    // #sb_instagram {
-    //   margin-top: -5px;
-    //
-    //   .sb_instagram_header {
-    //     padding: 0 !important;
-    //
-    //     h3 {
-    //       color: #fff !important;
-    //     }
-    //   }
-    //
-    //   .sbi_photo_wrap {
-    //     background: $black;
-    //     overflow: hidden;
-    //
-    //     a {
-    //       opacity: 1 !important;
-    //       transition: all .3s ease;
-    //
-    //       &:hover {
-    //         opacity: .5 !important;
-    //       }
-    //     }
-    //   }
-    // }
   }
 
   @media (max-width: 991px) {
@@ -355,10 +333,6 @@ footer#nm-footer {
 
 .instashow {
   font-family: $body-fonts !important;
-
-  * {
-    // font-family: $body-fonts;
-  }
 }
 
 .vc_tta.vc_general .vc_tta-tab > a {
@@ -370,4 +344,24 @@ footer#nm-footer {
     margin: 0;
     padding-top: 12px;
   }
+}
+
+.vc_tta-panels-container {
+  overflow: hidden;
+}
+
+.vc_tta.vc_general .vc_tta-tab > a:hover {
+  color: $clr-highlight;
+}
+
+.vc_tta.vc_general .vc_tta-tab.vc_active > a {
+  color: $clr-highlight;
+}
+
+.mfp-close:active {
+  top: 5px;
+}
+
+.twitter-tweet::shadow * {
+  font-family: $body-fonts !important;
 }

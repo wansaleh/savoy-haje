@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Savoy Theme\n"
-"POT-Creation-Date: 2016-06-29 21:58+0200\n"
-"PO-Revision-Date: 2016-06-29 21:58+0200\n"
+"POT-Creation-Date: 2016-08-28 17:24+0200\n"
+"PO-Revision-Date: 2016-09-28 15:34+0200\n"
 "Last-Translator: \n"
 "Language-Team: NordicMade\n"
 "Language: en_US\n"
@@ -29,7 +29,6 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-8: includes/visual-composer/init.php\n"
 "X-Poedit-SearchPathExcluded-9: includes/widgets\n"
 "X-Poedit-SearchPathExcluded-10: woocommerce\n"
-"X-Poedit-SearchPathExcluded-11: header-login.php\n"
 
 #: 404.php:7
 msgid "Oops, page not found."
@@ -93,11 +92,11 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: content-classic.php:45 content-grid.php:50 content-list.php:42 single.php:47
+#: content-classic.php:48 content-grid.php:53 content-list.php:45 single.php:47
 msgid "Pages:"
 msgstr ""
 
-#: content-grid.php:59
+#: content-grid.php:62
 msgid "More &nbsp;&rarr;"
 msgstr ""
 
@@ -128,65 +127,65 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-#: functions.php:609
+#: functions.php:613
 msgid "Top Bar Menu"
 msgstr ""
 
-#: functions.php:610
+#: functions.php:614
 msgid "Main Menu"
 msgstr ""
 
-#: functions.php:611
+#: functions.php:615
 msgid "Right Menu"
 msgstr ""
 
-#: functions.php:612
+#: functions.php:616
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:678
+#: functions.php:682
 msgid "Pingback:"
 msgstr ""
 
-#: functions.php:678 functions.php:703
+#: functions.php:682 functions.php:707
 msgid "Edit"
 msgstr ""
 
-#: functions.php:690
+#: functions.php:694
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: functions.php:695
+#: functions.php:699
 msgid "Your comment is awaiting moderation"
 msgstr ""
 
-#: functions.php:793
+#: functions.php:797
 msgid "Categories"
 msgstr ""
 
-#: functions.php:794 includes/translation-strings-dummy.php:59
+#: functions.php:798 includes/translation-strings-dummy.php:60
 #: includes/woocommerce/woocommerce-template-functions.php:160
 msgid "All"
 msgstr ""
 
-#: functions.php:922
+#: functions.php:926
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:964 functions.php:973
+#: functions.php:968 functions.php:977
 msgid "Shop"
 msgstr ""
 
-#: functions.php:985
+#: functions.php:989
 msgid "Footer"
 msgstr ""
 
-#: functions.php:996
+#: functions.php:1000
 msgid "Visual Composer - Widgetised Sidebar"
 msgstr ""
 
-#: includes/custom-styles.php:574
+#: includes/custom-styles.php:568
 msgid "Required field."
 msgstr ""
 
@@ -271,39 +270,44 @@ msgstr ""
 msgid "Showing %s&ldquo;%s&rdquo;%s"
 msgstr ""
 
-#: includes/translation-strings-dummy.php:50
-msgid "Filter Products"
+#: includes/translation-strings-dummy.php:48
+#, php-format
+msgid "Products tagged %s&ldquo;%s&rdquo;%s"
 msgstr ""
 
 #: includes/translation-strings-dummy.php:51
+msgid "Filter Products"
+msgstr ""
+
+#: includes/translation-strings-dummy.php:52
 msgid "Reset Filters"
 msgstr ""
 
-#: includes/translation-strings-dummy.php:54
+#: includes/translation-strings-dummy.php:55
 msgid "Show more"
 msgstr ""
 
-#: includes/translation-strings-dummy.php:62
+#: includes/translation-strings-dummy.php:63
 msgid "Default"
 msgstr ""
 
-#: includes/translation-strings-dummy.php:63
+#: includes/translation-strings-dummy.php:64
 msgid "Popularity"
 msgstr ""
 
-#: includes/translation-strings-dummy.php:64
+#: includes/translation-strings-dummy.php:65
 msgid "Average rating"
 msgstr ""
 
-#: includes/translation-strings-dummy.php:65
+#: includes/translation-strings-dummy.php:66
 msgid "Newness"
 msgstr ""
 
-#: includes/translation-strings-dummy.php:66
+#: includes/translation-strings-dummy.php:67
 msgid "Price: Low to High"
 msgstr ""
 
-#: includes/translation-strings-dummy.php:67
+#: includes/translation-strings-dummy.php:68
 msgid "Price: High to Low"
 msgstr ""
 
@@ -311,15 +315,15 @@ msgstr ""
 msgid "Click to toggle"
 msgstr ""
 
-#: includes/visual-composer/page-templates.php:36
+#: includes/visual-composer/page-templates.php:44
 msgid "About"
 msgstr ""
 
-#: includes/visual-composer/page-templates.php:44
+#: includes/visual-composer/page-templates.php:51
 msgid "Contact"
 msgstr ""
 
-#: includes/visual-composer/page-templates.php:52
+#: includes/visual-composer/page-templates.php:58
 msgid "FAQ"
 msgstr ""
 
@@ -381,31 +385,31 @@ msgstr ""
 msgid "on"
 msgstr ""
 
-#: single.php:65
+#: single.php:67
 msgid "Posted in "
 msgstr ""
 
-#: single.php:68
+#: single.php:70
 msgid " and tagged "
 msgstr ""
 
-#: single.php:76
+#: single.php:78
 msgid "Tagged "
 msgstr ""
 
-#: single.php:86
+#: single.php:88
 msgid "Share"
 msgstr ""
 
-#: single.php:96
+#: single.php:98
 msgid "&larr;&nbsp; Newer"
 msgstr ""
 
-#: single.php:99
+#: single.php:101
 msgid "Older &nbsp;&rarr;"
 msgstr ""
 
-#: single.php:170
+#: single.php:172
 msgid "Related Posts"
 msgstr ""
 

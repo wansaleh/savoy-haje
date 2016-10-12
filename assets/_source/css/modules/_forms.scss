@@ -5,7 +5,7 @@
     // margin: 0;
     text-transform: uppercase;
     letter-spacing: 0;
-    color: tint($black, 40);
+    color: tint($clr-heading, 40);
     font-size: 1.1rem;
     font-weight: 700;
     letter-spacing: 1px;
@@ -18,13 +18,13 @@
 
   &.focus {
     label {
-      color: $accent;
+      color: $clr-highlight;
     }
 
     input, textarea {
-      border-color: tint($accent, 40);
-      background: tint($accent, 90);
-      color: shade($accent, 60);
+      border-color: tint($clr-highlight, 40);
+      background: tint($clr-highlight, 90);
+      color: shade($clr-highlight, 60);
     }
   }
 
@@ -62,7 +62,7 @@
     margin: 0;
     text-transform: uppercase;
     letter-spacing: 0;
-    color: tint($black, 40);
+    color: tint($clr-heading, 40);
     font-size: .8em;
     font-weight: 500;
     transition: all .2s ease;
@@ -77,20 +77,20 @@
   }
 
   &.focus {
-    border-color: tint($accent-2, 40);
-    background: tint($accent-2, 90);
+    border-color: tint($clr-highlight-2, 40);
+    background: tint($clr-highlight-2, 90);
 
     label {
-      color: $accent;
+      color: $clr-highlight;
     }
   }
 }
 
 input, textarea {
   &:focus {
-    border-color: tint($accent, 40) !important;
-    background: tint($accent, 90);
-    color: shade($accent, 60);
+    border-color: tint($clr-highlight, 40) !important;
+    background: tint($clr-highlight, 90);
+    color: shade($clr-highlight, 60);
   }
 }
 
@@ -114,9 +114,9 @@ input:disabled {
 .nm-custom-checkbox:checked + .nm-custom-checkbox-label:before {
   font-size: 14px;
   line-height: 18px;
-  background: $accent;
+  background: $clr-highlight;
   color: #fff;
-  border-color: $accent;
+  border-color: $clr-highlight;
   content: "\e116";
 }
 
@@ -133,8 +133,8 @@ input:disabled {
   transition: all .3s ease;
 }
 .nm-custom-radio:checked + .nm-custom-radio-label:before {
-  border-color: $accent;
-  background-color: $accent;
+  border-color: $clr-highlight;
+  background-color: $clr-highlight;
 }
 
 #customer_login {
@@ -145,14 +145,14 @@ input:disabled {
 
 .woocommerce-cart {
   // #nm-cart-continue-button {
-  //   background: $accent;
-  //   border-color: $accent;
+  //   background: $clr-highlight;
+  //   border-color: $clr-highlight;
   //   color: #fff;
   //   transition: all .3s ease;
   //
   //   &:hover {
-  //     background: $black;
-  //     border-color: $black;
+  //     background: $clr-heading;
+  //     border-color: $clr-heading;
   //   }
   // }
 }
@@ -289,33 +289,23 @@ input:disabled {
   input[type="email"]:focus {
     border: 1px solid rgba(#fff, 0.8);
   }
-  input[type="email"]:focus + input[type="submit"]:hover {
-    border-top: 1px solid rgba(#fff, 0.8);
-    border-right: 1px solid rgba(#fff, 0.8);
-    border-bottom: 1px solid rgba(#fff, 0.8);
-  }
   input[type="submit"] {
-    width: 35px;
+    // width: 35px;
     height: 35px;
     border: none !important;
     background-color: transparent !important;
-    border-top: 1px solid rgba(#fff, 0);
-    border-right: 1px solid rgba(#fff, 0);
-    border-bottom: 1px solid rgba(#fff, 0);
     position: absolute;
     top: 0;
     right: 0;
-    font-size: 0;
-    background: url(../images/mailchimp-plus.png) no-repeat center;
-    opacity: 0.3;
-    -webkit-transition: all 0.2s linear;
-    transition: all 0.2s linear;
+    font-size: 1.2em;
+    line-height: 1;
+    padding: 0 10px;
+    text-align: center;
+    opacity: 1;
+    transition: all .3s ease;
   }
   input[type="submit"]:hover {
-    opacity: 1;
-    border-top: 1px solid rgba(#fff, 0.3);
-    border-right: 1px solid rgba(#fff, 0.3);
-    border-bottom: 1px solid rgba(#fff, 0.3);
+    color: $clr-highlight;
   }
   label {
     display: none;
@@ -338,35 +328,46 @@ input:disabled {
   .mc4wp-response {
     margin-top: .4em;
   }
+
+  .mc4wp-form-fields {
+    position: relative;
+  }
 }
 
 .light .mc4wp-form {
   margin-bottom: 30px;
 
   input[type="email"] {
-    border: 1px solid rgba($black, .3);
-    color: $black;
+    border: 1px solid rgba($clr-heading, .3);
+    color: $clr-heading;
   }
   input[type="email"]:focus {
-    border-color: $black;
+    border-color: $clr-heading;
   }
   input[type="submit"] {
-    background: url(../images/mailchimp-plus-gray.png) no-repeat center;
+    color: $clr-heading;
   }
   input[type="submit"]:hover {
+    color: $clr-highlight;
   }
   ::-webkit-input-placeholder {
-    color: rgba($black, .7);
+    color: rgba($clr-heading, .7);
   }
   :-moz-placeholder {
     /* Firefox 18- */
-    color: rgba($black, .7);
+    color: rgba($clr-heading, .7);
   }
   ::-moz-placeholder {
     /* Firefox 19+ */
-    color: rgba($black, .7);
+    color: rgba($clr-heading, .7);
   }
   :-ms-input-placeholder {
-    color: rgba($black, .7);
+    color: rgba($clr-heading, .7);
+  }
+
+  &.focus {
+    input[type="submit"] {
+      color: $clr-highlight;
+    }
   }
 }

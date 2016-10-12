@@ -1,20 +1,9 @@
 <?php
 
-$hj_version = '1.0';
+$hj_version = '1.1';
 
 function hj_uri($relative_uri = "") {
   return get_stylesheet_directory_uri() . $relative_uri;
-}
-
-add_action('wp_logout', create_function('', 'wp_redirect(home_url()); exit();'));
-
-add_filter( 'body_class', 'hj_slug_body_class' );
-function hj_slug_body_class( $classes ) {
-  global $post;
-  if ( isset( $post ) ) {
-    $classes[] = $post->post_type . '-' . $post->post_name;
-  }
-  return $classes;
 }
 
 add_action( 'wp_head', 'hj_head', 10000 );
@@ -25,35 +14,56 @@ function hj_head() {
   echo "<script src='https://cdn.polyfill.io/v2/polyfill.min.js'></script>";
 }
 
+/**
+ * Savoy javascript overrides.
+ */
+
 add_action( 'wp_enqueue_scripts', 'hj_scripts', 10000 );
 function hj_scripts() {
   if ( nm_woocommerce_activated() ) {
     wp_enqueue_script('nm-shop-quickview', hj_uri('/assets/js/haje-nm-shop-quickview.js'), array( 'jquery', 'nm-shop', 'wc-add-to-cart-variation' ), NM_THEME_VERSION);
 
     if ( is_woocommerce() ) {
-      wp_enqueue_script('nm-shop-filters', hj_uri('/assets/js/haje-nm-shop-filters.js'), array( 'jquery', 'nm-shop' ), NM_THEME_VERSION);
 
-      // if ( is_product() ) {
-      //   wp_enqueue_script( 'nm-shop-single-product', hj_uri('/assets/js/haje-nm-shop-single-product.js'), array( 'jquery', 'nm-shop', 'slick-slider', 'easyzoom' ), NM_THEME_VERSION );
-      // }
+      if ( is_product() ) {
+        wp_enqueue_script( 'nm-shop-single-product', hj_uri('/assets/js/haje-nm-shop-single-product.js'), array( 'jquery', 'nm-shop' ), NM_THEME_VERSION );
+      }
+      else {
+        wp_enqueue_script('nm-shop-filters', hj_uri('/assets/js/haje-nm-shop-filters.js'), array( 'jquery', 'nm-shop' ), NM_THEME_VERSION);
+      }
     }
   }
 }
 
-add_action( 'wp_footer', 'hj_footer', 10000 );
+/**
+ * Main javascripts.
+ */
+
+add_action( 'wp_footer', 'hj_footer' );
 function hj_footer() {
   global $hj_version;
 
   if ( ! is_admin() ) {
 
-    echo "<script type='text/javascript' src='" . hj_uri('/assets/js/vendor.js') . "'></script>\n";
-    echo "<script type='text/javascript' src='" . hj_uri('/assets/js/haje.js') . "'></script>\n";
+    wp_enqueue_script('haje-vendor', hj_uri('/assets/js/vendor.js'), array( 'jquery' ), NM_THEME_VERSION);
+    wp_enqueue_script('haje-main', hj_uri('/assets/js/haje.js'), array( 'haje-vendor' ), NM_THEME_VERSION);
 
-    if ( is_page( 'Coming Soon' ) ) {
-      echo "<script type='text/javascript' src='" . hj_uri('/assets/js/comingsoon.js') . "'></script>\n";
-    }
+    // echo "<script type='text/javascript' src='" . hj_uri('/assets/js/vendor.js') . "'></script>\n";
+    // echo "<script type='text/javascript' src='" . hj_uri('/assets/js/haje.js') . "'></script>\n";
 
+    // if ( is_page( 'Coming Soon' ) ) {
+    //   echo "<script type='text/javascript' src='" . hj_uri('/assets/js/comingsoon.js') . "'></script>\n";
+    // }
   }
+}
+
+add_filter( 'body_class', 'hj_slug_body_class' );
+function hj_slug_body_class( $classes ) {
+  global $post;
+  if ( isset( $post ) ) {
+    $classes[] = $post->post_type . '-' . $post->post_name;
+  }
+  return $classes;
 }
 
 add_filter( 'nm_myaccount_title', 'hj_myaccount_title' );
@@ -74,6 +84,8 @@ add_filter( 'login_headerurl', 'hj_login_logo_url' );
 function hj_login_logo_url() {
   return home_url();
 }
+
+add_action('wp_logout', create_function('', 'wp_redirect(home_url()); exit();'));
 
 // add_action( 'admin_head', 'hj_admin_styles' );
 function hj_admin_styles() {
@@ -132,13 +144,43 @@ function hj_custom_styles() {
 
   ob_start();
 ?>
-
-$accent: <?php echo esc_attr( $nm_theme_options['highlight_color'] ); ?>;
-
-$main: <?php echo esc_attr( $nm_theme_options['main_font_color'] ); ?>;
-$black: <?php echo esc_attr( $nm_theme_options['heading_color'] ); ?>;
+$clr-highlight: <?php echo esc_attr( $nm_theme_options['highlight_color'] ); ?>;
+$clr-main-font: <?php echo esc_attr( $nm_theme_options['main_font_color'] ); ?>;
+$clr-heading: <?php echo esc_attr( $nm_theme_options['heading_color'] ); ?>;
+$clr-button-bg: <?php echo esc_attr( $nm_theme_options['button_background_color'] ); ?>;
+$clr-button-font: <?php echo esc_attr( $nm_theme_options['button_font_color'] ); ?>;
+$clr-topbar-bg: <?php echo esc_attr( $nm_theme_options['top_bar_background_color'] ); ?>;
+$clr-nav: <?php echo esc_attr( $nm_theme_options['header_navigation_color'] ); ?>;
+$clr-nav-hover: <?php echo esc_attr( $nm_theme_options['header_navigation_highlight_color'] ); ?>;
+$clr-saleflash-bg: <?php echo esc_attr( $nm_theme_options['sale_flash_background_color'] ); ?>;
+$clr-saleflash-font: <?php echo esc_attr( $nm_theme_options['sale_flash_font_color'] ); ?>;
 
 <?php
+  file_put_contents( get_stylesheet_directory() . '/assets/_source/css/includes/_colors-settings.scss', ob_get_clean() );
+}
 
-  file_put_contents( get_stylesheet_directory() . '/assets/_source/css/modules/_colors-settings.scss', ob_get_clean() );
+add_action('admin_print_footer_scripts', 'haje_iris_palette');
+add_action('customize_controls_print_footer_scripts', 'haje_iris_palette');
+function haje_iris_palette() {
+?>
+<script>
+jQuery(document).ready(function($){
+  $.wp.wpColorPicker.prototype.options = {
+    palettes: ['#ffffff', '#282828', '#777777', '#2979FF', '#E91E63', '#00C853', '#FF9800', '#607D8B']
+  };
+});
+</script>
+<?php
+}
+
+// Remove nags here
+add_action('admin_print_styles', 'haje_admin_style');
+function haje_admin_style() {
+?>
+<style type="text/css">
+  .update-nag.bsf-update-nag {
+    display: none;
+  }
+</style>
+<?php
 }

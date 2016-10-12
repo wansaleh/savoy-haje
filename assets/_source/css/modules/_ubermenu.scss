@@ -117,7 +117,7 @@
 /* Submenu Links */
 .ubermenu-skin-none .ubermenu-submenu .ubermenu-target:hover,
 .ubermenu-skin-none .ubermenu-submenu .ubermenu-active > .ubermenu-target {
-  color: $black;
+  color: $clr-nav-hover;
 }
 /* Submenu Descriptions */
 .ubermenu-skin-none .ubermenu-submenu .ubermenu-target > .ubermenu-target-description {
@@ -131,7 +131,7 @@
 .ubermenu-skin-none .ubermenu-submenu .ubermenu-item-header > .ubermenu-target {
   font-size: 2.4rem;
   font-weight: 300;
-  color: $black;
+  // color: $clr-nav-hover;
 }
 /* Submenu items in a stack */
 .ubermenu-skin-none .ubermenu-submenu .ubermenu-item-header.ubermenu-has-submenu-stack > .ubermenu-target {
@@ -221,7 +221,7 @@
   transition: all .3s ease;
 
   &:hover {
-    border-color: $black;
+    border-color: $clr-nav-hover;
   }
 
   .header-light & {
@@ -237,19 +237,23 @@
   padding: 14px 24px 8px;
 }
 
-.header-light,
-.header-on-scroll  {
-  .ubermenu-skin-none .ubermenu-item-level-0 > .ubermenu-target {
-    color: #fff;
-  }
-
-  .ubermenu-skin-none .ubermenu-item-level-0:hover > .ubermenu-target,
-  .ubermenu-skin-none .ubermenu-item-level-0.ubermenu-active > .ubermenu-target {
-    color: #fff;
-    opacity: .6;
-  }
-
+.ubermenu-skin-none .ubermenu-item-level-0:hover > .ubermenu-target,
+.ubermenu-skin-none .ubermenu-item-level-0.ubermenu-active > .ubermenu-target {
+  color: $clr-nav-hover;
 }
+
+// .header-light,
+// .header-on-scroll  {
+//   .ubermenu-skin-none .ubermenu-item-level-0 > .ubermenu-target {
+//     color: #fff;
+//   }
+//
+//   .ubermenu-skin-none .ubermenu-item-level-0:hover > .ubermenu-target,
+//   .ubermenu-skin-none .ubermenu-item-level-0.ubermenu-active > .ubermenu-target {
+//     color: #fff;
+//     opacity: .6;
+//   }
+// }
 
 .ubermenu-skin-none .ubermenu-column-id-18740 {
   padding-right: 24px;
@@ -265,23 +269,29 @@
       font-size: 12px;
 
       h3,
-      .nm-shop-loop-price .price,
       .nm-wishlist-button,
-      .nm-wishlist-button i {
-        font-size: 12px;
+      .nm-wishlist-button i,
+      .nm-shop-loop-after-title {
+        font-size: 1em;
+        line-height: 1;
       }
-    }
 
+      .nm-shop-loop-after-title {
+        margin-top: .5em;
 
-    .nm-shop-loop-after-title {
-      margin-top: 0;
-    }
+        .nm-shop-loop-price .price {
+          font-size: 1.2em;
+        }
+        .nm-shop-loop-actions {
+          top: 0;
+          font-size: 1em;
+        }
+        .nm-shop-loop-actions > a {
+          border: 0;
+          font-size: .9em;
+        }
+      }
 
-    .nm-shop-loop-actions {
-      top: 2px;
-    }
-    .nm-shop-loop-actions a {
-      border: 0;
     }
 
     &:hover {

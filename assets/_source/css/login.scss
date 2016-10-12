@@ -1,8 +1,8 @@
 @import 'https://fonts.googleapis.com/css?family=Oxygen:300,400,700';
 
 @import "../../bower_components/Scut/dist/scut";
-@import "modules/helpers";
-@import "modules/colors";
+@import "includes/helpers";
+@import "includes/colors";
 
 html {
   box-sizing: border-box;
@@ -34,7 +34,7 @@ body.login {
   #login #login_error,
   #login .message {
     border: none;
-    background: $accent;
+    background: $clr-highlight;
     color: #fff;
     box-shadow: none;
     margin-bottom: 20px;
@@ -95,25 +95,25 @@ body.login {
       }
 
       input[type=checkbox]:checked {
-        border-color: $accent !important;
-        background: $accent !important;
+        border-color: $clr-highlight !important;
+        background: $clr-highlight !important;
 
         &:before {
           color: #fff !important;
         }
       }
       input[type=checkbox]:focus {
-        border-color: tint($accent, 40);
-        background: tint($accent, 90);
+        border-color: tint($clr-highlight, 40);
+        background: tint($clr-highlight, 90);
       }
 
       &.focus {
-        color: $accent;
+        color: $clr-highlight;
 
         input {
-          border-color: tint($accent, 40);
-          background: tint($accent, 90);
-          color: shade($accent, 60);
+          border-color: tint($clr-highlight, 40);
+          background: tint($clr-highlight, 90);
+          color: shade($clr-highlight, 60);
         }
       }
     }
@@ -139,7 +139,7 @@ body.login {
     clear: both;
 
     .button-primary {
-      background: $accent;
+      background: $clr-highlight;
       border: none;
       box-shadow: none;
       text-shadow: none;
@@ -154,7 +154,7 @@ body.login {
       letter-spacing: 2px;
 
       &:hover {
-        background: $black;
+        background: $clr-heading;
       }
     }
   }
@@ -174,7 +174,7 @@ body.login {
       font-size: .75rem;
 
       &:hover {
-        color: tint($accent, 30);
+        color: tint($clr-highlight, 30);
       }
     }
 
@@ -197,7 +197,7 @@ body.login {
       padding: .3em 1em;
 
       &:hover {
-        border-color: tint($accent, 30);
+        border-color: tint($clr-highlight, 30);
       }
     }
   }

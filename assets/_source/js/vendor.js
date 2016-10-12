@@ -37,3 +37,5 @@ jQuery.debounce = function(func, wait, immediate) {
 // @codekit-append "vendor/select-togglebutton.custom.js"
 // @codekit-append "../../bower_components/jquery-storage-api/jquery.storageapi.js"
 // @codekit-append "../../bower_components/matchHeight/dist/jquery.matchHeight.js"
+// @codekit-append "vendor/headroom.js"
+// @codekit-append "vendor/imagesloaded.pkgd.js"

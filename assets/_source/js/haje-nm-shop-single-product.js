@@ -259,11 +259,11 @@
 					adaptiveHeight: true,
 					slidesToShow: 1,
 					slidesToScroll: 1,
-					prevArrow: '<a class="slick-prev"><i class="nm-font nm-font-angle-left"></i></a>',
-					nextArrow: '<a class="slick-next"><i class="nm-font nm-font-angle-right"></i></a>',
+					prevArrow: '<a class="slick-prev"><i class="nm-font nm-font-angle-thin-left"></i></a>',
+					nextArrow: '<a class="slick-next"><i class="nm-font nm-font-angle-thin-right"></i></a>',
 					dots: true,
-					// fade: true,
-					cssEase: 'ease',
+					fade: true,
+					cssEase: 'linear',
 					infinite: false,
 					speed: animSpeed
 				});

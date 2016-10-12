@@ -31,6 +31,7 @@
 
 			self.shopFiltersBind();
 
+			// WAN
 			$('.nm-shop-sub-categories').addClass('in');
 		},
 
@@ -77,11 +78,13 @@
 				// Set categories count
 				//$('#nm-categories-count').text($('#nm-shop-categories').children().length-1);
 
+				// WAN
 				self.subCategoriesClicked = false;
 
 				self.$shopWrap.on('click', '#nm-shop-categories a',	function(e) {
 					e.preventDefault();
 
+					// WAN
 					self.subCategoriesClicked = $(this).closest('.nm-shop-sub-categories, #nm-shop-categories').hasClass('nm-shop-sub-categories');
 
 					var $this = $(this),
@@ -500,6 +503,7 @@
 					self.setPushState(pageUrl);
 				}
 
+				// WAN
 				// Fade out subcategories
 				if (!self.subCategoriesClicked)
 					$('.nm-shop-sub-categories').removeClass('in')
@@ -569,6 +573,7 @@
 
 				$shopCategories.replaceWith($ajaxCategories);
 
+				// WAN
 				if (!self.subCategoriesClicked) {
 					setTimeout(function() {
 						$('.nm-shop-sub-categories').addClass('in');

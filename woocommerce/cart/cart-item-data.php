@@ -41,10 +41,12 @@ foreach ( $item_data as $data ) {
 			if ($data['key'] == 'Color') {
 				$color = strtolower(trim($data['display']));
 
+				$hex = ' data-color="' . $color . '"';
+
 				if ( array_key_exists( $color, $hexes ) ) {
-					$hex = ' data-hex="' . $hexes[$color] . '"';
+					$hex .= ' data-hex="' . $hexes[$color] . '"';
 				} elseif ( array_key_exists( $color, $haje_color_names_flipped_lowercase ) ) {
-					$hex = ' data-hex="' . $colors[$color] . '"';
+					$hex .= ' data-hex="' . $colors[$color] . '"';
 				}
 			}
 		}

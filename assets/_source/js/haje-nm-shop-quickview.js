@@ -120,37 +120,6 @@
 								$productForm.find(':submit').attr('disabled', 'disabled');
 							});*/
 
-							// // WAN: get the color swatches
-							// var hexAjaxUrl = wc_add_to_cart_params.wc_ajax_url.toString().replace('%%endpoint%%', 'haje_hex_terms');
-							//
-							// window.haje_nm_qv_ajax_hex = $.ajax({
-							// 	type: 'GET',
-							// 	url: hexAjaxUrl,
-							// 	data: { product_id: productId },
-							// 	dataType: 'json',
-							// 	cache: false,
-							// 	headers: {'cache-control': 'no-cache'},
-							// 	beforeSend: function() {
-							// 		// Check previous requests
-							// 		if (typeof window.haje_nm_qv_ajax_hex === 'object') {
-							// 			window.haje_nm_qv_ajax_hex.abort();
-							// 		}
-							// 	},
-							// 	error: function(XMLHttpRequest, textStatus, errorThrown) {
-							// 		console.log('HAJE: NM: AJAX error - _qvLoadProduct() - ' + errorThrown);
-							//
-							// 		// Remove 'auto' width
-							// 		self.$html.css('width', '');
-							//
-							// 		// Remove overlay
-							// 		$qvOverlay.removeClass('mfp-ready mfp-removing').remove();
-							// 	},
-							// 	success: function(data) {
-							// 		window._haje_hex = data;
-							// 		Haje.WC_Variation_Swatches.init('#nm-qv-product-summary');
-							// 	}
-							// });
-
 							_qvShowModal();
 
 						});
@@ -208,8 +177,8 @@
 
 					self.$qvSlider.slick({
 						//adaptiveHeight: true,
-						prevArrow: '<a class="slick-prev"><i class="nm-font nm-font-angle-left"></i></a>',
-						nextArrow: '<a class="slick-next"><i class="nm-font nm-font-angle-right"></i></a>',
+						prevArrow: '<a class="slick-prev"><i class="nm-font nm-font-angle-thin-left"></i></a>',
+						nextArrow: '<a class="slick-next"><i class="nm-font nm-font-angle-thin-right"></i></a>',
 						dots: false,
 						infinite: false,
 						speed: 350

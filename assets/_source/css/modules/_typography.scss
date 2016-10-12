@@ -1,4 +1,4 @@
-@import 'https://fonts.googleapis.com/css?family=Oxygen:300,400,700|Playfair+Display:400,400i,700,700i|Open+Sans:800,900';
+@import 'https://fonts.googleapis.com/css?family=Oxygen:300,400,700|Playfair+Display:400,400i,700,900';
 @import 'myriad-set-pro.css';
 
 @mixin font-awesome {
@@ -20,9 +20,7 @@
 }
 
 $body-fonts: 'Oxygen', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-// $body-fonts: 'Myriad Set Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$heading-fonts: $body-fonts;
-// $heading-fonts: 'Myriad Set Pro', $body-fonts;
+$heading-fonts: 'Playfair Display', $body-fonts;
 
 body {
   font-family: $body-fonts;
@@ -30,11 +28,11 @@ body {
 }
 
 .accent {
-  color: $accent;
+  color: $clr-highlight;
 }
 
 .bg-accent {
-  background: $accent;
+  background: $clr-highlight;
   color: #fff;
 }
 
@@ -47,10 +45,15 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $heading-fonts;
-  font-weight: 300;
+  font-weight: 400;
+  letter-spacing: -.04em;
 }
 
-// h1, h2 { font-weight: 300; }
+h4, h5, h6 {
+  font-family: $body-fonts;
+  font-weight: 400;
+  letter-spacing: normal;
+}
 
 .jumbo {
   h1 {
@@ -74,8 +77,10 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-h4, h5, h6 {
-  font-family: $body-fonts;
+.heading-margins {
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 1em;
+  }
 }
 
 .playfair {
@@ -87,9 +92,15 @@ h4, h5, h6 {
 
 .nm-products {
   h1, h2, h3, h4, h5, h6 {
-    // font-family: $body-fonts;
+    font-family: $body-fonts;
     font-weight: 400;
+    letter-spacing: normal;
   }
+}
+
+.nm-single-product .product-summary .product_title {
+  font-family: $body-fonts;
+  font-weight: 400;
 }
 
 .center {
@@ -127,20 +138,20 @@ address {
   }
 }
 
-
 .hj-heading {
   position: relative;
-  padding-bottom: .5rem;
+  padding-bottom: 10px;
   font-weight: 400;
+  text-transform: capitalize;
 
   &:after {
     content: "";
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 2rem;
-    height: 2px;
-    background: $accent;
+    width: 5rem;
+    height: 1px;
+    background: $clr-highlight;
   }
 }
 
@@ -153,7 +164,7 @@ address {
   &:after {
     position: absolute;
     content: "";
-    border: 5px solid $accent;
+    border: 5px solid $clr-highlight;
     top: -.5rem;
     left: -.5rem;
     width: 100%;
@@ -162,7 +173,7 @@ address {
   }
 
   &:after {
-    border: 5px solid $black;
+    border: 5px solid $clr-heading;
     top: .5rem;
     left: .5rem;
   }
