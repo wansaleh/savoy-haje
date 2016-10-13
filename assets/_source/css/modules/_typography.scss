@@ -184,18 +184,34 @@ address {
 
   &.small {
     font-size: 3rem;
+
+    @include media-breakpoint-down(md) {
+      font-size: 2rem;
+    }
   }
   &.medium {
     font-size: 4rem;
+
+    @include media-breakpoint-down(md) {
+      font-size: 3rem;
+    }
   }
   &.large {
     font-size: 5rem;
+
+    @include media-breakpoint-down(md) {
+      font-size: 3.5rem;
+    }
   }
 }
 
-
 .nm-banner-text .nm-banner-subtitle {
   font-size: 3rem;
+
+  @include media-breakpoint-down(md) {
+    font-size: 2rem;
+    margin: 0;
+  }
 }
 
 .nm-banner.text-color-light .nm-banner-text .nm-banner-subtitle {

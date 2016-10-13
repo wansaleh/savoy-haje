@@ -1,7 +1,44 @@
+$spacer:   1rem;
+$spacer-x: $spacer;
+$spacer-y: $spacer;
+$spacers: (
+  0: (
+    x: 0,
+    y: 0
+  ),
+  1: (
+    x: $spacer-x,
+    y: $spacer-y
+  ),
+  2: (
+    x: ($spacer-x * 1.5),
+    y: ($spacer-y * 1.5)
+  ),
+  3: (
+    x: ($spacer-x * 3),
+    y: ($spacer-y * 3)
+  ),
+  4: (
+    x: ($spacer-x * 5),
+    y: ($spacer-y * 5)
+  ),
+  6: (
+    x: ($spacer-x * 7.5),
+    y: ($spacer-y * 7.5)
+  ),
+  7: (
+    x: ($spacer-x * 10),
+    y: ($spacer-y * 10)
+  )
+);
+@import "../../bower_components/bootstrap/scss/variables";
+@import "../../bower_components/bootstrap/scss/mixins";
+@import "../../bower_components/bootstrap/scss/utilities";
+
 $scut-rem-base: 10;
 @import "../../bower_components/Scut/dist/scut";
 
-@import "includes/helpers";
+// @import "includes/helpers";
 @import "includes/colors";
 
 @import "modules/typography";

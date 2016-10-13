@@ -1,18 +1,18 @@
 <?php
 
-$hj_version = '1.1';
+define( 'HJ_VERSION', '1.2' );
 
-function hj_uri($relative_uri = "") {
+function hj_uri( $relative_uri = "" ) {
   return get_stylesheet_directory_uri() . $relative_uri;
 }
 
-add_action( 'wp_head', 'hj_head', 10000 );
-function hj_head() {
-  if ( is_admin() ) return;
-
-  echo "<link rel='stylesheet' href='" . hj_uri('/assets/css/haje.css') . "' type='text/css' media='all'>";
-  echo "<script src='https://cdn.polyfill.io/v2/polyfill.min.js'></script>";
-}
+// add_action( 'wp_head', 'hj_head', 10000 );
+// function hj_head() {
+//   if ( is_admin() ) return;
+//
+//   echo "<link rel='stylesheet' href='" . hj_uri( '/assets/css/haje.css' ) . "' type='text/css' media='all'>";
+//   // echo "<script src='//cdn.polyfill.io/v2/polyfill.min.js'></script>";
+// }
 
 /**
  * Savoy javascript overrides.
@@ -20,16 +20,20 @@ function hj_head() {
 
 add_action( 'wp_enqueue_scripts', 'hj_scripts', 10000 );
 function hj_scripts() {
+  if ( is_admin() ) return;
+
+    wp_enqueue_style( 'haje-main', hj_uri( '/assets/css/haje.css' ), array( 'nm-core' ), HJ_VERSION );
+
   if ( nm_woocommerce_activated() ) {
-    wp_enqueue_script('nm-shop-quickview', hj_uri('/assets/js/haje-nm-shop-quickview.js'), array( 'jquery', 'nm-shop', 'wc-add-to-cart-variation' ), NM_THEME_VERSION);
+    wp_enqueue_script( 'nm-shop-quickview', hj_uri( '/assets/js/haje-nm-shop-quickview.js' ), array( 'jquery', 'nm-shop', 'wc-add-to-cart-variation' ), NM_THEME_VERSION );
 
     if ( is_woocommerce() ) {
 
       if ( is_product() ) {
-        wp_enqueue_script( 'nm-shop-single-product', hj_uri('/assets/js/haje-nm-shop-single-product.js'), array( 'jquery', 'nm-shop' ), NM_THEME_VERSION );
+        wp_enqueue_script( 'nm-shop-single-product', hj_uri( '/assets/js/haje-nm-shop-single-product.js' ), array( 'jquery', 'nm-shop' ), NM_THEME_VERSION );
       }
       else {
-        wp_enqueue_script('nm-shop-filters', hj_uri('/assets/js/haje-nm-shop-filters.js'), array( 'jquery', 'nm-shop' ), NM_THEME_VERSION);
+        wp_enqueue_script( 'nm-shop-filters', hj_uri( '/assets/js/haje-nm-shop-filters.js' ), array( 'jquery', 'nm-shop' ), NM_THEME_VERSION );
       }
     }
   }
@@ -41,18 +45,16 @@ function hj_scripts() {
 
 add_action( 'wp_footer', 'hj_footer' );
 function hj_footer() {
-  global $hj_version;
-
   if ( ! is_admin() ) {
 
-    wp_enqueue_script('haje-vendor', hj_uri('/assets/js/vendor.js'), array( 'jquery' ), NM_THEME_VERSION);
-    wp_enqueue_script('haje-main', hj_uri('/assets/js/haje.js'), array( 'haje-vendor' ), NM_THEME_VERSION);
+    wp_enqueue_script( 'haje-vendor', hj_uri( '/assets/js/vendor.js' ), array( 'jquery' ), HJ_VERSION );
+    wp_enqueue_script( 'haje-main', hj_uri( '/assets/js/haje.js' ), array( 'haje-vendor' ), HJ_VERSION );
 
-    // echo "<script type='text/javascript' src='" . hj_uri('/assets/js/vendor.js') . "'></script>\n";
-    // echo "<script type='text/javascript' src='" . hj_uri('/assets/js/haje.js') . "'></script>\n";
+    // echo "<script type='text/javascript' src='" . hj_uri( '/assets/js/vendor.js' ) . "'></script>\n";
+    // echo "<script type='text/javascript' src='" . hj_uri( '/assets/js/haje.js' ) . "'></script>\n";
 
     // if ( is_page( 'Coming Soon' ) ) {
-    //   echo "<script type='text/javascript' src='" . hj_uri('/assets/js/comingsoon.js') . "'></script>\n";
+    //   echo "<script type='text/javascript' src='" . hj_uri( '/assets/js/comingsoon.js' ) . "'></script>\n";
     // }
   }
 }
@@ -87,11 +89,9 @@ function hj_myaccount_title($title) {
 
 add_action( 'login_enqueue_scripts', 'hj_login' );
 function hj_login() {
-  global $hj_version;
-
   echo '<link href="/wp-content/uploads/2016/09/haje-icon-accented-512.png" rel="shortcut icon">';
-  echo "<link rel='stylesheet' href='" . hj_uri('/assets/css/login.css') . "' type='text/css' media='all'>";
-  wp_enqueue_script('haje-login', hj_uri('/assets/js/login.js'), array('jquery'), $hj_version);
+  wp_enqueue_style( 'haje-login', hj_uri( '/assets/css/login.css' ), array( ), HJ_VERSION );
+  wp_enqueue_script( 'haje-login', hj_uri( '/assets/js/login.js' ), array( 'jquery' ), HJ_VERSION, true );
 }
 
 add_filter( 'login_headerurl', 'hj_login_logo_url' );
@@ -99,7 +99,7 @@ function hj_login_logo_url() {
   return home_url();
 }
 
-add_action('wp_logout', create_function('', 'wp_redirect(home_url()); exit();'));
+add_action( 'wp_logout', create_function( '', 'wp_redirect(home_url()); exit();' ));
 
 // add_action( 'admin_head', 'hj_admin_styles' );
 function hj_admin_styles() {
@@ -138,15 +138,15 @@ function hj_address( $atts ) {
 
 add_filter( 'widget_title', 'hj_html_widget_title' );
 function hj_html_widget_title( $var) {
-  $var = (str_replace( '[', '<', $var ));
-  $var = (str_replace( ']', '>', $var ));
+  $var = str_replace( '[', '<', $var );
+  $var = str_replace( ']', '>', $var );
   return $var;
 }
 
 add_filter( 'get_terms_args', 'hj_convert_include', 10, 2 );
 function hj_convert_include($query, $taxonomies) {
-  if ($query['include'] && is_string($query['include']) && strpos($query['include'], ',') !== false) {
-    $query['include'] = explode(',', $query['include']);
+  if ( $query['include'] && is_string( $query['include'] ) && strpos( $query['include'], ',' ) !== false ) {
+    $query['include'] = explode( ',', $query['include'] );
   }
 
   return $query;
@@ -173,8 +173,8 @@ $clr-saleflash-font: <?php echo esc_attr( $nm_theme_options['sale_flash_font_col
   file_put_contents( get_stylesheet_directory() . '/assets/_source/css/includes/_colors-settings.scss', ob_get_clean() );
 }
 
-add_action('admin_print_footer_scripts', 'haje_iris_palette');
-add_action('customize_controls_print_footer_scripts', 'haje_iris_palette');
+add_action( 'admin_print_footer_scripts', 'haje_iris_palette' );
+add_action( 'customize_controls_print_footer_scripts', 'haje_iris_palette' );
 function haje_iris_palette() {
 ?>
 <script>
@@ -188,7 +188,7 @@ jQuery(document).ready(function($){
 }
 
 // Remove nags here
-add_action('admin_print_styles', 'haje_admin_style');
+add_action( 'admin_print_styles', 'haje_admin_style' );
 function haje_admin_style() {
 ?>
 <style type="text/css">
