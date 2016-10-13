@@ -178,3 +178,27 @@ address {
     left: .5rem;
   }
 }
+
+.nm-banner-text .nm-banner-title {
+  line-height: 1;
+
+  &.small {
+    font-size: 3rem;
+  }
+  &.medium {
+    font-size: 4rem;
+  }
+  &.large {
+    font-size: 5rem;
+  }
+}
+
+
+.nm-banner-text .nm-banner-subtitle {
+  font-size: 3rem;
+}
+
+.nm-banner.text-color-light .nm-banner-text .nm-banner-subtitle {
+  color: #fff;
+  opacity: .5;
+}

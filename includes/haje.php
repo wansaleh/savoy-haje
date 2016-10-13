@@ -57,6 +57,20 @@ function hj_footer() {
   }
 }
 
+/**
+ * Savoy menus.
+ */
+
+function nm_register_menus() {
+  register_nav_menus( array(
+    'top-bar-menu'	=> __( 'Top Bar Menu', 'nm-framework' ),
+    'main-menu'		=> __( 'Main Menu', 'nm-framework' ),
+    'right-menu'	=> __( 'Right Menu', 'nm-framework' ),
+    'mobile-menu'	=> __( 'Mobile Menu', 'nm-framework' ),
+    'footer-menu'	=> __( 'Footer Menu', 'nm-framework' )
+  ) );
+}
+
 add_filter( 'body_class', 'hj_slug_body_class' );
 function hj_slug_body_class( $classes ) {
   global $post;
