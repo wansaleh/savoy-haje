@@ -134,14 +134,18 @@ class Haje.WC.VariationSwatches
         sizeguide = $('<button type="button" class="swatch size-guide">Size Guide</button>').appendTo(select.data('group'))
 
         sizeguide.click ->
-          $.magnificPopup.open
-            midClick: true
-            closeBtnInside: true
-            closeMarkup: '<a class="mfp-close nm-font nm-font-close2"></a>',
-            items: {
-              src: $('#ct_size_guide')
-              type: 'inline'
-            }
+          $('.wc-tabs .size_guide_tab a').trigger('click')
+          $('html, body').animate({
+           scrollTop: $('.wc-tabs').offset().top
+          }, 300);
+          # $.magnificPopup.open
+          #   midClick: true
+          #   closeBtnInside: true
+          #   closeMarkup: '<a class="mfp-close nm-font nm-font-close2"></a>',
+          #   items: {
+          #     src: $('#ct_size_guide')
+          #     type: 'inline'
+          #   }
 
 
   colorizeSwatch: (swatches) ->

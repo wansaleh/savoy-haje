@@ -2,6 +2,15 @@
 
 define( 'HJ_VERSION', '1.2' );
 
+// is_admin() or add_filter( 'locale', function() {
+//   return 'ms_MY';
+// });
+
+add_action( 'after_setup_theme', 'hj_theme_support' );
+function hj_theme_support() {
+  load_theme_textdomain( 'savoy-haje', get_stylesheet_directory() . '/languages' );
+}
+
 function hj_uri( $relative_uri = "" ) {
   return get_stylesheet_directory_uri() . $relative_uri;
 }

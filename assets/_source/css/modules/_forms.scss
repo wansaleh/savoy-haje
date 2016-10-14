@@ -33,6 +33,43 @@
   }
 }
 
+@mixin form-row-checkout {
+  label {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    color: tint($clr-heading, 40);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: all .2s ease;
+    transform: translate3d(14px, 36px, 0);
+  }
+
+  input, textarea {
+    transition: all .2s ease;
+  }
+
+  &.focus {
+    label {
+      color: $clr-highlight;
+      transform: translate3d(0, 0, 0);
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+    }
+
+    input, textarea {
+      border-color: tint($clr-highlight, 40);
+      background: tint($clr-highlight, 90);
+      color: shade($clr-highlight, 60);
+    }
+  }
+
+  &.form-group label {
+    display: inline-block;
+  }
+}
+
 @mixin form-row-boxed {
   margin-bottom: 1em;
   border: 1px solid #ccc;

@@ -1,3 +1,6 @@
+// @import "includes/helpers";
+@import "includes/colors";
+
 $spacer:   1rem;
 $spacer-x: $spacer;
 $spacer-y: $spacer;
@@ -38,8 +41,17 @@ $spacers: (
 $scut-rem-base: 10;
 @import "../../bower_components/Scut/dist/scut";
 
-// @import "includes/helpers";
-@import "includes/colors";
+$hamburger-padding-x                       : 0;
+$hamburger-padding-y                       : 0;
+$hamburger-layer-width                     : 30px;
+$hamburger-layer-height                    : 2px;
+$hamburger-layer-spacing                   : 6px;
+$hamburger-layer-color                     : $clr-heading;
+$hamburger-layer-border-radius             : 4px;
+
+// Types (Remove or comment out what you don’t need)
+$hamburger-types: (spin);
+@import "../../bower_components/css-hamburgers/_sass/hamburgers/hamburgers";
 
 @import "modules/typography";
 @import "modules/base";
