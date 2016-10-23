@@ -15,13 +15,12 @@ function hj_uri( $relative_uri = "" ) {
   return get_stylesheet_directory_uri() . $relative_uri;
 }
 
-// add_action( 'wp_head', 'hj_head', 10000 );
-// function hj_head() {
-//   if ( is_admin() ) return;
-//
-//   echo "<link rel='stylesheet' href='" . hj_uri( '/assets/css/haje.css' ) . "' type='text/css' media='all'>";
-//   // echo "<script src='//cdn.polyfill.io/v2/polyfill.min.js'></script>";
-// }
+add_action( 'wp_head', 'hj_head', 10000 );
+function hj_head() {
+  if ( is_admin() ) return;
+
+  echo "<link rel='stylesheet' href='" . hj_uri( '/assets/css/haje.css' ) . "' type='text/css' media='all'>";
+}
 
 /**
  * Savoy javascript overrides.
@@ -29,20 +28,52 @@ function hj_uri( $relative_uri = "" ) {
 
 add_action( 'wp_enqueue_scripts', 'hj_scripts', 10000 );
 function hj_scripts() {
+  global $wp_scripts, $nm_theme_options, $nm_globals, $nm_page_includes;
+
   if ( is_admin() ) return;
 
-    wp_enqueue_style( 'haje-main', hj_uri( '/assets/css/haje.css' ), array( 'nm-core' ), HJ_VERSION );
+  // wp_enqueue_script( 'wc-cart', hj_uri() . '/assets/js/woocommerce/cart.js', array( 'jquery', 'wc-country-select', 'wc-address-i18n' ) );
+
+  // wp_enqueue_style( 'haje-main', hj_uri( '/assets/css/haje.css' ), array( 'nm-core' ), HJ_VERSION );
+
+  wp_enqueue_script( 'wc-add-to-cart', get_template_directory_uri() . '/woocommerce/js/wc-add-to-cart.js', array( 'jquery' ), WC_VERSION, true );
+
+  wp_enqueue_script( 'haje-vendor', hj_uri( '/assets/js/vendor.js' ), array( 'jquery' ), HJ_VERSION );
+
+  wp_enqueue_script( 'nm-core', hj_uri( '/assets/js/haje-nm-core.js' ), array( 'jquery' ), NM_THEME_VERSION, true );
+
+  $local_js_vars = array(
+    'themeUri'               => NM_THEME_URI,
+    'ajaxUrl'                => admin_url( 'admin-ajax.php' ),
+    'searchUrl'              => home_url( '?s=' ),
+    'pageLoadTransition'     => intval( $nm_theme_options['page_load_transition'] ),
+    'shopFiltersAjax'        => isset( $_GET['ajax_filters'] ) ? esc_attr( $_GET['ajax_filters'] ) : esc_attr( $nm_theme_options['shop_filters_enable_ajax'] ),
+    'shopAjaxUpdateTitle'    => intval( $nm_theme_options['shop_ajax_update_title'] ),
+    //'shopFilterScrollbars' => ( $nm_globals['shop_filters_scrollbar_custom'] ) ? 1 : 0,
+    'shopImageLazyLoad'      => intval( $nm_theme_options['product_image_lazy_loading'] ),
+    'shopScrollOffset'       => intval( $nm_theme_options['shop_scroll_offset'] ),
+    'shopScrollOffsetTablet' => intval( $nm_theme_options['shop_scroll_offset_tablet'] ),
+    'shopScrollOffsetMobile' => intval( $nm_theme_options['shop_scroll_offset_mobile'] ),
+    'shopSearch'             => esc_attr( $nm_globals['shop_search_layout'] ),
+    'shopSearchMinChar'      => intval( $nm_theme_options['shop_search_min_char'] ),
+    'shopSearchAutoClose'    => intval( $nm_theme_options['shop_search_auto_close'] ),
+    'shopAjaxAddToCart'      => ( get_option( 'woocommerce_enable_ajax_add_to_cart' ) == 'yes' && get_option( 'woocommerce_cart_redirect_after_add' ) == 'no' ) ? 1 : 0,
+    'shopRedirectScroll'     => intval( $nm_theme_options['product_redirect_scroll'] ),
+    'shopCustomSelect'       => intval( $nm_theme_options['product_custom_select'] ),
+    'wpGalleryPopup'         => intval( $nm_theme_options['wp_gallery_popup'] )
+  );
+  wp_localize_script( 'nm-core', 'nm_wp_vars', $local_js_vars );
 
   if ( nm_woocommerce_activated() ) {
-    wp_enqueue_script( 'nm-shop-quickview', hj_uri( '/assets/js/haje-nm-shop-quickview.js' ), array( 'jquery', 'nm-shop', 'wc-add-to-cart-variation' ), NM_THEME_VERSION );
+    wp_enqueue_script( 'nm-shop-quickview', hj_uri( '/assets/js/haje-nm-shop-quickview.js' ), array( 'jquery', 'nm-shop', 'wc-add-to-cart-variation' ), NM_THEME_VERSION, true );
 
     if ( is_woocommerce() ) {
 
       if ( is_product() ) {
-        wp_enqueue_script( 'nm-shop-single-product', hj_uri( '/assets/js/haje-nm-shop-single-product.js' ), array( 'jquery', 'nm-shop' ), NM_THEME_VERSION );
+        wp_enqueue_script( 'nm-shop-single-product', hj_uri( '/assets/js/haje-nm-shop-single-product.js' ), array( 'jquery', 'nm-shop' ), NM_THEME_VERSION, true );
       }
       else {
-        wp_enqueue_script( 'nm-shop-filters', hj_uri( '/assets/js/haje-nm-shop-filters.js' ), array( 'jquery', 'nm-shop' ), NM_THEME_VERSION );
+        wp_enqueue_script( 'nm-shop-filters', hj_uri( '/assets/js/haje-nm-shop-filters.js' ), array( 'jquery', 'nm-shop' ), NM_THEME_VERSION, true );
       }
     }
   }
@@ -54,18 +85,16 @@ function hj_scripts() {
 
 add_action( 'wp_footer', 'hj_footer' );
 function hj_footer() {
-  if ( ! is_admin() ) {
+  if ( is_admin() ) return;
 
-    wp_enqueue_script( 'haje-vendor', hj_uri( '/assets/js/vendor.js' ), array( 'jquery' ), HJ_VERSION );
-    wp_enqueue_script( 'haje-main', hj_uri( '/assets/js/haje.js' ), array( 'haje-vendor' ), HJ_VERSION );
+  wp_enqueue_script( 'haje-main', hj_uri( '/assets/js/haje.js' ), array( 'haje-vendor' ), HJ_VERSION );
 
-    // echo "<script type='text/javascript' src='" . hj_uri( '/assets/js/vendor.js' ) . "'></script>\n";
-    // echo "<script type='text/javascript' src='" . hj_uri( '/assets/js/haje.js' ) . "'></script>\n";
+  // echo "<script type='text/javascript' src='" . hj_uri( '/assets/js/vendor.js' ) . "'></script>\n";
+  // echo "<script type='text/javascript' src='" . hj_uri( '/assets/js/haje.js' ) . "'></script>\n";
 
-    // if ( is_page( 'Coming Soon' ) ) {
-    //   echo "<script type='text/javascript' src='" . hj_uri( '/assets/js/comingsoon.js' ) . "'></script>\n";
-    // }
-  }
+  // if ( is_page( 'Coming Soon' ) ) {
+  //   echo "<script type='text/javascript' src='" . hj_uri( '/assets/js/comingsoon.js' ) . "'></script>\n";
+  // }
 }
 
 /**
@@ -74,11 +103,11 @@ function hj_footer() {
 
 function nm_register_menus() {
   register_nav_menus( array(
-    'top-bar-menu'	=> __( 'Top Bar Menu', 'nm-framework' ),
-    'main-menu'		=> __( 'Main Menu', 'nm-framework' ),
-    'right-menu'	=> __( 'Right Menu', 'nm-framework' ),
-    'mobile-menu'	=> __( 'Mobile Menu', 'nm-framework' ),
-    'footer-menu'	=> __( 'Footer Menu', 'nm-framework' )
+    'top-bar-menu'  => __( 'Top Bar Menu', 'nm-framework' ),
+    'main-menu'    => __( 'Main Menu', 'nm-framework' ),
+    'right-menu'  => __( 'Right Menu', 'nm-framework' ),
+    'mobile-menu'  => __( 'Mobile Menu', 'savoy-haje' ),
+    'footer-menu'  => __( 'Footer Menu', 'nm-framework' )
   ) );
 }
 

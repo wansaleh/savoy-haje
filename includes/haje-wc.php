@@ -4,6 +4,12 @@ require('color-names.php');
 
 add_action( 'woocommerce_single_product_summary', 'woocommerce_show_product_sale_flash', 4 );
 
+add_action( 'woocommerce_before_shop_loop_item_title', 'hj_before_shop_loop_item_title' );
+function hj_before_shop_loop_item_title() {
+  global $product;
+
+
+}
 
 add_action( 'woocommerce_single_product_summary', 'hj_show_brand', 13 );
 function hj_show_brand() {
@@ -137,3 +143,40 @@ function hj_get_item_data( $item_data, $cart_item ) {
   );
   return $item_data;
 }
+
+add_filter( 'nm_product_quickview_link', 'hj_nm_product_quickview_link' );
+function hj_nm_product_quickview_link( $string ) {
+  echo str_ireplace( 'Show more', __('Quick View', 'savoy-haje'), $string );
+}
+
+/*
+ *	AJAX: Load product
+ */
+function hj_nm_ajax_load_product() {
+  global $woocommerce, $product, $post;
+
+  // sleep(60);
+
+  //$post = $product = get_post( $_POST['product_id'] );
+  $product = get_product( $_POST['product_id'] );
+  $post = $product->post;
+  $output = '';
+
+  setup_postdata( $post );
+
+  ob_start();
+    wc_get_template_part( 'quickview/content', 'quickview' );
+  $output = ob_get_clean();
+
+  wp_reset_postdata();
+
+  echo $output;
+
+  exit;
+}
+remove_action( 'wp_ajax_nm_ajax_load_product' , 'nm_ajax_load_product' );
+remove_action( 'wp_ajax_nopriv_nm_ajax_load_product', 'nm_ajax_load_product' );
+remove_action( 'wc_ajax_nm_ajax_load_product', 'nm_ajax_load_product' );
+add_action( 'wp_ajax_nm_ajax_load_product' , 'hj_nm_ajax_load_product' );
+add_action( 'wp_ajax_nopriv_nm_ajax_load_product', 'hj_nm_ajax_load_product' );
+add_action( 'wc_ajax_nm_ajax_load_product', 'hj_nm_ajax_load_product' );

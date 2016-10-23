@@ -43,14 +43,16 @@ $scut-rem-base: 10;
 
 $hamburger-padding-x                       : 0;
 $hamburger-padding-y                       : 0;
-$hamburger-layer-width                     : 30px;
+$hamburger-layer-width                     : 28px;
 $hamburger-layer-height                    : 2px;
-$hamburger-layer-spacing                   : 6px;
+$hamburger-layer-spacing                   : 8px;
 $hamburger-layer-color                     : $clr-heading;
-$hamburger-layer-border-radius             : 4px;
-
+$hamburger-layer-border-radius             : 0;
 // Types (Remove or comment out what you don’t need)
-$hamburger-types: (spin);
+// $hamburger-types: (
+//   arrow,
+//   spin
+// );
 @import "../../bower_components/css-hamburgers/_sass/hamburgers/hamburgers";
 
 @import "modules/typography";

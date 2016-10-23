@@ -9,6 +9,12 @@
   margin-left: -12px;
 }
 
+.menu-centered nav.ubermenu-skin-none {
+  float: left;
+  width: 50%;
+  text-align: center;
+}
+
 /* Menu Item Links in general */
 .ubermenu-skin-none .ubermenu-target {
   padding: 16px 12px;
@@ -287,7 +293,7 @@
           font-size: 1em;
         }
         .nm-shop-loop-actions > a {
-          border: 0;
+          border: 1px solid #e1e1e1;
           font-size: .9em;
         }
       }

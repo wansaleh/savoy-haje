@@ -1,5 +1,5 @@
 @import 'https://fonts.googleapis.com/css?family=Oxygen:300,400,700|Playfair+Display:400,400i,700,900';
-@import 'myriad-set-pro.css';
+// @import 'myriad-set-pro.css';
 
 @mixin font-awesome {
   content: "";
@@ -20,7 +20,8 @@
 }
 
 $body-fonts: 'Oxygen', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$heading-fonts: 'Playfair Display', $body-fonts;
+// $heading-fonts: 'Playfair Display', $body-fonts;
+$heading-fonts: $body-fonts;
 
 body {
   font-family: $body-fonts;
@@ -45,13 +46,15 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $heading-fonts;
-  font-weight: 400;
-  letter-spacing: -.04em;
+  // font-weight: 400;
+  // letter-spacing: -.04em;
+  font-weight: 300;
 }
 
 h4, h5, h6 {
   font-family: $body-fonts;
-  font-weight: 400;
+  // font-weight: 400;
+  font-weight: 300;
   letter-spacing: normal;
 }
 
@@ -74,6 +77,12 @@ h4, h5, h6 {
   h3, h4, h5, h6 {
     opacity: .4;
     font-weight: 400;
+  }
+
+  @include media-breakpoint-down(sm) {
+    h1 { font-size: scut-rem(30px) + .5rem; }
+    h2 { font-size: scut-rem(28px); }
+    h3 { font-size: scut-rem(24px); }
   }
 }
 
@@ -149,8 +158,8 @@ address {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 5rem;
-    height: 1px;
+    width: 3rem;
+    height: 2px;
     background: $clr-highlight;
   }
 }
@@ -179,42 +188,76 @@ address {
   }
 }
 
+// NM-BANNER
+
+// nm-banner text size
 .nm-banner-text .nm-banner-title {
-  line-height: 1;
-
-  &.small {
-    font-size: 3rem;
-
-    @include media-breakpoint-down(md) {
-      font-size: 2rem;
-    }
-  }
-  &.medium {
-    font-size: 4rem;
-
-    @include media-breakpoint-down(md) {
-      font-size: 3rem;
-    }
-  }
-  &.large {
-    font-size: 5rem;
-
-    @include media-breakpoint-down(md) {
-      font-size: 3.5rem;
-    }
-  }
+  color: $clr-heading;
+  line-height: 1.2;
 }
-
+.nm-banner-text .nm-banner-title.small {
+  font-size: 20px;
+}
+.nm-banner-text .nm-banner-title.medium {
+  font-size: 28px;
+}
+.nm-banner-text .nm-banner-title.large {
+  font-size: 34px;
+}
 .nm-banner-text .nm-banner-subtitle {
-  font-size: 3rem;
-
-  @include media-breakpoint-down(md) {
-    font-size: 2rem;
-    margin: 0;
-  }
+  display: block;
+  font-size: 16px;
+  line-height: 1.4;
+  color: $clr-main-font;
+  margin-top: 15px;
 }
 
-.nm-banner.text-color-light .nm-banner-text .nm-banner-subtitle {
-  color: #fff;
-  opacity: .5;
+.nm-banner.text-color-light .nm-banner-text .nm-banner-title { color: #fff; }
+.nm-banner.text-color-light .nm-banner-text .nm-banner-subtitle { color: rgba(#fff, .8); }
+.nm-banner.text-color-light .nm-banner-text .nm-banner-link {
+  color: rgba(#fff, .8);
+  border-bottom-color: rgba($clr-heading, .8);
 }
+.nm-banner-text .nm-banner-link:hover,
+.nm-banner.text-color-light .nm-banner-text .nm-banner-link:hover { color: #dc9814; }
+
+
+// .nm-banner-text .nm-banner-title {
+//   line-height: 1;
+//
+//   &.small {
+//     font-size: 3rem;
+//
+//     @include media-breakpoint-down(md) {
+//       font-size: 2rem;
+//     }
+//   }
+//   &.medium {
+//     font-size: 4rem;
+//
+//     @include media-breakpoint-down(md) {
+//       font-size: 3rem;
+//     }
+//   }
+//   &.large {
+//     font-size: 5rem;
+//
+//     @include media-breakpoint-down(md) {
+//       font-size: 3.5rem;
+//     }
+//   }
+// }
+//
+// .nm-banner-text .nm-banner-subtitle {
+//   font-size: 3rem;
+//
+//   @include media-breakpoint-down(md) {
+//     font-size: 2rem;
+//     margin: 0;
+//   }
+// }
+//
+// .nm-banner.text-color-light .nm-banner-text .nm-banner-subtitle {
+//   color: #fff;
+//   opacity: .5;
+// }

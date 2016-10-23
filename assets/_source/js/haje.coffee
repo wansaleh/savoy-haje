@@ -19,10 +19,17 @@ findKey = (obj, keyToFind) ->
 
 class window.Haje
   constructor: ->
-    new Headroom($('#nm-header')[0], {
-      offset: 128,
-      tolerance: 5,
-    }).init();
+    # new Headroom($('#nm-header')[0], {
+    #   offset: 128,
+    #   tolerance: 5,
+    # }).init();
+
+    $('#nm-mobile-menu-button').click ->
+      hamburger = $(this).children('.hamburger')
+      if $('body').hasClass('mobile-menu-open')
+        hamburger.addClass('is-active')
+      else
+        hamburger.removeClass('is-active')
 
 class Haje.Forms
   constructor: ->

@@ -37,7 +37,7 @@
                                     }
                                 ?>
                                 <a href="#" id="nm-mobile-menu-button" class="clicked">
-                                    <div class="hamburger hamburger--spin">
+                                    <div class="hamburger hamburger--slider">
                                       <div class="hamburger-box">
                                         <div class="hamburger-inner"></div>
                                       </div>
@@ -61,9 +61,14 @@
                   }
                 ?>
                                 <a href="#" id="nm-mobile-menu-button" class="clicked">
-                                    <div class="nm-menu-icon">
-                                        <span class="line-1"></span><span class="line-2"></span><span class="line-3"></span>
+                                    <div class="hamburger hamburger--slider">
+                                      <div class="hamburger-box">
+                                        <div class="hamburger-inner"></div>
+                                      </div>
                                     </div>
+                                    <!-- <div class="nm-menu-icon">
+                                        <span class="line-1"></span><span class="line-2"></span><span class="line-3"></span>
+                                    </div> -->
                 </a>
                             </li>
                             <?php
