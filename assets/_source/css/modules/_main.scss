@@ -32,19 +32,23 @@ $haje-assets: '/wp-content/themes/savoy-haje/assets';
   transition: all .2s ease;
 }
 
-.nm-page-overlay {
-  background: rgba(#111, .8);
+.nm-page-overlay,
+.nm-mfp-fade-in.mfp-bg.mfp-ready,
+.nm-mfp-zoom-in.mfp-bg.mfp-ready {
+  background: rgba(#111, .8) !important;
+  opacity: 1 !important;
 }
 
 .blockUI.blockOverlay:after,
 .nm-loader:after {
-  width: 20px;
-  height: 20px;
-  margin: -10px -10px 0 0;
+  width: 16px;
+  height: 16px;
+  margin: -8px -8px 0 0;
   z-index: 20000;
 }
 
-.nm-loader:after {
+.woocommerce-cart .blockOverlay {
+  background-color: rgba(#fff, .6) !important;
 }
 
 @keyframes dotFade {
@@ -75,7 +79,7 @@ $haje-assets: '/wp-content/themes/savoy-haje/assets';
   background-color: tint($clr-pink-a200, 90);
 }
 
-.haje-alert-overlay {
+.hj-alert-overlay {
   display: flex;
   justify-content: center;
   align-content: center;
@@ -99,7 +103,7 @@ $haje-assets: '/wp-content/themes/savoy-haje/assets';
     transition: visibility 0s linear 0s, opacity .3s ease;
   }
 
-  .haje-alert {
+  .hj-alert {
     width: 100%;
     max-width: 600px;
     background: #fff;
@@ -110,12 +114,12 @@ $haje-assets: '/wp-content/themes/savoy-haje/assets';
     background-clip: padding-box;
     overflow: hidden;
 
-    .haje-alert-content {
+    .hj-alert-content {
       padding: 2em;
       // border-bottom: 1px solid #eee;
     }
 
-    .haje-alert-action {
+    .hj-alert-action {
       padding: 0 2em 2em;
       text-align: right;
       a {
@@ -137,7 +141,7 @@ $haje-assets: '/wp-content/themes/savoy-haje/assets';
 
   // .widget-panel-dark & {
   //   background: rgba(#fff, .7);
-  //   .haje-alert {
+  //   .hj-alert {
   //     background: $clr-heading;
   //     color: #eee;
   //   }

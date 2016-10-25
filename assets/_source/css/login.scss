@@ -1,8 +1,6 @@
 @import 'https://fonts.googleapis.com/css?family=Oxygen:300,400,700';
 
-@import "../../bower_components/Scut/dist/scut";
-@import "includes/helpers";
-@import "includes/colors";
+@import "base";
 
 html {
   box-sizing: border-box;
@@ -11,8 +9,13 @@ html {
   box-sizing: inherit;
 }
 
+$body-fonts: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+@if variable-exists(font-primary) {
+  $body-fonts: $font-primary, $body-fonts;
+}
+
 body.login {
-  font-family: 'Oxygen', apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: $body-fonts;
 
   background-image: url(/wp-content/uploads/2015/08/sign.jpg);
   background-position: center center;
@@ -178,7 +181,7 @@ body.login {
       }
     }
 
-    @include breakpoint(xs) {
+    @include media-breakpoint-down(xs) {
       width: 100%;
       text-align: center;
       margin-left: 0;

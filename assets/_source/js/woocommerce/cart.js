@@ -41,7 +41,8 @@ jQuery( function( $ ) {
 			$node.addClass( 'processing' ).block( {
 				message: null,
 				overlayCSS: {
-					background: 'rgba(0,0,0,.6)'
+					background: '#fff',
+					opacity: 1
 				}
 			} );
 		}

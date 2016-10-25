@@ -23,6 +23,7 @@
     "matchHeight": "^0.7.0",
     "bootstrap": "v4.0.0-alpha.4",
     "css-hamburgers": "^0.5.0",
-    "readmore-js": "^2.2.0"
+    "readmore-js": "^2.2.0",
+    "PACE": "pace#^1.0.2"
   }
 }

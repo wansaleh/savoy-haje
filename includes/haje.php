@@ -15,11 +15,19 @@ function hj_uri( $relative_uri = "" ) {
   return get_stylesheet_directory_uri() . $relative_uri;
 }
 
-add_action( 'wp_head', 'hj_head', 10000 );
-function hj_head() {
+add_action( 'wp_head', 'hj_pace', 0 );
+function hj_pace() {
   if ( is_admin() ) return;
 
-  echo "<link rel='stylesheet' href='" . hj_uri( '/assets/css/haje.css' ) . "' type='text/css' media='all'>";
+  echo "<script type='text/javascript' src='" . hj_uri() . '/assets/bower_components/PACE/pace.min.js' . "'></script>\n";
+  echo "<style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#2979FF;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style>";
+}
+
+add_action( 'wp_head', 'hj_head_last', 10000 );
+function hj_head_last() {
+  if ( is_admin() ) return;
+
+  echo "<link rel='stylesheet' href='" . hj_uri() . '/assets/css/haje.css' . "' type='text/css' media='all'>";
 }
 
 /**
@@ -32,15 +40,11 @@ function hj_scripts() {
 
   if ( is_admin() ) return;
 
-  // wp_enqueue_script( 'wc-cart', hj_uri() . '/assets/js/woocommerce/cart.js', array( 'jquery', 'wc-country-select', 'wc-address-i18n' ) );
+  // wp_enqueue_style( 'haje-main', hj_uri() . '/assets/css/haje.css', array( 'nm-core' ), HJ_VERSION );
 
-  // wp_enqueue_style( 'haje-main', hj_uri( '/assets/css/haje.css' ), array( 'nm-core' ), HJ_VERSION );
+  wp_enqueue_script( 'haje-vendor', hj_uri() . '/assets/js/vendor.js', array( 'jquery' ), HJ_VERSION );
 
-  wp_enqueue_script( 'wc-add-to-cart', get_template_directory_uri() . '/woocommerce/js/wc-add-to-cart.js', array( 'jquery' ), WC_VERSION, true );
-
-  wp_enqueue_script( 'haje-vendor', hj_uri( '/assets/js/vendor.js' ), array( 'jquery' ), HJ_VERSION );
-
-  wp_enqueue_script( 'nm-core', hj_uri( '/assets/js/haje-nm-core.js' ), array( 'jquery' ), NM_THEME_VERSION, true );
+  wp_enqueue_script( 'nm-core', hj_uri() . '/assets/js/haje-nm-core.js', array( 'jquery' ), NM_THEME_VERSION, true );
 
   $local_js_vars = array(
     'themeUri'               => NM_THEME_URI,
@@ -65,19 +69,26 @@ function hj_scripts() {
   wp_localize_script( 'nm-core', 'nm_wp_vars', $local_js_vars );
 
   if ( nm_woocommerce_activated() ) {
-    wp_enqueue_script( 'nm-shop-quickview', hj_uri( '/assets/js/haje-nm-shop-quickview.js' ), array( 'jquery', 'nm-shop', 'wc-add-to-cart-variation' ), NM_THEME_VERSION, true );
+    wp_enqueue_script( 'nm-shop-quickview', hj_uri() . '/assets/js/haje-nm-shop-quickview.js', array( 'jquery', 'nm-shop', 'wc-add-to-cart-variation' ), NM_THEME_VERSION, true );
 
     if ( is_woocommerce() ) {
 
       if ( is_product() ) {
-        wp_enqueue_script( 'nm-shop-single-product', hj_uri( '/assets/js/haje-nm-shop-single-product.js' ), array( 'jquery', 'nm-shop' ), NM_THEME_VERSION, true );
+        wp_enqueue_script( 'nm-shop-single-product', hj_uri() . '/assets/js/haje-nm-shop-single-product.js', array( 'jquery', 'nm-shop' ), NM_THEME_VERSION, true );
       }
       else {
-        wp_enqueue_script( 'nm-shop-filters', hj_uri( '/assets/js/haje-nm-shop-filters.js' ), array( 'jquery', 'nm-shop' ), NM_THEME_VERSION, true );
+        wp_enqueue_script( 'nm-shop-filters', hj_uri() . '/assets/js/haje-nm-shop-filters.js', array( 'jquery', 'nm-shop' ), NM_THEME_VERSION, true );
       }
     }
   }
 }
+
+add_action( 'wp_enqueue_scripts', 'hj_wc_scripts', 9 );
+function hj_wc_scripts() {
+  if ( is_cart() )
+    wp_enqueue_script( 'wc-cart', hj_uri() . '/assets/js/woocommerce/cart.js', array( 'jquery', 'wc-country-select', 'wc-address-i18n' ) );
+}
+
 
 /**
  * Main javascripts.
@@ -87,13 +98,13 @@ add_action( 'wp_footer', 'hj_footer' );
 function hj_footer() {
   if ( is_admin() ) return;
 
-  wp_enqueue_script( 'haje-main', hj_uri( '/assets/js/haje.js' ), array( 'haje-vendor' ), HJ_VERSION );
+  wp_enqueue_script( 'haje-main', hj_uri() . '/assets/js/haje.js', array( 'haje-vendor' ), HJ_VERSION );
 
-  // echo "<script type='text/javascript' src='" . hj_uri( '/assets/js/vendor.js' ) . "'></script>\n";
-  // echo "<script type='text/javascript' src='" . hj_uri( '/assets/js/haje.js' ) . "'></script>\n";
+  // echo "<script type='text/javascript' src='" . hj_uri() . '/assets/js/vendor.js' . "'></script>\n";
+  // echo "<script type='text/javascript' src='" . hj_uri() . '/assets/js/haje.js' . "'></script>\n";
 
   // if ( is_page( 'Coming Soon' ) ) {
-  //   echo "<script type='text/javascript' src='" . hj_uri( '/assets/js/comingsoon.js' ) . "'></script>\n";
+  //   echo "<script type='text/javascript' src='" . hj_uri() . '/assets/js/comingsoon.js' . "'></script>\n";
   // }
 }
 
@@ -128,8 +139,8 @@ function hj_myaccount_title($title) {
 add_action( 'login_enqueue_scripts', 'hj_login' );
 function hj_login() {
   echo '<link href="/wp-content/uploads/2016/09/haje-icon-accented-512.png" rel="shortcut icon">';
-  wp_enqueue_style( 'haje-login', hj_uri( '/assets/css/login.css' ), array( ), HJ_VERSION );
-  wp_enqueue_script( 'haje-login', hj_uri( '/assets/js/login.js' ), array( 'jquery' ), HJ_VERSION, true );
+  wp_enqueue_style( 'haje-login', hj_uri() . '/assets/css/login.css', array( ), HJ_VERSION );
+  wp_enqueue_script( 'haje-login', hj_uri() . '/assets/js/login.js', array( 'jquery' ), HJ_VERSION, true );
 }
 
 add_filter( 'login_headerurl', 'hj_login_logo_url' );
@@ -206,9 +217,18 @@ $clr-nav: <?php echo esc_attr( $nm_theme_options['header_navigation_color'] ); ?
 $clr-nav-hover: <?php echo esc_attr( $nm_theme_options['header_navigation_highlight_color'] ); ?>;
 $clr-saleflash-bg: <?php echo esc_attr( $nm_theme_options['sale_flash_background_color'] ); ?>;
 $clr-saleflash-font: <?php echo esc_attr( $nm_theme_options['sale_flash_font_color'] ); ?>;
+$clr-single-bg: <?php echo esc_attr( $nm_theme_options['single_product_background_color'] ); ?>;
 
 <?php
-  file_put_contents( get_stylesheet_directory() . '/assets/_source/css/includes/_colors-settings.scss', ob_get_clean() );
+  if ( $nm_theme_options['main_font_source'] == 1 && $nm_theme_options['main_font']['font-family'] != '' ) : ?>
+$font-primary: '<?php echo esc_attr( $nm_theme_options['main_font']['font-family'] ); ?>';
+<?php
+  endif;
+  if ( $nm_theme_options['secondary_font_source'] == 1 && $nm_theme_options['secondary_font']['font-family'] != '' ) : ?>
+$font-secondary: '<?php echo esc_attr( $nm_theme_options['secondary_font']['font-family'] ); ?>';
+<?php
+  endif;
+  file_put_contents( get_stylesheet_directory() . '/assets/_source/css/includes/_savoy-settings.scss', ob_get_clean() );
 }
 
 add_action( 'admin_print_footer_scripts', 'haje_iris_palette' );

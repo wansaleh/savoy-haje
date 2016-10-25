@@ -149,34 +149,34 @@ function hj_nm_product_quickview_link( $string ) {
   echo str_ireplace( 'Show more', __('Quick View', 'savoy-haje'), $string );
 }
 
-/*
- *	AJAX: Load product
- */
-function hj_nm_ajax_load_product() {
-  global $woocommerce, $product, $post;
-
-  // sleep(60);
-
-  //$post = $product = get_post( $_POST['product_id'] );
-  $product = get_product( $_POST['product_id'] );
-  $post = $product->post;
-  $output = '';
-
-  setup_postdata( $post );
-
-  ob_start();
-    wc_get_template_part( 'quickview/content', 'quickview' );
-  $output = ob_get_clean();
-
-  wp_reset_postdata();
-
-  echo $output;
-
-  exit;
-}
-remove_action( 'wp_ajax_nm_ajax_load_product' , 'nm_ajax_load_product' );
-remove_action( 'wp_ajax_nopriv_nm_ajax_load_product', 'nm_ajax_load_product' );
-remove_action( 'wc_ajax_nm_ajax_load_product', 'nm_ajax_load_product' );
-add_action( 'wp_ajax_nm_ajax_load_product' , 'hj_nm_ajax_load_product' );
-add_action( 'wp_ajax_nopriv_nm_ajax_load_product', 'hj_nm_ajax_load_product' );
-add_action( 'wc_ajax_nm_ajax_load_product', 'hj_nm_ajax_load_product' );
+// /*
+//  *	AJAX: Load product
+//  */
+// function hj_nm_ajax_load_product() {
+//   global $woocommerce, $product, $post;
+//
+//   sleep(60);
+//
+//   //$post = $product = get_post( $_POST['product_id'] );
+//   $product = get_product( $_POST['product_id'] );
+//   $post = $product->post;
+//   $output = '';
+//
+//   setup_postdata( $post );
+//
+//   ob_start();
+//     wc_get_template_part( 'quickview/content', 'quickview' );
+//   $output = ob_get_clean();
+//
+//   wp_reset_postdata();
+//
+//   echo $output;
+//
+//   exit;
+// }
+// remove_action( 'wp_ajax_nm_ajax_load_product' , 'nm_ajax_load_product' );
+// remove_action( 'wp_ajax_nopriv_nm_ajax_load_product', 'nm_ajax_load_product' );
+// remove_action( 'wc_ajax_nm_ajax_load_product', 'nm_ajax_load_product' );
+// add_action( 'wp_ajax_nm_ajax_load_product' , 'hj_nm_ajax_load_product' );
+// add_action( 'wp_ajax_nopriv_nm_ajax_load_product', 'hj_nm_ajax_load_product' );
+// add_action( 'wc_ajax_nm_ajax_load_product', 'hj_nm_ajax_load_product' );

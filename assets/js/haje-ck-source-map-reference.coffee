@@ -54,10 +54,10 @@ class Haje.Alert
       @showAlert(content)
 
   setupAlert: ->
-    @overlay = $('<div class="haje-alert-overlay"></div>')
-    @alert = $('<div class="haje-alert"><div class="haje-alert-content"></div><div class="haje-alert-action"><a href="#">Close</a></div></div>')
-    @alertContent = @alert.find('.haje-alert-content')
-    @actionButton = @alert.find('.haje-alert-action > a')
+    @overlay = $('<div class="hj-alert-overlay"></div>')
+    @alert = $('<div class="hj-alert"><div class="hj-alert-content"></div><div class="hj-alert-action"><a href="#">Close</a></div></div>')
+    @alertContent = @alert.find('.hj-alert-content')
+    @actionButton = @alert.find('.hj-alert-action > a')
 
     @actionButton.click (ev) =>
       ev.stopPropagation()

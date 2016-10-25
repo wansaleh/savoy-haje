@@ -1,4 +1,4 @@
-@import 'https://fonts.googleapis.com/css?family=Oxygen:300,400,700|Playfair+Display:400,400i,700,900';
+// @import 'https://fonts.googleapis.com/css?family=Oxygen:300,400,700|Playfair+Display:400,400i,700,900';
 // @import 'myriad-set-pro.css';
 
 @mixin font-awesome {
@@ -19,9 +19,15 @@
   padding-right: 0.2em;
 }
 
-$body-fonts: 'Oxygen', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-// $heading-fonts: 'Playfair Display', $body-fonts;
+$body-fonts: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@if variable-exists(font-primary) {
+  $body-fonts: $font-primary, $body-fonts;
+}
+
 $heading-fonts: $body-fonts;
+@if variable-exists(font-secondary) {
+  $heading-fonts: $font-secondary, $heading-fonts;
+}
 
 body {
   font-family: $body-fonts;
