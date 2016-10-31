@@ -34,6 +34,16 @@ body {
   font-weight: 400;
 }
 
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+
 .accent {
   color: $clr-highlight;
 }
@@ -81,7 +91,7 @@ h4, h5, h6 {
   // }
 
   h3, h4, h5, h6 {
-    opacity: .4;
+    opacity: .5;
     font-weight: 400;
   }
 
@@ -89,6 +99,22 @@ h4, h5, h6 {
     h1 { font-size: scut-rem(30px) + .5rem; }
     h2 { font-size: scut-rem(28px); }
     h3 { font-size: scut-rem(24px); }
+  }
+
+  &.text-light {
+    color: #fff;
+
+    h1, h2, h3, h4, h5, h6, p {
+      color: inherit;
+    }
+
+    h3, h4, h5, h6 {
+      opacity: .8;
+    }
+
+    .accent {
+      color: inherit;
+    }
   }
 }
 
@@ -164,9 +190,14 @@ address {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 3rem;
+    width: 2rem;
     height: 2px;
     background: $clr-highlight;
+  }
+
+  em {
+    font-style: normal;
+    opacity: .5;
   }
 }
 

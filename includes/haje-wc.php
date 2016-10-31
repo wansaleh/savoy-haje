@@ -2,14 +2,20 @@
 
 require('color-names.php');
 
-add_action( 'woocommerce_single_product_summary', 'woocommerce_show_product_sale_flash', 4 );
-
-add_action( 'woocommerce_before_shop_loop_item_title', 'hj_before_shop_loop_item_title' );
-function hj_before_shop_loop_item_title() {
-  global $product;
-
-
+// add_action( 'woocommerce_after_customer_login_form', 'hj_social_login' );
+add_action( 'woocommerce_login_form_end', 'hj_social_login' );
+function hj_social_login() {
+  echo do_shortcode( '[woocommerce_social_login_buttons return_url="https://mystore.com/my-account"]' );
 }
+
+add_action( 'woocommerce_single_product_summary', 'woocommerce_show_product_sale_flash', 6 );
+
+// add_action( 'woocommerce_before_shop_loop_item_title', 'hj_before_shop_loop_item_title' );
+// function hj_before_shop_loop_item_title() {
+//   global $product;
+//
+//
+// }
 
 add_action( 'woocommerce_single_product_summary', 'hj_show_brand', 13 );
 function hj_show_brand() {
@@ -148,6 +154,67 @@ add_filter( 'nm_product_quickview_link', 'hj_nm_product_quickview_link' );
 function hj_nm_product_quickview_link( $string ) {
   echo str_ireplace( 'Show more', __('Quick View', 'savoy-haje'), $string );
 }
+
+
+// SINGLE PRODUCT
+add_image_size( '40x60', 40, 60, true );
+
+add_action( 'woocommerce_after_single_product_tabs', 'hj_product_nav' );
+function hj_product_nav() {
+  global $product, $nm_theme_options;
+
+  echo '<div class="hj-product-nav">';
+
+  // Product navigation
+  $navigate_same_term = ( $nm_theme_options['product_navigation_same_term'] ) ? true : false;
+
+  $prev_post = get_previous_post( $navigate_same_term );
+  if ( is_a( $prev_post , 'WP_Post' ) ) {
+    $prev_product   = new WC_Product( $prev_post->ID );
+    $prev_price     = $prev_product->get_price_html();
+
+    echo '<a class="prev" href="' . esc_url( get_permalink( $prev_post->ID ) ) . '">';
+      echo '<i class="nm-font nm-font-angle-thin-right"></i>';
+      echo get_the_post_thumbnail( $prev_post->ID, '40x60' );
+      echo '<div class="info">';
+        echo '<span class="title">' . get_the_title( $prev_post->ID ) . '</span>';
+        echo '<span class="price">' . $prev_price . '</span>';
+      echo '</div>';
+    echo '</a>';
+  }
+
+  $next_post = get_next_post( $navigate_same_term );
+  if ( is_a( $next_post , 'WP_Post' ) ) {
+    $next_product   = new WC_Product( $next_post->ID );
+    $next_price     = $next_product->get_price_html();
+
+    echo '<a class="next" href="' . esc_url( get_permalink( $next_post->ID ) ) . '">';
+      echo '<i class="nm-font nm-font-angle-thin-left"></i>';
+      echo get_the_post_thumbnail( $next_post->ID, '40x60' );
+      echo '<div class="info">';
+        echo '<span class="title">' . get_the_title( $next_post->ID ) . '</span>';
+        echo '<span class="price">' . $next_price . '</span>';
+      echo '</div>';
+    echo '</a>';
+  }
+
+  echo '</div>';
+
+  // /* Product navigation */
+  // next_post_link( '%link', apply_filters( 'nm_single_product_menu_next_icon', '<i class="nm-font nm-font-media-play flip"></i>' ), $navigate_same_term, array(), 'product_cat' );
+  // previous_post_link( '%link', apply_filters( 'nm_single_product_menu_prev_icon', '<i class="nm-font nm-font-media-play"></i>' ), $navigate_same_term, array(), 'product_cat' );
+}
+
+// add_filter( 'nm_single_product_menu_next_icon', 'hj_single_product_menu_next_icon' );
+// function hj_single_product_menu_next_icon( $orig ) {
+//   global $product;
+//   return '<i class="nm-font nm-font-media-play flip"></i> %title';
+// }
+// add_filter( 'nm_single_product_menu_prev_icon', 'hj_single_product_menu_prev_icon' );
+// function hj_single_product_menu_prev_icon( $orig ) {
+//   global $product;
+//   return '%title <i class="nm-font nm-font-media-play"></i>';
+// }
 
 // /*
 //  *	AJAX: Load product

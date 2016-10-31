@@ -37,7 +37,7 @@
                                     }
                                 ?>
                                 <a href="#" id="nm-mobile-menu-button" class="clicked">
-                                    <div class="hamburger hamburger--slider">
+                                    <div class="hamburger hamburger--spin">
                                       <div class="hamburger-box">
                                         <div class="hamburger-inner"></div>
                                       </div>
@@ -61,7 +61,7 @@
                   }
                 ?>
                                 <a href="#" id="nm-mobile-menu-button" class="clicked">
-                                    <div class="hamburger hamburger--slider">
+                                    <div class="hamburger hamburger--spin">
                                       <div class="hamburger-box">
                                         <div class="hamburger-inner"></div>
                                       </div>

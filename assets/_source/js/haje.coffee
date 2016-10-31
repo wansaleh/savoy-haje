@@ -19,6 +19,15 @@ findKey = (obj, keyToFind) ->
 
 class window.Haje
   constructor: ->
+    do ->
+      heading = $('.upsells h2, .related h2, .woocommerce-cart .woocommerce>form>h3, .cart-collaterals>h2, #customer_details h3, #order_review_heading, #nm-wishlist h1, .woocommerce-edit-address .woocommerce-MyAccount-content h2')
+      heading.length && heading.each ->
+        heading_html = $(this).html().trim()
+        if ! /<[a-z][\s\S]*>/i.test(heading_html)
+          substr = heading_html.split(/\s+/)
+          substr_last = substr.pop()
+          $(this).html(substr.join(' ') + " <em>#{substr_last}</em>")
+
     # new Headroom($('#nm-header')[0], {
     #   offset: 128,
     #   tolerance: 5,

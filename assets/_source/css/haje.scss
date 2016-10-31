@@ -1,11 +1,15 @@
 @import "base";
 
+@import "modules/grid";
+
 @import "modules/typography";
 @import "modules/main";
+@import "modules/footer";
 @import "modules/nav";
 @import "modules/ubermenu";
 @import "modules/forms";
-@import "modules/support";
 
 @import "modules/wc";
 @import "modules/wc-variations";
+
+@import "modules/home";

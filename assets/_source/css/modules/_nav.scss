@@ -54,7 +54,7 @@
   .ubermenu-skin-none .ubermenu-item-level-0 > .ubermenu-target {
     color: #fff;
     &:hover {
-      opacity: .6;
+      opacity: .7;
       color: #fff !important;
     }
   }
@@ -118,4 +118,42 @@
 
 #nm-mobile-menu a {
   display: block;
+}
+
+
+#nm-mobile-menu-button {
+  opacity: 1 !important;
+}
+
+#nm-mobile-menu {
+  background: none;
+
+  .nm-mobile-menu-content {
+    background: #fff;
+
+    li {
+      border: 0;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 400;
+    }
+  }
+}
+
+.hamburger-box {
+  margin-bottom: -4px;
+}
+
+.hamburger:hover {
+  opacity: 1;
+}
+
+.header-light {
+  .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+    background-color: #fff;
+  }
+  &.mobile-menu-open .nm-header {
+    background: transparent !important;
+  }
 }

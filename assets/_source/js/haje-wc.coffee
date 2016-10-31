@@ -6,7 +6,7 @@ ls = $.localStorage
 class Haje.WC
   constructor: ->
     single_product_summary = $('.nm-product-thumbnails-col, .nm-product-images-col, .nm-product-summary-col, .nm-single-product-right-col')
-    single_product_summary.imagesLoaded ->
+    single_product_summary.length && single_product_summary.imagesLoaded ->
       single_product_summary.matchHeight( property: 'min-height' )
 
 class Haje.WC.Filters

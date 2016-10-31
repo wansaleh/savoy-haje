@@ -1,6 +1,6 @@
 <?php
 
-define( 'HJ_VERSION', '1.2' );
+define( 'HJ_VERSION', '1.1.1' );
 
 // is_admin() or add_filter( 'locale', function() {
 //   return 'ms_MY';
@@ -27,7 +27,7 @@ add_action( 'wp_head', 'hj_head_last', 10000 );
 function hj_head_last() {
   if ( is_admin() ) return;
 
-  echo "<link rel='stylesheet' href='" . hj_uri() . '/assets/css/haje.css' . "' type='text/css' media='all'>";
+  echo "<link rel='stylesheet' href='" . hj_uri() . '/assets/css/haje.css?v=' . HJ_VERSION . "' type='text/css' media='all'>";
 }
 
 /**
@@ -218,6 +218,7 @@ $clr-nav-hover: <?php echo esc_attr( $nm_theme_options['header_navigation_highli
 $clr-saleflash-bg: <?php echo esc_attr( $nm_theme_options['sale_flash_background_color'] ); ?>;
 $clr-saleflash-font: <?php echo esc_attr( $nm_theme_options['sale_flash_font_color'] ); ?>;
 $clr-single-bg: <?php echo esc_attr( $nm_theme_options['single_product_background_color'] ); ?>;
+$clr-grey-bg: <?php echo esc_attr( $nm_theme_options['footer_widgets_background_color'] ); ?>;
 
 <?php
   if ( $nm_theme_options['main_font_source'] == 1 && $nm_theme_options['main_font']['font-family'] != '' ) : ?>

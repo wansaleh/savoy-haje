@@ -34,8 +34,8 @@ global $post, $product, $nm_theme_options;
 
 <?php endif;
 
-$postdate = get_the_time ( 'Y-m-d' );
-$postdatestamp = strtotime ( $postdate );
+$postdate = get_the_time( 'Y-m-d' );
+$postdatestamp = strtotime( $postdate );
 $newness = 10;
 if ((time () - (60 * 60 * 24 * $newness)) < $postdatestamp) {
 	echo '<span class="isnew">New</span>';
