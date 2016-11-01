@@ -1,5 +1,5 @@
 // @import 'https://fonts.googleapis.com/css?family=Oxygen:300,400,700|Playfair+Display:400,400i,700,900';
-// @import 'myriad-set-pro.css';
+@import 'myriad-set-pro.css';
 
 @mixin font-awesome {
   content: "";
@@ -24,6 +24,8 @@ $body-fonts: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   $body-fonts: $font-primary, $body-fonts;
 }
 
+// $body-fonts: 'Myriad Set Pro', $body-fonts;
+
 $heading-fonts: $body-fonts;
 @if variable-exists(font-secondary) {
   $heading-fonts: $font-secondary, $heading-fonts;
@@ -34,14 +36,36 @@ body {
   font-weight: 400;
 }
 
-.text-left {
-  text-align: left;
+// UTILITIES
+
+.text-xs-left { text-align: left; }
+.text-xs-right { text-align: right; }
+.text-xs-center { text-align: center; }
+.text-xs-justify { text-align: justify; }
+
+@media (min-width: map-get($grid-breakpoints, sm)) {
+  .text-sm-left { text-align: left; }
+  .text-sm-right { text-align: right; }
+  .text-sm-center { text-align: center; }
+  .text-sm-justify { text-align: justify; }
 }
-.text-center {
-  text-align: center;
+
+@media (min-width: map-get($grid-breakpoints, md)) {
+  .text-md-left { text-align: left; }
+  .text-md-right { text-align: right; }
+  .text-md-center { text-align: center; }
+  .text-md-justify { text-align: justify; }
 }
-.text-right {
-  text-align: right;
+
+@media (min-width: map-get($grid-breakpoints, lg)) {
+ .text-lg-left { text-align: left; }
+ .text-lg-right { text-align: right; }
+ .text-lg-center { text-align: center; }
+ .text-lg-justify { text-align: justify; }
+}
+
+.text-light {
+  color: #fff;
 }
 
 .accent {
@@ -69,16 +93,18 @@ h1, h2, h3, h4, h5, h6 {
 
 h4, h5, h6 {
   font-family: $body-fonts;
-  // font-weight: 400;
-  font-weight: 300;
+  font-weight: 400;
+  // font-weight: 300;
   letter-spacing: normal;
 }
 
 .jumbo {
   h1 {
-    font-size: scut-rem(30px) + 2rem;
+    font-size: scut-rem(30px) + 2.4rem;
     line-height: 1;
     margin-bottom: .2em;
+    margin-left: -4px;
+    margin-right: -4px;
   }
   h2 { font-size: scut-rem(28px) + 1rem; }
   h3 { font-size: scut-rem(24px) + .5rem; }
@@ -91,7 +117,6 @@ h4, h5, h6 {
   // }
 
   h3, h4, h5, h6 {
-    opacity: .5;
     font-weight: 400;
   }
 
@@ -101,21 +126,25 @@ h4, h5, h6 {
     h3 { font-size: scut-rem(24px); }
   }
 
-  &.text-light {
-    color: #fff;
-
+  &.text-light,
+  .text-light & {
     h1, h2, h3, h4, h5, h6, p {
-      color: inherit;
+      color: #fff;
     }
 
     h3, h4, h5, h6 {
-      opacity: .8;
+      opacity: 1;
+      // color: rgba(#fff, .8);
     }
 
     .accent {
       color: inherit;
     }
   }
+}
+
+.preheader {
+  opacity: .5;
 }
 
 .heading-margins {

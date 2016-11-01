@@ -19,8 +19,8 @@ add_action( 'wp_head', 'hj_pace', 0 );
 function hj_pace() {
   if ( is_admin() ) return;
 
-  echo "<script type='text/javascript' src='" . hj_uri() . '/assets/bower_components/PACE/pace.min.js' . "'></script>\n";
-  echo "<style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#2979FF;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style>";
+  echo "<script type='text/javascript' src='" . hj_uri() . '/bower_components/PACE/pace.min.js' . "'></script>\n";
+  echo "<style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#F57F17;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style>";
 }
 
 add_action( 'wp_head', 'hj_head_last', 10000 );
@@ -179,10 +179,16 @@ function hj_address( $atts ) {
 
   return "
   <address>
-    <p><b>Haje, Mikraj Concept</b><br>F-LG-07, Neo Damansara<br>Jalan PJU 8/1, Damansara Perdana<br>47820 Petaling Jaya, Selangor, Malaysia</p>
-    $phone_email
+    <p><b>Mikraj Concept Sdn. Bhd.</b><br>Company Reg. No. 1110211-K</p>
   </address>
   ";
+
+  // return "
+  // <address>
+  //   <p><b>Haje, Mikraj Concept</b><br>F-LG-07, Neo Damansara<br>Jalan PJU 8/1, Damansara Perdana<br>47820 Petaling Jaya, Selangor, Malaysia</p>
+  //   $phone_email
+  // </address>
+  // ";
 }
 
 add_filter( 'widget_title', 'hj_html_widget_title' );
@@ -224,12 +230,19 @@ $clr-grey-bg: <?php echo esc_attr( $nm_theme_options['footer_widgets_background_
   if ( $nm_theme_options['main_font_source'] == 1 && $nm_theme_options['main_font']['font-family'] != '' ) : ?>
 $font-primary: '<?php echo esc_attr( $nm_theme_options['main_font']['font-family'] ); ?>';
 <?php
+  elseif ( $nm_theme_options['main_font_source'] == 2 && $nm_theme_options['main_typekit_font'] != '' ) : ?>
+$font-primary: '<?php echo esc_attr( $nm_theme_options['main_typekit_font'] ); ?>';
+<?php
   endif;
+
   if ( $nm_theme_options['secondary_font_source'] == 1 && $nm_theme_options['secondary_font']['font-family'] != '' ) : ?>
 $font-secondary: '<?php echo esc_attr( $nm_theme_options['secondary_font']['font-family'] ); ?>';
 <?php
+  elseif ( $nm_theme_options['secondary_font_source'] == 2 && $nm_theme_options['secondary_typekit_font'] != '' ) : ?>
+  $font-secondary: '<?php echo esc_attr( $nm_theme_options['secondary_typekit_font'] ); ?>';
+<?php
   endif;
-  file_put_contents( get_stylesheet_directory() . '/assets/_source/css/includes/_savoy-settings.scss', ob_get_clean() );
+  file_put_contents( get_stylesheet_directory() . '/_source/css/includes/_savoy-settings.scss', ob_get_clean() );
 }
 
 add_action( 'admin_print_footer_scripts', 'haje_iris_palette' );

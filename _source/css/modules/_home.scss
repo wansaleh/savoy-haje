@@ -1,0 +1,332 @@
+@function pow($number, $exp) {
+  $value: 1;
+  @if $exp > 0 {
+    @for $i from 1 through $exp {
+      $value: $value * $number;
+    }
+  }
+  @else if $exp < 0 {
+    @for $i from 1 through -$exp {
+      $value: $value / $number;
+    }
+  }
+  @return $value;
+}
+
+@function fact($number) {
+  $value: 1;
+  @if $number > 0 {
+    @for $i from 1 through $number {
+      $value: $value * $i;
+    }
+  }
+  @return $value;
+}
+
+@function pi() {
+  @return 3.14159265359;
+}
+
+@function rad($angle) {
+  $unit: unit($angle);
+  $unitless: $angle / ($angle * 0 + 1);
+  // If the angle has 'deg' as unit, convert to radians.
+  @if $unit == deg {
+    $unitless: $unitless / 180 * pi();
+  }
+  @return $unitless;
+}
+
+@function sin($angle) {
+  $sin: 0;
+  $angle: rad($angle);
+  // Iterate a bunch of times.
+  @for $i from 0 through 10 {
+    $sin: $sin + pow(-1, $i) * pow($angle, (2 * $i + 1)) / fact(2 * $i + 1);
+  }
+  @return $sin;
+}
+
+@function cos($angle) {
+  $cos: 0;
+  $angle: rad($angle);
+  // Iterate a bunch of times.
+  @for $i from 0 through 10 {
+    $cos: $cos + pow(-1, $i) * pow($angle, 2 * $i) / fact(2 * $i);
+  }
+  @return $cos;
+}
+
+@function tan($angle) {
+  @return sin($angle) / cos($angle);
+}
+
+#home-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 55em;
+  background-color: $clr-green;
+  background-image: linear-gradient(
+    to top right,
+    rgba($clr-amber-200, 1) 0%,
+    rgba($clr-pink-200, 1) 30%,
+    rgba($clr-purple-200, 1) 60%,
+    $clr-cyan-500 100%);
+  transform: skewY(8deg);
+  transform-origin: 100%;
+  overflow: hidden;
+
+  @include media-breakpoint-down(sm) {
+    height: 58em;
+  }
+}
+
+.home {
+  .text-light {
+    text-shadow: 0 1px 2px rgba(#000, .05);
+  }
+
+  .haje-kurta {
+    padding-bottom: 4em;
+  }
+
+  #home-hero {
+    padding-top: 14em;
+    padding-bottom: 14em;
+
+    img {
+      max-width: 300px;
+    }
+
+    // $edge: 4em; // edge length
+    // $n-hex: 6; // number of hexagon edges/vertices
+    // $angle: 360deg/$n-hex; // base angle
+    // $skew-angle: 90deg - $angle;
+    // $n-per-edge: 3; // triangles per hex edge
+    // $n-tri: $n-hex*$n-per-edge; // in total
+    // $h-tri: $edge*cos(.5*$angle); // tri height
+    // $t: 2s; // animation-duration
+    // $scaling-duration: 80%;
+    // $pad-duration: 5%;
+    // $rp: 100% - $scaling-duration - $pad-duration;
+    //
+    // .assembly {
+    //   filter: drop-shadow(0 0 1px currentColor);
+    //   animation: down $t linear infinite;
+    //
+    //   color: #fff;
+    //   opacity: .8;
+    //
+    //   div, :before {
+    //     position: absolute;
+    //     top: 50%; left: 50%;
+    //   }
+    // }
+    //
+    // @keyframes down { to { transform: scale(1.5); opacity: 0; } }
+    //
+    // .hex {
+    //   z-index: -1;
+    //   margin: -$edge;
+    //   width: 2*$edge; height: 2*$edge;
+    //   /* shape it into rhombus */
+    //   transform: skewY($skew-angle)
+    //     scaleX(cos($skew-angle));
+    //   /* make rhombus ends transparent, get hex */
+    //   background: linear-gradient(135deg,
+    //       transparent 25%, currentColor 0,
+    //       currentColor 75%, transparent 0
+    //     );
+    // }
+    //
+    // .tri {
+    //   &:before {
+    //     margin: 0 (-.5*$edge);
+    //     border: solid 0;
+    //     border-color: currentColor transparent;
+    //     border-width: $h-tri .5*$edge 0;
+    //     animation: up $t ease-out infinite;
+    //     content: '';
+    //   }
+    //
+    //   @for $i from 0 to $n-hex {
+    //     @for $j from 0 to $n-per-edge {
+    //       $idx: $i*$n-per-edge + $j + 1;
+    //       $f: $j%2;
+    //       $p: $idx/($n-tri - 1)*$rp + $pad-duration;
+    //
+    //       &:nth-child(#{$idx}) {
+    //         transform: rotate(-($i - .5)*$angle)
+    //           translateY($h-tri)
+    //           if($j == 0, (),
+    //             translate($j*.5*$edge, $f*$h-tri)
+    //             rotate($f*.5turn)
+    //           );
+    //
+    //         &:before { animation-name: up-#{$idx}; }
+    //       }
+    //
+    //       @at-root {
+    //         @keyframes up-#{$idx} {
+    //           0%, #{$p} { transform: scale(0); }
+    //           100%, #{$p + $scaling-duration} {
+    //             transform: scale(1);
+    //           }
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
+  }
+
+  // .intro-left {
+  //   margin: 14em 0;
+  //   // padding-right: 2em;
+  //
+  //   @include media-breakpoint-down(sm) {
+  //     margin: 8em 0 4em;
+  //   }
+  // }
+  //
+  // .intro-right {
+  //   margin: 10em 0;
+  //
+  //   img {
+  //     max-width: 200px;
+  //   }
+  //
+  //   @include media-breakpoint-down(sm) {
+  //     margin: 8em 0 4em;
+  //   }
+  // }
+
+  // .nm-products li {
+  //   .nm-shop-loop-thumbnail {
+  //     border-radius: 4px;
+  //     box-shadow: 0 8px 15px rgba(#000,.05);
+  //     transition: all .3s ease;
+  //   }
+  //
+  //   &:hover {
+  //     .nm-shop-loop-thumbnail {
+  //       box-shadow: 0 10px 45px rgba(#000,.1);
+  //       transform: translateY(-5px);
+  //     }
+  //   }
+  // }
+
+  .wpb_single_image figure {
+    // box-shadow: 0 8px 50px rgba(#000, .05), 0 8px 10px rgba($clr-blue-grey, 0.05);
+    // border: 1px solid #ddd;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 10px;
+  }
+
+  $hexagon-count: 7;
+  $border-width: 2px;
+  $animation-duration: 15s;
+
+  .on-top {
+    position: relative;
+    z-index: 10;
+  }
+
+  .hexagon-container {
+    position: absolute;
+    top: -3%;
+    left: 3%;
+    width: 0;
+    height: 0;
+    color: #000;
+    font-size: 300px;
+    opacity: .05;
+  }
+
+  .hexagon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    .part {
+      position: absolute;
+      width: 10px;
+      height: $border-width;
+      animation: part $animation-duration linear infinite;
+      &::before, &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: currentColor;
+        border-radius: $border-width 0 0 $border-width;
+        transform-origin: right center;
+        animation: inner $animation-duration linear infinite;
+      }
+      &::before { transform: translateX(-$border-width / 4) rotate(60deg) translateX($border-width / 4); }
+      &::after { transform: translateX(-$border-width / 4) rotate(-60deg) translateX($border-width / 4); }
+      @for $i from 1 through 6 {
+        &:nth-child(#{$i}) {
+          transform: translate(-50%, -50%) rotate(360deg * $i / 6);
+        }
+      }
+    }
+    @for $i from 1 through $hexagon-count {
+      &:nth-child(#{$i}) {
+        .part, .part::before, .part::after {
+          animation-delay: -$animation-duration * ($i - 1) / ($hexagon-count - 1);
+        }
+      }
+    }
+    &:nth-child(2n) {
+      transform: rotate(30deg);
+    }
+  }
+
+  @keyframes part {
+    from { width: 0; }
+    to { width: 1em; }
+  }
+  @keyframes inner {
+    from { width: 50%; }
+    to { width: 0%; }
+  }
+
+  .nm_btn_align_left {
+    @extend .text-xs-center;
+    @extend .text-md-left;
+  }
+  .nm_btn_align_right {
+    @extend .text-xs-center;
+    @extend .text-md-right;
+  }
+
+  .nm_btn {
+    text-transform: uppercase;
+    font-size: .95em;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-shadow: 0 2px 6px rgba(#000, .1);
+  }
+  .nm_btn .nm_btn_bg {
+    border-radius: 5px;
+    // box-shadow: 0 6px 10px rgba(#000, 0.1);
+  }
+
+  .haje-cta {
+    text-align: right;
+    .nm_btn {
+      margin-left: 10px;
+    }
+
+    .btn-buy .nm_btn_bg {
+      background: $clr-highlight;
+    }
+  }
+}

@@ -53,6 +53,8 @@
   .nm-menu > li > a,
   .ubermenu-skin-none .ubermenu-item-level-0 > .ubermenu-target {
     color: #fff;
+    text-shadow: 0 1px 1px rgba(#000, .05);
+
     &:hover {
       opacity: .7;
       color: #fff !important;
