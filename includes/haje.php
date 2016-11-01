@@ -17,10 +17,11 @@ function hj_uri( $relative_uri = "" ) {
 
 add_action( 'wp_head', 'hj_pace', 0 );
 function hj_pace() {
+  global $nm_theme_options;
   if ( is_admin() ) return;
 
   echo "<script type='text/javascript' src='" . hj_uri() . '/bower_components/PACE/pace.min.js' . "'></script>\n";
-  echo "<style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#F57F17;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style>";
+  echo "<style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:".esc_attr( $nm_theme_options['highlight_color'] ).";position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style>";
 }
 
 add_action( 'wp_head', 'hj_head_last', 10000 );

@@ -49,6 +49,11 @@
   }
 }
 
+.nm-menu > li > a,
+.ubermenu-skin-none .ubermenu-item-level-0 > .ubermenu-target {
+  font-weight: 600;
+}
+
 .header-light:not(.header-on-scroll) .nm-header {
   .nm-menu > li > a,
   .ubermenu-skin-none .ubermenu-item-level-0 > .ubermenu-target {
