@@ -39,5 +39,6 @@ jQuery.debounce = function(func, wait, immediate) {
 // @codekit-append "../../bower_components/matchHeight/dist/jquery.matchHeight.js"
 // @  codekit-append "vendor/headroom.js"
 // @codekit-append "vendor/imagesloaded.pkgd.js"
-// @codekit-append "../../bower_components/velocity/velocity.js"
-// @codekit-append "../../bower_components/jquery.easing/jquery.easing.js"
+// @codekit-append "../../bower_components/gsap/src/uncompressed/TweenMax.js"
+// @codekit-append "../../bower_components/gsap/src/uncompressed/easing/EasePack.js"
+// @codekit-append "../../bower_components/gsap/src/uncompressed/plugins/ScrollToPlugin.js"

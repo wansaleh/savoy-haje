@@ -26,15 +26,13 @@ class window.Haje
           target = if target.length then target else $('[name=' + @hash.slice(1) + ']')
           console.log target
           if target.length
-            $(target).velocity 'scroll',
-              duration: 500
-              offset: -40
-              easing: 'ease-in-out'
-
-            # $('html, body').velocity { scrollTop: target.offset().top }, 300, 'easeInOutQuad'
+            TweenMax.to window, .3,
+              scrollTo:
+                y: target
+                offsetY: 0
+              ease: Power2.easeInOut
             return false
         return
-
 
     do ->
       heading = $('.upsells h2, .related h2, .woocommerce-cart .woocommerce>form>h3, .cart-collaterals>h2, #customer_details h3, #order_review_heading, #nm-wishlist h1, .woocommerce-edit-address .woocommerce-MyAccount-content h2')
@@ -112,7 +110,43 @@ $ ->
   new Haje.Forms
   new Haje.Alert
 
+# @codekit-append "haje-home";
 # @codekit-append "haje-wc";
+
+
+"use strict"
+
+$ = jQuery
+
+class Haje.Home
+  constructor: ->
+
+    $('.hexagon-dashed').clone().insertAfter('.hexagon-dashed:last-of-type')
+    $('.hexagon-dashed:last-of-type').clone().insertAfter('.hexagon-dashed:last-of-type')
+    $('.hexagon-dashed:last-of-type').clone().insertAfter('.hexagon-dashed:last-of-type')
+    $('.hexagon-dashed:last-of-type').clone().insertAfter('.hexagon-dashed:last-of-type')
+
+    tl = new TimelineMax(repeat: -1)
+
+    TweenMax.staggerTo '.hexagon-dashed', 5, {
+      width: 700
+      autoAlpha: 0
+      ease: Power3.easeInOut
+      repeat: -1
+    }, 0.35
+
+    # TweenMax.staggerTo '.ripple-inner', 5, {
+    #   width: 1000
+    #   height: 1000
+    #   x: '-=500'
+    #   y: '-=500'
+    #   autoAlpha: 0
+    #   ease: Power3.easeInOut
+    #   repeat: -1
+    # }, 0.4
+
+$ ->
+  new Haje.Home
 
 
 "use strict"

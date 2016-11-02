@@ -26,15 +26,13 @@ class window.Haje
           target = if target.length then target else $('[name=' + @hash.slice(1) + ']')
           console.log target
           if target.length
-            $(target).velocity 'scroll',
-              duration: 500
-              offset: -40
-              easing: 'ease-in-out'
-
-            # $('html, body').velocity { scrollTop: target.offset().top }, 300, 'easeInOutQuad'
+            TweenMax.to window, .3,
+              scrollTo:
+                y: target
+                offsetY: 0
+              ease: Power2.easeInOut
             return false
         return
-
 
     do ->
       heading = $('.upsells h2, .related h2, .woocommerce-cart .woocommerce>form>h3, .cart-collaterals>h2, #customer_details h3, #order_review_heading, #nm-wishlist h1, .woocommerce-edit-address .woocommerce-MyAccount-content h2')
@@ -112,4 +110,5 @@ $ ->
   new Haje.Forms
   new Haje.Alert
 
+# @codekit-append "haje-home";
 # @codekit-append "haje-wc";

@@ -2,82 +2,50 @@ $hexagon-count: 7;
 $border-width: 1px;
 $animation-duration: 5s;
 
-.hexagon-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  font-size: 300px;
-  opacity: .2;
-}
-
-.hexagon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  .part {
-    position: absolute;
-    width: 10px;
-    height: $border-width;
-    animation: part $animation-duration linear infinite;
-    &::before, &::after {
-      content: '';
-      position: absolute;
-      display: block;
-      top: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
-      background: currentColor;
-      border-radius: $border-width 0 0 $border-width;
-      transform-origin: right center;
-      animation: inner $animation-duration linear infinite;
-    }
-    &::before { transform: translateX(-$border-width / 4) rotate(60deg) translateX($border-width / 4); }
-    &::after { transform: translateX(-$border-width / 4) rotate(-60deg) translateX($border-width / 4); }
-    @for $i from 1 through 6 {
-      &:nth-child(#{$i}) {
-        transform: translate(-50%, -50%) rotate(360deg * $i / 6);
-      }
-    }
-  }
-  @for $i from 1 through $hexagon-count {
-    &:nth-child(#{$i}) {
-      .part, .part::before, .part::after {
-        animation-delay: -$animation-duration * ($i - 1) / ($hexagon-count - 1);
-      }
-    }
-  }
-  &:nth-child(2n) {
-    transform: rotate(30deg);
-  }
-}
-
-@keyframes part {
-  from { width: 0; }
-  to { width: 1em; }
-}
-@keyframes inner {
-  from { width: 50%; }
-  to { width: 0%; }
-}
-
-.nm_btn_align_left {
-  @extend .text-xs-center;
-  @extend .text-md-left;
-}
-.nm_btn_align_right {
-  @extend .text-xs-center;
-  @extend .text-md-right;
-}
-
-
 .home {
   .text-light {
-    text-shadow: 0 1px 3px rgba(#000, .15);
+    text-shadow: 0 1px 1px rgba(#000, .1);
+  }
+
+  .on-top {
+    position: relative;
+    z-index: 10;
+  }
+
+  .nm_btn_align_left {
+    @extend .text-xs-center;
+    @extend .text-md-left;
+  }
+  .nm_btn_align_right {
+    @extend .text-xs-center;
+    @extend .text-md-right;
+  }
+
+  .nm_btn {
+    text-transform: uppercase;
+    // font-size: .975em;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-shadow: none;
+    // text-shadow: 0 1px 1px rgba(#000, .15);
+    transition: all .3s ease;
+
+    .nm_btn_bg {
+      border-radius: 4px;
+      // background-image: linear-gradient(to bottom, rgba(#fff, .1) 0%, rgba(#000, .1) 100%);
+      // box-shadow: 1px 3px 6px rgba(#000, 0.05), 0 2px 4px rgba(#000, 0.05);
+      // box-shadow: 0 6px 10px rgba(#000, 0.1);
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+
+      .nm_btn_bg {
+        opacity: 1;
+        background-image: none;
+        box-shadow: 1px 3px 10px rgba(#000, 0.1), 0 2px 4px rgba(#000, 0.1);
+      }
+    }
   }
 
   #home-gradient {
@@ -103,8 +71,12 @@ $animation-duration: 5s;
       height: 100%;
     }
 
+    @include media-breakpoint-down(md) {
+      height: 40em;
+    }
+
     @include media-breakpoint-down(sm) {
-      height: 58em;
+      height: 60em;
     }
 
     #header-curve,
@@ -113,9 +85,13 @@ $animation-duration: 5s;
       bottom: 0;
       width: 110%;
       height: 110px;
-      // transform: scaleX(-1) translateX(5%);
-      transform: translateX(-5%);
+      transform: scaleX(-1) translateX(5%);
+      // transform: translateX(-5%);
       z-index: 10;
+
+      @include media-breakpoint-down(md) {
+        display: none !important;
+      }
     }
 
     #header-curve-shadow {
@@ -129,29 +105,106 @@ $animation-duration: 5s;
   #home-hero {
     @extend .text-light;
 
-    padding-top: 12em;
-    padding-bottom: 18em;
+    min-height: 52em;
+    padding-top: 8em;
+    padding-bottom: 12em;
+    // overflow: hidden;
+
+    @include media-breakpoint-down(md) {
+      min-height: 40em;
+      padding-top: 2em;
+      padding-bottom: 0;
+    }
+
+    @include media-breakpoint-down(sm) {
+      min-height: 60em;
+      padding-top: 6em;
+      padding-bottom: 2em;
+    }
 
     img {
       position: relative;
-      max-width: 240px;
+      max-width: 300px;
       z-index: 10;
-      opacity: .8;
+      // opacity: .8;
     }
 
-    .hexagon-container {
-      color: $clr-purple;
+    svg.hexagon-dashed {
+      // display: none;
+      position: absolute;
       top: 50%;
       left: 50%;
-      font-size: 600px;
-      // transform: scale(2);
-      opacity: .15;
+      transform: translateX(-50%) translateY(-50%);
+      width: 0;
+      max-width: none;
+      opacity: .4;
+      mix-blend-mode: overlay;
+
+      .path {
+        stroke: #000;
+        stroke-width: 5;
+      }
+
+      .st0 {
+        fill: none;
+        stroke-miterlimit: 10;
+      }
+      .st1 {
+        fill: none;
+        stroke-miterlimit: 10;
+        stroke-dasharray: 12.0319,12.0319;
+      }
+    }
+
+    .hexagon-font-wrapper {
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      text-shadow: none;
+
+      .hexagon-font {
+        display: block;
+        position: absolute;
+        text-align: center;
+        font-size: 0;
+        line-height: 300px;
+      }
+    }
+
+    .ripple-outer {
+      position: absolute;
+      margin: auto;
+      width: 2px;
+      height: 2px;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      opacity: .5;
+      mix-blend-mode: overlay;
+
+      .ripple-inner {
+        border: 4px solid $clr-purple;
+        border-radius: 50%;
+        width: 0;
+        height: 0;
+        position: absolute;
+      }
     }
 
     .nm_btn_bg {
-      background-image: linear-gradient(to bottom, rgba(#fff, .05) 0%, rgba(#000, .05) 100%);
-      box-shadow: 1px 3px 6px rgba(#000, 0.05), 0 2px 4px rgba(#000, 0.05);
+      // box-shadow: 0 2px 6px rgba(#000, .1), 0 1px 4px rgba(#000, .05);
     }
+
+    // .hexagon-container {
+    //   color: $clr-purple;
+    //   top: 50%;
+    //   left: 50%;
+    //   font-size: 600px;
+    //   // transform: scale(2);
+    //   opacity: .15;
+    // }
   }
 
   .haje-kurta {
@@ -159,33 +212,60 @@ $animation-duration: 5s;
     padding-bottom: 4em;
   }
 
+  .haje-kurta,
+  #home-cta {
+    @include media-breakpoint-down(sm) {
+      .nm_column:first-of-type {
+        margin-bottom: 4em;
+      }
+    }
+  }
+
   #home-signature {
+    margin-top: -2em;
     padding-top: 0;
     padding-bottom: 0;
   }
 
   #home-define {
-    padding-top: 4em;
+    padding-top: 0;
     padding-bottom: 0;
+  }
 
-    .nm_column:last-of-type {
-      margin-top: 4em;
+  @include media-breakpoint-down(md) {
+    #home-signature,
+    #home-define {
+      margin-top: 0;
+      padding-top: 4em;
+      padding-bottom: 4em;
+
+      figure {
+        border-radius: 50%;
+        overflow: hidden;
+        border: 2px solid rgba(#00D5F5, .5);
+        // box-shadow: 0 0 20px rgba(#00D5F5, .5);
+      }
+    }
+
+    #home-define figure {
+      border-color: rgba(#0054C9, .7);
     }
   }
+
 
   #home-prelude,
   #home-upright {
     background: $clr-grey-bg;
     overflow: hidden;
     position: relative;
-    padding-top: 8em;
-    padding-bottom: 8em;
-    transform: skewY(-5deg) translateY(-5%);
+    padding-top: 4em;
+    padding-bottom: 4em;
+    // transform: skewY(-5deg) translateY(-5%);
     z-index: 10;
 
-    > .nm-row {
-      transform: skewY(5deg);
-    }
+    // > .nm-row {
+    //   transform: skewY(5deg);
+    // }
 
     figure {
       border-radius: 50%;
@@ -193,57 +273,117 @@ $animation-duration: 5s;
       // max-width: 400px;
     }
 
-    .hexagon-container {
-      top: 55px;
-      left: auto;
-      right: -10px;
-      font-size: 400px;
-    }
+    // .hexagon-container {
+    //   top: 55px;
+    //   left: auto;
+    //   right: -10px;
+    //   font-size: 400px;
+    // }
   }
 
   #home-upright {
     @extend .text-light;
     background: #37385E linear-gradient(to bottom right, rgba(#37385E, 1), rgba(#59375e, 1));
   }
-  #home-prelude .hexagon-container {
-    color: #F0474D;
-  }
-  #home-upright .hexagon-container {
-    color: #B1B942;
-  }
+  // #home-prelude .hexagon-container {
+  //   color: #F0474D;
+  // }
+  // #home-upright .hexagon-container {
+  //   color: #B1B942;
+  // }
 
   #home-cta {
-    margin-top: -10em;
-    padding-top: 20em;
-    padding-bottom: 10em;
-    background: $clr-grey-bg;
-  }
+    padding-top: 6em;
+    padding-bottom: 6em;
 
-  .on-top {
-    position: relative;
-    z-index: 10;
-  }
+    @include media-breakpoint-down(md) {
+      padding-top: 4em;
+      padding-bottom: 4em;
 
-  .nm_btn {
-    text-transform: uppercase;
-    font-size: .95em;
-    letter-spacing: 1px;
-    font-weight: 700;
-    text-shadow: 0 2px 6px rgba(#000, .1);
-  }
-  .nm_btn .nm_btn_bg {
-    border-radius: 5px;
-    // box-shadow: 0 6px 10px rgba(#000, 0.1);
-  }
-
-  .haje-cta {
-    text-align: right;
-    .nm_btn {
-      margin-left: 10px;
+      h2, h3 {
+        text-align: center !important;
+      }
     }
 
-    .btn-buy .nm_btn_bg {
-      background: $clr-highlight;
+    .haje-cta {
+      text-align: right;
+
+      .nm_btn {
+        margin: 5px;
+        display: inline-block;
+
+        @include media-breakpoint-down(md) {
+          display: block;
+        }
+      }
+
+      .btn-buy .nm_btn_bg {
+        background: $clr-highlight;
+      }
     }
   }
 }
+
+
+// .hexagon-container {
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   width: 0;
+//   height: 0;
+//   font-size: 300px;
+//   opacity: .2;
+// }
+//
+// .hexagon {
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   width: 0;
+//   height: 0;
+//   .part {
+//     position: absolute;
+//     width: 10px;
+//     height: $border-width;
+//     animation: part $animation-duration linear infinite;
+//     &::before, &::after {
+//       content: '';
+//       position: absolute;
+//       display: block;
+//       top: 0;
+//       right: 0;
+//       width: 100%;
+//       height: 100%;
+//       background: currentColor;
+//       border-radius: $border-width 0 0 $border-width;
+//       transform-origin: right center;
+//       animation: inner $animation-duration linear infinite;
+//     }
+//     &::before { transform: translateX(-$border-width / 4) rotate(60deg) translateX($border-width / 4); }
+//     &::after { transform: translateX(-$border-width / 4) rotate(-60deg) translateX($border-width / 4); }
+//     @for $i from 1 through 6 {
+//       &:nth-child(#{$i}) {
+//         transform: translate(-50%, -50%) rotate(360deg * $i / 6);
+//       }
+//     }
+//   }
+//   @for $i from 1 through $hexagon-count {
+//     &:nth-child(#{$i}) {
+//       .part, .part::before, .part::after {
+//         animation-delay: -$animation-duration * ($i - 1) / ($hexagon-count - 1);
+//       }
+//     }
+//   }
+//   &:nth-child(2n) {
+//     transform: rotate(30deg);
+//   }
+// }
+//
+// @keyframes part {
+//   from { width: 0; }
+//   to { width: 1em; }
+// }
+// @keyframes inner {
+//   from { width: 50%; }
+//   to { width: 0%; }
+// }
