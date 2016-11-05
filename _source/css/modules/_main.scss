@@ -42,7 +42,15 @@ $haje-assets: '/wp-content/themes/savoy-haje/assets';
 .nm-mfp-fade-in.mfp-bg.mfp-ready,
 .nm-mfp-zoom-in.mfp-bg.mfp-ready {
   background: rgba(#111, .8) !important;
-  opacity: 1 !important;
+  // opacity: 1 !important;
+}
+
+.nm-page-overlay {
+  transition: visibility 0s linear .2s, opacity .2s ease;
+
+  &.show {
+    transition: visibility 0s linear 0s, opacity .2s ease;
+  }
 }
 
 .widget-panel-dark .nm-page-overlay {

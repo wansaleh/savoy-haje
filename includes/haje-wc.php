@@ -163,8 +163,6 @@ add_action( 'woocommerce_after_single_product_tabs', 'hj_product_nav' );
 function hj_product_nav() {
   global $product, $nm_theme_options;
 
-  echo '<div class="hj-product-nav">';
-
   // Product navigation
   $navigate_same_term = ( $nm_theme_options['product_navigation_same_term'] ) ? true : false;
 
@@ -173,7 +171,7 @@ function hj_product_nav() {
     $prev_product   = new WC_Product( $prev_post->ID );
     $prev_price     = $prev_product->get_price_html();
 
-    echo '<a class="prev" href="' . esc_url( get_permalink( $prev_post->ID ) ) . '">';
+    echo '<a class="hj-nav-prev" href="' . esc_url( get_permalink( $prev_post->ID ) ) . '">';
       echo '<i class="nm-font nm-font-angle-thin-right"></i>';
       echo get_the_post_thumbnail( $prev_post->ID, '40x60' );
       echo '<div class="info">';
@@ -188,7 +186,7 @@ function hj_product_nav() {
     $next_product   = new WC_Product( $next_post->ID );
     $next_price     = $next_product->get_price_html();
 
-    echo '<a class="next" href="' . esc_url( get_permalink( $next_post->ID ) ) . '">';
+    echo '<a class="hj-nav-next" href="' . esc_url( get_permalink( $next_post->ID ) ) . '">';
       echo '<i class="nm-font nm-font-angle-thin-left"></i>';
       echo get_the_post_thumbnail( $next_post->ID, '40x60' );
       echo '<div class="info">';
@@ -197,8 +195,6 @@ function hj_product_nav() {
       echo '</div>';
     echo '</a>';
   }
-
-  echo '</div>';
 
   // /* Product navigation */
   // next_post_link( '%link', apply_filters( 'nm_single_product_menu_next_icon', '<i class="nm-font nm-font-media-play flip"></i>' ), $navigate_same_term, array(), 'product_cat' );

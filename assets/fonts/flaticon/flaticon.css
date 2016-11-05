@@ -1,0 +1,131 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 22/06/2016 15:14
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+        font-size: 20px;
+font-style: normal;
+margin-left: 20px;
+}
+
+.flaticon-add-tool:before { content: "\f100"; }
+.flaticon-alarm-clock:before { content: "\f101"; }
+.flaticon-arrow-pointing-to-down:before { content: "\f102"; }
+.flaticon-arrow-pointing-to-left:before { content: "\f103"; }
+.flaticon-arrow-pointing-to-right:before { content: "\f104"; }
+.flaticon-arrow-pointing-to-up:before { content: "\f105"; }
+.flaticon-bar-chart:before { content: "\f106"; }
+.flaticon-battery-charging:before { content: "\f107"; }
+.flaticon-battery-level:before { content: "\f108"; }
+.flaticon-battery-level-1:before { content: "\f109"; }
+.flaticon-battery-level-2:before { content: "\f10a"; }
+.flaticon-benefit-chart:before { content: "\f10b"; }
+.flaticon-bookmark:before { content: "\f10c"; }
+.flaticon-cake-with-candles:before { content: "\f10d"; }
+.flaticon-calendar-with-day-5:before { content: "\f10e"; }
+.flaticon-cancel-button:before { content: "\f10f"; }
+.flaticon-caution-sign:before { content: "\f110"; }
+.flaticon-chain-links:before { content: "\f111"; }
+.flaticon-check-mark:before { content: "\f112"; }
+.flaticon-closed-envelope:before { content: "\f113"; }
+.flaticon-cloud:before { content: "\f114"; }
+.flaticon-cocktail-glass:before { content: "\f115"; }
+.flaticon-compass:before { content: "\f116"; }
+.flaticon-coverage-level:before { content: "\f117"; }
+.flaticon-cropping-tool:before { content: "\f118"; }
+.flaticon-cup-of-hot-coffee:before { content: "\f119"; }
+.flaticon-diamond:before { content: "\f11a"; }
+.flaticon-download-from-the-cloud:before { content: "\f11b"; }
+.flaticon-dustbin:before { content: "\f11c"; }
+.flaticon-dustbin-1:before { content: "\f11d"; }
+.flaticon-edit-tool:before { content: "\f11e"; }
+.flaticon-erlenmeyer-flask:before { content: "\f11f"; }
+.flaticon-eye:before { content: "\f120"; }
+.flaticon-file-folder:before { content: "\f121"; }
+.flaticon-gear:before { content: "\f122"; }
+.flaticon-gift-box-with-a-bow:before { content: "\f123"; }
+.flaticon-graduation-cap:before { content: "\f124"; }
+.flaticon-hand-pointing-to-left:before { content: "\f125"; }
+.flaticon-hand-pointing-to-right:before { content: "\f126"; }
+.flaticon-headphones:before { content: "\f127"; }
+.flaticon-heart:before { content: "\f128"; }
+.flaticon-homepage:before { content: "\f129"; }
+.flaticon-hourglass:before { content: "\f12a"; }
+.flaticon-inbox:before { content: "\f12b"; }
+.flaticon-international-globe:before { content: "\f12c"; }
+.flaticon-key:before { content: "\f12d"; }
+.flaticon-laptop:before { content: "\f12e"; }
+.flaticon-light-bulb:before { content: "\f12f"; }
+.flaticon-location-flag:before { content: "\f130"; }
+.flaticon-location-pointer:before { content: "\f131"; }
+.flaticon-location-pointer-1:before { content: "\f132"; }
+.flaticon-locked-padlock:before { content: "\f133"; }
+.flaticon-magic-wand:before { content: "\f134"; }
+.flaticon-magnifying-glass:before { content: "\f135"; }
+.flaticon-male-avatar:before { content: "\f136"; }
+.flaticon-medal-with-a-star:before { content: "\f137"; }
+.flaticon-mercury-thermometer:before { content: "\f138"; }
+.flaticon-musical-note:before { content: "\f139"; }
+.flaticon-mute-speakers:before { content: "\f13a"; }
+.flaticon-notebook:before { content: "\f13b"; }
+.flaticon-office-briefcase:before { content: "\f13c"; }
+.flaticon-old-phone:before { content: "\f13d"; }
+.flaticon-open-book:before { content: "\f13e"; }
+.flaticon-open-umbrella:before { content: "\f13f"; }
+.flaticon-outbox-send-mail:before { content: "\f140"; }
+.flaticon-paper-cup-with-a-drinking-straw:before { content: "\f141"; }
+.flaticon-paper-note:before { content: "\f142"; }
+.flaticon-photo-camera:before { content: "\f143"; }
+.flaticon-pie-chart:before { content: "\f144"; }
+.flaticon-piece-of-paper-and-pencil:before { content: "\f145"; }
+.flaticon-play-button:before { content: "\f146"; }
+.flaticon-power-button:before { content: "\f147"; }
+.flaticon-pushpin:before { content: "\f148"; }
+.flaticon-question-mark:before { content: "\f149"; }
+.flaticon-reusable-shopping-bag:before { content: "\f14a"; }
+.flaticon-satellite-dish:before { content: "\f14b"; }
+.flaticon-screwdriver-and-wrench:before { content: "\f14c"; }
+.flaticon-selection-tool:before { content: "\f14d"; }
+.flaticon-shopping-basket:before { content: "\f14e"; }
+.flaticon-shopping-cart:before { content: "\f14f"; }
+.flaticon-smartphone:before { content: "\f150"; }
+.flaticon-speech-bubble:before { content: "\f151"; }
+.flaticon-speech-bubble-with-text-lines:before { content: "\f152"; }
+.flaticon-star:before { content: "\f153"; }
+.flaticon-subtracting-button:before { content: "\f154"; }
+.flaticon-tablet:before { content: "\f155"; }
+.flaticon-telephone-handle:before { content: "\f156"; }
+.flaticon-television:before { content: "\f157"; }
+.flaticon-television-with-antenna:before { content: "\f158"; }
+.flaticon-thumb-up:before { content: "\f159"; }
+.flaticon-unlocked-padlock:before { content: "\f15a"; }
+.flaticon-update-arrow:before { content: "\f15b"; }
+.flaticon-update-arrows:before { content: "\f15c"; }
+.flaticon-uploading-files-to-the-cloud:before { content: "\f15d"; }
+.flaticon-video-camera:before { content: "\f15e"; }
+.flaticon-voice-recorder:before { content: "\f15f"; }
+.flaticon-volume-control:before { content: "\f160"; }
+.flaticon-wallet-with-zipper:before { content: "\f161"; }
+.flaticon-weighing-scale:before { content: "\f162"; }
+.flaticon-wrench:before { content: "\f163"; }

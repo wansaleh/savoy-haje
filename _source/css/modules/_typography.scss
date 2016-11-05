@@ -1,5 +1,6 @@
 // @import 'https://fonts.googleapis.com/css?family=Oxygen:300,400,700|Playfair+Display:400,400i,700,900';
-@import 'myriad-set-pro.css';
+// @import 'myriad-set-pro.css';
+@import '../fonts/flaticon/flaticon.css';
 
 @mixin font-awesome {
   content: "";
@@ -101,10 +102,10 @@ h4, h5, h6 {
 .jumbo {
   h1 {
     font-size: scut-rem(30px) + 1.6rem;
-    line-height: 1;
+    // line-height: 1;
     margin-bottom: .2em;
-    margin-left: -4px;
-    margin-right: -4px;
+    margin-left: -2px;
+    margin-right: -2px;
   }
   h2 { font-size: scut-rem(28px) + 1rem; }
   h3 { font-size: scut-rem(24px) + .5rem; }
@@ -133,7 +134,7 @@ h4, h5, h6 {
     }
 
     h3, h4, h5, h6 {
-      opacity: 1;
+      opacity: .5;
       // color: rgba(#fff, .8);
     }
 
@@ -145,6 +146,12 @@ h4, h5, h6 {
 
 .preheader {
   opacity: .5;
+  margin-bottom: -.5em;
+
+  .text-light & {
+    opacity: .8;
+    mix-blend-mode: overlay;
+  }
 }
 
 .heading-margins {

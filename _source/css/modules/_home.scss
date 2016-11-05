@@ -1,3 +1,38 @@
+@mixin gradient-text($gradient, $bg : 'light') {
+  @supports(mix-blend-mode: lighten) {
+    display: inline-block;
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+
+      background: unquote($gradient);
+      pointer-events: none;
+    }
+
+    @if ($bg == 'light') {
+      color: #000;
+      background: #fff;
+      mix-blend-mode: multiply;
+
+      &::before {
+        mix-blend-mode: screen;
+      }
+    } @else {
+      color: #fff;
+      background: #000;
+      mix-blend-mode: lighten;
+
+      &::before {
+        mix-blend-mode: multiply;
+      }
+    }
+  }
+}
+
 $hexagon-count: 7;
 $border-width: 1px;
 $animation-duration: 5s;
@@ -22,30 +57,81 @@ $animation-duration: 5s;
   }
 
   .nm_btn {
+    display: inline-block;
     text-transform: uppercase;
-    // font-size: .975em;
     letter-spacing: 1px;
-    font-weight: 700;
-    text-shadow: none;
-    // text-shadow: 0 1px 1px rgba(#000, .15);
+    font-weight: 600;
+    text-shadow: 0 1px 1px rgba(#000, .2);
+    // overflow: hidden;
     transition: all .3s ease;
+    transform-style: preserve-3d;
 
     .nm_btn_bg {
-      border-radius: 4px;
-      // background-image: linear-gradient(to bottom, rgba(#fff, .1) 0%, rgba(#000, .1) 100%);
-      // box-shadow: 1px 3px 6px rgba(#000, 0.05), 0 2px 4px rgba(#000, 0.05);
-      // box-shadow: 0 6px 10px rgba(#000, 0.1);
+      border: 0;
+      border-radius: 6px 6px 0 6px;
+      box-shadow: 0 2px 15px rgba(#000, .15);
+      overflow: hidden;
+
+      &:after {
+        content: "";
+        position: absolute;
+        right: -1px;
+        bottom: -1px;
+        width: 20px;
+        height: 20px;
+        background: #000;
+        opacity: .2;
+        // mix-blend-mode: overlay;
+        transform-origin: bottom left;
+        transform: skewX(-45deg);
+      }
     }
 
     &:hover {
-      transform: translateY(-2px);
+      transform: translateY(2px);
 
       .nm_btn_bg {
         opacity: 1;
-        background-image: none;
-        box-shadow: 1px 3px 10px rgba(#000, 0.1), 0 2px 4px rgba(#000, 0.1);
+        box-shadow: none;
       }
     }
+  }
+
+  // .wpb_content_element > .wpb_wrapper {
+  //   position: relative;
+  // }
+
+  .curve {
+    position: relative;
+    // max-height: 0;
+    // margin-bottom: -1px;
+    .nm_column {
+      min-height: 0;
+    }
+    .wpb_text_column {
+      position: relative;
+    }
+  }
+
+  .header-curve,
+  .header-curve-shadow {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    transform: scaleX(-1);
+    z-index: 10;
+
+    @include media-breakpoint-down(md) {
+      display: none !important;
+    }
+  }
+  .header-curve-shadow {
+    display: none;
+    filter: blur(15px);
+    mix-blend-mode: overlay;
+    opacity: .8;
   }
 
   #home-gradient {
@@ -54,14 +140,13 @@ $animation-duration: 5s;
     left: 0;
     right: 0;
     width: 100%;
-    height: 52em;
-    background-color: $clr-green;
-    background-image: linear-gradient(
-      to top right,
-      rgba($clr-amber-200, 1) 0%,
-      rgba($clr-pink-200, 1) 30%,
-      rgba($clr-purple-200, 1) 50%,
-      $clr-cyan-500 120%);
+    height: 64em;
+
+    background-image: linear-gradient(to top right, rgba($clr-amber-200, 1) 0%, rgba($clr-pink-200, 1) 30%, rgba($clr-purple-200, 1) 50%, $clr-cyan-500 120%);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
     // transform: skewY(8deg);
     // transform-origin: 100%;
     overflow: hidden;
@@ -71,6 +156,30 @@ $animation-duration: 5s;
       height: 100%;
     }
 
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      mix-blend-mode: overlay;
+      opacity: 0;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-image: url(../images/waves-hero_animated.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      mix-blend-mode: overlay;
+    }
+
     @include media-breakpoint-down(md) {
       height: 40em;
     }
@@ -78,36 +187,47 @@ $animation-duration: 5s;
     @include media-breakpoint-down(sm) {
       height: 60em;
     }
+  }
 
-    #header-curve,
-    #header-curve-shadow {
-      position: absolute;
-      bottom: 0;
-      width: 110%;
-      height: 110px;
-      transform: scaleX(-1) translateX(5%);
-      // transform: translateX(-5%);
-      z-index: 10;
-
-      @include media-breakpoint-down(md) {
-        display: none !important;
-      }
+  #home-div-1 {
+    .header-curve path {
+      fill: #fff;
     }
+    .header-curve,
+    .header-curve-shadow {
+      height: 80px;
+    }
+  }
+  #home-div-2 {
+    display: none;
 
-    #header-curve-shadow {
-      display: block;
-      filter: blur(20px);
-      mix-blend-mode: overlay;
-      opacity: .6;
+    .header-curve path {
+      fill: $clr-grey-bg;
+    }
+    .header-curve,
+    .header-curve-shadow {
+      transform: scaleX(1);
+      height: 80px;
+    }
+  }
+  #home-div-3 {
+    display: none;
+
+    .header-curve path {
+      fill: #fff;
+    }
+    .header-curve,
+    .header-curve-shadow {
+      height: 80px;
     }
   }
 
   #home-hero {
-    @extend .text-light;
+    @extend .text-xs-center, .text-md-right, .text-light;
 
-    min-height: 52em;
-    padding-top: 8em;
-    padding-bottom: 12em;
+    min-height: 64em;
+    padding-top: 14em;
+    padding-bottom: 14em;
     // overflow: hidden;
 
     @include media-breakpoint-down(md) {
@@ -122,14 +242,30 @@ $animation-duration: 5s;
       padding-bottom: 2em;
     }
 
-    img {
-      position: relative;
-      max-width: 300px;
-      z-index: 10;
-      // opacity: .8;
+    $color: #925BD4;
+
+    h1 {
+      color: $color !important;
+
+      .backgroundblendmode & {
+        color: #222 !important;
+        mix-blend-mode: overlay;
+      }
     }
 
-    svg.hexagon-dashed {
+    .nm_btn_bg {
+      background: $color;
+    }
+
+    #haje-logo {
+      position: relative;
+      width: 0;
+      z-index: 10;
+      opacity: 0;
+      // mix-blend-mode: hard-light;
+    }
+
+    svg.hexagon {
       // display: none;
       position: absolute;
       top: 50%;
@@ -137,79 +273,62 @@ $animation-duration: 5s;
       transform: translateX(-50%) translateY(-50%);
       width: 0;
       max-width: none;
-      opacity: .4;
+      opacity: 0;
       mix-blend-mode: overlay;
 
-      .path {
-        stroke: #000;
-        stroke-width: 5;
-      }
-
-      .st0 {
-        fill: none;
-        stroke-miterlimit: 10;
-      }
-      .st1 {
-        fill: none;
-        stroke-miterlimit: 10;
-        stroke-dasharray: 12.0319,12.0319;
-      }
-    }
-
-    .hexagon-font-wrapper {
-      display: none;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translateX(-50%) translateY(-50%);
-      text-shadow: none;
-
-      .hexagon-font {
-        display: block;
-        position: absolute;
-        text-align: center;
-        font-size: 0;
-        line-height: 300px;
-      }
-    }
-
-    .ripple-outer {
-      position: absolute;
-      margin: auto;
-      width: 2px;
-      height: 2px;
-      top: 50%;
-      left: 50%;
-      transform: translateX(-50%) translateY(-50%);
-      opacity: .5;
-      mix-blend-mode: overlay;
-
-      .ripple-inner {
-        border: 4px solid $clr-purple;
-        border-radius: 50%;
-        width: 0;
-        height: 0;
-        position: absolute;
+      polygon {
+        fill: $clr-blue-grey-800;
+        // fill: none;
+        // stroke: $clr-blue-grey-800;
+        // stroke-width: 10;
+        // stroke-miterlimit: 10;
       }
     }
 
     .nm_btn_bg {
       // box-shadow: 0 2px 6px rgba(#000, .1), 0 1px 4px rgba(#000, .05);
     }
-
-    // .hexagon-container {
-    //   color: $clr-purple;
-    //   top: 50%;
-    //   left: 50%;
-    //   font-size: 600px;
-    //   // transform: scale(2);
-    //   opacity: .15;
-    // }
   }
 
   .haje-kurta {
     padding-top: 4em;
     padding-bottom: 4em;
+
+    figure img {
+      mix-blend-mode: darken;
+    }
+
+    [class^="flaticon-"] {
+      display: flex;
+      border-radius: 100%;
+      border: 2px solid $clr-main-font;
+      // background: $clr-highlight;
+      width: 62px;
+      height: 62px;
+      font-size: 28px;
+      // line-height: 3em;
+      align-items: center;
+      justify-content: center;
+
+      // box-shadow: 0 2px 10px rgba(#000, .1);
+
+      position: absolute;
+      top: 20px;
+      left: -60px;
+      z-index: 100;
+
+      &:before, &:after {
+        font-size: inherit;
+        margin-left: 0;
+        color: $clr-main-font;
+        // opacity: .4;
+        // mix-blend-mode: overlay;
+      }
+
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
+    }
   }
 
   .haje-kurta,
@@ -222,79 +341,146 @@ $animation-duration: 5s;
   }
 
   #home-signature {
-    margin-top: -2em;
+    @extend .text-xs-center, .text-md-left;
+
+    // margin-top: -2em;
     padding-top: 0;
-    padding-bottom: 0;
-  }
+    padding-bottom: 4em;
 
-  #home-define {
-    padding-top: 0;
-    padding-bottom: 0;
-  }
+    background: #fff url(../images/waves4.svg) no-repeat center;
+    background-size: cover;
 
-  @include media-breakpoint-down(md) {
-    #home-signature,
-    #home-define {
-      margin-top: 0;
-      padding-top: 4em;
-      padding-bottom: 4em;
+    $color: #d6243b;
 
-      figure {
-        border-radius: 50%;
-        overflow: hidden;
-        border: 2px solid rgba(#00D5F5, .5);
-        // box-shadow: 0 0 20px rgba(#00D5F5, .5);
+    [class^="flaticon-"] {
+      border-color: $color;
+      &:before, &:after {
+        color: $color;
       }
     }
 
-    #home-define figure {
-      border-color: rgba(#0054C9, .7);
+    .preheader {
+      color: $color;
+    }
+    h1 {
+      color: $color;
+    }
+    .nm_btn_bg {
+      background: $color;
+    }
+
+    @include media-breakpoint-up(lg) {
+      .nm_column:last-of-type {
+        margin-top: 3em;
+      }
+    }
+    @include media-breakpoint-up(xl) {
+      .nm_column:last-of-type {
+        margin-top: 5em;
+      }
     }
   }
 
+  #home-prelude {
+    @extend .text-xs-center, .text-md-right;
 
-  #home-prelude,
-  #home-upright {
-    background: $clr-grey-bg;
+    background: $clr-grey-bg url(../images/waves2.svg) no-repeat center;
+    background-size: cover;
+
     overflow: hidden;
     position: relative;
     padding-top: 4em;
     padding-bottom: 4em;
-    // transform: skewY(-5deg) translateY(-5%);
     z-index: 10;
 
-    // > .nm-row {
-    //   transform: skewY(5deg);
-    // }
+    $color: #3b7777;
 
-    figure {
-      border-radius: 50%;
-      overflow: hidden;
-      // max-width: 400px;
+    [class^="flaticon-"] {
+      border-color: $color;
+      left: auto;
+      right: -60px;
+
+      &:before, &:after {
+        color: $color;
+      }
     }
 
-    // .hexagon-container {
-    //   top: 55px;
-    //   left: auto;
-    //   right: -10px;
-    //   font-size: 400px;
-    // }
+    .preheader {
+      color: $color;
+    }
+    h1 {
+      color: $color;
+    }
+    .nm_btn_bg {
+      background: $color;
+    }
+  }
+
+
+  #home-define {
+    @extend .text-xs-center, .text-md-left;
+
+    background: #fff url(../images/waves7.svg) no-repeat center;
+    background-size: cover;
+
+    $color: #6a6c65;
+
+    [class^="flaticon-"] {
+      border-color: $color;
+      &:before, &:after {
+        color: $color;
+      }
+    }
+
+    .preheader {
+      color: $color;
+    }
+    h1 {
+      color: $color;
+    }
+    .nm_btn_bg {
+      background: $color;
+    }
   }
 
   #home-upright {
-    @extend .text-light;
-    background: #37385E linear-gradient(to bottom right, rgba(#37385E, 1), rgba(#59375e, 1));
+    @extend .text-xs-center, .text-md-right;
+
+    background: $clr-grey-bg url(../images/waves6.svg) no-repeat center;
+    background-size: cover;
+
+    overflow: hidden;
+    position: relative;
+    padding-top: 4em;
+    padding-bottom: 4em;
+    z-index: 10;
+
+    $color: #755b8f;
+
+    [class^="flaticon-"] {
+      border-color: $color;
+      left: auto;
+      right: -60px;
+
+      &:before, &:after {
+        color: $color;
+      }
+    }
+
+    .preheader {
+      color: $color;
+    }
+    h1 {
+      color: $color;
+    }
+    .nm_btn_bg {
+      background: $color;
+    }
   }
-  // #home-prelude .hexagon-container {
-  //   color: #F0474D;
-  // }
-  // #home-upright .hexagon-container {
-  //   color: #B1B942;
-  // }
 
   #home-cta {
-    padding-top: 6em;
-    padding-bottom: 6em;
+    padding-top: 10em;
+    padding-bottom: 10em;
 
     @include media-breakpoint-down(md) {
       padding-top: 4em;
@@ -323,67 +509,3 @@ $animation-duration: 5s;
     }
   }
 }
-
-
-// .hexagon-container {
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   width: 0;
-//   height: 0;
-//   font-size: 300px;
-//   opacity: .2;
-// }
-//
-// .hexagon {
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   width: 0;
-//   height: 0;
-//   .part {
-//     position: absolute;
-//     width: 10px;
-//     height: $border-width;
-//     animation: part $animation-duration linear infinite;
-//     &::before, &::after {
-//       content: '';
-//       position: absolute;
-//       display: block;
-//       top: 0;
-//       right: 0;
-//       width: 100%;
-//       height: 100%;
-//       background: currentColor;
-//       border-radius: $border-width 0 0 $border-width;
-//       transform-origin: right center;
-//       animation: inner $animation-duration linear infinite;
-//     }
-//     &::before { transform: translateX(-$border-width / 4) rotate(60deg) translateX($border-width / 4); }
-//     &::after { transform: translateX(-$border-width / 4) rotate(-60deg) translateX($border-width / 4); }
-//     @for $i from 1 through 6 {
-//       &:nth-child(#{$i}) {
-//         transform: translate(-50%, -50%) rotate(360deg * $i / 6);
-//       }
-//     }
-//   }
-//   @for $i from 1 through $hexagon-count {
-//     &:nth-child(#{$i}) {
-//       .part, .part::before, .part::after {
-//         animation-delay: -$animation-duration * ($i - 1) / ($hexagon-count - 1);
-//       }
-//     }
-//   }
-//   &:nth-child(2n) {
-//     transform: rotate(30deg);
-//   }
-// }
-//
-// @keyframes part {
-//   from { width: 0; }
-//   to { width: 1em; }
-// }
-// @keyframes inner {
-//   from { width: 50%; }
-//   to { width: 0%; }
-// }

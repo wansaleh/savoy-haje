@@ -43,7 +43,9 @@ function hj_scripts() {
 
   // wp_enqueue_style( 'haje-main', hj_uri() . '/assets/css/haje.css', array( 'nm-core' ), HJ_VERSION );
 
-  wp_enqueue_script( 'haje-vendor', hj_uri() . '/assets/js/vendor.js', array( 'jquery' ), HJ_VERSION );
+  wp_enqueue_script( 'haje-modernizr', hj_uri() . '/assets/js/modernizr.js', array(), HJ_VERSION );
+
+  wp_enqueue_script( 'haje-vendor', hj_uri() . '/assets/js/vendor.js', array( 'jquery' ), HJ_VERSION, true );
 
   wp_enqueue_script( 'nm-core', hj_uri() . '/assets/js/haje-nm-core.js', array( 'jquery' ), NM_THEME_VERSION, true );
 
@@ -160,36 +162,6 @@ function hj_admin_styles() {
       clear: both;
     }
   </style>';
-}
-
-
-add_shortcode( 'hi', 'hj_hi_shortcode' );
-function hj_hi_shortcode( $atts, $content = null ) {
-  return '<span class="accent">' . $content . '</span>';
-}
-
-add_shortcode( 'haje_address', 'hj_address' );
-function hj_address( $atts ) {
-  $a = shortcode_atts( array(
-    'phone_email' => false
-  ), $atts );
-
-  $phone_email = "";
-  if ($a['phone_email'])
-    $phone_email = "<p><i class='fa fa-paper-plane'></i> <a href='/contact'>hello@haje.my</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;<i class='fa fa-phone'></i> +603 7733 1297</p>";
-
-  return "
-  <address>
-    <p><b>Mikraj Concept Sdn. Bhd.</b><br>Company Reg. No. 1110211-K</p>
-  </address>
-  ";
-
-  // return "
-  // <address>
-  //   <p><b>Haje, Mikraj Concept</b><br>F-LG-07, Neo Damansara<br>Jalan PJU 8/1, Damansara Perdana<br>47820 Petaling Jaya, Selangor, Malaysia</p>
-  //   $phone_email
-  // </address>
-  // ";
 }
 
 add_filter( 'widget_title', 'hj_html_widget_title' );

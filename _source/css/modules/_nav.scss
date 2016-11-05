@@ -7,7 +7,7 @@
 // }
 
 .nm-header .nm-header-logo {
-  z-index: 10000;
+  z-index: 1000;
 }
 
 .home .nm-header,
@@ -30,7 +30,7 @@
 }
 
 .header-mobile-alt .nm-header.centered .nm-header-logo {
-  @include media-breakpoint-down(sm) {
+  @media (max-width: 400px) {
     left: $gutter * 2;
   }
 }
@@ -55,10 +55,10 @@
   }
 }
 
-.nm-menu > li > a,
-.ubermenu-skin-none .ubermenu-item-level-0 > .ubermenu-target {
-  font-weight: 600;
-}
+// .nm-menu > li > a,
+// .ubermenu-skin-none .ubermenu-item-level-0 > .ubermenu-target {
+//   font-weight: 600;
+// }
 
 .header-light:not(.header-on-scroll) .nm-header {
   .nm-menu > li > a,

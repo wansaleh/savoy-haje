@@ -947,6 +947,15 @@
 		"oS": 0,
 		"sC": 0
 		},
+	"\/_source\/js\/modernizr.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/assets\/js\/modernizr.js",
+		"oF": 2,
+		"sC": 0,
+		"tS": 0
+		},
 	"\/_source\/js\/vendor.js": {
 		"ft": 64,
 		"mi": 1,
@@ -1197,6 +1206,44 @@
 		"oAP": "\/assets\/fonts\/.sass-cache\/d60cecdca9661097dd49ab9ebae5e557d004ef50\/myriad-set-pro.scssc",
 		"oF": 0
 		},
+	"\/assets\/fonts\/flaticon\/flaticon.css": {
+		"aP": 0,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/flaticon\/flaticon-ck.css",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/assets\/fonts\/flaticon\/Flaticon.eot": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/flaticon\/Flaticon.eot",
+		"oF": 0
+		},
+	"\/assets\/fonts\/flaticon\/Flaticon.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/flaticon\/Flaticon.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/assets\/fonts\/flaticon\/Flaticon.ttf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/flaticon\/Flaticon.ttf",
+		"oF": 0
+		},
+	"\/assets\/fonts\/flaticon\/Flaticon.woff": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/flaticon\/Flaticon.woff",
+		"oF": 0
+		},
 	"\/assets\/fonts\/msp\/myriad-set-pro_bold.ttf": {
 		"ft": 8192,
 		"oA": 2,
@@ -1435,6 +1482,86 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"\/assets\/images\/waves-hero_animated.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/images\/waves-hero_animated.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/assets\/images\/waves.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/images\/waves.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/assets\/images\/waves2.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/images\/waves2.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/assets\/images\/waves3.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/images\/waves3.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/assets\/images\/waves4.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/images\/waves4.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/assets\/images\/waves5.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/images\/waves5.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/assets\/images\/waves6.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/images\/waves6.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/assets\/images\/waves7.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/images\/waves7.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/assets\/js\/haje-ck-source-map-reference.coffee": {
 		"ft": 32,
 		"ma": 0,
@@ -1519,6 +1646,15 @@
 		"oA": 1,
 		"oAP": "\/assets\/js\/login.js.map",
 		"oF": 0
+		},
+	"\/assets\/js\/modernizr.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/assets\/js\/min\/modernizr-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
 		},
 	"\/assets\/js\/vendor.js": {
 		"ft": 64,
@@ -8981,6 +9117,156 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/bower_components\/trianglify\/.bower.json": {
+		"ft": 524288,
+		"oA": 2,
+		"oAP": "\/bower_components\/trianglify\/.bower.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/bower_components\/trianglify\/bower.json": {
+		"ft": 524288,
+		"oA": 2,
+		"oAP": "\/bower_components\/trianglify\/bower.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/bower_components\/trianglify\/CONTRIBUTING.md": {
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"eLB": 0,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"oA": 2,
+		"oAP": "\/bower_components\/trianglify\/CONTRIBUTING.md",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
+		},
+	"\/bower_components\/trianglify\/dist\/trianglify.min.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/bower_components\/trianglify\/dist\/trianglify.min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/bower_components\/trianglify\/examples\/basic-web-example.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/bower_components\/trianglify\/examples\/basic-web-example.html",
+		"oF": 0
+		},
+	"\/bower_components\/trianglify\/examples\/cutom-points-example.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/bower_components\/trianglify\/examples\/cutom-points-example.html",
+		"oF": 0
+		},
+	"\/bower_components\/trianglify\/examples\/save-as-png.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 2,
+		"oAP": "\/bower_components\/trianglify\/examples\/save-as-png.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/bower_components\/trianglify\/gulpfile.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 2,
+		"oAP": "\/bower_components\/trianglify\/gulpfile.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/bower_components\/trianglify\/lib\/colorbrewer.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 2,
+		"oAP": "\/bower_components\/trianglify\/lib\/colorbrewer.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/bower_components\/trianglify\/lib\/pattern.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 2,
+		"oAP": "\/bower_components\/trianglify\/lib\/pattern.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/bower_components\/trianglify\/lib\/points.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 2,
+		"oAP": "\/bower_components\/trianglify\/lib\/points.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/bower_components\/trianglify\/lib\/trianglify.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 2,
+		"oAP": "\/bower_components\/trianglify\/lib\/trianglify.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/bower_components\/trianglify\/LICENSE": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/bower_components\/trianglify\/LICENSE",
+		"oF": 0
+		},
+	"\/bower_components\/trianglify\/package.json": {
+		"ft": 524288,
+		"oA": 2,
+		"oAP": "\/bower_components\/trianglify\/package.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/bower_components\/trianglify\/Readme.md": {
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"eLB": 0,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"oA": 2,
+		"oAP": "\/bower_components\/trianglify\/Readme.md",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
+		},
+	"\/bower_components\/trianglify\/scripts\/postinstall.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 2,
+		"oAP": "\/bower_components\/trianglify\/scripts\/postinstall.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/bower_components\/velocity\/.bower.json": {
 		"ft": 524288,
 		"oA": 2,
@@ -9127,12 +9413,6 @@
 		"sC": 1,
 		"tS": 0
 		},
-	"\/build\/.gitignore": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/build\/.gitignore",
-		"oF": 0
-		},
 	"\/element-templates\/vc_column.php": {
 		"ft": 8192,
 		"oA": 2,
@@ -9181,6 +9461,12 @@
 		"oAP": "\/element-templates\/vc_toggle.php",
 		"oF": 0
 		},
+	"\/follow-up-emails\/checkout\/email-subscribe.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/follow-up-emails\/checkout\/email-subscribe.php",
+		"oF": 0
+		},
 	"\/footer-widgets.php": {
 		"ft": 8192,
 		"oA": 0,
@@ -9215,6 +9501,12 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/includes\/color-names.php",
+		"oF": 0
+		},
+	"\/includes\/haje-shortcodes.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/includes\/haje-shortcodes.php",
 		"oF": 0
 		},
 	"\/includes\/haje-wc.php": {

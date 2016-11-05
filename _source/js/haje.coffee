@@ -1,6 +1,6 @@
 "use strict"
 
-$ = jQuery
+$ = jQuery.noConflict()
 ls = $.localStorage
 
 $.fn.bgOverlay = (css = {}) ->

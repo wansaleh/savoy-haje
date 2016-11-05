@@ -2,7 +2,7 @@
 
 require('includes/haje.php');
 require('includes/haje-wc.php');
-
+require('includes/haje-shortcodes.php');
 
 
 add_action( 'vc_after_init', 'add_row_type' ); /* Note: here we are using vc_after_init because WPBMap::GetParam and mutateParame are available only when default content elements are "mapped" into the system */
