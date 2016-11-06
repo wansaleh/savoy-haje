@@ -88,12 +88,12 @@ $animation-duration: 5s;
     }
 
     &:hover {
-      transform: translateY(2px);
-
-      .nm_btn_bg {
-        opacity: 1;
-        box-shadow: none;
-      }
+      // transform: translateY(2px);
+      //
+      // .nm_btn_bg {
+      //   opacity: 1;
+      //   box-shadow: none;
+      // }
     }
   }
 
@@ -298,31 +298,30 @@ $animation-duration: 5s;
       mix-blend-mode: darken;
     }
 
+    h1 {
+      position: relative;
+    }
+
     [class^="flaticon-"] {
       display: flex;
       border-radius: 100%;
       border: 2px solid $clr-main-font;
-      // background: $clr-highlight;
-      width: 62px;
-      height: 62px;
-      font-size: 28px;
-      // line-height: 3em;
+      width: 56px;
+      height: 56px;
+      font-size: 24px;
       align-items: center;
       justify-content: center;
 
-      // box-shadow: 0 2px 10px rgba(#000, .1);
-
       position: absolute;
-      top: 20px;
-      left: -60px;
+      top: 50%;
+      left: -70px;
+      transform: translateY(-50%);
       z-index: 100;
 
       &:before, &:after {
         font-size: inherit;
         margin-left: 0;
         color: $clr-main-font;
-        // opacity: .4;
-        // mix-blend-mode: overlay;
       }
 
       @include media-breakpoint-down(sm) {
@@ -398,7 +397,7 @@ $animation-duration: 5s;
     [class^="flaticon-"] {
       border-color: $color;
       left: auto;
-      right: -60px;
+      right: -70px;
 
       &:before, &:after {
         color: $color;
@@ -460,7 +459,7 @@ $animation-duration: 5s;
     [class^="flaticon-"] {
       border-color: $color;
       left: auto;
-      right: -60px;
+      right: -70px;
 
       &:before, &:after {
         color: $color;
@@ -505,6 +504,17 @@ $animation-duration: 5s;
 
       .btn-buy .nm_btn_bg {
         background: $clr-highlight;
+          &:after {
+            background: $clr-cyan-400;
+            opacity: 1;
+          }
+      }
+
+      .btn-edar .nm_btn_bg {
+        &:after {
+          background: $clr-amber-700;
+          opacity: 1;
+        }
       }
     }
   }

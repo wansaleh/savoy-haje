@@ -7,7 +7,7 @@
 		"uuidString": "59ED6E37-D09D-408F-AC7B-C9248AC6CAF8"
 		}
 	],
-"creatorBuild": "25428",
+"creatorBuild": "25444",
 "files": {
 	"\/.bowerrc": {
 		"ft": 8192,
@@ -1477,6 +1477,26 @@
 		"miP": 0,
 		"oA": 2,
 		"oAP": "\/assets\/images\/user.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/assets\/images\/waves-hero-2.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/images\/waves-hero-2.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/assets\/images\/waves-hero.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/images\/waves-hero.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
