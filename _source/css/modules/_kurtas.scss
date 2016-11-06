@@ -1,0 +1,68 @@
+.product-kurta-signature {
+  $color: #d6243b;
+
+  #tab-description {
+    .row1 {
+      @extend .text-xs-center, .text-md-left, .text-light, .jumbo;
+      padding-top: 8em;
+      padding-bottom: 8em;
+
+      background: #303A52 url(../images/waves5-signature.svg) no-repeat 50% 80%;
+      background-size: cover;
+
+      // background-image:
+      //   url(../images/waves5-signature.svg),
+      //   linear-gradient(to bottom right, $color, #1a1e55);
+      //
+      // background-repeat: no-repeat;
+      // background-position: 50% 80%, center;
+      // background-size: cover, cover;
+
+      .preheader {
+        opacity: 1;
+      }
+      h1 {
+        margin-bottom: 1em;
+      }
+    }
+
+    .row2,
+    .row3 {
+      @extend .text-xs-left;
+      padding-top: 4em;
+      padding-bottom: 4em;
+
+      svg {
+        position: absolute;
+        top: -14px;
+        left: 0;
+        // transform: translateY(-50%);
+        width: 70px;
+      }
+
+      h1, p {
+        padding-left: 70px;
+      }
+
+      h1 {
+        margin-bottom: .5em;
+      }
+    }
+
+    .row2 {
+      background: #574B90;
+      color: #fff;
+      h1 {
+        color: #96E4E1;
+      }
+    }
+
+    .row3 {
+      background: #9E579D;
+      color: #fff;
+      h1 {
+        color: #F5CA6A;
+      }
+    }
+  }
+}

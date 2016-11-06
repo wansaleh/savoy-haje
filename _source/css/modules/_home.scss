@@ -169,7 +169,7 @@ $animation-duration: 5s;
       content: "";
       position: absolute;
       z-index: 0;
-      width: 100%;
+      width: 110%;
       height: 100%;
       top: 0;
       left: 0;
@@ -308,7 +308,7 @@ $animation-duration: 5s;
       border: 2px solid $clr-main-font;
       width: 56px;
       height: 56px;
-      font-size: 24px;
+      font-size: 28px;
       align-items: center;
       justify-content: center;
 
@@ -343,18 +343,19 @@ $animation-duration: 5s;
     @extend .text-xs-center, .text-md-left;
 
     // margin-top: -2em;
-    padding-top: 0;
+    padding-top: 4em;
     padding-bottom: 4em;
 
-    background: #fff url(../images/waves4.svg) no-repeat center;
+    background: #fff url(../images/waves4.svg) no-repeat right;
     background-size: cover;
 
     $color: #d6243b;
 
     [class^="flaticon-"] {
       border-color: $color;
+      background: $color;
       &:before, &:after {
-        color: $color;
+        color: #fff;
       }
     }
 
@@ -368,15 +369,8 @@ $animation-duration: 5s;
       background: $color;
     }
 
-    @include media-breakpoint-up(lg) {
-      .nm_column:last-of-type {
-        margin-top: 3em;
-      }
-    }
-    @include media-breakpoint-up(xl) {
-      .nm_column:last-of-type {
-        margin-top: 5em;
-      }
+    @include media-breakpoint-down(sm) {
+      background-position: 90% 100%;
     }
   }
 
@@ -396,11 +390,12 @@ $animation-duration: 5s;
 
     [class^="flaticon-"] {
       border-color: $color;
+      background: $color;
       left: auto;
       right: -70px;
 
       &:before, &:after {
-        color: $color;
+        color: #fff;
       }
     }
 
@@ -413,8 +408,11 @@ $animation-duration: 5s;
     .nm_btn_bg {
       background: $color;
     }
-  }
 
+    @include media-breakpoint-down(sm) {
+      background-position: 15% 100%;
+    }
+  }
 
   #home-define {
     @extend .text-xs-center, .text-md-left;
@@ -426,8 +424,9 @@ $animation-duration: 5s;
 
     [class^="flaticon-"] {
       border-color: $color;
+      background: $color;
       &:before, &:after {
-        color: $color;
+        color: #fff;
       }
     }
 
@@ -439,6 +438,10 @@ $animation-duration: 5s;
     }
     .nm_btn_bg {
       background: $color;
+    }
+
+    @include media-breakpoint-down(sm) {
+      background-image: none;
     }
   }
 
@@ -458,11 +461,12 @@ $animation-duration: 5s;
 
     [class^="flaticon-"] {
       border-color: $color;
+      background: $color;
       left: auto;
       right: -70px;
 
       &:before, &:after {
-        color: $color;
+        color: #fff;
       }
     }
 
@@ -474,6 +478,11 @@ $animation-duration: 5s;
     }
     .nm_btn_bg {
       background: $color;
+    }
+
+    @include media-breakpoint-down(sm) {
+      background: $clr-grey-bg url(../images/waves5.svg) no-repeat left 125%;
+      background-size: 250%;
     }
   }
 

@@ -183,6 +183,17 @@
 
 // SINGLE PRODUCT
 
+.nm-single-product-top {
+  display: none;
+}
+.nm-single-product-showcase {
+  padding: 4em 0;
+}
+.nm-product-summary-col {
+  display: flex;
+  align-items: center;
+}
+
 .nm-single-product-showcase,
 #nm-quickview {
   .images .product-flash {

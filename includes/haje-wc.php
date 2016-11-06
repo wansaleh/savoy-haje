@@ -17,7 +17,7 @@ add_action( 'woocommerce_single_product_summary', 'woocommerce_show_product_sale
 //
 // }
 
-add_action( 'woocommerce_single_product_summary', 'hj_show_brand', 13 );
+// add_action( 'woocommerce_single_product_summary', 'hj_show_brand', 13 );
 function hj_show_brand() {
   echo '<div class="brand-image-wrap">';
   echo do_shortcode('[product_brand class=""]');

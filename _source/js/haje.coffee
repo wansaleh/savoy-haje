@@ -20,21 +20,6 @@ findKey = (obj, keyToFind) ->
 class window.Haje
   constructor: ->
     do ->
-      $('a[href*="#"]:not([href="#"])').click ->
-        if location.pathname.replace(/^\//, '') == @pathname.replace(/^\//, '') and location.hostname == @hostname
-          target = $(@hash)
-          target = if target.length then target else $('[name=' + @hash.slice(1) + ']')
-          console.log target
-          if target.length
-            TweenMax.to window, .3,
-              scrollTo:
-                y: target
-                offsetY: 0
-              ease: Power2.easeInOut
-            return false
-        return
-
-    do ->
       heading = $('.upsells h2, .related h2, .woocommerce-cart .woocommerce>form>h3, .cart-collaterals>h2, #customer_details h3, #order_review_heading, #nm-wishlist h1, .woocommerce-edit-address .woocommerce-MyAccount-content h2')
       heading.length && heading.each ->
         heading_html = $(this).html().trim()
@@ -97,8 +82,8 @@ class Haje.Alert
     $('body').append(@overlay.append(@alert))
 
   showAlert: (content = 'Test') ->
-    @alertContent.html(content)
     @overlay.addClass('show')
+    @alertContent.html(content)
 
 # HS.beacon.config
 #   color: '#2979FF'
@@ -110,5 +95,5 @@ $ ->
   new Haje.Forms
   new Haje.Alert
 
-# @codekit-append "haje-home";
-# @codekit-append "haje-wc";
+# @codekit-append "_haje-home";
+# @codekit-append "_haje-wc";
