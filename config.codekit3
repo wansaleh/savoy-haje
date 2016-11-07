@@ -1346,6 +1346,26 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"\/_source\/images\/waves4-grey.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/images\/waves4-grey.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/_source\/images\/waves4-signature.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/images\/waves4-signature.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/_source\/images\/waves4.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -1353,6 +1373,16 @@
 		"oAP": "\/assets\/images\/waves4.svg",
 		"oF": 1,
 		"opt": 1,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/_source\/images\/waves5-prelude.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/images\/waves5-prelude.svg",
+		"oF": 0,
+		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
@@ -9583,7 +9613,7 @@
 	"displayValue": "savoy-haje",
 	"displayValueWasSetByUser": 1,
 	"iconImageName": "meme-yesBaby",
-	"lastBuiltDate": 500144858
+	"lastBuiltDate": 500201695
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,

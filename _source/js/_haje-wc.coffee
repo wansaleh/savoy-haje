@@ -119,12 +119,12 @@ class Haje.WC.VariationSwatches
           b_color = tinycolor(_this.colorFromName(b_value))
           # b_color = tinycolor($(b).data('hex'))
 
-          b_color.getBrightness() - a_color.getBrightness()
-          # hue_diff = a_color.toHsl().h - b_color.toHsl().h
-          # if hue_diff != 0
-          #   -hue_diff
-          # else
-          #   b_color.getBrightness() - a_color.getBrightness()
+          # b_color.getBrightness() - a_color.getBrightness()
+          hue_diff = a_color.toHsl().h - b_color.toHsl().h
+          if hue_diff != 0
+            -hue_diff
+          else
+            b_color.getBrightness() - a_color.getBrightness()
 
         select.data('buttons').detach().appendTo(select.data('group'))
 

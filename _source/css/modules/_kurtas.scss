@@ -1,67 +1,90 @@
-.product-kurta-signature {
-  $color: #d6243b;
+#tab-description {
+  .row1 {
+    @extend .text-xs-center, .text-md-left, .text-light, .jumbo;
+    padding-top: 8em;
+    padding-bottom: 8em;
 
+    .preheader {
+      opacity: 1;
+    }
+    h1 {
+      margin-bottom: 1em;
+    }
+  }
+
+  .row2,
+  .row3 {
+    @extend .text-xs-left;
+    padding-top: 6em;
+    padding-bottom: 6em;
+
+    svg {
+      position: absolute;
+      top: -14px;
+      left: 0;
+      // transform: translateY(-50%);
+      width: 70px;
+    }
+
+    h1, p {
+      padding-left: 70px;
+    }
+
+    h1 {
+      margin-bottom: .5em;
+    }
+  }
+
+  .row2 {
+    background: #e2eded;
+    h1 {
+      color: #0c9c9c;
+    }
+    p {
+      color: #5dbaba;
+    }
+  }
+
+  .row3 {
+    background: #2EB872;
+    color: #fff;
+    h1 {
+      color: #fff;
+    }
+  }
+}
+
+.product-kurta-signature {
   #tab-description {
     .row1 {
-      @extend .text-xs-center, .text-md-left, .text-light, .jumbo;
-      padding-top: 8em;
-      padding-bottom: 8em;
-
-      background: #303A52 url(../images/waves5-signature.svg) no-repeat 50% 80%;
+      // background: #ba3349 url(../images/waves5-signature.svg) no-repeat 50% 80%;
+      background-color: #ba3349;
+      background-image:
+        url(../images/waves5-signature.svg),
+        linear-gradient(to top right, transparent, #420942 150%);
+      background-position: 50% 80%, center;
       background-size: cover;
 
-      // background-image:
-      //   url(../images/waves5-signature.svg),
-      //   linear-gradient(to bottom right, $color, #1a1e55);
-      //
-      // background-repeat: no-repeat;
-      // background-position: 50% 80%, center;
-      // background-size: cover, cover;
-
-      .preheader {
-        opacity: 1;
-      }
-      h1 {
-        margin-bottom: 1em;
+      .preheader, h1 {
+        color: #f9f5be;
       }
     }
+  }
+}
 
-    .row2,
-    .row3 {
-      @extend .text-xs-left;
-      padding-top: 4em;
-      padding-bottom: 4em;
+.product-kurta-prelude {
+  #tab-description {
+    .row1 {
+      // background: #083836 url(../images/waves5-prelude.svg) no-repeat 50% 80%;
+      background-color: #083836;
+      background-image:
+        url(../images/waves5-prelude.svg),
+        linear-gradient(to top right, transparent, #37114f 150%);
+      background-position: 50% 80%, center;
+      background-size: cover;
 
-      svg {
-        position: absolute;
-        top: -14px;
-        left: 0;
-        // transform: translateY(-50%);
-        width: 70px;
-      }
-
-      h1, p {
-        padding-left: 70px;
-      }
-
-      h1 {
-        margin-bottom: .5em;
-      }
-    }
-
-    .row2 {
-      background: #574B90;
-      color: #fff;
-      h1 {
-        color: #96E4E1;
-      }
-    }
-
-    .row3 {
-      background: #9E579D;
-      color: #fff;
-      h1 {
-        color: #F5CA6A;
+      .preheader, h1 {
+        color: #81F4E1;
       }
     }
   }

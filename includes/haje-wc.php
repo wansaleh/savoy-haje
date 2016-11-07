@@ -2,6 +2,21 @@
 
 require('color-names.php');
 
+add_action( 'woocommerce_single_product_summary', 'hj_product_title_initials', 4 );
+function hj_product_title_initials() {
+  global $product;
+
+  $words = preg_split("/\s+/", trim($product->get_title()));
+  $i = 0;
+  $acronym = '';
+  foreach ($words as $w) {
+    if ( $i++ < 2 )
+      $acronym .= $w[0];
+  }
+
+  echo '<div class="initials">' . $acronym . '</div>';
+}
+
 // add_action( 'woocommerce_after_customer_login_form', 'hj_social_login' );
 add_action( 'woocommerce_login_form_end', 'hj_social_login' );
 function hj_social_login() {
