@@ -41,5 +41,11 @@ if ((time () - (60 * 60 * 24 * $newness)) < $postdatestamp) {
 	echo '<span class="isnew">New</span>';
 }
 
+// HAJE EDAR
+
+if ( has_term( 'edar', 'product_cat' ) ) {
+	echo '<span class="haje-edar">Edar</span>';
+}
+
 ?>
 </div>

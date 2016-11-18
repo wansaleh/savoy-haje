@@ -21,7 +21,7 @@ class Haje.Home
             return false
         return
 
-    TweenMax.to($('#haje-logo')[0], 1, {
+    TweenMax.to('#haje-logo', 1, {
       delay: 2
       width: 300
       autoAlpha: 1
@@ -45,25 +45,25 @@ class Haje.Home
 
     colors = Trianglify.colorbrewer.YlGnBu.reverse()
 
-    makePatternHero = (fadeIn = false) ->
-      $gradient.find('canvas').remove()
-      pattern = Trianglify(
-        width: $gradient.outerWidth()
-        height: $gradient.outerHeight()
-        x_colors: colors
-      )
-      canvas = pattern.canvas()
-      $gradient.append(canvas)
-
-      if fadeIn
-        TweenMax.to(canvas, 3, { delay: 0, autoAlpha: .9, ease: Power2.easeInOut })
-      else
-        TweenMax.set(canvas, { autoAlpha: .9 })
-
-    makePatternHero(true)
-
-    $(window).resize $.debounce((->
-      makePatternHero()
-    ), 10)
+    # makePatternHero = (fadeIn = false) ->
+    #   $gradient.find('canvas').remove()
+    #   pattern = Trianglify(
+    #     width: $gradient.outerWidth()
+    #     height: $gradient.outerHeight()
+    #     x_colors: colors
+    #   )
+    #   canvas = pattern.canvas()
+    #   $gradient.append(canvas)
+    #
+    #   if fadeIn
+    #     TweenMax.to(canvas, 3, { delay: 0, autoAlpha: .9, ease: Power2.easeInOut })
+    #   else
+    #     TweenMax.set(canvas, { autoAlpha: .9 })
+    #
+    # makePatternHero(true)
+    #
+    # $(window).resize $.debounce((->
+    #   makePatternHero()
+    # ), 10)
 $ ->
   new Haje.Home

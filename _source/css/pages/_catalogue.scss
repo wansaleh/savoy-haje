@@ -1,0 +1,12 @@
+.hj-catalogue {
+  .nm-page-wrap-inner {
+    background: linear-gradient(to bottom right, #42275a, #734b6d);
+
+    #cat-hero {
+      @extend .jumbo, .text-light, .text-xs-center;
+      padding-top: 10em;
+      padding-bottom: 10em;
+      margin-bottom: 1em;
+    }
+  }
+}

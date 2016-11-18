@@ -35,14 +35,44 @@
 }
 
 .variations_form .variations tr .nm-variation-row {
+  padding-top: 10px;
+  padding-bottom: 10px;
+
   .label {
     width: 100%;
-    padding-right: 34px;
+    // padding-right: 34px;
     cursor: pointer;
+
+    padding-left: 0;
+    padding-right: 23px;
+
+
+    position: relative;
+    z-index: 0;
+
+    .big-number {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: .5;
+      border: 2px solid #aaa;
+      color: #aaa;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      font-size: 20px;
+      line-height: 36px;
+      font-weight: 600;
+
+      top: 4px;
+      left: -44px;
+    }
 
     &:before {
       top: 0;
-      right: 13px;
+      // right: 13px;
+      right: 0;
       // z-index: 50;
       display: block;
       font-family: 'nm-font';
@@ -65,7 +95,7 @@
 
       &:before {
         content: "Choose from ";
-        font-weight: 300;
+        font-weight: 400;
       }
     }
 
@@ -77,7 +107,7 @@
       top: 0;
       right: 0;
       // opacity: 0;
-      transition: all .3s ease;
+      transition: all .15s ease;
 
       &.active {
         opacity: 1;
@@ -138,7 +168,8 @@
     align-content: center;
 
     width: 100%;
-    padding: 12px;
+    // padding: 12px;
+    padding: 12px 0;
 
     .swatch {
       position: relative;
@@ -162,35 +193,62 @@
         border: 2px solid #000 !important;
       }
     }
+  }
 
-    &[data-attribute_name="color"],
-    &[data-attribute_name="pa_color"] {
-      .swatch {
-        font-size: 0;
-        border-color: rgba(#000, .3);
-        box-shadow: inset 0 0 10px rgba(#000, .2);
+  &[data-attribute_name="color"],
+  &[data-attribute_name="pa_color"] {
+    .label-display {
+      font-size: .85em;
+      font-weight: 400;
+      border-radius: 1em;
+      padding: 4px 10px;
+      line-height: 1;
 
+      &.dark {
+        color: #fff;
+      }
+    }
+
+    .swatch {
+      font-size: 0;
+      border-color: rgba(#000, .3);
+      // border-width: 5px;
+      // box-shadow: inset 0 0 10px rgba(#000, .2);
+      // overflow: visible;
+
+      .alt-color {
+        display: none;
+
+        position: absolute;
+        width: 120%;
+        height: 70%;
+        top: 50%;
+        left: 0;
+        transform-origin: top;
+        // border-radius: 50%;
+        transform: translate(2px, 2px) rotate(-45deg);
+      }
+
+      // &:before {
+      //   content: "";
+      //   position: absolute;
+      //   top: -90%;
+      //   left: -60%;
+      //   width: 150%;
+      //   height: 150%;
+      //   background-color: #fff;
+      //   // background-image: radial-gradient(circle, rgba(#fff, 1) 30%, rgba(#fff, 0) 100%);
+      //   border-radius: 100%;
+      //   opacity: .1;
+      //   transition: all .3s ease
+      // }
+
+      &:hover,
+      &.active {
+        box-shadow: none;
         // &:before {
-        //   content: "";
-        //   position: absolute;
-        //   top: -90%;
-        //   left: -60%;
-        //   width: 150%;
-        //   height: 150%;
-        //   background-color: #fff;
-        //   // background-image: radial-gradient(circle, rgba(#fff, 1) 30%, rgba(#fff, 0) 100%);
-        //   border-radius: 100%;
-        //   opacity: .1;
-        //   transition: all .3s ease
+        //   opacity: 0;
         // }
-
-        &:hover,
-        &.active {
-          box-shadow: none;
-          // &:before {
-          //   opacity: 0;
-          // }
-        }
       }
     }
   }
@@ -206,11 +264,11 @@
 
     .swatch.size-guide {
       width: auto;
-      height: auto;
-      border-radius: 0;
+      // height: auto;
+      border-radius: 2em;
       border: 0 !important;
-      background: none;
-      padding: .5em 0;
+      // background: none;
+      padding: .5em .9em;
       text-transform: none;
       // font-weight: 300;
 
@@ -221,8 +279,26 @@
   }
 }
 
-.product-summary .single_variation_wrap .nm-quantity-wrap {
+.single_variation {
   border: 0;
+}
+
+.nm-quantity-wrap {
+  border: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.product-summary .single_variation_wrap .nm-quantity-wrap {
+  padding-right: 0;
+
+  label:not(.nm-qty-label-abbrev) {
+    left: 0;
+  }
+
+  .quantity {
+    margin-right: -7px;
+  }
 }
 
 .product-summary .button {

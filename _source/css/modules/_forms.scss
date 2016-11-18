@@ -1,7 +1,7 @@
 @mixin form-row {
   label {
     display: block;
-    padding: .5em 0;
+    padding: .8em 0 .5em;
     // margin: 0;
     text-transform: uppercase;
     letter-spacing: 0;
@@ -12,8 +12,17 @@
     transition: all .2s ease;
   }
 
-  input, textarea {
+  input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
+  textarea,
+  select {
+    font-size: 1.4em;
+    font-weight: 300;
     transition: all .2s ease;
+  }
+
+  .select2-chosen {
+    font-size: 1.4em;
+    font-weight: 300;
   }
 
   &.focus {
@@ -21,7 +30,8 @@
       color: $clr-highlight;
     }
 
-    input, textarea {
+    input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
+    textarea {
       border-color: tint($clr-highlight, 40);
       background: tint($clr-highlight, 90);
       color: shade($clr-highlight, 60);
@@ -78,35 +88,64 @@ input, textarea {
   }
 }
 
-input:disabled {
-  opacity: .5 !important;
+input:disabled,
+input.disabled,
+button.disabled {
+  opacity: .3 !important;
+}
+
+button:not(.swatch),
+a.button,
+input[type=submit],
+input[type=button] {
+  border-radius: 3px !important;
 }
 
 // CHECKBOX
 .nm-custom-checkbox-label {
-  padding-left: 2.2em !important;
+  padding-left: 32px !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  line-height: 30px !important;
 }
 .nm-custom-checkbox-label:before {
-  top: 4px !important;
+  top: 2px !important;
   left: 0;
-  width: 20px;
-  height: 20px;
-  font-size: 14px;
-  line-height: 18px;
-  transition: all .3s ease;
+  width: 24px;
+  height: 24px;
+  font-size: 16px !important;
+  line-height: 16px !important;
+  text-align: center;
+  border-radius: 3px;
+  border-color: #e7e7e7;
+
+  font-family: 'nm-font';
+  font-style: normal;
+  font-weight: normal;
+  color: rgba($clr-highlight, 0);
+  content: "\e116";
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all .2s ease;
 }
 .nm-custom-checkbox:checked + .nm-custom-checkbox-label:before {
-  font-size: 14px;
-  line-height: 18px;
-  background: $clr-highlight;
-  color: #fff;
   border-color: $clr-highlight;
+  color: $clr-highlight;
+  // background: $clr-highlight;
+  // color: #fff;
+  // border-color: $clr-highlight;
   content: "\e116";
+}
+.nm-custom-checkbox:checked + .nm-custom-checkbox-label {
+  color: $clr-highlight !important;
 }
 
 // RADIO
 .nm-custom-radio-label {
-  padding-left: 26px;
+  padding-left: 32px;
 }
 .nm-custom-radio-label:before {
   top: 2px;
@@ -124,6 +163,17 @@ input:disabled {
 #customer_login {
   .form-row {
     @include form-row;
+  }
+}
+
+.nm-myaccount-login,
+.nm-myaccount-lost-reset-password {
+  input.input-text {
+    border-color: #dbdbdb;
+  }
+
+  .nm-custom-checkbox-label:before {
+    border-color: #dbdbdb;
   }
 }
 
@@ -147,14 +197,54 @@ input:disabled {
       @include form-row;
     }
 
+    #billing_address_1_field {
+      margin-bottom: .5em;
+    }
+
     #order_comments_field {
-      padding-top: 36px;
+      padding-top: 4em;
     }
   }
 
   form.login {
     .form-row:not(.form-group) {
       @include form-row;
+    }
+  }
+
+  #customer_details {
+    h3 {
+      padding-bottom: 1.6em;
+    }
+
+    .woocommerce-billing-fields {
+      @include big-number-before;
+
+      &:before {
+        content: "1";
+      }
+    }
+
+    .woocommerce-shipping-fields {
+      @include big-number-before;
+
+      margin-top: 6em;
+
+      h3 {
+        padding-top: 0;
+      }
+
+      &:before {
+        content: "2";
+      }
+    }
+  }
+
+  h3#order_review_heading {
+    @include big-number-before;
+
+    &:before {
+      content: "3";
     }
   }
 }
@@ -180,7 +270,41 @@ input:disabled {
     }
   }
 }
+//
+// .gform_wrapper {
+//   margin: 0;
+//
+//   .gform_fields {
+//     .gfield {
+//       @include form-row;
+//
+//       input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
+//         font-size: 1.8em;
+//         padding: .2em .4em;
+//       }
+//
+//       .ginput_container {
+//         margin-top: 0;
+//       }
+//     }
+//
+//     .field_sublabel_below .ginput_complex.ginput_container label,
+//     .field_sublabel_below div[class*=gfield_time_].ginput_container label {
+//       margin: 0;
+//       padding: 0;
+//     }
+//   }
+//
+//
+//   .gform_footer input.button,
+//   .gform_footer input[type=submit],
+//   .gform_page_footer input.button,
+//   .gform_page_footer input[type=submit] {
+//     padding: 1em 2em;
+//   }
+// }
 
+// CONTACT FORM 7
 
 .nm-row .wpcf7 {
   margin-left: 0;
@@ -265,6 +389,7 @@ input:disabled {
   input[type="email"] {
     background-color: rgba(#fff, 0.1);
     border: 1px solid rgba(#fff, 0.3);
+    // border-radius: 3px;
     color: white;
     width: 100%;
     transition: all .3s ease;
@@ -322,7 +447,7 @@ input:disabled {
   margin-bottom: 30px;
 
   input[type="email"] {
-    border: 1px solid rgba($clr-heading, .3);
+    border: 1px solid rgba($clr-heading, .2);
     color: $clr-heading;
   }
   input[type="email"]:focus {

@@ -1,5 +1,29 @@
 <?php
 
+add_shortcode( 'user_account_link', 'hj_user_account_link' );
+function hj_user_account_link( $atts ) {
+  if ( is_user_logged_in() ) {
+    $current_user = wp_get_current_user();
+    return "<a href='/account/'>$current_user->user_login</a>";
+  }
+  return $content;
+}
+
+add_shortcode( 'USER', 'show_user_content' );
+function show_user_content( $atts, $content = null ) {
+  if ( !is_user_logged_in() ) {
+    return "";
+  }
+  return $content;
+}
+add_shortcode( 'GUEST', 'show_guest_content' );
+function show_guest_content( $atts, $content = null ) {
+  if ( is_user_logged_in() ) {
+    return "";
+  }
+  return $content;
+}
+
 add_shortcode( 'svg_curve_divider', 'svg_curve_divider' );
 function svg_curve_divider() {
   $output = ob_start();
@@ -49,4 +73,52 @@ function hj_address( $atts ) {
   //   $phone_email
   // </address>
   // ";
+}
+
+add_shortcode( 'kurta_colors', 'hj_kurta_colors' );
+function hj_kurta_colors( $atts ) {
+  $a = shortcode_atts( array(
+    'id' => false
+  ), $atts );
+
+  $product = wc_get_product( $a['id'] );
+  $colors = $product->get_attribute( 'color' );
+
+  $out = "";
+
+  if ( $colors ) {
+    $out .= "<ul class='home-color-list'>";
+    foreach ( preg_split( "/\s?\|\s?/", trim( $colors ) ) as $color ) {
+      $out .= "<li>$color</li>";
+    }
+    $out .= "</ul>";
+  }
+
+  return $out;
+}
+
+add_shortcode( 'kurta_sizes', 'hj_kurta_sizes' );
+function hj_kurta_sizes( $atts ) {
+  $a = shortcode_atts( array(
+    'id' => false
+  ), $atts );
+
+  $product = wc_get_product( $a['id'] );
+  $sizes = $product->get_attribute( 'size' );
+
+  $out = "";
+
+  if ( $sizes ) {
+    $out .= "<ul class='home-size-list'>";
+    $count = 0;
+    foreach ( preg_split( "/\s?\,\s?/", trim( $sizes ) ) as $size ) {
+      $out .= "<li>$size</li>";
+      $count++;
+    }
+    $out .= "<li>Available in $count sizes.</li>";
+    $out .= "</ul>";
+
+  }
+
+  return $out;
 }

@@ -5,9 +5,9 @@ ls = $.localStorage
 
 class Haje.WC
   constructor: ->
-    single_product_summary = $('.nm-product-thumbnails-col, .nm-product-images-col, .nm-product-summary-col, .nm-single-product-right-col')
-    single_product_summary.length && single_product_summary.imagesLoaded ->
-      single_product_summary.matchHeight( property: 'min-height' )
+    # single_product_summary = $('.nm-product-thumbnails-col, .nm-product-images-col, .nm-product-summary-col, .nm-single-product-right-col')
+    # single_product_summary.length && single_product_summary.imagesLoaded ->
+    #   single_product_summary.matchHeight( property: 'min-height' )
 
 class Haje.WC.Filters
   constructor: ->
@@ -24,6 +24,24 @@ class Haje.WC.Filters
         => widget_title.text($(this).children('i')[0].nextSibling.nodeValue)
         => widget_title.text(color_widget.data('original-title'))
       )
+
+class Haje.WC.Tabs
+  constructor: ->
+    $('.woocommerce-tabs .panel:first-child').addClass 'current'
+    $('.woocommerce-tabs ul.tabs li a').off('click').on 'click', ->
+      that = $(this)
+      currentPanel = that.attr('href')
+      that.parent().siblings().removeClass('active').end().addClass 'active'
+      $('.woocommerce-tabs').find(currentPanel).siblings('.panel').filter(':visible').fadeOut 500, ->
+        $('.woocommerce-tabs').find(currentPanel).siblings('.panel').removeClass 'current'
+        $('.woocommerce-tabs').find(currentPanel).addClass('current').fadeIn 500
+        return
+      false
+
+class Haje.WC.VariationNumberGuide
+  constructor: ->
+    # $('#nm-product-summary table.variations .nm-variation-row .label').each (index, row) ->
+    #   $(row).prepend("<div class='big-number'>#{index + 1}</div>")
 
 class Haje.WC.VariationSwatches
   constructor: ->
@@ -42,6 +60,24 @@ class Haje.WC.VariationSwatches
   #
   #   $('a.reset_variations').detach().insertBefore('table.variations')
 
+  colorFromName: (compare) ->
+    if (haje_hex?)
+      hex = findKey(haje_hex, compare)
+
+      return hex
+
+      # if hex.indexOf(',') > -1
+      #   hex = hex.split(',')
+      #   return [tinycolor(hex[0]).toHex(), tinycolor(hex[1]).toHex()]
+      #
+      # else
+      #   return tinycolor(hex).toHex()
+
+    else
+      for name in ntc.names
+        return name[0] if compare.toLowerCase().trim() == name[1].toLowerCase()
+
+    false
 
   replaceSelect: (parent) ->
     _this = this
@@ -51,6 +87,11 @@ class Haje.WC.VariationSwatches
       variation_row = $(this).addClass('haje-swatch')
       variation_label = variation_row.children('.label')
       variation_value = variation_row.children('.value')
+
+      attr_name = variation_row.data('attribute_name')
+
+      isAttributeColor = attr_name == 'color' || attr_name == 'pa_color'
+      isAttributeSize = attr_name == 'size' || attr_name == 'pa_size'
 
       # Add some structure
       variation_label.children('label').append('<div class="label-display"></div>')
@@ -66,33 +107,59 @@ class Haje.WC.VariationSwatches
       # If the selectbox has been replaced by "Variation Swatches & Colors" plugin, skip
       return if !select.length
 
-      select.togglebutton({
-        removeFirst: true,
-        onChange: (val, text) ->
-          if select.val()
-            # variation_label_display.addClass('active').text(text)
-            variation_label_display.text(text)
-            variation_label_display.data('original-label', text)
+      if isAttributeColor
+        select.children('option').each ->
+          if $(this).val() != ''
+            $(this).attr('data-hex', _this.colorFromName($(this).val()))
+
+      highlightColor = (btn) ->
+        if isAttributeColor
+          variation_label_display.removeClass('dark light');
+
+          color = String btn.data('hex')
+          color2 = null
+
+          if color.indexOf(',') > -1
+            multicolor = color.split(',')
+            color = multicolor[0]
+            color2 = multicolor[1]
+
+          if !color2
+            variation_label_display
+              .addClass( if tinycolor(color).getBrightness() < 150 then 'dark' else 'light' )
+              .css( background: "##{color}" )
+
           else
-            # variation_label_display.removeClass('active')
-            variation_label_display.data('original-label', '')
-      })
+            variation_label_display
+              .addClass( if tinycolor(color).getBrightness() < 150 then 'dark' else 'light' )
+              .css(
+                background: "##{color}",
+                boxShadow: "-10px 0 0 ##{color2}" )
 
-      # Number of Variations
-      # variation_label_count.html("<strong>#{select.data('buttons').length}</strong> #{variation_label_count.text()}s")
+      dehighlightColor = (btn) ->
+        if isAttributeColor
+          variation_label_display
+            .removeClass('dark light')
+            .css(
+              background: "none",
+              boxShadow: "none" )
 
-      $.each select.data(), (attr_name, attr_val) ->
-        if typeof attr_val == 'string'
-          select.data('group').attr('data-' + attr_name, attr_val.replace(/^attribute_/, ''))
+      select.togglebutton {
+        removeFirst: true,
+        onChange: (val, text, btn) ->
+          if select.val()
+            variation_label_display
+              .text(text)
+              .data('original-label', text)
 
-      # select.change ->
-      #   if select.val()
-      #     # variation_label_display.addClass('active')
-      #     variation_label_display.text(select.val())
-      #     variation_label_display.data('original-label', select.val())
-      #   else
-      #     # variation_label_display.removeClass('active')
-      #     variation_label_display.data('original-label', '')
+            highlightColor(btn)
+
+          else
+            variation_label_display
+              .data('original-label', '')
+
+            dehighlightColor(btn)
+      }
 
       # Change label on hover
       select.data('buttons').hover(
@@ -104,20 +171,30 @@ class Haje.WC.VariationSwatches
           variation_label_display.text(variation_label_display.data('original-label'))
       )
 
-      if (variation_row.data('attribute_name') == 'color' ||
-          variation_row.data('attribute_name') == 'pa_color')
+      $.each select.data(), (attr_name, attr_val) ->
+        if typeof attr_val == 'string'
+          select.data('group').attr('data-' + attr_name, attr_val.replace(/^attribute_/, ''))
 
+      if isAttributeColor
         _this.colorizeSwatch(select.data('buttons'))
 
         # Sort color by brightness
         select.data('buttons').sort (a, b) ->
           a_value = $(a).attr('value')
-          a_color = tinycolor(_this.colorFromName(a_value))
-          # a_color = tinycolor($(a).data('hex'))
+          # a_color = tinycolor(_this.colorFromName(a_value))
+
+          a_color = String($(a).data('hex'))
+          if a_color.indexOf(',') > -1
+            a_color = a_color.split(',')[0]
+          a_color = tinycolor(a_color)
 
           b_value = $(b).attr('value')
-          b_color = tinycolor(_this.colorFromName(b_value))
-          # b_color = tinycolor($(b).data('hex'))
+          # b_color = tinycolor(_this.colorFromName(b_value))
+
+          b_color = String($(b).data('hex'))
+          if b_color.indexOf(',') > -1
+            b_color = b_color.split(',')[0]
+          b_color = tinycolor(b_color)
 
           # b_color.getBrightness() - a_color.getBrightness()
           hue_diff = a_color.toHsl().h - b_color.toHsl().h
@@ -128,8 +205,7 @@ class Haje.WC.VariationSwatches
 
         select.data('buttons').detach().appendTo(select.data('group'))
 
-      if $('.size_guide_tab').length && (variation_row.data('attribute_name') == 'size' ||
-          variation_row.data('attribute_name') == 'pa_size')
+      if $('.size_guide_tab').length && isAttributeSize
 
         sizeguide = $('<button type="button" class="swatch size-guide">Size Guide</button>').appendTo(select.data('group'))
 
@@ -138,23 +214,27 @@ class Haje.WC.VariationSwatches
           $('html, body').animate({
            scrollTop: $('.wc-tabs').offset().top
           }, 300);
-          # $.magnificPopup.open
-          #   midClick: true
-          #   closeBtnInside: true
-          #   closeMarkup: '<a class="mfp-close nm-font nm-font-close2"></a>',
-          #   items: {
-          #     src: $('#ct_size_guide')
-          #     type: 'inline'
-          #   }
-
 
   colorizeSwatch: (swatches) ->
     _this = this
 
     swatches.each ->
-      color = _this.colorFromName $(this).attr('value')
-      # color = $(this).data('hex')
-      $(this).css( backgroundColor: "##{color}" )
+      color = String $(this).data('hex')
+      color2 = null
+
+      if color.indexOf(',') > -1
+        multicolor = color.split(',')
+        color = multicolor[0]
+        color2 = multicolor[1]
+
+      if !color2
+        $(this).css( background: "##{color}" )
+
+      else
+        altcolor = $('<span class="alt-color"></span>').css( background: "##{color2}" )
+        $(this)
+          .css( background: "##{color}", borderColor: "##{color2}", borderWidth: "5px" )
+          .append(altcolor)
 
   toggleVariations: (parent) ->
     $(parent).find('table.variations .nm-variation-row').each ->
@@ -178,13 +258,6 @@ class Haje.WC.VariationSwatches
           variation_row.removeClass('open')
           ls.set('haje_open_variation_' + attr_name, false)
 
-  colorFromName: (compare) ->
-    if (haje_hex?)
-      return tinycolor(findKey(haje_hex, compare)).toHex()
-    else
-      for name in ntc.names
-        return name[0] if compare.toLowerCase().trim() == name[1].toLowerCase()
-    false
 
 class Haje.WC.ColorCart
   constructor: ->
@@ -204,15 +277,22 @@ class Haje.WC.ColorCart
       value = $(this).html()
       # product_id = $(this).closest('.cart_item, .mini_cart_item').attr('class').match(/product-id-(\d+)/)[1]
       # color = _this.colorFromName(value, product_id)
-      color = $(this).parent().data('hex')
+      color = String $(this).parent().data('hex')
       colorname = $(this).parent().data('color')
 
-      $(this).parent().addClass( if tinycolor(color).getBrightness() < 180 then 'dark' else 'light' )
+      multicolor = if color.indexOf(',') > -1 then color.split(',') else []
+
+      if multicolor.length
+        color = multicolor[0]
+
+      $(this).parent().addClass( if tinycolor(color).getBrightness() < 150 then 'dark' else 'light' )
 
       if colorname == 'white' or colorname == 'White'
         $(this).parent().css( { background: "##{color}" } )
       else
         $(this).parent().css( { background: "##{color}", borderColor: "##{color}" } )
+        if multicolor.length
+          $(this).parent().css( { boxShadow: "10px 0 0 ##{multicolor[1]}", marginRight: '10px' } )
 
   # colorFromName: (compare, product_id = null) ->
   #   if (product_id and haje_cart_hex? and haje_cart_hex[product_id])
@@ -238,6 +318,8 @@ class Haje.WC.PaymentMethods
 $ ->
   new Haje.WC
   new Haje.WC.Filters
+  new Haje.WC.Tabs
+  new Haje.WC.VariationNumberGuide
   new Haje.WC.VariationSwatches
   new Haje.WC.ColorCart
   new Haje.WC.PaymentMethods

@@ -1,5 +1,4 @@
-@import 'https://fonts.googleapis.com/css?family=Oxygen:300,400,700';
-
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,700');
 @import "base";
 
 html {
@@ -17,22 +16,26 @@ $body-fonts: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, 
 body.login {
   font-family: $body-fonts;
 
-  background-image: url(/wp-content/uploads/2015/08/sign.jpg);
-  background-position: center center;
-  background-size: cover;
+  $clr-page: #1b2020;
+
+  background: linear-gradient(to bottom, #19304a, #090e1a 90%);
+
+  // background-image: url(/wp-content/uploads/2015/08/sign.jpg);
+  // background-position: center center;
+  // background-size: cover;
   position: relative;
 
-  &:after {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: #111;
-    z-index: -10;
-    opacity: .9;
-  }
+  // &:after {
+  //   position: absolute;
+  //   content: "";
+  //   width: 100%;
+  //   height: 100%;
+  //   top: 0;
+  //   left: 0;
+  //   background: #303841;
+  //   z-index: -10;
+  //   opacity: .95;
+  // }
 
   #login #login_error,
   #login .message {
@@ -41,8 +44,11 @@ body.login {
     color: #fff;
     box-shadow: none;
     margin-bottom: 20px;
-    padding: 30px 40px;
+    padding: 2em;
     font-size: 1rem;
+    font-weight: 300;
+    border-radius: 5px;
+    text-align: center;
 
     a {
       color: #fff;
@@ -50,51 +56,56 @@ body.login {
   }
 
   #login #login_error {
-    background: $error;
+    background: rgba($error, .5);
   }
 
   #login {
-    max-width: 480px;
+    max-width: 500px;
     width: 100%;
     padding-left: 15px;
     padding-right: 15px;
   }
 
   #login h1 a {
-    background-image: url(../images/haje-accented-white.svg);
+    background-image: url(../images/haje-stroke.svg);
     background-size: contain;
     width: 100%;
-    margin-bottom: 2em;
+    // margin-bottom: 2em;
   }
 
   #loginform, #registerform {
-    padding: 40px;
-    box-shadow: none;
+    padding: 30px;
+    box-shadow: 0 10px 50px rgba($clr-blue-grey, .3);
+    border-radius: 5px;
 
     label {
       display: block;
-      font-size: .9em;
-      font-weight: 700;
+      font-size: .95em;
+      font-weight: 600;
+      width: 100%;
       text-transform: uppercase;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
       margin-bottom: 1.5rem;
       transition: all .2s ease;
 
       input {
         box-shadow: none !important;
         margin: 5px 0 0;
-        padding: .2em .4em;
+        padding: .3em .5em;
         background: none;
         border-color: $clr-grey-400;
-        font-size: 1.5rem;
-        font-weight: 500;
+        border-radius: 3px;
+        font-size: 1.8rem;
+        font-weight: 300;
         text-transform: none;
         letter-spacing: 0;
         transition: all .2s ease;
       }
 
       input[type=checkbox] {
-
+        width: 30px;
+        height: 30px;
+        margin-right: 5px;
       }
 
       input[type=checkbox]:checked {
@@ -103,6 +114,10 @@ body.login {
 
         &:before {
           color: #fff !important;
+          font-size: 34px;
+          width: 30px;
+          line-height: 30px;
+          margin: 0 0 0 -4px;
         }
       }
       input[type=checkbox]:focus {
@@ -120,6 +135,10 @@ body.login {
         }
       }
     }
+  }
+
+  #loginform p.forgetmenot {
+    width: 100%;
   }
 
   #loginform p.forgetmenot label {
@@ -147,7 +166,7 @@ body.login {
       box-shadow: none;
       text-shadow: none;
       transition: all .2s ease;
-      border-radius: 0;
+      border-radius: 3px;
       padding: .8em 1.5em;
       height: auto;
       width: 100%;
@@ -164,9 +183,9 @@ body.login {
 
   #login #nav,
   #login #backtoblog {
-    margin: 24px 10px 0;
-    padding: 0;
-    text-transform: uppercase;
+    margin: 0;
+    padding: 20px 30px;
+    // text-transform: uppercase;
 
     color: #fff;
     a {
@@ -175,6 +194,11 @@ body.login {
       display: inline-block;
       padding: .3em 1em;
       font-size: .75rem;
+      outline: none;
+
+      &:focus {
+        box-shadow: none;
+      }
 
       &:hover {
         color: tint($clr-highlight, 30);
@@ -205,8 +229,83 @@ body.login {
     }
   }
 
+  #login #backtoblog a {
+    padding-right: 0;
+  }
+
   #login #backtoblog {
     float: right;
     font-size: 1rem;
+  }
+}
+
+.wppb-sc-buttons-container {
+  // text-align: center;
+  margin-top: 2em;
+
+  .wppb-sc-buttons-text-div {
+    // display: inline-block;
+    // margin: 4px;
+
+    a.wppb-sc-button-wp-default-text {
+      text-align: center;
+      margin: 3px 0;
+      font-family: $body-fonts;
+      font-weight: 300;
+      border-radius: 3px;
+      min-width: auto;
+      padding: .8em 1.3em .6em .5em;
+      transition: all .3s ease;
+
+      i {
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+#wppb_sc_account_connect, #wppb_sc_new_account, #wppb_sc_submit_account_password, #wppb_sc_submit_account_email, #wppb_sc_submit_twitter_your_email, #wppb_sc_submit_facebook_your_email {
+  background: $clr-highlight;
+  transition: all .3s ease;
+
+  &:hover {
+    opacity: .8;
+  }  
+}
+
+#wppb_sc_account_connect, #wppb_sc_new_account {
+  margin: 5px;
+}
+
+#wppb_sc_account_email, #wppb_sc_account_password, #wppb_sc_twitter_your_email, #wppb_sc_facebook_your_email {
+  border-color: #e7e7e7;
+  background: none;
+  box-shadow: none;
+}
+
+#wppb_sc_new_account {
+  background: $clr-heading;
+}
+
+#TB_title {
+  border-bottom: 0;
+}
+
+#TB_closeAjaxWindow {
+  .screen-reader-text {
+    display: none;
+  }
+}
+
+#TB_ajaxContent {
+  margin: 0 auto;
+  // padding: 2em 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+
+  p {
+    flex: 1 100%;
   }
 }

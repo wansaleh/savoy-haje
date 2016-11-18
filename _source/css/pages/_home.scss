@@ -1,3 +1,44 @@
+@mixin home-button {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-shadow: 0 1px 1px rgba(#000, .2);
+  // overflow: hidden;
+  transition: all .3s ease;
+  transform-style: preserve-3d;
+
+  .nm_btn_bg {
+    border: 0;
+    border-radius: 6px 6px 0 6px;
+    box-shadow: 0 2px 5px rgba(#000, .05);
+    overflow: hidden;
+
+    &:after {
+      content: "";
+      position: absolute;
+      right: -1px;
+      bottom: -1px;
+      width: 20px;
+      height: 20px;
+      background: #000;
+      opacity: .2;
+      // mix-blend-mode: overlay;
+      transform-origin: bottom left;
+      transform: skewX(-45deg);
+    }
+  }
+
+  &:hover {
+    // transform: translateY(2px);
+    //
+    // .nm_btn_bg {
+    //   opacity: 1;
+    //   box-shadow: none;
+    // }
+  }
+}
+
 @mixin gradient-text($gradient, $bg : 'light') {
   @supports(mix-blend-mode: lighten) {
     display: inline-block;
@@ -57,44 +98,7 @@ $animation-duration: 5s;
   }
 
   .nm_btn {
-    display: inline-block;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 600;
-    text-shadow: 0 1px 1px rgba(#000, .2);
-    // overflow: hidden;
-    transition: all .3s ease;
-    transform-style: preserve-3d;
-
-    .nm_btn_bg {
-      border: 0;
-      border-radius: 6px 6px 0 6px;
-      box-shadow: 0 2px 15px rgba(#000, .15);
-      overflow: hidden;
-
-      &:after {
-        content: "";
-        position: absolute;
-        right: -1px;
-        bottom: -1px;
-        width: 20px;
-        height: 20px;
-        background: #000;
-        opacity: .2;
-        // mix-blend-mode: overlay;
-        transform-origin: bottom left;
-        transform: skewX(-45deg);
-      }
-    }
-
-    &:hover {
-      // transform: translateY(2px);
-      //
-      // .nm_btn_bg {
-      //   opacity: 1;
-      //   box-shadow: none;
-      // }
-    }
+    @include home-button;
   }
 
   // .wpb_content_element > .wpb_wrapper {
@@ -253,16 +257,31 @@ $animation-duration: 5s;
       }
     }
 
-    .nm_btn_bg {
-      background: $color;
+    .hero-cta {
+      margin: 0 -5px;
+      .nm_btn {
+        margin: 5px;
+      }
+
+      .btn-explore .nm_btn_bg {
+        background: $color;
+      }
+      .btn-catalogue .nm_btn_bg {
+        background: $clr-pink-a200;
+      }
     }
 
-    #haje-logo {
+    svg#haje-logo {
       position: relative;
       width: 0;
       z-index: 10;
       opacity: 0;
-      // mix-blend-mode: hard-light;
+
+      path {
+        fill: #fff;
+        opacity: .9;
+      }
+      // mix-blend-mode: overlay;
     }
 
     svg.hexagon {
@@ -328,6 +347,50 @@ $animation-duration: 5s;
         display: none;
       }
     }
+
+    .home-size-list {
+      // position: absolute;
+      // top: -12px;
+      // right: 0;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      color: #aaa;
+
+      li {
+        display: inline-flex;
+        list-style: none;
+
+        width: 40px;
+        height: 40px;
+        background: rgba(#fff, .8);
+        border-radius: 50%;
+        border: 1px solid #e7e7e7;
+        margin: 3px;
+
+        justify-content: center;
+        align-items: center;
+      }
+
+      li:first-child {
+        margin-left: 0;
+      }
+      li:last-child {
+        width: auto;
+        background: none;
+        border-radius: 0;
+        border: 0;
+        padding-left: 8px;
+        margin-right: 0;
+        color: $clr-main-font;
+      }
+
+      @include media-breakpoint-down(sm) {
+        justify-content: center !important;
+      }
+    }
   }
 
   .haje-kurta,
@@ -336,6 +399,13 @@ $animation-duration: 5s;
       .nm_column:first-of-type {
         margin-bottom: 4em;
       }
+    }
+  }
+
+  #home-prelude,
+  #home-upright {
+    .home-size-list {
+      justify-content: flex-end;
     }
   }
 
@@ -420,7 +490,7 @@ $animation-duration: 5s;
     background: #fff url(../images/waves7.svg) no-repeat center;
     background-size: cover;
 
-    $color: #6a6c65;
+    $color: #eeaf15;
 
     [class^="flaticon-"] {
       border-color: $color;
@@ -430,10 +500,7 @@ $animation-duration: 5s;
       }
     }
 
-    .preheader {
-      color: $color;
-    }
-    h1 {
+    .preheader, h1 {
       color: $color;
     }
     .nm_btn_bg {
@@ -457,7 +524,7 @@ $animation-duration: 5s;
     padding-bottom: 4em;
     z-index: 10;
 
-    $color: #755b8f;
+    $color: #335bee;
 
     [class^="flaticon-"] {
       border-color: $color;
@@ -513,15 +580,16 @@ $animation-duration: 5s;
 
       .btn-buy .nm_btn_bg {
         background: $clr-highlight;
-          &:after {
-            background: $clr-cyan-400;
-            opacity: 1;
-          }
+        &:after {
+          background: $clr-blue-900;
+          opacity: 1;
+        }
       }
 
       .btn-edar .nm_btn_bg {
+        background: #3DD2CC;
         &:after {
-          background: $clr-amber-700;
+          background: #198c89;
           opacity: 1;
         }
       }

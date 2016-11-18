@@ -32,6 +32,7 @@ $haje-assets: '/wp-content/themes/savoy-haje/assets';
   transition: all .2s ease;
 }
 
+.no-footer-widgets,
 .nm-woocommerce-account-login {
   .nm-footer-widgets {
     display: none;
@@ -76,6 +77,43 @@ $haje-assets: '/wp-content/themes/savoy-haje/assets';
   0% { opacity: 0; transform: scale(0);}
   50% { opacity: 1; transform: scale(1); }
   100% { opacity: 0; transform: scale(0); }
+}
+
+/* Open/close animations */
+
+/* Overlay fade */
+/* overlay at start */
+.nm-mfp-fade-in.mfp-bg,
+.nm-mfp-zoom-in.mfp-bg {
+  opacity: 0;
+  transition: all .3s ease;
+}
+.nm-mfp-fade-in.mfp-bg.mfp-ready,
+.nm-mfp-zoom-in.mfp-bg.mfp-ready {
+  opacity: 0.73;
+}
+/* overlay animate out */
+.nm-mfp-fade-in.mfp-bg.mfp-removing,
+.nm-mfp-zoom-in.mfp-bg.mfp-removing {
+  opacity: 0;
+}
+
+/* Modal fade */
+/* start state */
+.nm-mfp-fade-in .mfp-content {
+  opacity: 0;
+  transform: translateY(-20%);
+  transition: all .2s ease;
+}
+/* animate in */
+.nm-mfp-fade-in.mfp-ready .mfp-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+/* animate out */
+.nm-mfp-fade-in.mfp-removing .mfp-content {
+  opacity: 0;
+  transform: translateY(20%);
 }
 
 // 404 page

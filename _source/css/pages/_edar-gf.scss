@@ -1,0 +1,151 @@
+#edar-hero {
+  @extend .text-xs-center, .jumbo;
+  padding-top: 10em;
+  padding-bottom: 6em;
+
+  background-color: #CBF9DA;
+  background-image: url(../images/waves3-edar.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  > .nm-row {
+    @include media-breakpoint-up(md) {
+      @include scut-center-transform;
+    }
+  }
+
+  h1 {
+    // margin-bottom: 1em;
+    color: #122D42;
+  }
+
+  .preheader {
+    color: #122D42;
+  }
+
+  p {
+    color: #122D42;
+    font-size: 1.6em;
+    font-weight: 300;
+  }
+
+  svg {
+    max-width: 200px;
+    // margin-bottom: 2em;
+
+    polygon,
+    path {
+      fill: #122D42;
+    }
+
+    .haje-top {
+      fill: #3DD2CC;
+    }
+  }
+
+  .nm_btn {
+    @include home-button;
+    .nm_btn_bg {
+      background: #3DD2CC;
+    }
+  }
+}
+
+$clr-page: #3DD2CC;
+$clr-page-2: #122D42;
+
+#edar-gform-title {
+  padding-top: 8em;
+  padding-bottom: 2em;
+
+  background: $clr-page;
+
+  h1 {
+    font-size: 2.4em;
+    color: #fff;
+  }
+}
+
+#edar-gform {
+  padding-top: 0;
+  padding-bottom: 8em;
+
+  background: $clr-page;
+
+  @include media-breakpoint-down(sm) {
+    // padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .edar-box {
+    padding: 2em;
+    background: #fff;
+    border-radius: 3px;
+    // box-shadow: 5px 10px 30px rgba(#000, .2);
+
+    overflow: hidden;
+  }
+
+  .gsection {
+    border: 0;
+
+    h2 {
+      // @extend .hj-heading;
+      font-size: 2.2em;
+      font-weight: 300;
+      padding-bottom: .2em !important;
+
+      // &:after {
+      //   background: $clr-page;
+      // }
+    }
+
+    @include big-number;
+  }
+
+  .gform_wrapper li.gfield.field_description_below+li.gsection {
+    margin-top: 4em !important;
+  }
+
+  #field_1_9 {
+    &:before {
+      content: "1";
+    }
+  }
+
+  #field_1_10 {
+    &:before {
+      content: "2";
+    }
+  }
+
+  #field_1_11 {
+    &:before {
+      content: "3";
+    }
+  }
+}
+
+
+body.gf-activation {
+  .nm-page-wrap-inner #content {
+    max-width: 600px;
+    margin: 0 auto;
+
+    padding-left: $gutter;
+    padding-right: $gutter;
+    padding-top: 4em;
+    padding-bottom: 4em;
+
+    text-align: center;
+
+    #submit, #key {
+      width: 100% !important;
+    }
+
+    #submit {
+      padding: 1em;
+    }
+  }
+}

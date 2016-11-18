@@ -20,6 +20,49 @@
   padding-right: 0.2em;
 }
 
+@mixin big-number {
+  position: absolute;
+  z-index: -1;
+  opacity: .15;
+  font-size: 140px;
+  font-weight: 900;
+  line-height: .8;
+
+  top: -30px;
+  left: -48px;
+}
+
+@mixin big-number-before($number: "1") {
+  position: relative;
+  z-index: 0;
+
+  &:before {
+    content: $number;
+    @include big-number;
+  }
+}
+
+@mixin fancy-bottom {
+  display: inline-block;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background: $clr-highlight;
+    transition: width .2s ease;
+  }
+
+  &:hover:after {
+    left: 0;
+    width: 100%;
+  }
+}
+
 $body-fonts: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 @if variable-exists(font-primary) {
   $body-fonts: $font-primary, $body-fonts;
@@ -121,7 +164,7 @@ h4, h5, h6 {
   //   font-weight: 300;
   // }
 
-  h3, h4, h5, h6 {
+  h4, h5, h6 {
     font-weight: 400;
   }
 
@@ -137,7 +180,7 @@ h4, h5, h6 {
       color: #fff;
     }
 
-    h3, h4, h5, h6 {
+    h4, h5, h6 {
       opacity: .5;
       // color: rgba(#fff, .8);
     }
@@ -153,8 +196,8 @@ h4, h5, h6 {
   margin-bottom: -.5em;
 
   .text-light & {
-    opacity: .8;
-    mix-blend-mode: overlay;
+    opacity: .6;
+    // mix-blend-mode: overlay;
   }
 }
 

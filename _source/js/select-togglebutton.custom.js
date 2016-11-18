@@ -38,6 +38,7 @@
             button.attr(this.name, this.value);
           }
         });
+        button.data($(opt).data());
 
         if (settings.afterInit) {
           settings.afterInit();
@@ -90,7 +91,7 @@
           // Change selected options of the select.
           self.val(total).change();
 
-          settings.onChange($(btn).val(), $(btn).text(), self);
+          settings.onChange($(btn).val(), $(btn).text(), $(btn), self);
         });
       });
 
@@ -111,6 +112,7 @@
   // Set the defaults options of the plugin.
   $.fn.togglebutton.defaults = {
     removeFirst: false,
+    onOptionInit: $.noop,
     afterInit: $.noop,
     onChange: $.noop
   };

@@ -1,11 +1,11 @@
 #tab-description {
   .row1 {
-    @extend .text-xs-center, .text-md-left, .text-light, .jumbo;
+    @extend .text-xs-center, .text-md-left, .jumbo;
     padding-top: 8em;
     padding-bottom: 8em;
 
     .preheader {
-      opacity: 1;
+      // opacity: 1 !important;
     }
     h1 {
       margin-bottom: 1em;
@@ -15,8 +15,8 @@
   .row2,
   .row3 {
     @extend .text-xs-left;
-    padding-top: 6em;
-    padding-bottom: 6em;
+    padding-top: 5em;
+    padding-bottom: 5em;
 
     svg {
       position: absolute;
@@ -36,27 +36,40 @@
   }
 
   .row2 {
-    background: #e2eded;
+    background: #fff;
+    svg {
+      path {
+        fill: #5dbaba;
+      }
+    }
     h1 {
-      color: #0c9c9c;
+      color: #5dbaba;
     }
     p {
-      color: #5dbaba;
+      color: #3ba2a2;
     }
   }
 
   .row3 {
     background: #2EB872;
     color: #fff;
+    svg {
+      path {
+        fill: #fff;
+      }
+    }
     h1 {
       color: #fff;
     }
   }
 }
 
-.product-kurta-signature {
+.product-kurta-signature,
+.product-edar-kurta-signature {
   #tab-description {
     .row1 {
+      @extend .text-light;
+
       // background: #ba3349 url(../images/waves5-signature.svg) no-repeat 50% 80%;
       background-color: #ba3349;
       background-image:
@@ -72,9 +85,12 @@
   }
 }
 
-.product-kurta-prelude {
+.product-kurta-prelude,
+.product-edar-kurta-prelude {
   #tab-description {
     .row1 {
+      @extend .text-light;
+
       // background: #083836 url(../images/waves5-prelude.svg) no-repeat 50% 80%;
       background-color: #083836;
       background-image:
@@ -85,6 +101,44 @@
 
       .preheader, h1 {
         color: #81F4E1;
+      }
+    }
+  }
+}
+
+.product-kurta-define,
+.product-edar-kurta-define {
+  #tab-description {
+    .row1 {
+      // background: #083836 url(../images/waves5-prelude.svg) no-repeat 50% 80%;
+      background-color: #F0EFE8;
+      background-image:
+        url(../images/waves5.svg);
+      background-position: 50% 80%, center;
+      background-size: cover;
+
+      .preheader, h1 {
+      }
+    }
+  }
+}
+
+.product-kurta-upright,
+.product-edar-kurta-upright {
+  #tab-description {
+    .row1 {
+      @extend .text-light;
+
+      // background: #083836 url(../images/waves5-prelude.svg) no-repeat 50% 80%;
+      background-color: #4c69e0;
+      background-image:
+        url(../images/waves5-upright.svg),
+        linear-gradient(to top right, transparent, #202036 150%);
+      background-position: 50% 80%, center;
+      background-size: cover;
+
+      .preheader, h1 {
+        color: #2cf4b8;
       }
     }
   }

@@ -1,7 +1,8 @@
+$max-width: 1280px;
 $gutter: 15px;
 
 .nm-row {
-	max-width: 1180px;
+	max-width: $max-width;
 	padding-right: $gutter;
 	padding-left: $gutter;
 

@@ -2,6 +2,7 @@
 
 require('includes/haje.php');
 require('includes/haje-wc.php');
+require('includes/haje-wc-account.php');
 require('includes/haje-shortcodes.php');
 
 

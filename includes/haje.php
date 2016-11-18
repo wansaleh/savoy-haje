@@ -2,9 +2,62 @@
 
 define( 'HJ_VERSION', '1.1.1' );
 
+function get_user_roles() {
+  $user = wp_get_current_user();
+  return empty( $user ) ? array() : $user->roles;
+}
+
+function is_user_in_role( $role ) {
+  return in_array( $role, get_user_roles() );
+}
+
 // is_admin() or add_filter( 'locale', function() {
 //   return 'ms_MY';
 // });
+
+// add_action( 'template_redirect', 'hj_logged_in' );
+// function hj_logged_in() {
+//   if ( is_page('login') && is_user_logged_in() ) {
+//     wp_redirect( home_url() );
+//     exit;
+//   }
+//
+//   if ( is_page('edar') && is_user_logged_in() && is_user_in_role( 'haje_edar' ) ) {
+//     wp_redirect( '/shop/category/edar/' );
+//   }
+// }
+
+// add_action( 'wp_logout', create_function( '', 'wp_redirect(home_url()); exit();' ));
+
+// function wc_custom_user_redirect( $redirect, $user ) {
+//   // Get the first of all the roles assigned to the user
+//   $role = $user->roles[0];
+//   $dashboard = admin_url();
+//   $myaccount = get_permalink( wc_get_page_id( 'myaccount' ) );
+//   if ( $role == 'haje-edar' ) {
+//     //Redirect customers and subscribers to the "My Account" page
+//     $redirect = $myaccount;
+//   } else {
+//     //Redirect any other role to the previous visited page or, if not available, to the home
+//     $redirect = wp_get_referer() ? wp_get_referer() : home_url();
+//   }
+//   return $redirect;
+// }
+// add_filter( 'woocommerce_login_redirect', 'wc_custom_user_redirect', 10, 2 );
+
+add_filter( 'body_class', 'hj_adjust_body_class', 99999 );
+function hj_adjust_body_class( $classes ) {
+  if ( isset( $_GET['page'] ) && $_GET['page'] == 'gf_activation' ) {
+    foreach ( $classes as $key => $value ) {
+      if ( $value == 'header-light' || $value == 'header-transparency' ) {
+        unset( $classes[ $key ] );
+        $classes[] = 'gf-activation';
+      }
+    }
+  }
+
+  return $classes;
+}
 
 add_action( 'after_setup_theme', 'hj_theme_support' );
 function hj_theme_support() {
@@ -86,11 +139,11 @@ function hj_scripts() {
   }
 }
 
-add_action( 'wp_enqueue_scripts', 'hj_wc_scripts', 9 );
-function hj_wc_scripts() {
-  if ( is_cart() )
-    wp_enqueue_script( 'wc-cart', hj_uri() . '/assets/js/woocommerce/cart.js', array( 'jquery', 'wc-country-select', 'wc-address-i18n' ) );
-}
+// add_action( 'wp_enqueue_scripts', 'hj_wc_scripts', 9 );
+// function hj_wc_scripts() {
+//   if ( is_cart() )
+//     wp_enqueue_script( 'wc-cart', hj_uri() . '/assets/js/woocommerce/cart.js', array( 'jquery', 'wc-country-select', 'wc-address-i18n' ) );
+// }
 
 
 /**
@@ -101,7 +154,13 @@ add_action( 'wp_footer', 'hj_footer' );
 function hj_footer() {
   if ( is_admin() ) return;
 
+  $js_vars = array(
+    'login_url' => wp_login_url( get_permalink() ),
+    'logout_url' => wp_logout_url( get_permalink() )
+  );
+
   wp_enqueue_script( 'haje-main', hj_uri() . '/assets/js/haje.js', array( 'haje-vendor' ), HJ_VERSION );
+  wp_localize_script( 'haje-main', '_hj_vars', $js_vars );
 
   // echo "<script type='text/javascript' src='" . hj_uri() . '/assets/js/vendor.js' . "'></script>\n";
   // echo "<script type='text/javascript' src='" . hj_uri() . '/assets/js/haje.js' . "'></script>\n";
@@ -150,8 +209,6 @@ add_filter( 'login_headerurl', 'hj_login_logo_url' );
 function hj_login_logo_url() {
   return home_url();
 }
-
-add_action( 'wp_logout', create_function( '', 'wp_redirect(home_url()); exit();' ));
 
 // add_action( 'admin_head', 'hj_admin_styles' );
 function hj_admin_styles() {
@@ -243,3 +300,20 @@ function haje_admin_style() {
 </style>
 <?php
 }
+
+//Dequeue Styles
+function hj_dequeue_unnecessary_styles() {
+  if ( !current_user_can( 'update_core' ) ) {
+    wp_deregister_style('dashicons');
+  }
+  wp_dequeue_style( 'magnific.popup.css' );
+  wp_deregister_style( 'magnific.popup.css' );
+}
+add_action( 'wp_print_styles', 'hj_dequeue_unnecessary_styles' );
+
+//Dequeue JavaScripts
+function hj_dequeue_unnecessary_scripts() {
+  wp_dequeue_script( 'magnific.popup.js' );
+  wp_deregister_script( 'magnific.popup.js' );
+}
+add_action( 'wp_print_scripts', 'hj_dequeue_unnecessary_scripts' );

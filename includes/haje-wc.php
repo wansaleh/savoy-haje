@@ -2,6 +2,11 @@
 
 require('color-names.php');
 
+// add_filter( 'woogoogad_gg_api_other_parameters', gg_api_key );
+// function gg_api_key() {
+//   return '&key=' . 'AIzaSyCC0d5jWVxtb21279onGwuz-XhcCQHENlc';
+// }
+
 add_action( 'woocommerce_single_product_summary', 'hj_product_title_initials', 4 );
 function hj_product_title_initials() {
   global $product;
@@ -17,11 +22,19 @@ function hj_product_title_initials() {
   echo '<div class="initials">' . $acronym . '</div>';
 }
 
+// add_action( 'woocommerce_shop_loop_item_title', 'hj_edar_badge' );
+// function hj_edar_badge() {
+//   global $product;
+//   if ( has_term( 'edar', 'product_cat', $product->id ) ) {
+//     echo '<span class="haje-edar">Edar</span>';
+//   }
+// }
+
 // add_action( 'woocommerce_after_customer_login_form', 'hj_social_login' );
-add_action( 'woocommerce_login_form_end', 'hj_social_login' );
-function hj_social_login() {
-  echo do_shortcode( '[woocommerce_social_login_buttons return_url="https://mystore.com/my-account"]' );
-}
+// add_action( 'woocommerce_login_form_end', 'hj_social_login' );
+// function hj_social_login() {
+//   echo do_shortcode( '[woocommerce_social_login_buttons return_url="http://haje.my/my-account"]' );
+// }
 
 add_action( 'woocommerce_single_product_summary', 'woocommerce_show_product_sale_flash', 6 );
 
@@ -54,7 +67,7 @@ function hj_hex_terms() {
   if ($hexes) {
     $out = array();
     foreach (preg_split("/\s?\|\s?/", trim($hexes)) as $hex) {
-      $clr_hex = explode(',', $hex);
+      $clr_hex = explode(':', $hex);
       $out[trim($clr_hex[0])] = trim($clr_hex[1]);
     }
 
@@ -75,7 +88,7 @@ function hj_ajax_hex_terms() {
   if ($hexes) {
     $out = array();
     foreach (preg_split("/\s?\|\s?/", trim($hexes)) as $hex) {
-      $clr_hex = explode(',', $hex);
+      $clr_hex = explode(':', $hex);
       $out[trim($clr_hex[0])] = trim($clr_hex[1]);
     }
   }
@@ -97,7 +110,7 @@ function hj_ajax_hex_terms() {
 //     if ($hexes) {
 //       $out = array();
 //       foreach (preg_split("/\s?\|\s?/", trim($hexes)) as $hex) {
-//         $clr_hex = explode(',', $hex);
+//         $clr_hex = explode(':', $hex);
 //         $out[trim($clr_hex[0])] = trim($clr_hex[1]);
 //       }
 //       $product_hexes[$product_id] = $out;
@@ -120,7 +133,7 @@ function hj_get_hexes($product) {
   if ($hexes) {
     $out = array();
     foreach (preg_split("/\s?\|\s?/", trim($hexes)) as $hex) {
-      $clr_hex = explode(',', $hex);
+      $clr_hex = explode(':', $hex);
       $out[strtolower(trim($clr_hex[0]))] = trim($clr_hex[1]);
     }
 
@@ -167,14 +180,15 @@ function hj_get_item_data( $item_data, $cart_item ) {
 
 add_filter( 'nm_product_quickview_link', 'hj_nm_product_quickview_link' );
 function hj_nm_product_quickview_link( $string ) {
-  echo str_ireplace( 'Show more', __('Quick View', 'savoy-haje'), $string );
+  // echo str_ireplace( 'Show more', __('Quick View', 'savoy-haje'), $string );
+  echo str_ireplace( 'Show more', '<i class="nm-font nm-font-eye"></i>', $string );
 }
 
 
 // SINGLE PRODUCT
-add_image_size( '40x60', 40, 60, true );
+// add_image_size( '40x60', 40, 60, true );
 
-add_action( 'woocommerce_after_single_product_tabs', 'hj_product_nav' );
+// add_action( 'woocommerce_after_single_product_tabs', 'hj_product_nav' );
 function hj_product_nav() {
   global $product, $nm_theme_options;
 

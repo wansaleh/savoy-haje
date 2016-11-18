@@ -19,14 +19,22 @@ findKey = (obj, keyToFind) ->
 
 class window.Haje
   constructor: ->
-    do ->
-      heading = $('.upsells h2, .related h2, .woocommerce-cart .woocommerce>form>h3, .cart-collaterals>h2, #customer_details h3, #order_review_heading, #nm-wishlist h1, .woocommerce-edit-address .woocommerce-MyAccount-content h2')
-      heading.length && heading.each ->
-        heading_html = $(this).html().trim()
-        if ! /<[a-z][\s\S]*>/i.test(heading_html)
-          substr = heading_html.split(/\s+/)
-          substr_last = substr.pop()
-          $(this).html(substr.join(' ') + " <em>#{substr_last}</em>")
+    # do ->
+    #   $('.menu-login a').attr('href', _hj_vars.login_url)
+    #   $('.menu-logout a').attr('href', _hj_vars.logout_url)
+
+      # $('.menu-login, .menu-logout').find('a').each ->
+      #   currentURL = window.location.href
+      #   $(this).attr('href', $(this).attr('href') + '?' + $.param(redirect_to: currentURL))
+
+    # do ->
+    #   heading = $('.upsells h2, .related h2, .woocommerce-cart .woocommerce>form>h3, .cart-collaterals>h2, #customer_details h3, #order_review_heading, #nm-wishlist h1, .woocommerce-edit-address .woocommerce-MyAccount-content h2')
+    #   heading.length && heading.each ->
+    #     heading_html = $(this).html().trim()
+    #     if ! /<[a-z][\s\S]*>/i.test(heading_html)
+    #       substr = heading_html.split(/\s+/)
+    #       substr_last = substr.pop()
+    #       $(this).html(substr.join(' ') + " <em>#{substr_last}</em>")
 
     # new Headroom($('#nm-header')[0], {
     #   offset: 128,
@@ -53,6 +61,26 @@ class Haje.Forms
     $('.mc4wp-form input[type=email]')
       .focus -> $(this).closest('.mc4wp-form').addClass('focus')
       .blur -> $(this).closest('.mc4wp-form').removeClass('focus')
+
+    # GRAVITY FORMS
+    $('.ginput_container').find('input, textarea, select, label')
+      .focus -> $(this).closest('.gfield').addClass('focus')
+      .blur -> $(this).closest('.gfield').removeClass('focus')
+
+    # PROFILE BUILDER
+    $('.wppb-user-forms').find('input, textarea, select, label')
+      .focus -> $(this).closest('.wppb-form-field, p').addClass('focus')
+      .blur -> $(this).closest('.wppb-form-field, p').removeClass('focus')
+
+    $('.wppb-user-forms').find(':checkbox')
+      .each ->
+        if $(this).is(':checked')
+          $(this).closest('.wppb-form-field, p').addClass('checked')
+      .change ->
+        if $(this).is(':checked')
+          $(this).closest('.wppb-form-field, p').addClass('checked')
+        else
+          $(this).closest('.wppb-form-field, p').removeClass('checked')
 
 class Haje.Alert
   constructor: ->

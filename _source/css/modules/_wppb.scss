@@ -1,0 +1,375 @@
+@mixin custom-checkbox {
+  label {
+    position: relative;
+    padding-left: 32px;
+    padding-top: 0;
+    padding-bottom: 0;
+    line-height: 30px;
+
+    input {
+      position: absolute;
+      top: -100px;
+      left: 0;
+      visibility: hidden;
+    }
+
+    &:before {
+      position: absolute;
+      top: 2px;
+      left: 0;
+      width: 24px;
+      height: 24px;
+      font-size: 16px;
+      line-height: 16px;
+      text-align: center;
+      border-radius: 3px;
+      border: 1px solid #e1e1e1;
+
+      font-family: 'nm-font';
+      font-style: normal;
+      font-weight: normal;
+      color: rgba($clr-highlight, 0);
+      content: "\e116";
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      transition: all .2s ease;
+    }
+  }
+
+  &.checked label:before {
+    border-color: $clr-highlight;
+    color: $clr-highlight;
+    // background: $clr-highlight;
+    // color: #fff;
+    // border-color: $clr-highlight;
+    content: "\e116";
+  }
+  &.checked label {
+    // color: $clr-highlight !important;
+  }
+}
+
+$clr-login-page: $clr-deep-purple;
+
+.hj-login {
+  .nm-page-wrap-inner > .nm-page-full {
+    background: linear-gradient(to bottom left, $clr-blue-a200, #1b519d);
+    // background: $clr-login-page linear-gradient(to bottom, rgba($clr-highlight, .3), $clr-login-page 20%);
+  }
+}
+
+#haje-login {
+  // @extend .text-xs-center;
+
+  .login-box {
+    padding: 2em;
+    background: #fff;
+    border-radius: 3px;
+
+    h1 {
+      margin-bottom: 1em;
+      text-align: center;
+    }
+
+    form > p {
+      @include form-row;
+
+      input:not([type=checkbox]):not([type=radio]) {
+        width: 100%;
+      }
+
+      input[type=submit] {
+        padding: 1em;
+      }
+
+      &.login-remember {
+        @include custom-checkbox;
+      }
+    }
+
+    p.wppb-alert {
+      text-align: center;
+    }
+  }
+}
+
+.wppb-user-forms {
+  ul {
+    @include scut-list-unstyled;
+
+    li {
+      list-style-type: none;
+    }
+  }
+
+  .wppb-form-field > ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  .wppb-form-field {
+    @include form-row;
+
+    h4 {
+      margin-bottom: 1em;
+      font-size: 2em;
+      font-weight: 300;
+    }
+
+    label {
+      img {
+        vertical-align: middle;
+        margin-left: 3px;
+      }
+    }
+
+    input:not([type=checkbox]),
+    input:not([type=radio]),
+    textarea,
+    select {
+      width: 100%;
+    }
+
+    .wppb-required {
+      display: inline-block;
+      margin-left: 5px;
+      color: $clr-pink-a400;
+    }
+
+    .wppb-description-delimiter {
+      display: block;
+      font-size: .8em;
+      opacity: .6;
+    }
+
+    &.wppb-heading .wppb-description-delimiter {
+      font-size: 1.2em;
+      margin-top: -1.4em;
+      margin-bottom: 1em;
+      line-height: 1.2;
+    }
+
+    &.wppb-default-first-name,
+    &.wppb-default-last-name,
+    &.wppb_billing_first_name,
+    &.wppb_billing_last_name {
+      width: 49%;
+      float: left;
+      margin-bottom: .8em;
+
+      @include media-breakpoint-down(xs) {
+        width: 100%;
+        float: none !important;
+        margin-bottom: 0;
+      }
+    }
+    &.wppb-default-last-name,
+    &.wppb_billing_last_name {
+      float: right;
+    }
+
+    &.wppb-field-error {
+      label {
+        color: $clr-pink-a400;
+      }
+
+      input:not([type=checkbox]),
+      input:not([type=radio]),
+      textarea,
+      select {
+        border-bottom-color: $clr-pink-a400;
+      }
+    }
+
+    .wppb-form-error {
+      display: block;
+      margin-top: .5em;
+      color: $clr-pink-a200;
+      font-size: .8em;
+      line-height: 1;
+    }
+
+    // PASS STRENGTH
+    #pass-strength-result {
+      display: block;
+      margin-top: -14px;
+      padding: 0px 10px;
+      border-radius: 2em;
+      background: #eee;
+      font-size: .8em;
+      float: right;
+      transition: all .3s ease;
+
+      &.short {
+        background: $clr-pink-a400;
+        color: #fff;
+        opacity: 1;
+      }
+      &.bad {
+        background: $clr-amber-800;
+        color: #fff;
+        opacity: 1;
+      }
+      &.good {
+        background: $clr-cyan-a700;
+        color: #fff;
+        opacity: 1;
+      }
+      &.strong {
+        background: $clr-blue-a200;
+        color: #fff;
+        opacity: 1;
+      }
+      &[class=""] {
+        opacity: 0;
+      }
+    }
+
+    &.wppb-shipping-different-address,
+    &.wppb-send-credentials-checkbox {
+      margin-top: 1em;
+      margin-bottom: 1em;
+      @include custom-checkbox;
+    }
+  }
+
+  p.form-submit {
+    margin-top: 4em;
+    margin-bottom: 0;
+
+    input[type=submit] {
+      padding: 1em;
+      font-size: 2em;
+      font-weight: 300;
+      // background: $clr-page-2;
+      width: 100%;
+      border-radius: 3px;
+
+      @include media-breakpoint-down(sm) {
+        padding: .5em;
+      }
+    }
+  }
+
+  p.login-register-lost-password {
+    text-align: center;
+  }
+}
+
+.wppb-user-forms .wppb-form-field {
+  &.wppb-default-contact-info-heading,
+  &.wppb-password-heading,
+  &.wppb-default-about-yourself-heading,
+  &.wppb_billing_heading,
+  &.wppb_shipping_heading,
+  &.wppb-misc-heading {
+    margin-top: 4em;
+  }
+}
+
+.wppb-user-forms:not(.wppb-edit-user) .wppb-form-field {
+  &.wppb-default-name-heading {
+    @include big-number-before('1');
+  }
+  &.wppb-default-contact-info-heading {
+    @include big-number-before('2');
+  }
+  &.wppb-password-heading {
+    @include big-number-before('3');
+  }
+  &.wppb-default-about-yourself-heading {
+    @include big-number-before('4');
+  }
+  &.wppb_billing_heading {
+    @include big-number-before('5');
+  }
+  &.wppb_shipping_heading {
+    @include big-number-before('5.1');
+  }
+  &.wppb-misc-heading {
+    @include big-number-before('6');
+  }
+}
+
+.wppb-edit-user .wppb-form-field.wppb-default-name-heading {
+  margin-top: 4em;
+}
+
+.edar-box .wppb-edit-user .wppb-form-field.wppb-default-name-heading {
+  margin-top: 0;
+}
+
+// .wppb-edit-user .wppb-form-field.wppb-misc-heading {
+//   @include big-number-before('5');
+// }
+
+#wppb_general_top_error_message,
+#wppb_form_success_message,
+p.redirect_message,
+p.wppb-success,
+p.alert,
+p.error {
+  font-size: 1.6em;
+  font-weight: 300;
+  line-height: 1.4;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+//
+// p.error {
+//   color: $clr-pink-a400;
+// }
+
+#wppb_general_top_error_message {
+  color: $clr-pink-a400;
+}
+
+.wppb-sc-buttons-container {
+  text-align: center;
+  margin-top: 2em;
+  padding-bottom: 0;
+
+  .wppb-sc-buttons-text-div {
+    display: inline-block;
+    margin: 3px;
+
+    a.wppb-sc-button-text {
+      font-family: $body-fonts;
+      font-weight: 400;
+      border-radius: 3px;
+      min-width: auto;
+      padding: .1em 1.3em 0 .5em;
+      transition: all .3s ease;
+
+      i {
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+
+.woocommerce-MyAccount-content {
+  overflow: visible;
+
+  .wppb-sc-buttons-container {
+    margin-top: 4em;
+    padding: 3em 1em;
+    text-align: center;
+    background: $clr-grey-bg;
+    border-radius: 5px;
+
+    &:before {
+      content: "Social Connect";
+      font-size: 2em;
+      font-weight: 300;
+      display: block;
+      padding-bottom: 1em;
+    }
+  }
+}

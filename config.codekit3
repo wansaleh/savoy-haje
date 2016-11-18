@@ -640,6 +640,19 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/_source\/css\/editor-style.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/editor-style.css",
+		"oF": 2,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/_source\/css\/haje.scss": {
 		"aP": 1,
 		"bl": 1,
@@ -757,6 +770,19 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/_source\/css\/modules\/_gforms.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/css\/css\/_gforms.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/_source\/css\/modules\/_grid.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -766,32 +792,6 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/assets\/css\/css\/_grid.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"\/_source\/css\/modules\/_home.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "\/assets\/css\/css\/_home.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"\/_source\/css\/modules\/_kurtas.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "\/assets\/css\/css\/_kurtas.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -848,6 +848,19 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/_source\/css\/modules\/_wc-account.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/css\/css\/_wc-account.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/_source\/css\/modules\/_wc-variations.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -870,6 +883,97 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/assets\/css\/css\/_wc.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/_source\/css\/modules\/_wppb.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/css\/css\/_wppb.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/_source\/css\/pages\/_catalogue.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/css\/css\/_catalogue.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/_source\/css\/pages\/_edar-gf.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/css\/css\/_edar-gf.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/_source\/css\/pages\/_edar.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/css\/css\/_edar.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/_source\/css\/pages\/_home.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/css\/css\/_home.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/_source\/css\/pages\/_kurtas.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/css\/css\/_kurtas.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/_source\/css\/pages\/_memberships.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/css\/css\/_memberships.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -1116,6 +1220,24 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/_source\/images\/binding_dark.png": {
+		"ft": 32768,
+		"iS": 19846,
+		"oA": 0,
+		"oAP": "\/assets\/images\/binding_dark.png",
+		"oF": 0,
+		"opt": 1
+		},
+	"\/_source\/images\/blind.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/images\/blind.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/_source\/images\/certificate.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -1204,6 +1326,24 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"\/_source\/images\/haje-letterhead.png": {
+		"ft": 32768,
+		"iS": 12509,
+		"oA": 0,
+		"oAP": "\/assets\/images\/haje-letterhead.png",
+		"oF": 0,
+		"opt": 1
+		},
+	"\/_source\/images\/haje-stroke.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/images\/haje-stroke.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/_source\/images\/mailchimp-plus-gray.png": {
 		"ft": 32768,
 		"iS": 15411,
@@ -1219,6 +1359,16 @@
 		"oAP": "\/assets\/images\/mailchimp-plus.png",
 		"oF": 1,
 		"opt": 1
+		},
+	"\/_source\/images\/not-available.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/images\/not-available.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
 		},
 	"\/_source\/images\/payments-30-new.png": {
 		"ft": 32768,
@@ -1273,6 +1423,24 @@
 		"oAP": "\/assets\/images\/shopping-cart.svg",
 		"oF": 1,
 		"opt": 1,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/_source\/images\/sizeguide.png": {
+		"ft": 32768,
+		"iS": 24735,
+		"oA": 0,
+		"oAP": "\/assets\/images\/sizeguide.png",
+		"oF": 0,
+		"opt": 1
+		},
+	"\/_source\/images\/sizeguide.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/images\/sizeguide.svg",
+		"oF": 0,
+		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
@@ -1336,6 +1504,16 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"\/_source\/images\/waves3-edar.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/images\/waves3-edar.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/_source\/images\/waves3.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -1396,6 +1574,16 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"\/_source\/images\/waves5-upright.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/images\/waves5-upright.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/_source\/images\/waves5.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -1425,6 +1613,14 @@
 		"opt": 1,
 		"plM": 3758088159,
 		"prP": 0
+		},
+	"\/_source\/images\/wavy.jpg": {
+		"ft": 16384,
+		"iS": 57369,
+		"oA": 0,
+		"oAP": "\/assets\/images\/wavy.jpg",
+		"oF": 0,
+		"opt": 1
 		},
 	"\/_source\/js\/_haje-home.coffee": {
 		"ft": 32,
@@ -1495,7 +1691,7 @@
 	"\/_source\/js\/haje.coffee": {
 		"ft": 32,
 		"ma": 1,
-		"mi": 1,
+		"mi": 0,
 		"oA": 0,
 		"oAP": "\/assets\/js\/haje.js",
 		"oF": 2,
@@ -1519,6 +1715,15 @@
 		"oAP": "\/assets\/js\/modernizr.js",
 		"oF": 2,
 		"sC": 0,
+		"tS": 0
+		},
+	"\/_source\/js\/select-togglebutton.custom.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 2,
+		"oAP": "\/assets\/js\/vendor\/select-togglebutton.custom-min.js",
+		"oF": 3,
+		"sC": 1,
 		"tS": 0
 		},
 	"\/_source\/js\/vendor.js": {
@@ -1589,15 +1794,6 @@
 		"mi": 1,
 		"oA": 2,
 		"oAP": "\/assets\/js\/vendor\/ntc-min.js",
-		"oF": 3,
-		"sC": 1,
-		"tS": 0
-		},
-	"\/_source\/js\/vendor\/select-togglebutton.custom.js": {
-		"ft": 64,
-		"mi": 1,
-		"oA": 2,
-		"oAP": "\/assets\/js\/vendor\/select-togglebutton.custom-min.js",
 		"oF": 3,
 		"sC": 1,
 		"tS": 0
@@ -9377,6 +9573,16 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/editor-style.css": {
+		"aP": 0,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 2,
+		"oAP": "\/assets\/editor-style.css",
+		"oF": 0,
+		"oS": 0
+		},
 	"\/element-templates\/vc_column.php": {
 		"ft": 8192,
 		"oA": 1,
@@ -9424,16 +9630,6 @@
 		"oA": 1,
 		"oAP": "\/assets\/element-templates\/vc_toggle.php",
 		"oF": 1
-		},
-	"\/flaticon.css": {
-		"aP": 0,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 2,
-		"oAP": "\/assets\/flaticon.css",
-		"oF": 0,
-		"oS": 0
 		},
 	"\/follow-up-emails\/checkout\/email-subscribe.php": {
 		"ft": 8192,
@@ -9488,6 +9684,12 @@
 		"oA": 1,
 		"oAP": "\/assets\/includes\/haje-shortcodes.php",
 		"oF": 1
+		},
+	"\/includes\/haje-wc-account.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/includes\/haje-wc-account.php",
+		"oF": 0
 		},
 	"\/includes\/haje-wc.php": {
 		"ft": 8192,
@@ -9591,6 +9793,18 @@
 		"oAP": "\/assets\/woocommerce\/loop\/sale-flash.php",
 		"oF": 1
 		},
+	"\/woocommerce\/myaccount\/form-login-2.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/woocommerce\/myaccount\/form-login-2.php",
+		"oF": 0
+		},
+	"\/woocommerce\/myaccount\/form-login.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/woocommerce\/myaccount\/form-login.php",
+		"oF": 0
+		},
 	"\/woocommerce\/single-product\/add-to-cart\/variable.php": {
 		"ft": 8192,
 		"oA": 1,
@@ -9612,8 +9826,8 @@
 	"creationDate": 499207108,
 	"displayValue": "savoy-haje",
 	"displayValueWasSetByUser": 1,
-	"iconImageName": "meme-yesBaby",
-	"lastBuiltDate": 500201695
+	"iconImageName": "brackets_teal",
+	"lastBuiltDate": 500962617
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
