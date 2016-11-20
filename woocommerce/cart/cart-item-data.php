@@ -19,17 +19,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+// WAN
 require dirname(__FILE__) . '/../../includes/color-names.php';
 
 $product_id = null;
 foreach ( $item_data as $data ) {
-	if ($data['key'] == 'product_id')
+	if ($data['key'] == 'product_id') {
 		$product_id = $data['value'];
+	}
 }
+// END WAN
 
 ?>
 <ul class="variation">
 	<?php foreach ( $item_data as $data ) :
+		// WAN
 		if ($data['key'] == 'product_id')
 			continue;
 
@@ -50,7 +54,7 @@ foreach ( $item_data as $data ) {
 				}
 			}
 		}
-
+		// END WAN
 	?>
 		<li>
             <div class="variation-<?php echo sanitize_html_class( $data['key'] ); ?>"><?php echo wp_kses_post( $data['key'] ); ?>:</div>

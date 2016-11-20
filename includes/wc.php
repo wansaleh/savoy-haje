@@ -1,6 +1,18 @@
 <?php
 
-require('color-names.php');
+require('colors.php');
+
+add_filter( 'woocommerce_cart_item_price', 'hj_woocommerce_cart_item_price', 20, 3 );
+function hj_woocommerce_cart_item_price( $html, $cart_item, $cart_item_key ) {
+  if ( isset( $cart_item['discounts'] ) ) {
+    $percent = 100 * ( ( $cart_item['discounts']['display_price'] - $cart_item['discounts']['price_adjusted'] ) / $cart_item['discounts']['display_price'] );
+
+    return "$html<span class='discount-percent'>$percent% discount</span>";
+  }
+
+  return $html;
+}
+
 
 // add_filter( 'woogoogad_gg_api_other_parameters', gg_api_key );
 // function gg_api_key() {

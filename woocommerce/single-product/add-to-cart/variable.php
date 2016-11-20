@@ -39,12 +39,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 	<?php else : ?>
 		<table class="variations" cellspacing="0">
 			<tbody>
-				<?php foreach ( $attributes as $attribute_name => $options ) :
-					// $size_guide = '';
-					// if ( $attribute_name == 'pa_size' || $attribute_name == 'size' || $attribute_name == 'Size' ) {
-					// 	$size_guide = '<a class="size-guide open-popup-link" href="#ct_size_guide">Size Guide</a>';
-					// }
-				?>
+				<?php foreach ( $attributes as $attribute_name => $options ) : ?>
 					<tr>
 						<td class="nm-variation-row" data-attribute_name="<?php echo sanitize_title( $attribute_name ); ?>">
 							<div class="label"><label for="<?php echo sanitize_title( $attribute_name ); ?>"><?php echo count( $options ) . ' ' . wc_attribute_label( $attribute_name ); ?>s</label></div>
@@ -54,7 +49,6 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 									wc_dropdown_variation_attribute_options( array( 'options' => $options, 'attribute' => $attribute_name, 'product' => $product, 'selected' => $selected ) );
 									echo end( $attribute_keys ) === $attribute_name ? apply_filters( 'woocommerce_reset_variations_link', '<a class="reset_variations" href="#">' . __( 'Clear', 'woocommerce' ) . '</a>' ) : '';
 								?>
-								<?php //echo $size_guide; ?>
 							</div>
 						</td>
 					</tr>

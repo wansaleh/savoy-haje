@@ -136,7 +136,7 @@ $clr-login-page: $clr-deep-purple;
     .wppb-required {
       display: inline-block;
       margin-left: 5px;
-      color: $clr-pink-a400;
+      color: $error;
     }
 
     .wppb-description-delimiter {
@@ -173,14 +173,14 @@ $clr-login-page: $clr-deep-purple;
 
     &.wppb-field-error {
       label {
-        color: $clr-pink-a400;
+        color: $error;
       }
 
       input:not([type=checkbox]),
       input:not([type=radio]),
       textarea,
       select {
-        border-bottom-color: $clr-pink-a400;
+        border-bottom-color: $error;
       }
     }
 
@@ -204,7 +204,7 @@ $clr-login-page: $clr-deep-purple;
       transition: all .3s ease;
 
       &.short {
-        background: $clr-pink-a400;
+        background: $error;
         color: #fff;
         opacity: 1;
       }
@@ -322,11 +322,11 @@ p.error {
 }
 //
 // p.error {
-//   color: $clr-pink-a400;
+//   color: $error;
 // }
 
 #wppb_general_top_error_message {
-  color: $clr-pink-a400;
+  color: $error;
 }
 
 .wppb-sc-buttons-container {

@@ -11,6 +11,7 @@
 		'disable_element'   => '',
         'el_class'        	=> '',
 		'css' 				=> '',
+        'css_animation'     => '',
 		// Custom params
 		'type' 				=> 'full',
 		'max_width'			=> '',
@@ -28,7 +29,12 @@
 	}
 
 	// Custom class
+	//$el_class = $this->getExtraClass( $el_class ) . $this->getCSSAnimation( $css_animation );
 	$el_class = $this->getExtraClass( $el_class );
+	// Fix: $css_animation should be empty when animation is disabled but returns "none" instead (see "getCSSAnimation()" in "../js_composer/include/classes/shortcodes/shortcodes.php")
+	if ( $css_animation !== 'none' ) {
+			$el_class .= $this->getCSSAnimation( $css_animation );
+	}
 
 	// Maximum width
 	if ( strlen( $max_width ) > 0 ) {
@@ -102,6 +108,16 @@
 		}
 	}
 
+	// CSS animation
+	/*if ( strlen( $css_animation ) > 0 ) {
+			// Enqueue CSS animation styles
+			wp_enqueue_script( 'waypoints' );
+			wp_enqueue_style( 'nm-animate' );
+
+			$row_class .= ' animated';
+			$wrapper_atts[] = ' data-animate="' . esc_attr( $css_animation ) . '"';
+	}*/
+
     // Row class end
 	$row_class .= ' ' . $el_class . vc_shortcode_custom_css_class( $css, ' ' );
 
@@ -115,6 +131,7 @@
 	// Output
 	$output .= '<div ' . implode( ' ', $wrapper_atts ) . '>';
 
+	// WAN
 	if ( $type == 'full-boxed' ) {
 		$inner_row_class = 'nm-row nm-row-boxed';
 		if ( ! empty( $row_flex_class ) ) {
@@ -122,12 +139,15 @@
     }
 		$output .= '<div class="' . $inner_row_class . '">';
 	}
+	// END WAN
 
 	$output .= wpb_js_remove_wpautop( $content );
 
+	// WAN
 	if ( $type == 'full-boxed' ) {
 		$output .= '</div>';
 	}
+	// END WAN
 
 	$output .= '</div>';
 

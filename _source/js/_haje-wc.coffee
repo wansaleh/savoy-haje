@@ -32,10 +32,11 @@ class Haje.WC.Tabs
       that = $(this)
       currentPanel = that.attr('href')
       that.parent().siblings().removeClass('active').end().addClass 'active'
-      $('.woocommerce-tabs').find(currentPanel).siblings('.panel').filter(':visible').fadeOut 500, ->
+
+      $('.woocommerce-tabs').find(currentPanel).siblings('.panel').filter(':visible').fadeOut 200, ->
         $('.woocommerce-tabs').find(currentPanel).siblings('.panel').removeClass 'current'
-        $('.woocommerce-tabs').find(currentPanel).addClass('current').fadeIn 500
-        return
+        $('.woocommerce-tabs').find(currentPanel).addClass('current').fadeIn 200
+
       false
 
 class Haje.WC.VariationNumberGuide
@@ -210,10 +211,17 @@ class Haje.WC.VariationSwatches
         sizeguide = $('<button type="button" class="swatch size-guide">Size Guide</button>').appendTo(select.data('group'))
 
         sizeguide.click ->
-          $('.wc-tabs .size_guide_tab a').trigger('click')
-          $('html, body').animate({
-           scrollTop: $('.wc-tabs').offset().top
-          }, 300);
+          TweenMax.to window, .5,
+            scrollTo:
+              y: $('.wc-tabs')
+              offsetY: 0
+            ease: Power2.easeInOut
+            onComplete: ->
+              $('.wc-tabs .size_guide_tab a').trigger('click')
+
+          # $('html, body').animate({
+          #  scrollTop: $('.wc-tabs').offset().top
+          # }, 300);
 
   colorizeSwatch: (swatches) ->
     _this = this

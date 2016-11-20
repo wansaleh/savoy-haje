@@ -6,10 +6,16 @@
 		'el_class' 		=> '',
 		'width' 		=> '1/1',
 		'css' 			=> '',
-		'offset' 		=> ''
+		'offset' 		=> '',
+        'css_animation' => ''
 	), $atts));
 	
+    //$el_class = $this->getExtraClass( $el_class ) . $this->getCSSAnimation( $css_animation );
 	$el_class = $this->getExtraClass($el_class);
+    // Fix: $css_animation should be empty when animation is disabled but returns "none" instead (see "getCSSAnimation()" in "../js_composer/include/classes/shortcodes/shortcodes.php")
+    if ( $css_animation !== 'none' ) {
+        $el_class .= $this->getCSSAnimation( $css_animation );
+    }
 	$el_class .= ' nm_column';
 	
 	$width = wpb_translateColumnWidthToSpan($width);

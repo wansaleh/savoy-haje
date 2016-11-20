@@ -965,19 +965,6 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"\/_source\/css\/pages\/_memberships.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "\/assets\/css\/css\/_memberships.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
 	"\/_source\/fonts\/.sass-cache\/d60cecdca9661097dd49ab9ebae5e557d004ef50\/myriad-pro-apple.scssc": {
 		"ft": 8192,
 		"oA": 2,
@@ -1339,6 +1326,16 @@
 		"miP": 0,
 		"oA": 2,
 		"oAP": "\/assets\/images\/haje-stroke.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/_source\/images\/lace.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/images\/lace.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
@@ -9585,15 +9582,15 @@
 		},
 	"\/element-templates\/vc_column.php": {
 		"ft": 8192,
-		"oA": 1,
+		"oA": 2,
 		"oAP": "\/assets\/element-templates\/vc_column.php",
-		"oF": 1
+		"oF": 0
 		},
 	"\/element-templates\/vc_column_inner.php": {
 		"ft": 8192,
-		"oA": 1,
+		"oA": 2,
 		"oAP": "\/assets\/element-templates\/vc_column_inner.php",
-		"oF": 1
+		"oF": 0
 		},
 	"\/element-templates\/vc_message.php": {
 		"ft": 8192,
@@ -9667,40 +9664,58 @@
 		"oAP": "\/assets\/header-default.php",
 		"oF": 1
 		},
-	"\/header.php": {
+	"\/includes\/colors.php": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/assets\/includes\/colors.php",
+		"oF": 1
+		},
+	"\/includes\/emails.php": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/assets\/header.php",
+		"oAP": "\/assets\/includes\/emails.php",
 		"oF": 0
-		},
-	"\/includes\/color-names.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/includes\/color-names.php",
-		"oF": 1
-		},
-	"\/includes\/haje-shortcodes.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/includes\/haje-shortcodes.php",
-		"oF": 1
-		},
-	"\/includes\/haje-wc-account.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/assets\/includes\/haje-wc-account.php",
-		"oF": 0
-		},
-	"\/includes\/haje-wc.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/includes\/haje-wc.php",
-		"oF": 1
 		},
 	"\/includes\/haje.php": {
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/assets\/includes\/haje.php",
+		"oF": 1
+		},
+	"\/includes\/redirects.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/includes\/redirects.php",
+		"oF": 0
+		},
+	"\/includes\/shortcodes.php": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/assets\/includes\/shortcodes.php",
+		"oF": 1
+		},
+	"\/includes\/userpro.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/includes\/userpro.php",
+		"oF": 0
+		},
+	"\/includes\/vc.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/includes\/vc.php",
+		"oF": 0
+		},
+	"\/includes\/wc-account.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/includes\/wc-account.php",
+		"oF": 0
+		},
+	"\/includes\/wc.php": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/assets\/includes\/wc.php",
 		"oF": 1
 		},
 	"\/languages\/en_US.mo": {
@@ -9763,22 +9778,46 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/woocommerce\/ajax-add-to-cart-fragments.php": {
+	"\/views\/emails\/haje-edar-approved-full.twig": {
 		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/woocommerce\/ajax-add-to-cart-fragments.php",
-		"oF": 1
+		"oA": 2,
+		"oAP": "\/assets\/views\/emails\/haje-edar-approved-full.twig",
+		"oF": 0
+		},
+	"\/views\/emails\/haje-edar-approved.twig": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/views\/emails\/haje-edar-approved.twig",
+		"oF": 0
+		},
+	"\/views\/myaccount-edar.twig": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/views\/myaccount-edar.twig",
+		"oF": 0
+		},
+	"\/views\/pb-user-emails\/default-registration.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/views\/pb-user-emails\/default-registration.html",
+		"oF": 0
+		},
+	"\/views\/pb-user-emails\/registration-admin-approval.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/views\/pb-user-emails\/registration-admin-approval.html",
+		"oF": 0
+		},
+	"\/views\/pb-user-emails\/user-approval.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/views\/pb-user-emails\/user-approval.html",
+		"oF": 0
 		},
 	"\/woocommerce\/cart\/cart-item-data.php": {
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/assets\/woocommerce\/cart\/cart-item-data.php",
-		"oF": 1
-		},
-	"\/woocommerce\/content-product_nm_header.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/woocommerce\/content-product_nm_header.php",
 		"oF": 1
 		},
 	"\/woocommerce\/content-product_nm_results_bar.php": {
@@ -9816,6 +9855,12 @@
 		"oA": 1,
 		"oAP": "\/assets\/woocommerce\/single-product\/sale-flash.php",
 		"oF": 1
+		},
+	"\/wp-html-mail\/template.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/wp-html-mail\/template.html",
+		"oF": 0
 		}
 	},
 "hooks": [

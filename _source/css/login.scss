@@ -16,9 +16,9 @@ $body-fonts: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, 
 body.login {
   font-family: $body-fonts;
 
-  $clr-page: #1b2020;
+  $clr-page: #303841;
 
-  background: linear-gradient(to bottom, #19304a, #090e1a 90%);
+  background: linear-gradient(to bottom, $clr-page, #090e1a 90%);
 
   // background-image: url(/wp-content/uploads/2015/08/sign.jpg);
   // background-position: center center;
@@ -270,7 +270,7 @@ body.login {
 
   &:hover {
     opacity: .8;
-  }  
+  }
 }
 
 #wppb_sc_account_connect, #wppb_sc_new_account {

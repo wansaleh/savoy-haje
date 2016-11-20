@@ -15,45 +15,28 @@ function is_user_in_role( $role ) {
 //   return 'ms_MY';
 // });
 
-// add_action( 'template_redirect', 'hj_logged_in' );
-// function hj_logged_in() {
-//   if ( is_page('login') && is_user_logged_in() ) {
-//     wp_redirect( home_url() );
-//     exit;
-//   }
+// add_filter( 'body_class', 'hj_adjust_body_class', 99999 );
+// function hj_adjust_body_class( $classes ) {
 //
-//   if ( is_page('edar') && is_user_logged_in() && is_user_in_role( 'haje_edar' ) ) {
-//     wp_redirect( '/shop/category/edar/' );
-//   }
+//   // if ( isset( $_GET['page'] ) && $_GET['page'] == 'gf_activation' ) {
+//   //   foreach ( $classes as $key => $value ) {
+//   //     if ( $value == 'header-light' || $value == 'header-transparency' ) {
+//   //       unset( $classes[ $key ] );
+//   //       $classes[] = 'gf-activation';
+//   //     }
+//   //   }
+//   // }
+//
+//   return $classes;
 // }
 
-// add_action( 'wp_logout', create_function( '', 'wp_redirect(home_url()); exit();' ));
+// Add role class to body
+add_filter('body_class','hj_add_role_to_body', 9999);
+function hj_add_role_to_body( $classes ) {
+  global $current_user;
 
-// function wc_custom_user_redirect( $redirect, $user ) {
-//   // Get the first of all the roles assigned to the user
-//   $role = $user->roles[0];
-//   $dashboard = admin_url();
-//   $myaccount = get_permalink( wc_get_page_id( 'myaccount' ) );
-//   if ( $role == 'haje-edar' ) {
-//     //Redirect customers and subscribers to the "My Account" page
-//     $redirect = $myaccount;
-//   } else {
-//     //Redirect any other role to the previous visited page or, if not available, to the home
-//     $redirect = wp_get_referer() ? wp_get_referer() : home_url();
-//   }
-//   return $redirect;
-// }
-// add_filter( 'woocommerce_login_redirect', 'wc_custom_user_redirect', 10, 2 );
-
-add_filter( 'body_class', 'hj_adjust_body_class', 99999 );
-function hj_adjust_body_class( $classes ) {
-  if ( isset( $_GET['page'] ) && $_GET['page'] == 'gf_activation' ) {
-    foreach ( $classes as $key => $value ) {
-      if ( $value == 'header-light' || $value == 'header-transparency' ) {
-        unset( $classes[ $key ] );
-        $classes[] = 'gf-activation';
-      }
-    }
+  foreach ( $current_user->roles as $role ) {
+    $classes[] = 'role-'. $role;
   }
 
   return $classes;
@@ -74,7 +57,7 @@ function hj_pace() {
   if ( is_admin() ) return;
 
   echo "<script type='text/javascript' src='" . hj_uri() . '/bower_components/PACE/pace.min.js' . "'></script>\n";
-  echo "<style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:".esc_attr( $nm_theme_options['highlight_color'] ).";position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style>";
+  echo "<style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:".esc_attr( $nm_theme_options['highlight_color'] ).";position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px;box-shadow:0 0 2px ".esc_attr( $nm_theme_options['highlight_color'] )."}</style>";
 }
 
 add_action( 'wp_head', 'hj_head_last', 10000 );

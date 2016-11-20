@@ -152,7 +152,7 @@
 
   Haje.Home = (function() {
     function Home() {
-      var $gradient, $upright, colors, tl;
+      var $gradient, $upright, tl;
       if (!$('body').hasClass('home')) {
         return;
       }
@@ -164,7 +164,7 @@
             target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
             console.log(target);
             if (target.length) {
-              TweenMax.to(window, .3, {
+              TweenMax.to(window, .5, {
                 scrollTo: {
                   y: target,
                   offsetY: 0
@@ -196,7 +196,6 @@
       }, 0.2);
       $gradient = $('#home-gradient');
       $upright = $('#home-upright');
-      colors = Trianglify.colorbrewer.YlGnBu.reverse();
     }
 
     return Home;
@@ -256,9 +255,9 @@
         that = $(this);
         currentPanel = that.attr('href');
         that.parent().siblings().removeClass('active').end().addClass('active');
-        $('.woocommerce-tabs').find(currentPanel).siblings('.panel').filter(':visible').fadeOut(500, function() {
+        $('.woocommerce-tabs').find(currentPanel).siblings('.panel').filter(':visible').fadeOut(200, function() {
           $('.woocommerce-tabs').find(currentPanel).siblings('.panel').removeClass('current');
-          $('.woocommerce-tabs').find(currentPanel).addClass('current').fadeIn(500);
+          return $('.woocommerce-tabs').find(currentPanel).addClass('current').fadeIn(200);
         });
         return false;
       });
@@ -412,10 +411,16 @@
         if ($('.size_guide_tab').length && isAttributeSize) {
           sizeguide = $('<button type="button" class="swatch size-guide">Size Guide</button>').appendTo(select.data('group'));
           return sizeguide.click(function() {
-            $('.wc-tabs .size_guide_tab a').trigger('click');
-            return $('html, body').animate({
-              scrollTop: $('.wc-tabs').offset().top
-            }, 300);
+            return TweenMax.to(window, .5, {
+              scrollTo: {
+                y: $('.wc-tabs'),
+                offsetY: 0
+              },
+              ease: Power2.easeInOut,
+              onComplete: function() {
+                return $('.wc-tabs .size_guide_tab a').trigger('click');
+              }
+            });
           });
         }
       });

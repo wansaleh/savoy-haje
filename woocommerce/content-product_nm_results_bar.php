@@ -18,7 +18,7 @@ if ( $filters_count ) {
     $results_bar_class = ' has-filters';
     $results_bar_buttons['filters'] = array(
         'id'    => 'nm-shop-filters-reset',
-        'title' => sprintf( esc_html__( 'Filters active %s(%s)%s', 'savoy-haje' ), '<span>', $filters_count, '</span>' )
+        'title' => sprintf( esc_html__( 'Filters active %s(%s)%s', 'nm-framework' ), '<span>', $filters_count, '</span>' )
     );
 }
 
@@ -27,7 +27,7 @@ if ( ! empty( $_REQUEST['s'] ) ) { // Is search query set and not empty?
     $results_bar_class .= ' is-search';
     $results_bar_buttons['search_taxonomy'] = array(
         'id'    => 'nm-shop-search-taxonomy-reset',
-        'title' => sprintf( esc_html__( 'Search results for %s&ldquo;%s&rdquo;%s', 'savoy-haje' ), '<span>', esc_html( $_REQUEST['s'] ), '</span>' )
+        'title' => sprintf( esc_html__( 'Search results for %s&ldquo;%s&rdquo;%s', 'nm-framework' ), '<span>', esc_html( $_REQUEST['s'] ), '</span>' )
     );
 }
 // Taxonomy
@@ -39,14 +39,16 @@ else if ( is_product_taxonomy() ) {
 
     if ( is_product_category() ) {
         $results_bar_class .= ' is-category';
-        $results_bar_buttons['search_taxonomy']['title'] = sprintf( esc_html__( 'Showing %s&ldquo;%s&rdquo;%s', 'savoy-haje' ), '<span>', esc_html( $current_term->name ), '</span>' );
+        $results_bar_buttons['search_taxonomy']['title'] = sprintf( esc_html__( 'Showing %s&ldquo;%s&rdquo;%s', 'nm-framework' ), '<span>', esc_html( $current_term->name ), '</span>' );
     } else {
         $results_bar_class .= ' is-tag';
+				// WAN
 				if ( is_tax( 'product_brand' ) ) {
 					$results_bar_class .= ' is-brand';
 					$results_bar_buttons['search_taxonomy']['title'] = sprintf( esc_html__( 'Showing brand %s&ldquo;%s&rdquo;%s', 'savoy-haje' ), '<span>', esc_html( $current_term->name ), '</span>' );
 				} else {
-					$results_bar_buttons['search_taxonomy']['title'] = sprintf( esc_html__( 'Products tagged %s&ldquo;%s&rdquo;%s', 'woocommerce' ), '<span>', esc_html( $current_term->name ), '</span>' );
+				// END WAN
+					$results_bar_buttons['search_taxonomy']['title'] = sprintf( esc_html__( 'Products tagged %s&ldquo;%s&rdquo;%s', 'nm-framework' ), '<span>', esc_html( $current_term->name ), '</span>' );
 				}
     }
 }

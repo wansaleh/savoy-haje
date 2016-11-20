@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- So that mobile will display zoomed in -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- enable media queries for windows phone 8 -->
+  <meta name="format-detection" content="telephone=no"> <!-- disable auto telephone linking in iOS -->
+  <style>
+    /* FONTS */
+    @media screen {
+      @font-face {font-family: 'Open Sans'; font-style: normal; font-weight: 300; src: local('Open Sans Light'), local('OpenSans-Light'), url(http://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTegdm0LZdjqr5-oayXSOefg.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;}
+      @font-face {font-family: 'Open Sans'; font-style: normal; font-weight: 400; src: local('Open Sans'), local('OpenSans'), url(http://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;}
+      @font-face {font-family: 'Open Sans'; font-style: normal; font-weight: 600; src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(http://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSugdm0LZdjqr5-oayXSOefg.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;}
+      @font-face {font-family: 'Open Sans'; font-style: italic; font-weight: 300; src: local('Open Sans Light Italic'), local('OpenSansLight-Italic'), url(http://fonts.gstatic.com/s/opensans/v13/PRmiXeptR36kaC0GEAetxko2lTMeWA_kmIyWrkNCwPc.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;}
+      @font-face {font-family: 'Open Sans'; font-style: italic; font-weight: 400; src: local('Open Sans Italic'), local('OpenSans-Italic'), url(http://fonts.gstatic.com/s/opensans/v13/xjAJXh38I15wypJXxuGMBo4P5ICox8Kq3LLUNMylGO4.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;}
+      @font-face {font-family: 'Open Sans'; font-style: italic; font-weight: 600; src: local('Open Sans Semibold Italic'), local('OpenSans-SemiboldItalic'), url(http://fonts.gstatic.com/s/opensans/v13/PRmiXeptR36kaC0GEAetxl2umOyRU7PgRiv8DXcgJjk.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;}
+    }
+
+    body{
+        background-color:###background###;
+        margin:0;
+        padding:0;
+    }
+
+    .header,
+    .title,
+    .subtitle,
+    .footer-text {
+        font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+        font-weight: 300;
+    }
+
+    .container-padding {
+        padding: 36px;
+        /*padding-left: 24px;
+        padding-right: 24px;*/
+    }
+
+    .header {
+        font-size:        ###headerfontsize###px;
+        font-weight:      ###headerbold###;
+        font-style:       ###headeritalic###;
+        color:            ###headercolor###;
+        background:       ###headerbackground###;
+        /*font-family:      ###headerfont###;*/
+        font-family:      'Open Sans', Helvetica, Arial, sans-serif;
+        text-align:       ###headeralign###!important;
+        padding:          ###headerpaddingtop###px ###headerpaddingright###px ###headerpaddingbottom###px ###headerpaddingleft###px;
+    }
+
+    .header-image{
+        max-width: 600px;
+        height:auto;
+        vertical-align: top;
+    }
+
+    .full-width-header-image{
+        width: 100%;
+        display: block;
+    }
+
+    .footer-text,
+    .footer-text th,
+    .footer-text td,
+    .footer-text li {
+        font-size: 12px;
+        line-height: 16px;
+        color: #aaaaaa;
+        background: ###footerbackground###;
+    }
+
+    .footer-text a,
+    .footer-text th a,
+    .footer-text td a,
+    .footer-text li a {
+        color: #aaaaaa;
+    }
+
+    .footerlink{
+        font-size: 11px;
+        text-transform: uppercase;
+        text-decoration: underline;
+    }
+
+    .container {
+        width: 600px;
+        max-width: 600px;
+    }
+
+    .content {
+        /*padding-top: 12px;
+        padding-bottom: 12px;*/
+        background-color: ###contentbackground###;
+        border-radius: 5px;
+    }
+
+    code {
+        background-color: #eee;
+        padding: 0 4px;
+        font-family: Courier, monospace;
+        font-size: 12px;
+    }
+
+    hr {
+        border: 0;
+        border-bottom: 1px solid #cccccc;
+    }
+
+    .hr {
+        height: 1px;
+        border-bottom: 1px solid #cccccc;
+    }
+
+    h1 {
+        font-size:        ###headlinefontsize###px;
+        font-weight:      ###headlinebold###;
+        font-style:       ###headlineitalic###;
+        color:            ###headlinecolor###;
+        /*font-family:      ###headlinefont###;*/
+        font-family:      'Open Sans', Helvetica, Arial, sans-serif;
+        text-align:       ###headlinealign###;
+    }
+
+    h2,h3,h4 {
+        font-size:        ###subheadlinefontsize###px;
+        font-weight:      ###subheadlinebold###;
+        font-style:       ###subheadlineitalic###;
+        color:            ###subheadlinecolor###;
+        /*font-family:      ###subheadlinefont###;*/
+        font-family:      'Open Sans', Helvetica, Arial, sans-serif;
+        text-align:       ###subheadlinealign###;
+    }
+
+    .subtitle {
+        font-size: 16px;
+        font-weight: 600;
+        color: #2469A0;
+    }
+    .subtitle span {
+        font-weight: 400;
+        color: #999999;
+    }
+
+    .body-text,
+    .body-text td,
+    .body-text th,
+    .body-text li {
+        /*font-family:      ###textfont###;*/
+        font-family:      'Open Sans', Helvetica, Arial, sans-serif;
+        font-size:        ###textfontsize###px;
+        color:            ###textcolor###;
+        /*font-weight:      ###textbold###;*/
+        font-weight:      300;
+        font-style:       ###textitalic###;
+        line-height:      1.5;
+    }
+
+    .body-text,
+    .body-text td,
+    .body-text th{
+        text-align:       ###textalign###;
+    }
+
+    a{
+        color:            ###linkcolor###;
+        font-weight:      ###linkbold###;
+        font-style:       ###linkitalic###;
+        text-decoration:  ###linkunderline###;
+    }
+
+    .body-text .content-twocol td,
+    .body-text .content-twocol h1,
+    .body-text .content-twocol h2,
+    .body-text .content-twocol h3,
+    .body-text .content-twocol h4{
+        text-align: left;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    table {
+      border-spacing: 0;
+    }
+
+    table td {
+      border-collapse: collapse;
+    }
+
+    .ExternalClass {
+      width: 100%;
+    }
+
+    .ExternalClass,
+    .ExternalClass p,
+    .ExternalClass span,
+    .ExternalClass font,
+    .ExternalClass td,
+    .ExternalClass div {
+      line-height: 100%;
+    }
+
+    .ReadMsgBody {
+      width: 100%;
+      background-color: ###background###;
+    }
+
+    table {
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+    }
+
+    img {
+      -ms-interpolation-mode: bicubic;
+    }
+
+    a.footerlink{
+      font-size: 12px;
+      text-decoration: none;
+      color:###footerlinkcolor###;
+    }
+
+    .yshortcuts a {
+      border-bottom: none !important;
+    }
+
+    @media screen and (max-width: 599px) {
+      table[class="force-row"],
+      table[class="container"] {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+    }
+    @media screen and (max-width: 400px) {
+      td[class*="container-padding"] {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+      }
+
+      .header-image{
+        max-width: 100% !important;
+      }
+
+      td[class*="one-half"] {
+        display: block;
+        width: 100% !important;
+      }
+
+      td[class*="one-half"],
+      td[class*="one-half"] p,
+      td[class*="one-half"] h1,
+      td[class*="one-half"] h2,
+      td[class*="one-half"] h3,
+      td[class*="one-half"] h4{
+        text-align: ###textalign###!important;
+      }
+    }
+    .ios-footer a {
+      color: #aaaaaa !important;
+      text-decoration: underline;
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- 100% background wrapper (grey background) -->
+<table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" class="###plugin-class###">
+  <tr>
+    <td align="center" valign="top" >
+
+      <br>
+
+      <!-- 600px container (white background) -->
+      <table border="0" width="600" cellpadding="0" cellspacing="0" class="container">
+        <tr>
+          <td class="container-padding header" align="###headeralign###">
+            ###headertext###
+          </td>
+        </tr>
+        <tr>
+          <td class="container-padding content" align="">
+            <div class="body-text">
+              {#mailcontent#}
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="container-padding footer-text" align="left">
+            ###footer###
+            <br>
+          </td>
+        </tr>
+      </table><!--/600px container -->
+
+
+    </td>
+  </tr>
+</table><!--/100% background wrapper-->
+
+</body>
+</html>

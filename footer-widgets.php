@@ -11,8 +11,6 @@
 ?>
 
 	<div class="nm-footer-widgets<?php echo esc_attr( $border_class ); ?> clearfix light">
-			<!-- <svg class="mpc-separator mpc-separator--top mpc-separator-style--arrow-center" data-color="#ffffff" width="100%" height="30" viewBox="0 0 100 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" style="fill: rgb(255, 255, 255);"><polygon points="0,100 0,-5 100,-5 100,100 50,5"></polygon></svg> -->
-
 			<div class="bg-overlay"></div>
     	<div class="nm-footer-widgets-inner">
             <div class="nm-row <?php echo esc_attr( $row_class ); ?>">
@@ -24,6 +22,3 @@
             </div>
         </div>
     </div>
-
-<?php
-	// echo do_shortcode('[instashow id="1"]');

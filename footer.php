@@ -138,7 +138,7 @@
                                 </ul>
                             </div>
 
-                            <!-- <div class="nm-mobile-menu-secondary col-xs-12">
+                            <div class="nm-mobile-menu-secondary col-xs-12">
                                 <ul id="nm-mobile-menu-secondary-ul" class="menu">
                                     <?php
                                         // Top bar menu
@@ -158,7 +158,7 @@
                                     </li>
                                     <?php endif; ?>
                                 </ul>
-                            </div> -->
+                            </div>
 
                         </div>
                     </div>

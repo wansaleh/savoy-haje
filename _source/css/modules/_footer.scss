@@ -23,20 +23,26 @@ footer#nm-footer {
   .nm-footer-widgets {
     // padding: 80px 0 30px;
     // padding: 100px 0 30px;
-    padding: 80px 0 40px;
+    padding: 40px 0 0;
 
     @include media-breakpoint-down(md) {
       padding: 40px 0 0;
     }
 
-    h3 {
-      font-weight: 700;
+    .nm-footer-block-grid > li {
+      padding-bottom: 20px;
     }
 
     .nm-widget-title {
-      @extend .hj-heading;
-      font-size: 2rem;
+      // @extend .hj-heading;
+      font-size: 1.8em;
+      font-weight: 300;
       margin-bottom: 2em;
+
+      em {
+        font-style: normal;
+        color: tint($clr-heading, 50);
+      }
     }
 
     address {
@@ -141,16 +147,60 @@ footer#nm-footer {
 
     .newsletter {
       form {
+        position: relative;
         margin-bottom: 1em;
-      }
 
-      p {
-        line-height: 1.4;
-      }
+        .mymail-email-wrapper {
+          input {
+            border-radius: 3px;
+            padding-right: 100px;
+          }
 
-      p:last-of-type {
-        font-size: .8em;
-        opacity: .6;
+          &.error {
+            input {
+              outline: none;
+            }
+          }
+        }
+
+        .form-submit {
+          position: absolute;
+          bottom: 7px;
+          right: 5px;
+          margin: 0;
+
+          .submit-button {
+            padding: 0 .8em;
+            line-height: 30px;
+            font-size: 1em;
+            width: 90px;
+            // background: #ddd;
+          }
+        }
+        .mymail-form-info {
+          text-align: center;
+
+          &.success {
+            background: $message;
+          }
+
+          &.error {
+            background: $error;
+          }
+        }
+
+        p {
+          line-height: 1.4;
+        }
+
+        .textwidget > p:last-of-type {
+          font-size: .8em;
+          opacity: .6;
+        }
+
+        // &.has-errors {
+        //   .form-submit
+        // }
       }
     }
   }
@@ -176,10 +226,6 @@ footer#nm-footer {
   }
 
   .nm-footer-bar-left .menu {
-    // @include scut-list-divided("/", 1em) {
-    //   opacity: .3;
-    // }
-
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -188,13 +234,6 @@ footer#nm-footer {
       float: none;
       border: 0;
       padding: 0 1em;
-      // display: inline-flex;
-      //
-      // &:after {
-      //   content: "/";
-      //   opacity: .3;
-      //   padding: 0 1em;
-      // }
 
       &:last-of-type:after {
         display: none;
@@ -204,39 +243,6 @@ footer#nm-footer {
     > li a {
       padding: 0;
     }
-
-    // @include media-breakpoint-up(sm) {
-    //   @include scut-list-divided("/", 1em) {
-    //     opacity: .3;
-    //   }
-    //
-    //   > li {
-    //     float: none;
-    //     display: inline-block;
-    //   }
-    //
-    //   > li a {
-    //     padding-right: 0;
-    //   }
-    // }
-    //
-    // @include media-breakpoint-down(md) {
-    //   text-align: center;
-    // }
-    //
-    // @include media-breakpoint-down(sm) {
-    //   margin-top: 1em;
-    //   margin-bottom: 1em;
-    //
-    //   > li {
-    //     border: 0;
-    //
-    //     a {
-    //       padding: 0;
-    //       line-height: 2;
-    //     }
-    //   }
-    // }
   }
 
   .nm-footer-bar-text img {

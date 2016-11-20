@@ -96,7 +96,6 @@
 								/*$productForm.on('found_variation', function() { // Bind: WooCommerce "found_variation" event
 									self.shopToggleVariationDetails();
 								});*/
-
 								var $variationDetailsWrap = $productForm.children('.single_variation_wrap').children('.single_variation');
 								self.shopCheckVariationDetails($variationDetailsWrap); // Hide if empty
 								$variationDetailsWrap.on('show_variation', function() { // Bind: WooCommerce "show_variation" event
@@ -121,7 +120,6 @@
 							});*/
 
 							_qvShowModal();
-
 						});
 					}
 				});

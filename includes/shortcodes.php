@@ -105,19 +105,20 @@ function hj_kurta_sizes( $atts ) {
 
   $product = wc_get_product( $a['id'] );
   $sizes = $product->get_attribute( 'size' );
+  $sizes = preg_split( "/\s?\,\s?/", trim( $sizes ) );
 
   $out = "";
 
-  if ( $sizes ) {
+  if ( ! empty( $sizes ) ) {
+    $count = count( $sizes );
     $out .= "<ul class='home-size-list'>";
-    $count = 0;
-    foreach ( preg_split( "/\s?\,\s?/", trim( $sizes ) ) as $size ) {
-      $out .= "<li>$size</li>";
-      $count++;
-    }
-    $out .= "<li>Available in $count sizes.</li>";
-    $out .= "</ul>";
+    $out .= "<li>Available in $count sizes</li>";
 
+    foreach ( $sizes as $size ) {
+      $out .= "<li>$size</li>";
+    }
+
+    $out .= "</ul>";
   }
 
   return $out;

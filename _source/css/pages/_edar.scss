@@ -43,7 +43,7 @@ $clr-page-2: #122D42;
     }
 
     .haje-top {
-      fill: $clr-page;
+      fill: #20d4cd;
     }
   }
 
@@ -74,9 +74,13 @@ $clr-page-2: #122D42;
 
   p {
     font-size: 1.2em;
-    line-height: 1.6;
+    line-height: 1.4;
     // color: #000;
     // mix-blend-mode: overlay;
+
+    &:last-of-type {
+      font-size: 1em;
+    }
   }
 
   a {
@@ -143,4 +147,40 @@ $clr-page-2: #122D42;
   }
 }
 
-// #thank-you
+#field_4_12 {
+  // position: absolute;
+  // top: 0;
+  // right: 0;
+  font-size: 1.4em;
+  font-weight: 300;
+  // margin-top: 20px;
+}
+
+// .role-haje_edar,
+// .role-haje_edar_unapproved {
+//   .nm_btn {
+//     display: none !important;
+//   }
+// }
+
+.hj-edar-waiting {
+  .nm-page-wrap-inner {
+    .page.status-publish {
+      @extend .text-xs-center, .jumbo;
+
+      padding-top: 4em;
+      padding-bottom: 8em;
+
+      .box {
+        padding: 2em;
+        background: $clr-grey-bg;
+        border-radius: 10px;
+
+        h1 {
+          margin-bottom: 1em;
+          // line-height: 1;
+        }
+      }
+    }
+  }
+}

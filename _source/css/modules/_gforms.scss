@@ -150,38 +150,38 @@
 
   div.validation_error {
     border: 0;
-    color: $clr-pink-a400;
+    color: $error;
     font-weight: 400;
     font-size: 1.2em;
   }
 
   .gfield_required {
-    color: $clr-pink-a400;
+    color: $error;
   }
 
   li.gfield.gfield_error,
   li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
     // background: tint($clr-pink-a400, 95);
     background: none;
-    border-color: $clr-pink-a400;
+    border-color: $error;
     border: 0;
   }
   li.gfield_error input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
   li.gfield_error textarea,
   li.gfield_error select {
     border: 1px solid #e7e7e7;
-    border-bottom: 1px solid $clr-pink-a400;
+    border-bottom: 1px solid $error;
   }
   .gfield_error .gfield_label {
-    color: $clr-pink-a400;
+    color: $error;
   }
   .validation_message {
-    color: $clr-pink-a400;
+    color: $error;
   }
   li.gfield_error div.ginput_complex.ginput_container label,
   li.gfield_error ul.gfield_checkbox,
   li.gfield_error ul.gfield_radio {
-    color: $clr-pink-a400;
+    color: $error;
   }
 }
 

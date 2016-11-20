@@ -248,7 +248,7 @@ $animation-duration: 5s;
 
     $color: #925BD4;
 
-    h1 {
+    .jumbo h1 {
       color: $color !important;
 
       .backgroundblendmode & {
@@ -363,11 +363,12 @@ $animation-duration: 5s;
         display: inline-flex;
         list-style: none;
 
-        width: 40px;
-        height: 40px;
+        width: 44px;
+        height: 44px;
+        line-height: 1;
         background: rgba(#fff, .8);
         border-radius: 50%;
-        border: 1px solid #e7e7e7;
+        border: 1px solid #eee;
         margin: 3px;
 
         justify-content: center;
@@ -375,16 +376,20 @@ $animation-duration: 5s;
       }
 
       li:first-child {
-        margin-left: 0;
-      }
-      li:last-child {
         width: auto;
+        height: auto;
         background: none;
         border-radius: 0;
         border: 0;
-        padding-left: 8px;
-        margin-right: 0;
+        margin-right: 10px;
+        margin-left: 0;
         color: $clr-main-font;
+        font-size: 1.4em;
+        font-weight: 300;
+      }
+
+      li:last-child {
+        margin-right: 0;
       }
 
       @include media-breakpoint-down(sm) {
@@ -401,6 +406,8 @@ $animation-duration: 5s;
       }
     }
   }
+
+  // SPECIFIC SECTIONS
 
   #home-prelude,
   #home-upright {

@@ -1281,11 +1281,6 @@
 						sliderOptions = $.extend(sliderOptions, $sliderWrap.data());
 
 						$slider.slick(sliderOptions);
-
-						// $(window).resize($.debounce(function() {
-						// 	$slider.slick('unslick');
-						// 	$slider.slick('slick');
-						// }))
 					});
 				}
 

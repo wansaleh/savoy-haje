@@ -13,7 +13,7 @@ class Haje.Home
           target = if target.length then target else $('[name=' + @hash.slice(1) + ']')
           console.log target
           if target.length
-            TweenMax.to window, .3,
+            TweenMax.to window, .5,
               scrollTo:
                 y: target
                 offsetY: 0
@@ -43,8 +43,7 @@ class Haje.Home
     $gradient = $('#home-gradient')
     $upright = $('#home-upright')
 
-    colors = Trianglify.colorbrewer.YlGnBu.reverse()
-
+    # colors = Trianglify.colorbrewer.YlGnBu.reverse()
     # makePatternHero = (fadeIn = false) ->
     #   $gradient.find('canvas').remove()
     #   pattern = Trianglify(
