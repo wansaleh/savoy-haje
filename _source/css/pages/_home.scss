@@ -250,11 +250,11 @@ $animation-duration: 5s;
     $color: #925BD4;
 
     .jumbo h1 {
-      color: $color !important;
+      // color: $color !important;
 
       .backgroundblendmode & {
-        color: #222 !important;
-        mix-blend-mode: overlay;
+        // color: #222 !important;
+        // mix-blend-mode: overlay;
       }
     }
 
