@@ -1,7 +1,7 @@
 $new:        $clr-orange-a700;
 $sale:       $clr-green-a700;
 $edar:       $clr-blue-grey;
-$comingsoon: $clr-cyan-a700;
+$preorder: $clr-cyan-a700;
 
 @mixin label {
   position: static;
@@ -146,7 +146,7 @@ $comingsoon: $clr-cyan-a700;
       .onsale,
       .isnew,
       .haje-edar,
-      .comingsoon {
+      .preorder {
         @include label;
         background: rgba(#fff, .9);
       }
@@ -162,9 +162,9 @@ $comingsoon: $clr-cyan-a700;
         border-color: $edar;
         color: $edar;
       }
-      .comingsoon {
-        border-color: $comingsoon;
-        color: $comingsoon;
+      .preorder {
+        border-color: $preorder;
+        color: $preorder;
       }
     }
 
@@ -289,7 +289,7 @@ $comingsoon: $clr-cyan-a700;
         }
       }
 
-      .pre-order-release-date {
+      .preorder-release-date {
         margin: .5em 0;
         font-size: .8em;
         opacity: .5;
@@ -487,7 +487,7 @@ $comingsoon: $clr-cyan-a700;
     .onsale,
     .isnew,
     .haje-edar,
-    .comingsoon {
+    .preorder {
       @include label;
       line-height: 1;
     }
@@ -512,13 +512,13 @@ $comingsoon: $clr-cyan-a700;
         margin-right: -4px;
       }
     }
-    .comingsoon {
-      border-color: $comingsoon;
-      color: $comingsoon;
+    .preorder {
+      border-color: $preorder;
+      color: $preorder;
     }
   }
 
-  .pre-order-release-date {
+  .preorder-release-date {
     padding-bottom: 1em;
     font-size: 1.2em;
     font-weight: 300;
@@ -527,7 +527,29 @@ $comingsoon: $clr-cyan-a700;
 
   .product-short-description {
     line-height: 1.4;
-    padding-bottom: 6em;
+    padding-bottom: 2em;
+  }
+
+  .preorder-notice {
+    margin-bottom: 2em;
+    font-size: 1em;
+    line-height: 1.4;
+    padding: 1em;
+    border: 2px solid $preorder;
+    border-radius: 3px;
+    color: $preorder;
+  }
+
+  .woocommerce-variation.single_variation {
+    padding-top: 0 !important;
+
+    .woocommerce-variation-availability {
+      padding-bottom: 0;
+
+      .stock.in-stock {
+        display: none;
+      }
+    }
   }
 
   .quantity .nm-qty-minus,
