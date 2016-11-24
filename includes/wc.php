@@ -2,7 +2,9 @@
 
 add_action( 'woocommerce_single_product_summary', 'hj_woocommerce_single_product_summary', 20 );
 function hj_woocommerce_single_product_summary() {
-  echo "<div class='preorder-notice'>This product is currently in production. Estimated delivery time in 3-4 weeks.</div>";
+  if ( WC_Pre_Orders_Product::product_can_be_pre_ordered( $product ) ) {
+    echo "<div class='preorder-notice'>This product is currently in production. Estimated delivery time in 3-4 weeks.</div>";
+  }
 }
 
 // add_filter( 'wc_pre_orders_localized_availability_date', 'hj_wc_pre_orders_localized_availability_date', 10, 3 );
