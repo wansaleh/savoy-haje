@@ -253,8 +253,8 @@ $animation-duration: 5s;
       // color: $color !important;
 
       .backgroundblendmode & {
-        // color: #222 !important;
-        // mix-blend-mode: overlay;
+        color: #222 !important;
+        mix-blend-mode: overlay;
       }
     }
 
