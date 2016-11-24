@@ -2,17 +2,21 @@
 
 use Carbon\Carbon;
 
-add_filter( 'wc_pre_orders_localized_availability_date', 'hj_wc_pre_orders_localized_availability_date', 10, 3 );
-function hj_wc_pre_orders_localized_availability_date( $formatted_date, $product, $none_text ) {
-  $timestamp = WC_Pre_Orders_Product::get_localized_availability_datetime_timestamp( $product );
-
-  return 'asdas';
-}
+// add_filter( 'wc_pre_orders_localized_availability_date', 'hj_wc_pre_orders_localized_availability_date', 10, 3 );
+// function hj_wc_pre_orders_localized_availability_date( $formatted_date, $product, $none_text ) {
+//   $timestamp = WC_Pre_Orders_Product::get_localized_availability_datetime_timestamp( $product );
+//
+//   return 'asdas';
+// }
 
 add_filter( 'wc_pre_orders_product_message', 'hj_wc_pre_orders_product_message', 10, 2 );
 function hj_wc_pre_orders_product_message( $message, $product ) {
   $timestamp = WC_Pre_Orders_Product::get_localized_availability_datetime_timestamp( $product );
-  return '<div class="pre-order-release-date">Available in ' . Carbon::createFromTimestamp($timestamp)->diffForHumans(Carbon::now(), true) . '</div>';
+  return
+    '<div class="pre-order-release-date">Ready to ship in ' .
+    human_time_diff( current_time('timestamp'), $timestamp ) .
+    // Carbon::createFromTimestamp($timestamp)->diffForHumans(Carbon::now(), true) .
+    '</div>';
 }
 
 function hj_pre_order_flash() {

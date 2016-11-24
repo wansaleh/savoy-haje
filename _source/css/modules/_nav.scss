@@ -70,7 +70,6 @@
     &:hover {
       opacity: .7;
       color: #fff !important;
-      text-shadow: none;
     }
   }
 
@@ -101,7 +100,7 @@
       padding: 10px 16px;
       margin-top: 6px;
       transition: all .3s ease;
-      mix-blend-mode: overlay;
+      // mix-blend-mode: overlay;
 
       &:hover {
         border-color: $clr-heading;

@@ -1,7 +1,5 @@
 <?php
 
-use Carbon\Carbon;
-
 add_shortcode( 'user_account_link', 'hj_user_account_link' );
 function hj_user_account_link( $atts ) {
   if ( is_user_logged_in() ) {
@@ -109,8 +107,8 @@ function hj_kurta_cta( $atts ) {
   $preorder_timestamp = WC_Pre_Orders_Product::get_localized_availability_datetime_timestamp( $product );
   $preorder_info = !$can_be_preordered ? '' :
     '<div class="home-pre-order">' .
-    'Will be available in ' .
-    Carbon::createFromTimestamp($preorder_timestamp)->diffForHumans(Carbon::now(), true) .
+    'Ready to ship in ' .
+    human_time_diff( current_time('timestamp'), $preorder_timestamp ) .
     '</div>';
 
   ob_start();

@@ -1,8 +1,5 @@
 <?php
 
-define( 'HJ_VERSION', '1.2.1' );
-define( 'HJ_URI', get_stylesheet_directory_uri() );
-
 add_action( 'wp_head', 'hj_pace', 0 );
 function hj_pace() {
   global $nm_theme_options;

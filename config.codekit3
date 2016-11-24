@@ -10056,6 +10056,12 @@
 		"oAP": "\/assets\/includes\/emails.php",
 		"oF": 1
 		},
+	"\/includes\/functions.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/includes\/functions.php",
+		"oF": 0
+		},
 	"\/includes\/haje.php": {
 		"ft": 8192,
 		"oA": 1,
@@ -11600,6 +11606,12 @@
 		"oA": 1,
 		"oAP": "\/assets\/woocommerce\/cart\/cart-item-data.php",
 		"oF": 1
+		},
+	"\/woocommerce\/checkout\/thankyou.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/woocommerce\/checkout\/thankyou.php",
+		"oF": 0
 		},
 	"\/woocommerce\/content-product.php": {
 		"ft": 8192,

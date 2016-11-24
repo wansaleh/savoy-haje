@@ -2,6 +2,7 @@
 
 require 'vendor/autoload.php';
 
+require_once 'includes/functions.php';
 require_once 'includes/assets.php';
 require_once 'includes/backend.php';
 require_once 'includes/haje.php';
