@@ -48,7 +48,7 @@
     content: "\e116";
   }
   &.checked label {
-    // color: $clr-highlight !important;
+    color: $clr-highlight !important;
   }
 }
 
@@ -145,12 +145,12 @@ $clr-login-page: $clr-deep-purple;
       opacity: .6;
     }
 
-    &.wppb-heading .wppb-description-delimiter {
-      font-size: 1.2em;
-      margin-top: -1.4em;
-      margin-bottom: 1em;
-      line-height: 1.2;
-    }
+    // &.wppb-heading .wppb-description-delimiter {
+    //   font-size: 1.2em;
+    //   margin-top: -1.4em;
+    //   margin-bottom: 1em;
+    //   line-height: 1.2;
+    // }
 
     &.wppb-default-first-name,
     &.wppb-default-last-name,
@@ -320,7 +320,7 @@ p.error {
   margin-left: auto;
   margin-right: auto;
 }
-//
+
 // p.error {
 //   color: $error;
 // }
@@ -358,18 +358,27 @@ p.error {
   overflow: visible;
 
   .wppb-sc-buttons-container {
-    margin-top: 4em;
+    margin-top: 0;
+    margin-bottom: 8em;
     padding: 3em 1em;
     text-align: center;
     background: $clr-grey-bg;
     border-radius: 5px;
 
-    &:before {
-      content: "Social Connect";
-      font-size: 2em;
-      font-weight: 300;
-      display: block;
-      padding-bottom: 1em;
-    }
+    // &:before {
+    //   content: "Social Connect";
+    //   font-size: 2em;
+    //   font-weight: 300;
+    //   display: block;
+    //   padding-bottom: 1em;
+    // }
   }
+
+  .wppb-edit-user .wppb-password-heading .wppb-description-delimiter {
+    font-size: 1.4em;
+    font-weight: 300;
+    margin-top: -1.5em;
+    padding-bottom: 1.5em;
+  }
+
 }

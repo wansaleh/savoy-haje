@@ -1,5 +1,7 @@
 <?php
 
+use Carbon\Carbon;
+
 add_shortcode( 'user_account_link', 'hj_user_account_link' );
 function hj_user_account_link( $atts ) {
   if ( is_user_logged_in() ) {
@@ -75,35 +77,14 @@ function hj_address( $atts ) {
   // ";
 }
 
-add_shortcode( 'kurta_colors', 'hj_kurta_colors' );
-function hj_kurta_colors( $atts ) {
+add_shortcode( 'kurta_cta', 'hj_kurta_cta' );
+function hj_kurta_cta( $atts ) {
   $a = shortcode_atts( array(
     'id' => false
   ), $atts );
 
   $product = wc_get_product( $a['id'] );
-  $colors = $product->get_attribute( 'color' );
-
-  $out = "";
-
-  if ( $colors ) {
-    $out .= "<ul class='home-color-list'>";
-    foreach ( preg_split( "/\s?\|\s?/", trim( $colors ) ) as $color ) {
-      $out .= "<li>$color</li>";
-    }
-    $out .= "</ul>";
-  }
-
-  return $out;
-}
-
-add_shortcode( 'kurta_sizes', 'hj_kurta_sizes' );
-function hj_kurta_sizes( $atts ) {
-  $a = shortcode_atts( array(
-    'id' => false
-  ), $atts );
-
-  $product = wc_get_product( $a['id'] );
+  $permalink = get_permalink( $a['id'] );
   $sizes = $product->get_attribute( 'size' );
   $sizes = preg_split( "/\s?\,\s?/", trim( $sizes ) );
 
@@ -112,14 +93,46 @@ function hj_kurta_sizes( $atts ) {
   if ( ! empty( $sizes ) ) {
     $count = count( $sizes );
     $out .= "<ul class='home-size-list'>";
-    $out .= "<li>Available in $count sizes</li>";
+    $out .= "<li class='size-count'>Available in $count sizes</li>";
 
     foreach ( $sizes as $size ) {
-      $out .= "<li>$size</li>";
+      $out .= "<li><a href='$permalink?attribute_pa_size=$size'>$size</a></li>";
     }
 
     $out .= "</ul>";
   }
 
+  $can_be_preordered = WC_Pre_Orders_Product::product_can_be_pre_ordered( $product );
+
+  $action = !$can_be_preordered ? "Buy" : "Pre-Order";
+
+  $preorder_timestamp = WC_Pre_Orders_Product::get_localized_availability_datetime_timestamp( $product );
+  $preorder_info = !$can_be_preordered ? '' :
+    '<div class="home-pre-order">' .
+    'Will be available in ' .
+    Carbon::createFromTimestamp($preorder_timestamp)->diffForHumans(Carbon::now(), true) .
+    '</div>';
+
+  ob_start();
+  ?>
+  <div class="home-kurta-price">
+    <?php echo $product->get_price_html(); ?>
+  </div>
+  <div class="home-kurta-cta">
+    <a href="<?php echo $permalink; ?>" class="nm_btn nm_btn_lg nm_btn_filled">
+      <span class="nm_btn_title"><?php echo $action; ?> <?php echo preg_replace( '/^Kurta\s/', '', $product->get_title() ); ?></span>
+      <span class="nm_btn_bg"></span>
+    </a>
+  </div>
+  <?php echo $preorder_info; ?>
+  <?php
+
+  $out .= ob_get_clean();
+
   return $out;
+}
+
+add_shortcode( 'sizeguide_img', 'hj_sizeguide_img' );
+function hj_sizeguide_img() {
+  return '<img class="alignright" style="width: 200px; margin-top: -80px;" src="' . HJ_URI . '/assets/images/sizechart.svg" alt="sizeguide">';
 }

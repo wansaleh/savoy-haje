@@ -111,7 +111,7 @@ $clr-page-2: #122D42;
     border-radius: 5px;
     // box-shadow: 5px 5px 15px rgba(#000, .1), inset 3px 3px 10px rgba(#fff, 1);
 
-    overflow: hidden;
+    // overflow: hidden;
   }
 }
 
@@ -142,6 +142,11 @@ $clr-page-2: #122D42;
 
       p {
         color: $clr-blue-grey;
+      }
+
+      p:first-of-type {
+        font-size: 1.6em;
+        font-weight: 300;
       }
     }
   }

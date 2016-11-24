@@ -241,7 +241,7 @@ class Haje.WC.VariationSwatches
       else
         altcolor = $('<span class="alt-color"></span>').css( background: "##{color2}" )
         $(this)
-          .css( background: "##{color}", borderColor: "##{color2}", borderWidth: "5px" )
+          .css( background: "##{color}", borderColor: "##{color2}", borderWidth: "8px" )
           .append(altcolor)
 
   toggleVariations: (parent) ->
@@ -254,6 +254,9 @@ class Haje.WC.VariationSwatches
 
       # check localStorage
       if ls.get('haje_open_variation_' + $(this).data('attribute_name'))
+        $(this).addClass('open')
+
+      if location.href.indexOf('attribute_' + $(this).data('attribute_name')) > -1
         $(this).addClass('open')
 
       # bind click event

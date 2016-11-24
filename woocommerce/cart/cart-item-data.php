@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // WAN
-require dirname(__FILE__) . '/../../includes/color-names.php';
+require_once dirname(__FILE__) . '/../../includes/colors.php';
 
 $product_id = null;
 foreach ( $item_data as $data ) {

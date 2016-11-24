@@ -147,60 +147,63 @@ footer#nm-footer {
 
     .newsletter {
       form {
-        position: relative;
         margin-bottom: 1em;
+        position: relative;
 
-        .mymail-email-wrapper {
-          input {
-            border-radius: 3px;
-            padding-right: 100px;
-          }
-
-          &.error {
+        .mymail-form-fields {
+          .mymail-email-wrapper {
             input {
-              outline: none;
+              border-radius: 3px;
+              padding-right: 100px;
+            }
+
+            &.error {
+              input {
+                outline: none;
+              }
             }
           }
-        }
 
-        .form-submit {
-          position: absolute;
-          bottom: 7px;
-          right: 5px;
-          margin: 0;
+          .form-submit {
+            position: absolute;
+            bottom: 7px;
+            right: 5px;
+            margin: 0;
 
-          .submit-button {
-            padding: 0 .8em;
-            line-height: 30px;
-            font-size: 1em;
-            width: 90px;
-            // background: #ddd;
-          }
-        }
-        .mymail-form-info {
-          text-align: center;
-
-          &.success {
-            background: $message;
+            .submit-button {
+              padding: 0 .8em;
+              line-height: 30px;
+              font-size: 1em;
+              width: 90px;
+              // background: #ddd;
+            }
           }
 
-          &.error {
-            background: $error;
+          .mymail-form-info {
+            text-align: center;
+
+            &.success {
+              background: $message;
+            }
+
+            &.error {
+              background: $error;
+            }
           }
-        }
-
-        p {
-          line-height: 1.4;
-        }
-
-        .textwidget > p:last-of-type {
-          font-size: .8em;
-          opacity: .6;
         }
 
         // &.has-errors {
         //   .form-submit
         // }
+      }
+
+      .textwidget > p {
+        line-height: 1.4;
+      }
+
+      .textwidget > p:last-of-type {
+        font-size: .8em;
+        opacity: .6;
       }
     }
   }

@@ -4,7 +4,7 @@ add_action( 'template_redirect', 'hj_edar_role_redirects' );
 function hj_edar_role_redirects() {
   if ( ( is_page( 'edar' ) || is_page( 'edar/apply' ) ) && is_user_logged_in() ) {
     if ( is_user_in_role( 'haje_edar_unapproved' ) ) {
-      wp_redirect( '/edar/waiting-confirmation/' );
+      wp_redirect( '/edar/waiting/' );
       exit;
     }
 

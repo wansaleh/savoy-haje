@@ -88,6 +88,7 @@
           return $(this).closest('.wppb-form-field, p').removeClass('checked');
         }
       });
+      $('.woocommerce-MyAccount-content .wppb-edit-user .wppb-password-heading .wppb-description-delimiter').html('Leave the password fields blank if you don\'t need to change them.');
     }
 
     return Forms;
@@ -449,7 +450,7 @@
           return $(this).css({
             background: "#" + color,
             borderColor: "#" + color2,
-            borderWidth: "5px"
+            borderWidth: "8px"
           }).append(altcolor);
         }
       });
@@ -463,6 +464,9 @@
         variation_value = variation_row.children('.value');
         attr_name = variation_row.data('attribute_name');
         if (ls.get('haje_open_variation_' + $(this).data('attribute_name'))) {
+          $(this).addClass('open');
+        }
+        if (location.href.indexOf('attribute_' + $(this).data('attribute_name')) > -1) {
           $(this).addClass('open');
         }
         return variation_label.click(function() {

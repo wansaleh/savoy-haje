@@ -1,10 +1,15 @@
 <?php
 
-require('includes/haje.php');
-require('includes/emails.php');
-require('includes/redirects.php');
-require('includes/wc.php');
-require('includes/wc-account.php');
-require('includes/shortcodes.php');
-require('includes/userpro.php');
-require('includes/vc.php');
+require 'vendor/autoload.php';
+
+require_once 'includes/assets.php';
+require_once 'includes/backend.php';
+require_once 'includes/haje.php';
+require_once 'includes/emails.php';
+require_once 'includes/redirects.php';
+require_once 'includes/colors.php';
+require_once 'includes/wc.php';
+require_once 'includes/wc-account.php';
+require_once 'includes/shortcodes.php';
+require_once 'includes/vc.php';
+// require_once 'includes/userpro.php';

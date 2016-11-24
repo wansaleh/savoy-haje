@@ -1,0 +1,23 @@
+.hj-userpro {
+  $clr-page: #303841;
+
+  .nm-page-wrap {
+    background: linear-gradient(to bottom, $clr-page, #090e1a 90%);
+  }
+
+  .nm-page-wrap-inner {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+  .box {
+    background: #fff;
+    border-radius: 5px;
+    padding: 1em;
+  }
+}
+
+img.userpro-profile-badge {
+  max-width: 16px !important;
+  max-height: 16px !important;
+  margin: 10px 5px !important;
+}

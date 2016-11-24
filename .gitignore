@@ -5,3 +5,6 @@ bower_components
 .env
 .codekit-cache
 .DS_Store
+
+composer.phar
+/vendor/

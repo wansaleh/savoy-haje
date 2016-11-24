@@ -6,11 +6,11 @@
 @import "modules/main";
 @import "modules/footer";
 @import "modules/nav";
-@import "modules/ubermenu";
-@import "modules/forms";
-@import "modules/gforms";
+// @import "modules/ubermenu";
 
-@import "modules/wppb";
+@import "modules/forms";
+@import "modules/forms-gforms";
+@import "modules/forms-wppb";
 
 @import "modules/wc";
 @import "modules/wc-variations";
@@ -20,3 +20,4 @@
 @import "pages/kurtas";
 @import "pages/edar";
 @import "pages/catalogue";
+@import "pages/profile";
