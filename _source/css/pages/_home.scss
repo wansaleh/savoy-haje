@@ -660,6 +660,11 @@ $animation-duration: 5s;
           opacity: 1;
         }
       }
+
+      .btn-catalogue .nm_btn_bg {
+        background: $clr-pink-a200;
+      }
+
     }
   }
 }

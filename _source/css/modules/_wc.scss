@@ -126,7 +126,7 @@ $comingsoon: $clr-cyan-a700;
     // border-radius: 4px;
     overflow: hidden;
     z-index: 100;
-    margin: -20px -20px 0;
+    margin: -21px -21px 0;
 
     > a > img {
       // transition: transform 1.5s ease, opacity .3s ease;
@@ -192,12 +192,14 @@ $comingsoon: $clr-cyan-a700;
   }
 
   .nm-shop-loop-details {
-    margin-top: 12px;
+    margin-top: 20px;
     overflow: visible;
     width: calc(100% - 1px);
     padding-bottom: 0;
 
     .nm-wishlist-button {
+      top: 20px;
+      z-index: 10;
       opacity: 0;
       transform: translateX(20px);
       transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -421,6 +423,26 @@ $comingsoon: $clr-cyan-a700;
     // position: absolute;
     // top: -4px;
     // left: -48px;
+
+    .product-kurta-signature & {
+      $color: #d6243b;
+      background: linear-gradient(to bottom, $color, darken($color, 20));
+    }
+
+    .product-kurta-prelude & {
+      $color: #3b7777;
+      background: linear-gradient(to bottom, $color, darken($color, 20));
+    }
+
+    .product-kurta-define & {
+      $color: #f5cf5f;
+      background: linear-gradient(to bottom, $color, darken($color, 20));
+    }
+
+    .product-kurta-upright & {
+      $color: #335bee;
+      background: linear-gradient(to bottom, $color, darken($color, 20));
+    }
   }
 
   .product_title {
