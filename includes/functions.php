@@ -1,6 +1,6 @@
 <?php
 
-define( 'HJ_VERSION', '1.2.1' );
+define( 'HJ_VERSION', '1.2.2' );
 define( 'HJ_URI', get_stylesheet_directory_uri() );
 
 function get_date_diff( $time1, $time2, $precision = 2, $range = false ) {

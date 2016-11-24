@@ -10058,9 +10058,9 @@
 		},
 	"\/includes\/functions.php": {
 		"ft": 8192,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "\/assets\/includes\/functions.php",
-		"oF": 0
+		"oF": 1
 		},
 	"\/includes\/haje.php": {
 		"ft": 8192,
@@ -11671,7 +11671,7 @@
 	"displayValue": "savoy-haje",
 	"displayValueWasSetByUser": 1,
 	"iconImageName": "brackets_teal",
-	"lastBuiltDate": 501676867
+	"lastBuiltDate": 501691528
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,

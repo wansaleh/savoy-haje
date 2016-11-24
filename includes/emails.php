@@ -1,6 +1,5 @@
 <?php
 
-
 add_filter( 'woocommerce_email_headers', 'hj_woocommerce_email_headers', 10, 3 );
 function hj_woocommerce_email_headers( $string, $low_stock, $product ) {
   return $string . "X-HAJE-WC: true\r\n";
@@ -13,7 +12,7 @@ function hj_wp_mail_filter( $orig_mail ) {
   if ( class_exists("Haet_Mail") ) {
     PC::debug($orig_mail);
 
-    if ( is_string( $orig_mail['headers'] ) && strpos( $orig_mail['headers'], 'X-HAJE-WC: true' ) === true ) {
+    if ( is_string( $orig_mail['headers'] ) && strpos( $orig_mail['headers'], 'X-HAJE-WC: true' ) !== false ) {
       return $orig_mail;
     }
 
