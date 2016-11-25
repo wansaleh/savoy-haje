@@ -10,8 +10,6 @@ add_filter( 'wp_mail', 'hj_wp_mail_filter' );
 
 function hj_wp_mail_filter( $orig_mail ) {
   if ( class_exists("Haet_Mail") ) {
-    PC::debug($orig_mail);
-
     if ( is_string( $orig_mail['headers'] ) && strpos( $orig_mail['headers'], 'X-HAJE-WC: true' ) !== false ) {
       return $orig_mail;
     }
@@ -21,7 +19,6 @@ function hj_wp_mail_filter( $orig_mail ) {
     }
 
     $new_mail = (new Haet_Mail())->style_mail($orig_mail);
-    PC::debug($new_mail);
 
     return $new_mail;
   }

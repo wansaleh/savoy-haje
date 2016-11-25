@@ -249,14 +249,14 @@ $animation-duration: 5s;
 
     $color: #925BD4;
 
-    .jumbo h1 {
-      // color: $color !important;
-
-      .backgroundblendmode & {
-        color: #222 !important;
-        mix-blend-mode: overlay;
-      }
-    }
+    // .jumbo h1 {
+    //   // color: $color !important;
+    //
+    //   // .backgroundblendmode & {
+    //   //   color: #222 !important;
+    //   //   mix-blend-mode: overlay;
+    //   // }
+    // }
 
     .hero-cta {
       margin: 0 -5px;
@@ -290,7 +290,7 @@ $animation-duration: 5s;
     }
 
     svg.hexagon {
-      display: none;
+      // display: none;
       position: absolute;
       top: 50%;
       left: 50%;

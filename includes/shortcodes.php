@@ -105,11 +105,14 @@ function hj_kurta_cta( $atts ) {
   $action = !$can_be_preordered ? "Buy" : "Pre-Order";
 
   $preorder_timestamp = WC_Pre_Orders_Product::get_localized_availability_datetime_timestamp( $product );
+  $td = human_time_diff( current_time('timestamp'), $preorder_timestamp );
+  preg_match('/(\d+)\s(weeks|days)/i', $td, $matches);
+  $newtd = $matches[1] . '&ndash;' . ($matches[1] + 1) . ' ' . $matches[2];
+
   $preorder_info = !$can_be_preordered ? '' :
     '<div class="home-pre-order">' .
     'Ready to ship in ' .
-    human_time_diff( current_time('timestamp'), $preorder_timestamp ) .
-    '</div>';
+    $newtd . '.</div>';
 
   ob_start();
   ?>
