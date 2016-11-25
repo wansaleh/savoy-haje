@@ -6,13 +6,14 @@ function hj_woocommerce_single_product_summary() {
   if ( WC_Pre_Orders_Product::product_can_be_pre_ordered( $product ) ) {
     echo "<div class='preorder-notice'>This product is currently in production.";
 
+    $timestamp = WC_Pre_Orders_Product::get_localized_availability_datetime_timestamp( $product );
+
     if ( $timestamp ) {
-      $timestamp = WC_Pre_Orders_Product::get_localized_availability_datetime_timestamp( $product );
       $td = human_time_diff( current_time('timestamp'), $timestamp );
       preg_match('/(\d+)\s(weeks|days)/i', $td, $matches);
       $newtd = $matches[1] . '&ndash;' . ($matches[1] + 1) . ' ' . $matches[2];
 
-      echo "Estimated delivery time in <strong>$newtd.</strong>";
+      echo " Estimated delivery time in <strong>$newtd.</strong>";
     }
 
     echo "</div>";
@@ -29,17 +30,17 @@ function hj_woocommerce_single_product_summary() {
 add_filter( 'wc_pre_orders_product_message', 'hj_wc_pre_orders_product_message', 10, 2 );
 function hj_wc_pre_orders_product_message( $message, $product ) {
   $timestamp = WC_Pre_Orders_Product::get_localized_availability_datetime_timestamp( $product );
-  $td = human_time_diff( current_time('timestamp'), $timestamp );
-  preg_match('/(\d+)\s(weeks|days)/i', $td, $matches);
-  $newtd = $matches[1] . '&ndash;' . ($matches[1] + 1) . ' ' . $matches[2];
 
   if ( ! $timestamp ) {
     return '<div class="preorder-release-date">Avalable soon</div>';
   }
+  else {
+    $td = human_time_diff( current_time('timestamp'), $timestamp );
+    preg_match('/(\d+)\s(weeks|days)/i', $td, $matches);
+    $newtd = $matches[1] . '&ndash;' . ($matches[1] + 1) . ' ' . $matches[2];
 
-  return
-    '<div class="preorder-release-date">Ready to ship in ' . $newtd .
-    '</div>';
+    return '<div class="preorder-release-date">Ready to ship in ' . $newtd . '</div>';
+  }
 }
 
 function hj_pre_order_flash() {
