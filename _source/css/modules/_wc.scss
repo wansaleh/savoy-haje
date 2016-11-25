@@ -1837,6 +1837,12 @@ strong.product-quantity {
   }
 }
 
+.nm-checkout-login-coupon .nm-shop-notice {
+  a {
+    color: $clr-highlight;
+  }
+}
+
 .woocommerce-message {
   color: $message;
 }

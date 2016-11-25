@@ -18,7 +18,8 @@ function hj_wp_mail_filter( $orig_mail ) {
       return $orig_mail;
     }
 
-    $new_mail = (new Haet_Mail())->style_mail($orig_mail);
+    $wp_html_mail = new Haet_Mail();
+    $new_mail = $wp_html_mail->style_mail($orig_mail);
 
     return $new_mail;
   }

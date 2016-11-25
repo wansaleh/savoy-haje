@@ -307,6 +307,10 @@ $animation-duration: 5s;
         // stroke-width: 10;
         // stroke-miterlimit: 10;
       }
+
+      @include media-breakpoint-down(md) {
+        display: none;
+      }
     }
 
     .nm_btn_bg {

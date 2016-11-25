@@ -1,5 +1,13 @@
 <?php
 
+add_action('wp_head', 'hj_prefetch', 2);
+function hj_prefetch() {
+  echo "<link rel='dns-prefetch' href='//www.google-analytics.com'>\n";
+  echo "<link rel='dns-prefetch' href='//apis.google.com'>\n";
+  echo "<link rel='dns-prefetch' href='//content.googleapis.com'>\n";
+  echo "<link rel='dns-prefetch' href='//connect.facebook.net'>\n";
+}
+
 function get_user_roles() {
   $user = wp_get_current_user();
   return empty( $user ) ? array() : $user->roles;
