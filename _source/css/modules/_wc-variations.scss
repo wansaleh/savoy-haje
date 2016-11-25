@@ -385,11 +385,11 @@ ul.variation li {
   margin: 0;
   display: inline-block;
 
-  [class^="variation-"]:first-child {
+  [class^="variation-"]:not(.variation-AvailableOn):first-child {
     display: none;
   }
 
-  [class^="variation-"]:last-child {
+  [class^="variation-"]:not(.variation-AvailableOn):last-child {
     display: inline-block;
     margin: 0;
     padding: .3em .7em;

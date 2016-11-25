@@ -330,11 +330,11 @@
             }
           });
         }
-        highlightColor = function(btn) {
+        highlightColor = function(hex) {
           var color, color2, multicolor;
           if (isAttributeColor) {
             variation_label_display.removeClass('dark light');
-            color = String(btn.data('hex'));
+            color = String(hex);
             color2 = null;
             if (color.indexOf(',') > -1) {
               multicolor = color.split(',');
@@ -353,7 +353,7 @@
             }
           }
         };
-        dehighlightColor = function(btn) {
+        dehighlightColor = function() {
           if (isAttributeColor) {
             return variation_label_display.removeClass('dark light').css({
               background: "none",
@@ -366,10 +366,10 @@
           onChange: function(val, text, btn) {
             if (select.val()) {
               variation_label_display.text(text).data('original-label', text);
-              return highlightColor(btn);
+              return highlightColor(btn.data('hex'));
             } else {
               variation_label_display.data('original-label', '');
-              return dehighlightColor(btn);
+              return dehighlightColor();
             }
           }
         });
@@ -379,6 +379,8 @@
         }, function() {
           return variation_label_display.text(variation_label_display.data('original-label'));
         });
+        variation_label_display.data('original-label', select.val());
+        variation_label_display.text(select.val());
         $.each(select.data(), function(attr_name, attr_val) {
           if (typeof attr_val === 'string') {
             return select.data('group').attr('data-' + attr_name, attr_val.replace(/^attribute_/, ''));
@@ -458,10 +460,11 @@
 
     VariationSwatches.prototype.toggleVariations = function(parent) {
       return $(parent).find('table.variations .nm-variation-row').each(function() {
-        var attr_name, variation_label, variation_row, variation_value;
+        var attr_name, variation_label, variation_label_display, variation_row, variation_value;
         variation_row = $(this);
         variation_label = variation_row.children('.label');
         variation_value = variation_row.children('.value');
+        variation_label_display = variation_label.find('.label-display');
         attr_name = variation_row.data('attribute_name');
         if (ls.get('haje_open_variation_' + $(this).data('attribute_name'))) {
           $(this).addClass('open');

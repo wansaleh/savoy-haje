@@ -94,7 +94,7 @@ function hj_kurta_cta( $atts ) {
     $out .= "<li class='size-count'>Available in $count sizes</li>";
 
     foreach ( $sizes as $size ) {
-      $out .= "<li><a href='$permalink?attribute_pa_size=$size'>$size</a></li>";
+      $out .= "<li><a href='$permalink?attribute_pa_size=" . strtolower( $size ) . "'>$size</a></li>";
     }
 
     $out .= "</ul>";

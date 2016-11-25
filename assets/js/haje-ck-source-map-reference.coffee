@@ -320,11 +320,11 @@ class Haje.WC.VariationSwatches
           if $(this).val() != ''
             $(this).attr('data-hex', _this.colorFromName($(this).val()))
 
-      highlightColor = (btn) ->
+      highlightColor = (hex) ->
         if isAttributeColor
           variation_label_display.removeClass('dark light');
 
-          color = String btn.data('hex')
+          color = String hex
           color2 = null
 
           if color.indexOf(',') > -1
@@ -344,7 +344,7 @@ class Haje.WC.VariationSwatches
                 background: "##{color}",
                 boxShadow: "-10px 0 0 ##{color2}" )
 
-      dehighlightColor = (btn) ->
+      dehighlightColor = ->
         if isAttributeColor
           variation_label_display
             .removeClass('dark light')
@@ -360,13 +360,13 @@ class Haje.WC.VariationSwatches
               .text(text)
               .data('original-label', text)
 
-            highlightColor(btn)
+            highlightColor(btn.data('hex'))
 
           else
             variation_label_display
               .data('original-label', '')
 
-            dehighlightColor(btn)
+            dehighlightColor()
       }
 
       # Change label on hover
@@ -378,6 +378,11 @@ class Haje.WC.VariationSwatches
         ->
           variation_label_display.text(variation_label_display.data('original-label'))
       )
+
+      # Set label on init (through url param)
+      variation_label_display.data('original-label', select.val())
+      variation_label_display.text(select.val())
+      # highlightColor()
 
       $.each select.data(), (attr_name, attr_val) ->
         if typeof attr_val == 'string'
@@ -414,7 +419,6 @@ class Haje.WC.VariationSwatches
         select.data('buttons').detach().appendTo(select.data('group'))
 
       if $('.size_guide_tab').length && isAttributeSize
-
         sizeguide = $('<button type="button" class="swatch size-guide">Size Guide</button>').appendTo(select.data('group'))
 
         sizeguide.click ->
@@ -456,6 +460,7 @@ class Haje.WC.VariationSwatches
       variation_row = $(this)
       variation_label = variation_row.children('.label')
       variation_value = variation_row.children('.value')
+      variation_label_display = variation_label.find('.label-display')
 
       attr_name = variation_row.data('attribute_name')
 

@@ -1202,6 +1202,7 @@ strong.product-quantity {
 
 .woocommerce-order-pay {
   ul.order_details {
+    margin-top: 6em;
     text-align: center;
   }
 
@@ -1828,7 +1829,7 @@ strong.product-quantity {
 
 .nm-shop-notice {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 auto !important;
 
   a {
     display: inline;
