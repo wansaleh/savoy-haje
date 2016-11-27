@@ -100,11 +100,14 @@ function hj_kurta_cta( $atts ) {
     $out .= "</ul>";
   }
 
-  $can_be_preordered = WC_Pre_Orders_Product::product_can_be_pre_ordered( $product );
+  // $can_be_preordered = WC_Pre_Orders_Product::product_can_be_pre_ordered( $product );
+  // $action = !$can_be_preordered ? "Buy" : "Pre-Order";
+  // $preorder_timestamp = WC_Pre_Orders_Product::get_localized_availability_datetime_timestamp( $product );
 
+  $can_be_preordered = true;
   $action = !$can_be_preordered ? "Buy" : "Pre-Order";
+  $preorder_timestamp = strtotime('20 December 2016');
 
-  $preorder_timestamp = WC_Pre_Orders_Product::get_localized_availability_datetime_timestamp( $product );
   $td = human_time_diff( current_time('timestamp'), $preorder_timestamp );
   preg_match('/(\d+)\s(weeks|days)/i', $td, $matches);
   $newtd = $matches[1] . '&ndash;' . ($matches[1] + 1) . ' ' . $matches[2];

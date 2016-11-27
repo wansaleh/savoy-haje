@@ -1,21 +1,21 @@
 <?php
-	global $nm_theme_options, $nm_globals;
+  global $nm_theme_options, $nm_globals;
 
-	// Copyright text
-	$copyright_text = ( isset( $nm_theme_options['footer_bar_text'] ) && strlen( $nm_theme_options['footer_bar_text'] ) > 0 ) ? $nm_theme_options['footer_bar_text'] : '';
-	if ( $nm_theme_options['footer_bar_text_cr_year'] ) {
-		$copyright_text = sprintf( '&copy; %s %s', date( 'Y' ), $copyright_text );
-	}
+  // Copyright text
+  $copyright_text = ( isset( $nm_theme_options['footer_bar_text'] ) && strlen( $nm_theme_options['footer_bar_text'] ) > 0 ) ? $nm_theme_options['footer_bar_text'] : '';
+  if ( $nm_theme_options['footer_bar_text_cr_year'] ) {
+  $copyright_text = sprintf( '&copy; %s %s', date( 'Y' ), $copyright_text );
+  }
 
-	// Bar right-column content
-	if ( $nm_theme_options['footer_bar_content'] !== 'social_icons' ) {
-		$display_social_icons = false;
-		$display_copyright_in_menu = ( $nm_theme_options['footer_bar_content'] !== 'copyright_text' ) ? true : false;
-		$bar_content = ( $display_copyright_in_menu ) ? do_shortcode( $nm_theme_options['footer_bar_custom_content'] ) : $copyright_text;
-	} else {
-		$display_social_icons = true;
-		$display_copyright_in_menu = true;
-	}
+  // Bar right-column content
+  if ( $nm_theme_options['footer_bar_content'] !== 'social_icons' ) {
+  $display_social_icons = false;
+  $display_copyright_in_menu = ( $nm_theme_options['footer_bar_content'] !== 'copyright_text' ) ? true : false;
+  $bar_content = ( $display_copyright_in_menu ) ? do_shortcode( $nm_theme_options['footer_bar_custom_content'] ) : $copyright_text;
+  } else {
+  $display_social_icons = true;
+  $display_copyright_in_menu = true;
+  }
 ?>
 
                 </div>
@@ -38,10 +38,10 @@
                         <div class="nm-row">
                             <div class="nm-footer-bar-left col-md-8 col-xs-12">
                                 <?php
-									if ( isset( $nm_theme_options['footer_bar_logo'] ) && strlen( $nm_theme_options['footer_bar_logo']['url'] ) > 0 ) :
+  if ( isset( $nm_theme_options['footer_bar_logo'] ) && strlen( $nm_theme_options['footer_bar_logo']['url'] ) > 0 ) :
 
-									$footer_bar_logo_src = ( is_ssl() ) ? str_replace( 'http://', 'https://', $nm_theme_options['footer_bar_logo']['url'] ) : $nm_theme_options['footer_bar_logo']['url'];
-								?>
+  $footer_bar_logo_src = ( is_ssl() ) ? str_replace( 'http://', 'https://', $nm_theme_options['footer_bar_logo']['url'] ) : $nm_theme_options['footer_bar_logo']['url'];
+  ?>
                                 <div class="nm-footer-bar-logo">
                                     <img src="<?php echo esc_url( $footer_bar_logo_src ); ?>" />
                                 </div>
@@ -65,7 +65,7 @@
 
                             <div class="nm-footer-bar-right col-md-4 col-xs-12">
                                 <?php if ( $display_social_icons ) : ?>
-									<?php echo nm_get_social_profiles( 'nm-footer-bar-social' ); // Args: $wrapper_class ?>
+  <?php echo nm_get_social_profiles( 'nm-footer-bar-social' ); // Args: $wrapper_class ?>
                                 <?php else : ?>
                                 <ul class="menu">
                                     <li class="nm-footer-bar-text menu-item"><div><?php echo wp_kses_post( $bar_content ); ?></div></li>
@@ -109,13 +109,13 @@
                             <div class="nm-mobile-menu-main col-xs-12">
                                 <ul id="nm-mobile-menu-main-ul" class="menu">
                                     <?php
-																				wp_nav_menu( array(
-																						'theme_location'	=> 'mobile-menu',
-																						'container'       	=> false,
-																						'fallback_cb'     	=> false,
-																						'after' 	 		=> '<span class="nm-menu-toggle"></span>',
-																						'items_wrap'      	=> '%3$s'
-																				) );
+  wp_nav_menu( array(
+  'theme_location'	=> 'mobile-menu',
+  'container'       	=> false,
+  'fallback_cb'     	=> false,
+  'after' 	 		=> '<span class="nm-menu-toggle"></span>',
+  'items_wrap'      	=> '%3$s'
+  ) );
 
                                         // // Main menu
                                         // wp_nav_menu( array(
@@ -125,7 +125,7 @@
                                         //     'after' 	 		=> '<span class="nm-menu-toggle"></span>',
                                         //     'items_wrap'      	=> '%3$s'
                                         // ) );
-																				//
+  //
                                         // // Right menu
                                         // wp_nav_menu( array(
                                         //     'theme_location'	=> 'right-menu',
@@ -188,15 +188,15 @@
             <?php endif; ?>
 
             <?php
-				if ( $nm_globals['login_popup'] && ! is_user_logged_in() && ! is_account_page() ) :
-					nm_add_page_include( 'login-popup' );
-			?>
-				<!-- login popup -->
+  if ( $nm_globals['login_popup'] && ! is_user_logged_in() && ! is_account_page() ) :
+  nm_add_page_include( 'login-popup' );
+  ?>
+  <!-- login popup -->
                 <div id="nm-login-popup-wrap" class="nm-login-popup-wrap mfp-hide">
                     <?php wc_get_template( 'myaccount/form-login.php', array( 'is_popup' => true ) ); ?>
-				</div>
+  </div>
                 <!-- /login popup -->
-			<?php endif; ?>
+  <?php endif; ?>
 
             <!-- quickview -->
             <div id="nm-quickview" class="clearfix"></div>
@@ -214,20 +214,21 @@
                 wp_footer();
             ?>
 
-						<script>
-						  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-						  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-						  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-						  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+          <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-						  ga('create', 'UA-87961486-1', 'auto');
-						  ga('send', 'pageview');
+            ga('create', 'UA-87961486-1', 'auto');
+          ga('require', 'linkid');
+            ga('send', 'pageview');
 
-						</script>
+          </script>
 
         </div>
         <!-- /page overflow wrapper -->
 
-	</body>
+  </body>
 
 </html>

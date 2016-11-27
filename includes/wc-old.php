@@ -173,34 +173,105 @@ function hj_nm_product_quickview_link( $string ) {
   echo str_ireplace( 'Show more', '<i class="nm-font nm-font-eye"></i>', $string );
 }
 
-// add_filter( 'wc_price', 'hj_wc_price', 10, 3 );
-// function hj_wc_price( $string, $price, $args ) {
-//   extract( apply_filters( 'wc_price_args', wp_parse_args( $args, array(
-//     'ex_tax_label'       => false,
-//     'currency'           => '',
-//     'decimal_separator'  => wc_get_price_decimal_separator(),
-//     'thousand_separator' => wc_get_price_thousand_separator(),
-//     'decimals'           => wc_get_price_decimals(),
-//     'price_format'       => get_woocommerce_price_format()
-//   ) ) ) );
+
+
+// SINGLE PRODUCT
+// add_image_size( '40x60', 40, 60, true );
+
+// add_action( 'woocommerce_after_single_product_tabs', 'hj_product_nav' );
+// function hj_product_nav() {
+//   global $product, $nm_theme_options;
 //
-//   $negative        = $price < 0;
-//   $price           = apply_filters( 'raw_woocommerce_price', floatval( $negative ? $price * -1 : $price ) );
-//   $price           = apply_filters( 'formatted_woocommerce_price', number_format( $price, $decimals, $decimal_separator, $thousand_separator ), $price, $decimals, $decimal_separator, $thousand_separator );
+//   // Product navigation
+//   $navigate_same_term = ( $nm_theme_options['product_navigation_same_term'] ) ? true : false;
 //
-//   if ( apply_filters( 'woocommerce_price_trim_zeros', false ) && $decimals > 0 ) {
-//     $price = wc_trim_zeros( $price );
+//   $prev_post = get_previous_post( $navigate_same_term );
+//   if ( is_a( $prev_post , 'WP_Post' ) ) {
+//     $prev_product   = new WC_Product( $prev_post->ID );
+//     $prev_price     = $prev_product->get_price_html();
+//
+//     echo '<a class="hj-nav-prev" href="' . esc_url( get_permalink( $prev_post->ID ) ) . '">';
+//       echo '<i class="nm-font nm-font-angle-thin-right"></i>';
+//       echo get_the_post_thumbnail( $prev_post->ID, '40x60' );
+//       echo '<div class="info">';
+//         echo '<span class="title">' . get_the_title( $prev_post->ID ) . '</span>';
+//         echo '<span class="price">' . $prev_price . '</span>';
+//       echo '</div>';
+//     echo '</a>';
 //   }
 //
-//   $pricelr = explode( '.', $price );
-//   $price   = $pricelr[0] . '<span class="decimals"><span class="point">.</span>' . $pricelr[1] . '</span>';
+//   $next_post = get_next_post( $navigate_same_term );
+//   if ( is_a( $next_post , 'WP_Post' ) ) {
+//     $next_product   = new WC_Product( $next_post->ID );
+//     $next_price     = $next_product->get_price_html();
 //
-//   $formatted_price = ( $negative ? '-' : '' ) . sprintf( $price_format, '<span class="woocommerce-Price-currencySymbol">' . get_woocommerce_currency_symbol( $currency ) . '</span>', $price );
-//   $return          = '<span class="woocommerce-Price-amount amount">' . $formatted_price . '</span>';
-//
-//   if ( $ex_tax_label && wc_tax_enabled() ) {
-//     $return .= ' <small class="woocommerce-Price-taxLabel tax_label">' . WC()->countries->ex_tax_or_vat() . '</small>';
+//     echo '<a class="hj-nav-next" href="' . esc_url( get_permalink( $next_post->ID ) ) . '">';
+//       echo '<i class="nm-font nm-font-angle-thin-left"></i>';
+//       echo get_the_post_thumbnail( $next_post->ID, '40x60' );
+//       echo '<div class="info">';
+//         echo '<span class="title">' . get_the_title( $next_post->ID ) . '</span>';
+//         echo '<span class="price">' . $next_price . '</span>';
+//       echo '</div>';
+//     echo '</a>';
 //   }
 //
-//   return $return;
+//   // /* Product navigation */
+//   // next_post_link( '%link', apply_filters( 'nm_single_product_menu_next_icon', '<i class="nm-font nm-font-media-play flip"></i>' ), $navigate_same_term, array(), 'product_cat' );
+//   // previous_post_link( '%link', apply_filters( 'nm_single_product_menu_prev_icon', '<i class="nm-font nm-font-media-play"></i>' ), $navigate_same_term, array(), 'product_cat' );
 // }
+
+// add_filter( 'nm_single_product_menu_next_icon', 'hj_single_product_menu_next_icon' );
+// function hj_single_product_menu_next_icon( $orig ) {
+//   global $product;
+//   return '<i class="nm-font nm-font-media-play flip"></i> %title';
+// }
+// add_filter( 'nm_single_product_menu_prev_icon', 'hj_single_product_menu_prev_icon' );
+// function hj_single_product_menu_prev_icon( $orig ) {
+//   global $product;
+//   return '%title <i class="nm-font nm-font-media-play"></i>';
+// }
+
+// /*
+//  *	AJAX: Load product
+//  */
+// function hj_nm_ajax_load_product() {
+//   global $woocommerce, $product, $post;
+//
+//   sleep(60);
+//
+//   //$post = $product = get_post( $_POST['product_id'] );
+//   $product = get_product( $_POST['product_id'] );
+//   $post = $product->post;
+//   $output = '';
+//
+//   setup_postdata( $post );
+//
+//   ob_start();
+//     wc_get_template_part( 'quickview/content', 'quickview' );
+//   $output = ob_get_clean();
+//
+//   wp_reset_postdata();
+//
+//   echo $output;
+//
+//   exit;
+// }
+// remove_action( 'wp_ajax_nm_ajax_load_product' , 'nm_ajax_load_product' );
+// remove_action( 'wp_ajax_nopriv_nm_ajax_load_product', 'nm_ajax_load_product' );
+// remove_action( 'wc_ajax_nm_ajax_load_product', 'nm_ajax_load_product' );
+// add_action( 'wp_ajax_nm_ajax_load_product' , 'hj_nm_ajax_load_product' );
+// add_action( 'wp_ajax_nopriv_nm_ajax_load_product', 'hj_nm_ajax_load_product' );
+// add_action( 'wc_ajax_nm_ajax_load_product', 'hj_nm_ajax_load_product' );
+
+//
+// add_action( 'mc4wp_integration_woocommerce_before_checkbox_wrapper', function() {
+//   ob_start();
+// } );
+// add_action( 'mc4wp_integration_woocommerce_after_checkbox_wrapper', function() {
+//   $output = ob_get_clean();
+//
+//   $output = str_replace( '<label>', '<label for="mc-wc-subscribe">', $output );
+//   $output = str_replace( '<input type="checkbox"', '<input id="mc-wc-subscribe" type="checkbox"', $output );
+//
+//   echo $output;
+// } );

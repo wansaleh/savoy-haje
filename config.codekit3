@@ -10098,6 +10098,18 @@
 		"oAP": "\/assets\/includes\/wc-account.php",
 		"oF": 1
 		},
+	"\/includes\/wc-old.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/includes\/wc-old.php",
+		"oF": 0
+		},
+	"\/includes\/wc-preorder.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/includes\/wc-preorder.php",
+		"oF": 0
+		},
 	"\/includes\/wc.php": {
 		"ft": 8192,
 		"oA": 1,

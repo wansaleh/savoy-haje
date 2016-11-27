@@ -89,6 +89,17 @@ $preorder: $clr-cyan-a700;
   margin: 0 auto 4em;
 }
 
+// .decimals {
+//   font-size: .6em;
+//   position: relative;
+//   bottom: .4em;
+//   padding-left: .1em;
+//
+//   .point {
+//     display: none;
+//   }
+// }
+
 // LOOPS
 
 .nm-shop-products-col {
@@ -1411,6 +1422,16 @@ strong.product-quantity {
 
   .addresses {
     margin-top: 1em;
+  }
+
+  .wc_pip_view_invoice {
+    margin-top: 2em;
+    float: right;
+  }
+
+  .customer_details {
+    margin-top: 3em;
+    border-top: 1px solid #e7e7e7;
   }
 }
 
