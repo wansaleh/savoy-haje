@@ -13,8 +13,15 @@ $gutter: 15px;
 
   &.nm-row-full-nopad {
     max-width: none;
-    margin-right: -$gutter;
-    margin-left: -$gutter;
+    margin-right: 0;
+    margin-left: 0;
+    // margin-right: -$gutter;
+    // margin-left: -$gutter;
+
+    > .mpc-column {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 
   &.nm-row-full-boxed {

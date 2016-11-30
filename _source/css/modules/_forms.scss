@@ -5,7 +5,7 @@
     // margin: 0;
     text-transform: uppercase;
     letter-spacing: 0;
-    color: tint($clr-heading, 40);
+    color: $clr-main-font;
     font-size: .9em;
     font-weight: 700;
     letter-spacing: 1px;
@@ -15,6 +15,7 @@
   input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
   textarea,
   select {
+    border-width: 2px;
     font-size: 1.4em;
     font-weight: 300;
     transition: all .2s ease;
@@ -32,9 +33,10 @@
 
     input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
     textarea {
-      border-color: tint($clr-highlight, 40);
-      background: tint($clr-highlight, 90);
-      color: shade($clr-highlight, 60);
+      // border-color: tint($clr-highlight, 40);
+      border-color: $clr-highlight !important;
+      background: tint($clr-highlight, 98) !important;
+      color: shade($clr-highlight, 60) !important;
     }
   }
 
@@ -99,9 +101,10 @@ textarea {
   border-radius: 3px;
 
   &:focus {
-    border-color: tint($clr-highlight, 40) !important;
-    background: tint($clr-highlight, 90);
-    color: shade($clr-highlight, 60);
+    // border-color: tint($clr-highlight, 40) !important;
+    border-color: $clr-highlight !important;
+    background: tint($clr-highlight, 98) !important;
+    color: shade($clr-highlight, 60) !important;
   }
 }
 
@@ -118,15 +121,52 @@ input[type=button] {
   border-radius: 3px !important;
 }
 
-.select2-container {
-  .select2-choice {
-    border-radius: 3px;
+body[class*="woocommerce-"] {
+  .select2-container {
+    .select2-choice {
+      border-radius: 3px;
+      border-width: 2px;
+    }
+
+    &.select2-dropdown-open .select2-choice {
+      border-radius: 3px 3px 0 0;
+    }
+
+    &.select2-dropdown-open.select2-drop-above .select2-choice {
+      border-radius: 0 0 3px 3px;
+    }
   }
 
-  &.select2-dropdown-open .select2-choice {
-    border-radius: 3px 3px 0 0;
+  .select2-results .select2-highlighted {
+    color: #eee !important;
+  }
+
+  .select2-drop-active {
+    border-width: 2px;
+  }
+
+  .select2-drop {
+    margin-top: -2px;
+    border-radius: 0 0 3px 3px;
+
+    &.select2-drop-above.select2-drop-active {
+      margin-top: 3px;
+      border-bottom: 0;
+      border-top-width: 2px;
+      border-radius: 3px 3px 0 0;
+
+      .select2-results {
+        border-bottom: 0;
+      }
+
+      .select2-search {
+        padding-top: 14px;
+      }
+    }
   }
 }
+
+
 // CHECKBOX
 .nm-custom-checkbox-label {
   padding-left: 32px !important;
@@ -142,6 +182,7 @@ input[type=button] {
   font-size: 16px !important;
   line-height: 16px !important;
   text-align: center;
+  border-width: 2px;
   border-radius: 3px;
   border-color: #e7e7e7;
 
@@ -188,7 +229,7 @@ input[type=button] {
         line-height: 16px !important;
         text-align: center;
         border-radius: 3px;
-        border: 1px solid #e7e7e7;
+        border: 2px solid #e7e7e7;
 
         font-family: 'nm-font';
         font-style: normal;
@@ -223,6 +264,56 @@ input[type=button] {
   }
 }
 
+.followup-checkout {
+  label {
+    display: block;
+    position: relative;
+    padding: 0 0 0 32px !important;
+    line-height: 24px;
+
+    &:before {
+      top: 0;
+      left: 0;
+      width: 24px;
+      height: 24px;
+      font-size: 16px !important;
+      line-height: 16px !important;
+      text-align: center;
+      border-radius: 3px;
+      border: 2px solid #e7e7e7;
+
+      font-family: 'nm-font';
+      font-style: normal;
+      font-weight: normal;
+      color: rgba($clr-highlight, 0);
+      content: "\e116";
+
+      position: absolute;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      transition: all .2s ease;
+    }
+
+    input[type=checkbox] {
+      position: absolute;
+      top: -100px;
+      left: 0;
+      visibility: hidden;
+    }
+
+    &.checked:before {
+      border-color: $clr-highlight;
+      color: $clr-highlight;
+    }
+    &.checked {
+      color: $clr-highlight !important;
+    }
+  }
+}
+
 // RADIO
 .nm-custom-radio-label {
   padding-left: 32px !important;
@@ -235,6 +326,7 @@ input[type=button] {
   left: 0;
   width: 24px;
   height: 24px;
+  border-width: 2px;
   border-radius: 24px;
   transition: all .3s ease;
 }

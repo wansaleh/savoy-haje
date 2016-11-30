@@ -431,24 +431,30 @@ ul.variation li {
   }
 
   .variation-EstimatedRelease:last-child {
+    background: $preorder;
     border-color: $preorder;
-    color: $preorder;
+    color: #fff;
+    font-weight: 600;
     // border-radius: 3px;
     // font-weight: 600;
     // padding: .3em .4em;
-    text-transform: lowercase;
+    // text-transform: lowercase;
     overflow: hidden;
 
-    p:after {
-      content: "Estimated";
-      display: inline-block;
-      background: $preorder;
-      color: #fff;
-      padding: .2em .6em;
-      padding-left: .5em;
-      margin: -.2em -.6em;
-      margin-left: .4em;
+    p:before {
+      content: "Est. ";
     }
+
+    // p:after {
+    //   content: "Estimated";
+    //   display: inline-block;
+    //   background: $preorder;
+    //   color: #fff;
+    //   padding: .2em .6em;
+    //   padding-left: .5em;
+    //   margin: -.2em -.6em;
+    //   margin-left: .4em;
+    // }
   }
 
   .nm-cart-panel-item-details & {

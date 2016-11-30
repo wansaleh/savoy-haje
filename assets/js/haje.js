@@ -50,51 +50,6 @@
 
   })();
 
-  Haje.Forms = (function() {
-    function Forms() {
-      $('form .form-row').find('input, textarea, select, label').focus(function() {
-        return $(this).closest('.form-row').addClass('focus');
-      }).blur(function() {
-        return $(this).closest('.form-row').removeClass('focus');
-      });
-      $('p[class^="comment-form-"]').find('input, textarea, select, label').focus(function() {
-        return $(this).closest('p[class^="comment-form-"]').addClass('focus');
-      }).blur(function() {
-        return $(this).closest('p[class^="comment-form-"]').removeClass('focus');
-      });
-      $('.mc4wp-form input[type=email]').focus(function() {
-        return $(this).closest('.mc4wp-form').addClass('focus');
-      }).blur(function() {
-        return $(this).closest('.mc4wp-form').removeClass('focus');
-      });
-      $('.ginput_container').find('input, textarea, select, label').focus(function() {
-        return $(this).closest('.gfield').addClass('focus');
-      }).blur(function() {
-        return $(this).closest('.gfield').removeClass('focus');
-      });
-      $('.wppb-user-forms').find('input, textarea, select, label').focus(function() {
-        return $(this).closest('.wppb-form-field, p').addClass('focus');
-      }).blur(function() {
-        return $(this).closest('.wppb-form-field, p').removeClass('focus');
-      });
-      $('.wppb-user-forms').find(':checkbox').each(function() {
-        if ($(this).is(':checked')) {
-          return $(this).closest('.wppb-form-field, p').addClass('checked');
-        }
-      }).change(function() {
-        if ($(this).is(':checked')) {
-          return $(this).closest('.wppb-form-field, p').addClass('checked');
-        } else {
-          return $(this).closest('.wppb-form-field, p').removeClass('checked');
-        }
-      });
-      $('.woocommerce-MyAccount-content .wppb-edit-user .wppb-password-heading .wppb-description-delimiter').html('Leave the password fields blank if you don\'t need to change them.');
-    }
-
-    return Forms;
-
-  })();
-
   Haje.Alert = (function() {
     function Alert() {
       this.setupAlert();
@@ -143,8 +98,85 @@
 
   $(function() {
     new Haje;
-    new Haje.Forms;
     return new Haje.Alert;
+  });
+
+  "use strict";
+
+  $ = jQuery.noConflict();
+
+  Haje.Forms = (function() {
+    function Forms() {
+      this.base();
+      this.gforms();
+    }
+
+    Forms.prototype.base = function() {
+      $('form .form-row').find('input, textarea, select, label').focus(function() {
+        return $(this).closest('.form-row').addClass('focus');
+      }).blur(function() {
+        return $(this).closest('.form-row').removeClass('focus');
+      });
+      $('p[class^="comment-form-"]').find('input, textarea, select, label').focus(function() {
+        return $(this).closest('p[class^="comment-form-"]').addClass('focus');
+      }).blur(function() {
+        return $(this).closest('p[class^="comment-form-"]').removeClass('focus');
+      });
+      $('.mc4wp-form input[type=email]').focus(function() {
+        return $(this).closest('.mc4wp-form').addClass('focus');
+      }).blur(function() {
+        return $(this).closest('.mc4wp-form').removeClass('focus');
+      });
+      return $('.followup-checkout input[type=checkbox]').each(function() {
+        var _this, check;
+        _this = $(this);
+        check = function() {
+          if (_this.is(':checked')) {
+            return _this.closest('label').addClass('checked');
+          } else {
+            return _this.closest('label').removeClass('checked');
+          }
+        };
+        check();
+        return $(this).change(check);
+      });
+    };
+
+    Forms.prototype.gforms = function() {
+      $('.ginput_container').find('input, textarea, select, label').focus(function() {
+        return $(this).closest('.gfield').addClass('focus');
+      }).blur(function() {
+        return $(this).closest('.gfield').removeClass('focus');
+      });
+      return $("li.gf_readonly input").attr("readonly", "readonly");
+    };
+
+    Forms.prototype.wppb = function() {
+      $('.wppb-user-forms').find('input, textarea, select, label').focus(function() {
+        return $(this).closest('.wppb-form-field, p').addClass('focus');
+      }).blur(function() {
+        return $(this).closest('.wppb-form-field, p').removeClass('focus');
+      });
+      $('.wppb-user-forms').find(':checkbox').each(function() {
+        if ($(this).is(':checked')) {
+          return $(this).closest('.wppb-form-field, p').addClass('checked');
+        }
+      }).change(function() {
+        if ($(this).is(':checked')) {
+          return $(this).closest('.wppb-form-field, p').addClass('checked');
+        } else {
+          return $(this).closest('.wppb-form-field, p').removeClass('checked');
+        }
+      });
+      return $('.woocommerce-MyAccount-content .wppb-edit-user .wppb-password-heading .wppb-description-delimiter').html('Leave the password fields blank if you don\'t need to change them.');
+    };
+
+    return Forms;
+
+  })();
+
+  $(function() {
+    return new Haje.Forms;
   });
 
   "use strict";

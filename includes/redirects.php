@@ -1,5 +1,7 @@
 <?php
 
+add_action( 'wp_logout', create_function( '', 'wp_redirect(home_url()); exit();' ));
+
 add_action( 'template_redirect', 'hj_edar_role_redirects' );
 function hj_edar_role_redirects() {
   if ( ( is_page( 'edar' ) || is_page( 'edar/apply' ) ) && is_user_logged_in() ) {
@@ -28,8 +30,6 @@ function hj_edar_role_redirects() {
 //     wp_redirect( '/shop/category/edar/' );
 //   }
 // }
-
-// add_action( 'wp_logout', create_function( '', 'wp_redirect(home_url()); exit();' ));
 
 // function wc_custom_user_redirect( $redirect, $user ) {
 //   // Get the first of all the roles assigned to the user

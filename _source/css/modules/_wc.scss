@@ -1988,6 +1988,8 @@ a.size-guide {
   }
 
   .sg_title {
+    display: none;
+
     margin-top: 0;
     font-size: 4rem;
     font-weight: 300;
@@ -1995,8 +1997,15 @@ a.size-guide {
     text-align: center;
   }
 
-  img {
-    width: 240px !important;
+  img.sizeguide {
+    display: block;
+    width: 200px;
+    float: right;
+    margin-left: 20px;
+
+    @include media-breakpoint-down(sm) {
+      width: 160px;
+    }
   }
 
   hr {
@@ -2006,24 +2015,35 @@ a.size-guide {
 
   table {
     table-layout: fixed;
-  }
+    margin-top: 2em;
 
-  table th {
-    font-weight: 700;
-  }
+    th {
+      font-weight: 700;
+      white-space: nowrap;
+    }
 
-  table td, table th {
-    padding: 1em 0;
-  }
+    td, th {
+      padding: 1em 0;
+    }
 
-  table tr:first-child th {
-    border: 0;
-  }
+    tr:first-child th {
+      border: 0;
+    }
 
-  table tr:nth-child(2n) {
-    background: $clr-grey-bg;
-  }
-  table tr:nth-child(2n+1) {
-    background: none;
+    tr:nth-child(2n) {
+      background: $clr-grey-bg;
+    }
+    tr:nth-child(2n+1) {
+      background: none;
+    }
+
+    @include media-breakpoint-down(xs) {
+      overflow-x: auto;
+      display: block;
+
+      td, th {
+        padding: 1em;
+      }
+    }
   }
 }

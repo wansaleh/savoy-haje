@@ -43,6 +43,8 @@ class Haje.Home
     $gradient = $('#home-gradient')
     $upright = $('#home-upright')
 
+    # new Vivus('hero-waves', { duration: 2000 })
+
     # colors = Trianglify.colorbrewer.YlGnBu.reverse()
     # makePatternHero = (fadeIn = false) ->
     #   $gradient.find('canvas').remove()

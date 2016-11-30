@@ -138,5 +138,5 @@ function hj_kurta_cta( $atts ) {
 
 add_shortcode( 'sizeguide_img', 'hj_sizeguide_img' );
 function hj_sizeguide_img() {
-  return '<img class="alignright" style="width: 200px; margin-top: -80px;" src="' . HJ_URI . '/assets/images/sizechart.svg" alt="sizeguide">';
+  return '<img class="sizeguide" src="' . HJ_URI . '/assets/images/sizechart.svg" alt="sizeguide">';
 }

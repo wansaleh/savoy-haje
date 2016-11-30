@@ -48,48 +48,6 @@ class window.Haje
       else
         hamburger.removeClass('is-active')
 
-class Haje.Forms
-  constructor: ->
-    $('form .form-row').find('input, textarea, select, label')
-      .focus -> $(this).closest('.form-row').addClass('focus')
-      .blur -> $(this).closest('.form-row').removeClass('focus')
-
-    $('p[class^="comment-form-"]').find('input, textarea, select, label')
-      .focus -> $(this).closest('p[class^="comment-form-"]').addClass('focus')
-      .blur -> $(this).closest('p[class^="comment-form-"]').removeClass('focus')
-
-    $('.mc4wp-form input[type=email]')
-      .focus -> $(this).closest('.mc4wp-form').addClass('focus')
-      .blur -> $(this).closest('.mc4wp-form').removeClass('focus')
-
-    # GRAVITY FORMS
-    $('.ginput_container').find('input, textarea, select, label')
-      .focus -> $(this).closest('.gfield').addClass('focus')
-      .blur -> $(this).closest('.gfield').removeClass('focus')
-
-    # # USERPRO
-    # $('.userpro-field').find('input, textarea, select, label')
-    #   .focus -> $(this).closest('.userpro-field').addClass('focus')
-    #   .blur -> $(this).closest('.userpro-field').removeClass('focus')
-
-    # PROFILE BUILDER
-    $('.wppb-user-forms').find('input, textarea, select, label')
-      .focus -> $(this).closest('.wppb-form-field, p').addClass('focus')
-      .blur -> $(this).closest('.wppb-form-field, p').removeClass('focus')
-
-    $('.wppb-user-forms').find(':checkbox')
-      .each ->
-        if $(this).is(':checked')
-          $(this).closest('.wppb-form-field, p').addClass('checked')
-      .change ->
-        if $(this).is(':checked')
-          $(this).closest('.wppb-form-field, p').addClass('checked')
-        else
-          $(this).closest('.wppb-form-field, p').removeClass('checked')
-
-    $('.woocommerce-MyAccount-content .wppb-edit-user .wppb-password-heading .wppb-description-delimiter')
-      .html('Leave the password fields blank if you don\'t need to change them.')
-
 class Haje.Alert
   constructor: ->
     @setupAlert()
@@ -128,8 +86,8 @@ class Haje.Alert
 
 $ ->
   new Haje
-  new Haje.Forms
   new Haje.Alert
 
+# @codekit-append "_haje-forms";
 # @codekit-append "_haje-home";
 # @codekit-append "_haje-wc";

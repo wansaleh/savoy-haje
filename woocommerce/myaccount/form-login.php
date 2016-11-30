@@ -17,19 +17,19 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+  exit; // Exit if accessed directly
 }
 
 $show_reg_form = ( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' ) ? true : false;
 
 // Is this a popup form? - "$is_popup" is passed to "wc_get_template()" in footer.php
 if ( isset( $is_popup ) ) {
-	// Redirect popup form to "my account" page
-	$popup_redirect_url = esc_url( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) );
-	$popup_redirect_input = sprintf( '<input type="hidden" id="nm-login-popup-redirect-input" name="redirect" value="%s" />', $popup_redirect_url );
-	$popup_form_action = sprintf( ' action="%s"', $popup_redirect_url );
+  // Redirect popup form to "my account" page
+  $popup_redirect_url = esc_url( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) );
+  $popup_redirect_input = sprintf( '<input type="hidden" id="nm-login-popup-redirect-input" name="redirect" value="%s" />', $popup_redirect_url );
+  $popup_form_action = sprintf( ' action="%s"', $popup_redirect_url );
 } else {
-	$popup_redirect_input = $popup_form_action = '';
+  $popup_redirect_input = $popup_form_action = '';
 }
 
 ?>
@@ -37,7 +37,7 @@ if ( isset( $is_popup ) ) {
 <?php do_action( 'woocommerce_before_customer_login_form' ); ?>
 
 <div id="customer_login" class="nm-myaccount-login">
-	<?php wc_print_notices(); ?>
+  <?php wc_print_notices(); ?>
 
     <div class="nm-myaccount-login-inner">
 
@@ -81,6 +81,7 @@ if ( isset( $is_popup ) ) {
                     <?php endif; ?>
                 </p>
 
+                <?php do_action( 'register_form' ); ?>
                 <?php do_action( 'woocommerce_login_form_end' ); ?>
 
             </form>
@@ -124,7 +125,6 @@ if ( isset( $is_popup ) ) {
                 <div style="<?php echo ( ( is_rtl() ) ? 'right' : 'left' ); ?>: -999em; position: absolute;"><label for="trap"><?php _e( 'Anti-spam', 'woocommerce' ); ?></label><input type="text" name="email_2" id="trap" tabindex="-1" autocomplete="off" /></div>
 
                 <?php do_action( 'woocommerce_register_form' ); ?>
-                <?php do_action( 'register_form' ); ?>
 
                 <p class="form-actions">
                     <?php wp_nonce_field( 'woocommerce-register', 'woocommerce-register-nonce' ); ?>
@@ -137,6 +137,7 @@ if ( isset( $is_popup ) ) {
                     <?php endif; ?>
                 </p>
 
+                <?php do_action( 'register_form' ); ?>
                 <?php do_action( 'woocommerce_register_form_end' ); ?>
 
             </form>

@@ -42,6 +42,17 @@
       text-transform: none;
     }
 
+    // &.gf_readonly.focus {
+    //   label {
+    //     color: inherit;
+    //   }
+    //
+    //   input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
+    //   select {
+    //     border-color: inherit !important;
+    //   }
+    // }
+
     // &.focus {
     //   label {
     //     color: $clr-page;
@@ -121,6 +132,84 @@
     margin: 5px 0 0;
     text-transform: uppercase;
     color: rgba(#000, .5);
+  }
+
+  // Radio
+  #input_1_14,
+  #input_1_20,
+  #input_1_21,
+  #input_1_15,
+  #input_6_14,
+  #input_6_20,
+  #input_6_21,
+  #input_6_15 {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    [class^="gchoice_"] {
+      input[type="radio"] {
+        position: absolute;
+        top: -100px;
+        left: 0;
+        visibility: hidden;
+      }
+
+      label {
+        position: relative;
+        padding: 5px;
+        border: 2px solid #e7e7e7;
+        border-radius: 2em;
+        min-width: 100px;
+        text-align: center;
+        margin: 0 8px 0 0 !important;
+
+        &:hover {
+          border-color: #aaa;
+        }
+      }
+
+      input[type="radio"]:checked + label {
+        border-color: $clr-highlight;
+        color: $clr-highlight;
+      }
+
+      input[type="text"] {
+        font-size: .875em !important;
+        font-weight: 700;
+        text-transform: uppercase;
+        border-radius: 2em;
+        text-align: center;
+        padding: 5px;
+        min-width: 100px;
+      }
+
+      input[type="radio"]:checked + input[type="text"] {
+        border-color: $clr-highlight;
+        color: $clr-highlight;
+      }
+    }
+  }
+
+  .gfield.focus {
+    #input_1_14,
+    #input_1_20,
+    #input_1_21,
+    #input_1_15,
+    #input_6_14,
+    #input_6_20,
+    #input_6_21,
+    #input_6_15 {
+      label {
+        color: #8f8f8f
+      }
+    }
+  }
+
+  .gf_readonly {
+    opacity: .5;
+    cursor: no-drop;
   }
 
   .gform_footer {

@@ -861,6 +861,19 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/_source\/css\/modules\/_um.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/css\/css\/_um.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/_source\/css\/modules\/_wc-account.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -1817,12 +1830,22 @@
 		},
 	"\/_source\/images\/waves-hero.svg": {
 		"ft": 2097152,
-		"miP": 1,
-		"oA": 0,
+		"miP": 0,
+		"oA": 2,
 		"oAP": "\/assets\/images\/waves-hero.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/_source\/images\/waves-hero_animated-2.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 0,
+		"oAP": "\/assets\/images\/waves-hero_animated-2.svg",
 		"oF": 1,
 		"opt": 1,
-		"plM": 20937965567,
+		"plM": 3758088159,
 		"prP": 0
 		},
 	"\/_source\/images\/waves-hero_animated.svg": {
@@ -1972,6 +1995,16 @@
 		"oAP": "\/assets\/images\/wavy.jpg",
 		"oF": 0,
 		"opt": 1
+		},
+	"\/_source\/js\/_haje-forms.coffee": {
+		"ft": 32,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/assets\/js\/_haje-forms.js",
+		"oF": 0,
+		"oS": 0,
+		"sC": 1
 		},
 	"\/_source\/js\/_haje-home.coffee": {
 		"ft": 32,
@@ -9924,6 +9957,130 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/bower_components\/vivus\/.bower.json": {
+		"ft": 524288,
+		"oA": 2,
+		"oAP": "\/assets\/bower_components\/vivus\/.bower.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/bower_components\/vivus\/.github\/ISSUE_TEMPLATE.md": {
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"eLB": 0,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"oA": 2,
+		"oAP": "\/assets\/bower_components\/vivus\/.github\/ISSUE_TEMPLATE.md",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
+		},
+	"\/bower_components\/vivus\/.npmignore": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/bower_components\/vivus\/.npmignore",
+		"oF": 0
+		},
+	"\/bower_components\/vivus\/.spmignore": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/bower_components\/vivus\/.spmignore",
+		"oF": 0
+		},
+	"\/bower_components\/vivus\/bower.json": {
+		"ft": 524288,
+		"oA": 2,
+		"oAP": "\/assets\/bower_components\/vivus\/bower.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/bower_components\/vivus\/CONTRIBUTING.md": {
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"eLB": 0,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"oA": 2,
+		"oAP": "\/assets\/bower_components\/vivus\/CONTRIBUTING.md",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
+		},
+	"\/bower_components\/vivus\/dist\/vivus.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/assets\/bower_components\/vivus\/dist\/vivus.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/bower_components\/vivus\/dist\/vivus.min.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 2,
+		"oAP": "\/assets\/bower_components\/vivus\/dist\/vivus.min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/bower_components\/vivus\/hacks.md": {
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"eLB": 0,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"oA": 2,
+		"oAP": "\/assets\/bower_components\/vivus\/hacks.md",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
+		},
+	"\/bower_components\/vivus\/LICENSE": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/bower_components\/vivus\/LICENSE",
+		"oF": 0
+		},
+	"\/bower_components\/vivus\/readme.md": {
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"eLB": 0,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"oA": 2,
+		"oAP": "\/assets\/bower_components\/vivus\/readme.md",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
+		},
 	"\/composer.json": {
 		"ft": 524288,
 		"oA": 1,
@@ -9996,10 +10153,10 @@
 		"oAP": "\/assets\/element-templates\/vc_toggle.php",
 		"oF": 1
 		},
-	"\/follow-up-emails\/checkout\/email-subscribe.php": {
+	"\/follow-up-emails\/checkout\/email-subscribe---.php": {
 		"ft": 8192,
 		"oA": 1,
-		"oAP": "\/assets\/follow-up-emails\/checkout\/email-subscribe.php",
+		"oAP": "\/assets\/follow-up-emails\/checkout\/email-subscribe---.php",
 		"oF": 1
 		},
 	"\/footer-widgets.php": {
@@ -10100,15 +10257,15 @@
 		},
 	"\/includes\/wc-old.php": {
 		"ft": 8192,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "\/assets\/includes\/wc-old.php",
-		"oF": 0
+		"oF": 1
 		},
 	"\/includes\/wc-preorder.php": {
 		"ft": 8192,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "\/assets\/includes\/wc-preorder.php",
-		"oF": 0
+		"oF": 1
 		},
 	"\/includes\/wc.php": {
 		"ft": 8192,
@@ -10176,1382 +10333,11 @@
 		"oF": 1,
 		"oS": 0
 		},
-	"\/vendor\/autoload.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/autoload.php",
-		"oF": 1
-		},
-	"\/vendor\/composer\/autoload_classmap.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/composer\/autoload_classmap.php",
-		"oF": 1
-		},
-	"\/vendor\/composer\/autoload_files.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/composer\/autoload_files.php",
-		"oF": 1
-		},
-	"\/vendor\/composer\/autoload_namespaces.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/composer\/autoload_namespaces.php",
-		"oF": 1
-		},
-	"\/vendor\/composer\/autoload_psr4.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/composer\/autoload_psr4.php",
-		"oF": 1
-		},
-	"\/vendor\/composer\/autoload_real.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/composer\/autoload_real.php",
-		"oF": 1
-		},
-	"\/vendor\/composer\/autoload_static.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/composer\/autoload_static.php",
-		"oF": 1
-		},
-	"\/vendor\/composer\/ClassLoader.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/composer\/ClassLoader.php",
-		"oF": 1
-		},
-	"\/vendor\/composer\/installed.json": {
-		"ft": 524288,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/composer\/installed-min.json",
-		"oF": 1,
-		"oO": 0,
-		"oS": 1
-		},
-	"\/vendor\/composer\/LICENSE": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/composer\/LICENSE",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/composer.json": {
-		"ft": 524288,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/composer-min.json",
-		"oF": 1,
-		"oO": 0,
-		"oS": 1
-		},
-	"\/vendor\/nesbot\/carbon\/LICENSE": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/LICENSE",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/readme.md": {
-		"cS": 0,
-		"eF": 1,
-		"eL": 1,
-		"eLB": 0,
-		"ema": 1,
-		"eSQ": 1,
-		"ft": 4096,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/readme.html",
-		"oF": 1,
-		"oFM": 0,
-		"oS": 0,
-		"pHT": 0,
-		"pME": 1,
-		"rFN": 0,
-		"uCM": 0
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Carbon.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Carbon.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/CarbonInterval.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/CarbonInterval.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/af.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/af.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/ar.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/ar.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/az.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/az.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/bg.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/bg.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/bn.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/bn.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/ca.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/ca.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/cs.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/cs.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/da.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/da.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/de.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/de.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/el.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/el.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/en.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/en.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/eo.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/eo.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/es.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/es.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/et.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/et.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/eu.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/eu.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/fa.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/fa.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/fi.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/fi.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/fo.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/fo.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/fr.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/fr.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/he.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/he.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/hr.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/hr.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/hu.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/hu.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/id.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/id.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/it.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/it.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/ja.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/ja.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/ko.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/ko.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/lt.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/lt.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/lv.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/lv.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/ms.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/ms.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/nl.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/nl.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/no.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/no.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/pl.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/pl.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/pt.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/pt.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/pt_BR.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/pt_BR.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/ro.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/ro.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/ru.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/ru.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/sk.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/sk.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/sl.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/sl.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/sq.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/sq.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/sr.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/sr.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/sv.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/sv.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/th.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/th.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/tr.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/tr.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/uk.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/uk.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/uz.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/uz.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/vi.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/vi.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/zh-TW.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/zh-TW.php",
-		"oF": 1
-		},
-	"\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/zh.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/nesbot\/carbon\/src\/Carbon\/Lang\/zh.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/polyfill-mbstring\/bootstrap.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/polyfill-mbstring\/bootstrap.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/polyfill-mbstring\/composer.json": {
-		"ft": 524288,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/polyfill-mbstring\/composer-min.json",
-		"oF": 1,
-		"oO": 0,
-		"oS": 1
-		},
-	"\/vendor\/symfony\/polyfill-mbstring\/LICENSE": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/polyfill-mbstring\/LICENSE",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/polyfill-mbstring\/Mbstring.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/polyfill-mbstring\/Mbstring.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/polyfill-mbstring\/README.md": {
-		"cS": 0,
-		"eF": 1,
-		"eL": 1,
-		"eLB": 0,
-		"ema": 1,
-		"eSQ": 1,
-		"ft": 4096,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/polyfill-mbstring\/README.html",
-		"oF": 1,
-		"oFM": 0,
-		"oS": 0,
-		"pHT": 0,
-		"pME": 1,
-		"rFN": 0,
-		"uCM": 0
-		},
-	"\/vendor\/symfony\/polyfill-mbstring\/Resources\/unidata\/lowerCase.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/polyfill-mbstring\/Resources\/unidata\/lowerCase.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/polyfill-mbstring\/Resources\/unidata\/upperCase.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/polyfill-mbstring\/Resources\/unidata\/upperCase.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/.gitignore": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/.gitignore",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Catalogue\/AbstractOperation.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Catalogue\/AbstractOperation.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Catalogue\/MergeOperation.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Catalogue\/MergeOperation.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Catalogue\/OperationInterface.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Catalogue\/OperationInterface.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Catalogue\/TargetOperation.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Catalogue\/TargetOperation.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/CHANGELOG.md": {
-		"cS": 0,
-		"eF": 1,
-		"eL": 1,
-		"eLB": 0,
-		"ema": 1,
-		"eSQ": 1,
-		"ft": 4096,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/CHANGELOG.html",
-		"oF": 1,
-		"oFM": 0,
-		"oS": 0,
-		"pHT": 0,
-		"pME": 1,
-		"rFN": 0,
-		"uCM": 0
-		},
-	"\/vendor\/symfony\/translation\/composer.json": {
-		"ft": 524288,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/composer-min.json",
-		"oF": 1,
-		"oO": 0,
-		"oS": 1
-		},
-	"\/vendor\/symfony\/translation\/DataCollector\/TranslationDataCollector.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/DataCollector\/TranslationDataCollector.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/DataCollectorTranslator.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/DataCollectorTranslator.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Dumper\/CsvFileDumper.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Dumper\/CsvFileDumper.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Dumper\/DumperInterface.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Dumper\/DumperInterface.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Dumper\/FileDumper.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Dumper\/FileDumper.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Dumper\/IcuResFileDumper.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Dumper\/IcuResFileDumper.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Dumper\/IniFileDumper.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Dumper\/IniFileDumper.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Dumper\/JsonFileDumper.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Dumper\/JsonFileDumper.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Dumper\/MoFileDumper.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Dumper\/MoFileDumper.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Dumper\/PhpFileDumper.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Dumper\/PhpFileDumper.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Dumper\/PoFileDumper.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Dumper\/PoFileDumper.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Dumper\/QtFileDumper.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Dumper\/QtFileDumper.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Dumper\/XliffFileDumper.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Dumper\/XliffFileDumper.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Dumper\/YamlFileDumper.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Dumper\/YamlFileDumper.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Exception\/ExceptionInterface.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Exception\/ExceptionInterface.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Exception\/InvalidResourceException.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Exception\/InvalidResourceException.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Exception\/NotFoundResourceException.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Exception\/NotFoundResourceException.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Extractor\/AbstractFileExtractor.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Extractor\/AbstractFileExtractor.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Extractor\/ChainExtractor.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Extractor\/ChainExtractor.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Extractor\/ExtractorInterface.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Extractor\/ExtractorInterface.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/IdentityTranslator.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/IdentityTranslator.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Interval.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Interval.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/LICENSE": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/LICENSE",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Loader\/ArrayLoader.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Loader\/ArrayLoader.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Loader\/CsvFileLoader.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Loader\/CsvFileLoader.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Loader\/FileLoader.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Loader\/FileLoader.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Loader\/IcuDatFileLoader.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Loader\/IcuDatFileLoader.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Loader\/IcuResFileLoader.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Loader\/IcuResFileLoader.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Loader\/IniFileLoader.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Loader\/IniFileLoader.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Loader\/JsonFileLoader.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Loader\/JsonFileLoader.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Loader\/LoaderInterface.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Loader\/LoaderInterface.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Loader\/MoFileLoader.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Loader\/MoFileLoader.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Loader\/PhpFileLoader.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Loader\/PhpFileLoader.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Loader\/PoFileLoader.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Loader\/PoFileLoader.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Loader\/QtFileLoader.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Loader\/QtFileLoader.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Loader\/schema\/dic\/xliff-core\/xliff-core-1.2-strict.xsd": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Loader\/schema\/dic\/xliff-core\/xliff-core-1.2-strict.xsd",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Loader\/schema\/dic\/xliff-core\/xliff-core-2.0.xsd": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Loader\/schema\/dic\/xliff-core\/xliff-core-2.0.xsd",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Loader\/schema\/dic\/xliff-core\/xml.xsd": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Loader\/schema\/dic\/xliff-core\/xml.xsd",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Loader\/XliffFileLoader.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Loader\/XliffFileLoader.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Loader\/YamlFileLoader.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Loader\/YamlFileLoader.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/LoggingTranslator.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/LoggingTranslator.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/MessageCatalogue.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/MessageCatalogue.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/MessageCatalogueInterface.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/MessageCatalogueInterface.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/MessageSelector.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/MessageSelector.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/MetadataAwareInterface.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/MetadataAwareInterface.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/phpunit.xml.dist": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/phpunit.xml.dist",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/PluralizationRules.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/PluralizationRules.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/README.md": {
-		"cS": 0,
-		"eF": 1,
-		"eL": 1,
-		"eLB": 0,
-		"ema": 1,
-		"eSQ": 1,
-		"ft": 4096,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/README.html",
-		"oF": 1,
-		"oFM": 0,
-		"oS": 0,
-		"pHT": 0,
-		"pME": 1,
-		"rFN": 0,
-		"uCM": 0
-		},
-	"\/vendor\/symfony\/translation\/Tests\/Catalogue\/AbstractOperationTest.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/Catalogue\/AbstractOperationTest.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/Catalogue\/MergeOperationTest.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/Catalogue\/MergeOperationTest.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/Catalogue\/TargetOperationTest.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/Catalogue\/TargetOperationTest.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/DataCollector\/TranslationDataCollectorTest.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/DataCollector\/TranslationDataCollectorTest.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/DataCollectorTranslatorTest.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/DataCollectorTranslatorTest.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/Dumper\/CsvFileDumperTest.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/Dumper\/CsvFileDumperTest.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/Dumper\/FileDumperTest.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/Dumper\/FileDumperTest.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/Dumper\/IcuResFileDumperTest.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/Dumper\/IcuResFileDumperTest.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/Dumper\/IniFileDumperTest.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/Dumper\/IniFileDumperTest.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/Dumper\/JsonFileDumperTest.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/Dumper\/JsonFileDumperTest.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/Dumper\/MoFileDumperTest.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/Dumper\/MoFileDumperTest.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/Dumper\/PhpFileDumperTest.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/Dumper\/PhpFileDumperTest.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/Dumper\/PoFileDumperTest.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/Dumper\/PoFileDumperTest.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/Dumper\/QtFileDumperTest.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/Dumper\/QtFileDumperTest.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/Dumper\/XliffFileDumperTest.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/Dumper\/XliffFileDumperTest.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/Dumper\/YamlFileDumperTest.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/Dumper\/YamlFileDumperTest.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/empty-translation.mo": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/empty-translation.mo",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/empty-translation.po": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/empty-translation.po",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/empty.csv": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/empty.csv",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/empty.ini": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/empty.ini",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/empty.json": {
-		"ft": 524288,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/empty-min.json",
-		"oF": 1,
-		"oO": 0,
-		"oS": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/empty.mo": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/empty.mo",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/empty.po": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/empty.po",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/empty.xlf": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/empty.xlf",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/empty.yml": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/empty.yml",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/encoding.xlf": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/encoding.xlf",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/escaped-id-plurals.po": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/escaped-id-plurals.po",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/escaped-id.po": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/escaped-id.po",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/fuzzy-translations.po": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/fuzzy-translations.po",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/invalid-xml-resources.xlf": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/invalid-xml-resources.xlf",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/malformed.json": {
-		"ft": 524288,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/malformed-min.json",
-		"oF": 1,
-		"oO": 0,
-		"oS": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/messages.yml": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/messages.yml",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/messages_linear.yml": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/messages_linear.yml",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/non-valid.xlf": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/non-valid.xlf",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/non-valid.yml": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/non-valid.yml",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/plurals.mo": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/plurals.mo",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/plurals.po": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/plurals.po",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/resname.xlf": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/resname.xlf",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/resourcebundle\/corrupted\/resources.dat": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/resourcebundle\/corrupted\/resources.dat",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/resourcebundle\/dat\/en.res": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/resourcebundle\/dat\/en.res",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/resourcebundle\/dat\/en.txt": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/resourcebundle\/dat\/en.txt",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/resourcebundle\/dat\/fr.res": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/resourcebundle\/dat\/fr.res",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/resourcebundle\/dat\/fr.txt": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/resourcebundle\/dat\/fr.txt",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/resourcebundle\/dat\/packagelist.txt": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/resourcebundle\/dat\/packagelist.txt",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/resourcebundle\/dat\/resources.dat": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/resourcebundle\/dat\/resources.dat",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/resourcebundle\/res\/en.res": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/resourcebundle\/res\/en.res",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/resources-2.0-clean.xlf": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/resources-2.0-clean.xlf",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/resources-2.0.xlf": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/resources-2.0.xlf",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/resources-clean.xlf": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/resources-clean.xlf",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/resources-target-attributes.xlf": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/resources-target-attributes.xlf",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/resources-tool-info.xlf": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/resources-tool-info.xlf",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/resources.csv": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/resources.csv",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/resources.dump.json": {
-		"ft": 524288,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/resources.dump-min.json",
-		"oF": 1,
-		"oO": 0,
-		"oS": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/resources.ini": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/resources.ini",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/resources.json": {
-		"ft": 524288,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/resources-min.json",
-		"oF": 1,
-		"oO": 0,
-		"oS": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/resources.mo": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/resources.mo",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/resources.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/resources.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/resources.po": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/resources.po",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/resources.ts": {
-		"cDF": 0,
-		"ft": 128,
-		"jxM": 0,
-		"ma": 0,
-		"mi": 0,
-		"moR": 0,
-		"moT": 2,
-		"nIA": 0,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/js\/resources.js",
-		"oF": 1,
-		"pCE": 0,
-		"rC": 0,
-		"sIE": 0,
-		"tEC": 0
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/resources.xlf": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/resources.xlf",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/resources.yml": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/resources.yml",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/valid.csv": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/valid.csv",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/with-attributes.xlf": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/with-attributes.xlf",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/withdoctype.xlf": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/withdoctype.xlf",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/fixtures\/withnote.xlf": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/fixtures\/withnote.xlf",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/IdentityTranslatorTest.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/IdentityTranslatorTest.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/IntervalTest.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/IntervalTest.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/Loader\/CsvFileLoaderTest.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/Loader\/CsvFileLoaderTest.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/Loader\/IcuDatFileLoaderTest.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/Loader\/IcuDatFileLoaderTest.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/Loader\/IcuResFileLoaderTest.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/Loader\/IcuResFileLoaderTest.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/Loader\/IniFileLoaderTest.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/Loader\/IniFileLoaderTest.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/Loader\/JsonFileLoaderTest.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/Loader\/JsonFileLoaderTest.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/Loader\/LocalizedTestCase.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/Loader\/LocalizedTestCase.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/Loader\/MoFileLoaderTest.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/Loader\/MoFileLoaderTest.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/Loader\/PhpFileLoaderTest.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/Loader\/PhpFileLoaderTest.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/Loader\/PoFileLoaderTest.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/Loader\/PoFileLoaderTest.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/Loader\/QtFileLoaderTest.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/Loader\/QtFileLoaderTest.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/Loader\/XliffFileLoaderTest.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/Loader\/XliffFileLoaderTest.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/Loader\/YamlFileLoaderTest.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/Loader\/YamlFileLoaderTest.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/LoggingTranslatorTest.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/LoggingTranslatorTest.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/MessageCatalogueTest.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/MessageCatalogueTest.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/MessageSelectorTest.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/MessageSelectorTest.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/PluralizationRulesTest.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/PluralizationRulesTest.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/TranslatorCacheTest.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/TranslatorCacheTest.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/TranslatorTest.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/TranslatorTest.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/Util\/ArrayConverterTest.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/Util\/ArrayConverterTest.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Tests\/Writer\/TranslationWriterTest.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Tests\/Writer\/TranslationWriterTest.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Translator.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Translator.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/TranslatorBagInterface.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/TranslatorBagInterface.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/TranslatorInterface.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/TranslatorInterface.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Util\/ArrayConverter.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Util\/ArrayConverter.php",
-		"oF": 1
-		},
-	"\/vendor\/symfony\/translation\/Writer\/TranslationWriter.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/vendor\/symfony\/translation\/Writer\/TranslationWriter.php",
-		"oF": 1
+	"\/vendor": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/assets\/vendor",
+		"oF": 0
 		},
 	"\/views\/emails\/haje-edar-approved-full.twig": {
 		"ft": 8192,
@@ -11621,9 +10407,9 @@
 		},
 	"\/woocommerce\/checkout\/thankyou.php": {
 		"ft": 8192,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "\/assets\/woocommerce\/checkout\/thankyou.php",
-		"oF": 0
+		"oF": 1
 		},
 	"\/woocommerce\/content-product.php": {
 		"ft": 8192,
@@ -11643,6 +10429,18 @@
 		"oAP": "\/assets\/woocommerce\/loop\/sale-flash.php",
 		"oF": 1
 		},
+	"\/woocommerce\/myaccount\/dashboard.php": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/assets\/woocommerce\/myaccount\/dashboard.php",
+		"oF": 1
+		},
+	"\/woocommerce\/myaccount\/downloads.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/woocommerce\/myaccount\/downloads.php",
+		"oF": 0
+		},
 	"\/woocommerce\/myaccount\/form-login-2.php": {
 		"ft": 8192,
 		"oA": 1,
@@ -11654,6 +10452,18 @@
 		"oA": 1,
 		"oAP": "\/assets\/woocommerce\/myaccount\/form-login.php",
 		"oF": 1
+		},
+	"\/woocommerce\/myaccount\/my-address.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/woocommerce\/myaccount\/my-address.php",
+		"oF": 0
+		},
+	"\/woocommerce\/myaccount\/orders.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/woocommerce\/myaccount\/orders.php",
+		"oF": 0
 		},
 	"\/woocommerce\/single-product\/add-to-cart\/variable.php": {
 		"ft": 8192,
@@ -11683,7 +10493,7 @@
 	"displayValue": "savoy-haje",
 	"displayValueWasSetByUser": 1,
 	"iconImageName": "brackets_teal",
-	"lastBuiltDate": 501691528
+	"lastBuiltDate": 501993706
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
@@ -13577,7 +12387,7 @@
 	"languageDefaultsUserDefined": [
 		],
 	"previewPathAddition": "",
-	"skippedFoldersString": "log, _logs, logs, _cache, cache, \/storage\/framework\/sessions, node_modules",
+	"skippedFoldersString": "log, _logs, logs, _cache, cache, \/storage\/framework\/sessions, node_modules, \/vendor",
 	"sourceFolderName": "_source",
 	"uglifyDefinesString": "",
 	"uglifyFlags2": {
