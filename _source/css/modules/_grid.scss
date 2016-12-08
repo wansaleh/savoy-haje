@@ -63,3 +63,10 @@ $gutter: 15px;
     padding-left: 0;
   }
 }
+
+
+@include media-breakpoint-down(xs) {
+  .products.xsmall-block-grid-1 > li {
+    width: 100% !important;
+  }
+}

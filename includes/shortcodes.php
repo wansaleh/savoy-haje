@@ -4,7 +4,7 @@ add_shortcode( 'user_account_link', 'hj_user_account_link' );
 function hj_user_account_link( $atts ) {
   if ( is_user_logged_in() ) {
     $current_user = wp_get_current_user();
-    return "<a href='/account/'>$current_user->user_login</a>";
+    return "<a href='/account/'>$current_user->display_name</a>";
   }
   return $content;
 }

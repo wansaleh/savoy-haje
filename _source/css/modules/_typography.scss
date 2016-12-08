@@ -1,6 +1,8 @@
 // @import 'https://fonts.googleapis.com/css?family=Oxygen:300,400,700|Playfair+Display:400,400i,700,900';
 // @import 'myriad-set-pro.css';
-@import '../fonts/fi/flaticon.css';
+
+@import '../../assets/fonts/haje/haje.css';
+@import '../../assets/fonts/fi/flaticon.css';
 
 @mixin font-awesome {
   content: "";
@@ -82,6 +84,7 @@ html, body {
 body {
   font-family: $body-fonts;
   font-weight: 400;
+  // line-height: 1.4;
 }
 
 // UTILITIES
@@ -149,7 +152,7 @@ h4, h5, h6 {
 .jumbo {
   h1 {
     font-size: scut-rem(30px) + 1.6rem;
-    // line-height: 1;
+    margin-top: 0;
     margin-bottom: .2em;
     margin-left: -2px;
     margin-right: -2px;

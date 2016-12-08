@@ -215,17 +215,17 @@ class Haje.WC.VariationSwatches
         sizeguide = $('<button type="button" class="swatch size-guide">Size Guide</button>').appendTo(select.data('group'))
 
         sizeguide.click ->
-          TweenMax.to window, .5,
-            scrollTo:
-              y: $('.wc-tabs')
-              offsetY: 0
-            ease: Power2.easeInOut
-            onComplete: ->
-              $('.wc-tabs .size_guide_tab a').trigger('click')
+          # TweenMax.to window, .5,
+          #   scrollTo:
+          #     y: $('.wc-tabs')
+          #     offsetY: 0
+          #   ease: Power2.easeInOut
+          #   onComplete: ->
+          #     $('.wc-tabs .size_guide_tab a').trigger('click')
 
-          # $('html, body').animate({
-          #  scrollTop: $('.wc-tabs').offset().top
-          # }, 300);
+          $('html, body').animate({
+            scrollTop: $('.wc-tabs').offset().top
+          }, 300)
 
   colorizeSwatch: (swatches) ->
     _this = this

@@ -1,5 +1,19 @@
 <?php
 
+// function hj_filter_html($buffer) {
+//   $urlOut=preg_replace('/https?:/i','',$urlIn);
+//   return $urlOut;
+//   // modify buffer here, and then return the updated code
+//   return $buffer;
+// }
+//
+// function buffer_start() { ob_start("hj_filter_html"); }
+//
+// function buffer_end() { ob_end_flush(); }
+//
+// add_action( 'wp_loaded', 'buffer_start' );
+// add_action( 'shutdown', 'buffer_end' );
+
 add_action('wp_head', 'hj_prefetch', 2);
 function hj_prefetch() {
   echo "<link rel='dns-prefetch' href='//www.google-analytics.com'>\n";

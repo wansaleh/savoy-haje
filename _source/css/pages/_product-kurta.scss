@@ -110,14 +110,18 @@
 .product-edar-kurta-define {
   #tab-description {
     .row1 {
-      // background: #083836 url(../images/waves5-prelude.svg) no-repeat 50% 80%;
-      background-color: #F0EFE8;
+      background-color: #F7D888;
       background-image:
-        url(../images/waves5.svg);
+        url(../images/waves5-define.svg);
       background-position: 50% 80%, center;
       background-size: cover;
 
       .preheader, h1 {
+        color: #AC4C5E;
+      }
+
+      p {
+        color: #AC4C5E;
       }
     }
   }

@@ -1,34 +1,56 @@
 <?php
 
+// add_filter('wp_mail_from', 'hj_mail_from');
+// add_filter('wp_mail_from_name', 'hj_mail_from_name');
+// function hj_mail_from($old) {
+//   return 'hello@haje.my';
+// }
+// function hj_mail_from_name($old) {
+//   return 'Haje HQ';
+// }
+
 add_filter( 'woocommerce_email_headers', 'hj_woocommerce_email_headers', 10, 3 );
 function hj_woocommerce_email_headers( $string, $low_stock, $product ) {
   return $string . "X-HAJE-WC: true\r\n";
 };
 
-remove_filter( 'wp_mail', array(Haet_Mail(), 'style_mail'), 12, 1 );
-add_filter( 'wp_mail', 'hj_wp_mail_filter' );
-
-function hj_wp_mail_filter( $orig_mail ) {
-  if ( class_exists("Haet_Mail") ) {
-    if ( is_string( $orig_mail['headers'] ) && strpos( $orig_mail['headers'], 'X-HAJE-WC: true' ) !== false ) {
-      return $orig_mail;
-    }
-
-    if ( is_array( $orig_mail['headers'] ) && isset( $orig_mail['headers']['X-HAJE-WC'] ) ) {
-      return $orig_mail;
-    }
-
-    $wp_html_mail = new Haet_Mail();
-    $new_mail = $wp_html_mail->style_mail($orig_mail);
-
-    return $new_mail;
+add_filter( 'haet_mail_use_template', 'hj_haet_mail_use_template', 20, 2 );
+function hj_haet_mail_use_template( $use_template, $mail ) {
+  if ( is_string( $mail['headers'] ) && strpos( $mail['headers'], 'X-HAJE-WC: true' ) !== false ) {
+    return false;
   }
 
-  return $orig_mail;
+  if ( is_array( $mail['headers'] ) && isset( $mail['headers']['X-HAJE-WC'] ) ) {
+    return false;
+  }
+
+  return $use_template;
 }
 
+// remove_filter( 'wp_mail', array(Haet_Mail(), 'style_mail'), 12, 1 );
+// add_filter( 'wp_mail', 'hj_wp_mail_filter' );
+// function hj_wp_mail_filter( $orig_mail ) {
+//
+//   if ( class_exists("Haet_Mail") ) {
+//     if ( is_string( $orig_mail['headers'] ) && strpos( $orig_mail['headers'], 'X-HAJE-WC: true' ) !== false ) {
+//       return $orig_mail;
+//     }
+//
+//     if ( is_array( $orig_mail['headers'] ) && isset( $orig_mail['headers']['X-HAJE-WC'] ) ) {
+//       return $orig_mail;
+//     }
+//
+//     $wp_html_mail = new Haet_Mail();
+//     $new_mail = $wp_html_mail->style_mail($orig_mail);
+//
+//     return $new_mail;
+//   }
+//
+//   return $orig_mail;
+// }
+
 add_action( 'wp_head', function() {
-  if ( isset( $_REQUEST['testmail'] ) && $_REQUEST['testmail'] == 1 ) {
+  if ( isset( $_REQUEST['testmail'] ) && $_REQUEST['testmail'] == 'marhaban' ) {
     $site_url = get_bloginfo('wpurl');
     $user_info = wp_get_current_user();
     $to = $user_info->user_email;

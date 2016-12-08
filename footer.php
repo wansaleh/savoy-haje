@@ -43,7 +43,7 @@
   $footer_bar_logo_src = ( is_ssl() ) ? str_replace( 'http://', 'https://', $nm_theme_options['footer_bar_logo']['url'] ) : $nm_theme_options['footer_bar_logo']['url'];
   ?>
                                 <div class="nm-footer-bar-logo">
-                                    <img src="<?php echo esc_url( $footer_bar_logo_src ); ?>" />
+                                    <img src="<?php echo esc_url( $footer_bar_logo_src ); ?>" alt="<?php bloginfo( 'name' ); ?>">
                                 </div>
                                 <?php endif; ?>
 
@@ -214,17 +214,7 @@
                 wp_footer();
             ?>
 
-          <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-            ga('create', 'UA-87961486-1', 'auto');
-          ga('require', 'linkid');
-            ga('send', 'pageview');
-
-          </script>
+          <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create', 'UA-87961486-1', 'auto');ga('require', 'linkid');ga('send', 'pageview');</script>
 
         </div>
         <!-- /page overflow wrapper -->

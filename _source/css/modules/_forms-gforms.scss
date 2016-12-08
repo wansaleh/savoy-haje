@@ -210,6 +210,12 @@
   .gf_readonly {
     opacity: .5;
     cursor: no-drop;
+    user-select: none;
+
+    input {
+      cursor: no-drop;
+      user-select: none;
+    }
   }
 
   .gform_footer {
@@ -278,9 +284,9 @@
   li.gfield_error input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
   li.gfield_error textarea,
   li.gfield_error select {
-    border: 1px solid #e7e7e7;
-    border-bottom: 1px solid $error;
-    border-radius: 3px 3px 0 0;
+    border: 2px solid #e7e7e7;
+    border-bottom: 2px solid $error;
+    // border-radius: 3px 3px 0 0;
   }
   .gfield_error .gfield_label {
     color: $error;

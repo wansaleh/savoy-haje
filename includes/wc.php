@@ -11,7 +11,7 @@ function hj_new_flash( $newness = 30 ) { // days
 
 function hj_edar_flash() { // days
   if ( is_user_in_role( 'haje_edar' ) ) {
-    echo "<span class='haje-edar'>" . __( 'Edar Discounts', 'savoy-haje' ) . " <a href='/account/' class='info' target='_blank'><i class='fa fa-question'></i></a></span>";
+    echo "<span class='haje-edar'>" . __( 'Edar Discounts', 'savoy-haje' ) . " <a href='/account/edar/' class='info' target='_blank'><i class='fa fa-question'></i></a></span>";
   }
 }
 

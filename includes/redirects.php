@@ -6,11 +6,11 @@ add_action( 'template_redirect', 'hj_edar_role_redirects' );
 function hj_edar_role_redirects() {
   if ( ( is_page( 'edar' ) || is_page( 'edar/apply' ) ) && is_user_logged_in() ) {
     if ( is_user_in_role( 'haje_edar_unapproved' ) ) {
-      wp_redirect( '/edar/waiting/' );
+      wp_redirect( '/edar/pending/' );
       exit;
     }
 
-    if ( is_user_in_role( 'haje_edar' ) ) {
+    if ( is_user_in_role( 'haje_edar' ) || is_user_in_role( 'administrator' ) || is_user_in_role( 'shop_manager' ) ) {
       wp_redirect( '/shop/' );
       exit;
     }

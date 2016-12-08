@@ -14,4 +14,6 @@ require_once 'includes/wc-preorder.php';
 require_once 'includes/wc-account.php';
 require_once 'includes/shortcodes.php';
 require_once 'includes/vc.php';
+require_once 'includes/gforms.php';
+require_once 'includes/um.php';
 // require_once 'includes/userpro.php';

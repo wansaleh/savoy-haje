@@ -627,6 +627,19 @@
 		"oAP": "\/assets\/css\/.sass-cache\/d51e1b68c6d7725b2488aa2d6b908123631ca6c1\/_visibility.scssc",
 		"oF": 0
 		},
+	"\/_source\/css\/_base-old.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/css\/_base-old.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/_source\/css\/_base.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -642,7 +655,7 @@
 		},
 	"\/_source\/css\/editor-style.scss": {
 		"aP": 1,
-		"bl": 1,
+		"bl": 0,
 		"dP": 10,
 		"dS": 0,
 		"ft": 4,
@@ -733,7 +746,7 @@
 		},
 	"\/_source\/css\/login.scss": {
 		"aP": 1,
-		"bl": 1,
+		"bl": 0,
 		"dP": 10,
 		"dS": 0,
 		"ft": 4,
@@ -952,6 +965,19 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/_source\/css\/pages\/_home-old.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/css\/css\/_home-old.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/_source\/css\/pages\/_home.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -965,7 +991,7 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"\/_source\/css\/pages\/_kurtas.scss": {
+	"\/_source\/css\/pages\/_product-kurta.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
@@ -973,7 +999,7 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "\/assets\/css\/css\/_kurtas.css",
+		"oAP": "\/assets\/css\/css\/_product-kurta.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -993,7 +1019,7 @@
 		},
 	"\/_source\/css\/userpro.scss": {
 		"aP": 1,
-		"bl": 1,
+		"bl": 0,
 		"dP": 10,
 		"dS": 0,
 		"ft": 4,
@@ -1006,19 +1032,19 @@
 		},
 	"\/_source\/fonts\/.sass-cache\/d60cecdca9661097dd49ab9ebae5e557d004ef50\/myriad-pro-apple.scssc": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/assets\/fonts\/.sass-cache\/d60cecdca9661097dd49ab9ebae5e557d004ef50\/myriad-pro-apple.scssc",
 		"oF": 1
 		},
 	"\/_source\/fonts\/.sass-cache\/d60cecdca9661097dd49ab9ebae5e557d004ef50\/myriad-pro.scssc": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/assets\/fonts\/.sass-cache\/d60cecdca9661097dd49ab9ebae5e557d004ef50\/myriad-pro.scssc",
 		"oF": 1
 		},
 	"\/_source\/fonts\/.sass-cache\/d60cecdca9661097dd49ab9ebae5e557d004ef50\/myriad-set-pro.scssc": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/assets\/fonts\/.sass-cache\/d60cecdca9661097dd49ab9ebae5e557d004ef50\/myriad-set-pro.scssc",
 		"oF": 1
 		},
@@ -1148,6 +1174,50 @@
 		"oAP": "\/assets\/fonts\/general\/Flaticon.woff",
 		"oF": 1
 		},
+	"\/_source\/fonts\/haje\/haje.css": {
+		"aP": 0,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/haje\/haje.css",
+		"oF": 1,
+		"oS": 0
+		},
+	"\/_source\/fonts\/haje\/haje.eot": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/haje\/haje.eot",
+		"oF": 1
+		},
+	"\/_source\/fonts\/haje\/haje.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/haje\/haje.svg",
+		"oF": 1,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/_source\/fonts\/haje\/haje.ttf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/haje\/haje.ttf",
+		"oF": 1
+		},
+	"\/_source\/fonts\/haje\/haje.woff": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/haje\/haje.woff",
+		"oF": 1
+		},
+	"\/_source\/fonts\/haje\/haje.woff2": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/haje\/haje.woff2",
+		"oF": 1
+		},
 	"\/_source\/fonts\/msp\/myriad-set-pro.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -1155,7 +1225,7 @@
 		"dS": 0,
 		"ft": 4,
 		"ma": 0,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/assets\/fonts\/msp\/myriad-set-pro.css",
 		"oF": 3,
 		"oS": 0,
@@ -1163,73 +1233,73 @@
 		},
 	"\/_source\/fonts\/msp\/myriad-set-pro_bold.ttf": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/assets\/fonts\/msp\/myriad-set-pro_bold.ttf",
 		"oF": 1
 		},
 	"\/_source\/fonts\/msp\/myriad-set-pro_bold.woff": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/assets\/fonts\/msp\/myriad-set-pro_bold.woff",
 		"oF": 1
 		},
 	"\/_source\/fonts\/msp\/myriad-set-pro_medium.ttf": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/assets\/fonts\/msp\/myriad-set-pro_medium.ttf",
 		"oF": 1
 		},
 	"\/_source\/fonts\/msp\/myriad-set-pro_medium.woff": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/assets\/fonts\/msp\/myriad-set-pro_medium.woff",
 		"oF": 1
 		},
 	"\/_source\/fonts\/msp\/myriad-set-pro_semibold.ttf": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/assets\/fonts\/msp\/myriad-set-pro_semibold.ttf",
 		"oF": 1
 		},
 	"\/_source\/fonts\/msp\/myriad-set-pro_semibold.woff": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/assets\/fonts\/msp\/myriad-set-pro_semibold.woff",
 		"oF": 1
 		},
 	"\/_source\/fonts\/msp\/myriad-set-pro_text.ttf": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/assets\/fonts\/msp\/myriad-set-pro_text.ttf",
 		"oF": 1
 		},
 	"\/_source\/fonts\/msp\/myriad-set-pro_text.woff": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/assets\/fonts\/msp\/myriad-set-pro_text.woff",
 		"oF": 1
 		},
 	"\/_source\/fonts\/msp\/myriad-set-pro_thin.ttf": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/assets\/fonts\/msp\/myriad-set-pro_thin.ttf",
 		"oF": 1
 		},
 	"\/_source\/fonts\/msp\/myriad-set-pro_thin.woff": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/assets\/fonts\/msp\/myriad-set-pro_thin.woff",
 		"oF": 1
 		},
 	"\/_source\/fonts\/msp\/myriad-set-pro_ultralight.ttf": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/assets\/fonts\/msp\/myriad-set-pro_ultralight.ttf",
 		"oF": 1
 		},
 	"\/_source\/fonts\/msp\/myriad-set-pro_ultralight.woff": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/assets\/fonts\/msp\/myriad-set-pro_ultralight.woff",
 		"oF": 1
 		},
@@ -1387,6 +1457,14 @@
 		"opt": 1,
 		"plM": 20937965567,
 		"prP": 0
+		},
+	"\/_source\/images\/hearts.png": {
+		"ft": 32768,
+		"iS": 1695,
+		"oA": 0,
+		"oAP": "\/assets\/images\/hearts.png",
+		"oF": 0,
+		"opt": 1
 		},
 	"\/_source\/images\/lace.svg": {
 		"ft": 2097152,
@@ -1928,6 +2006,16 @@
 		"plM": 20937965567,
 		"prP": 0
 		},
+	"\/_source\/images\/waves5-define.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/images\/waves5-define.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/_source\/images\/waves5-prelude.svg": {
 		"ft": 2097152,
 		"miP": 1,
@@ -2036,42 +2124,6 @@
 		"oS": 0,
 		"sC": 1
 		},
-	"\/_source\/js\/haje-nm-core.js": {
-		"ft": 64,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/assets\/js\/haje-nm-core.js",
-		"oF": 2,
-		"sC": 0,
-		"tS": 0
-		},
-	"\/_source\/js\/haje-nm-shop-filters.js": {
-		"ft": 64,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/assets\/js\/haje-nm-shop-filters.js",
-		"oF": 2,
-		"sC": 0,
-		"tS": 0
-		},
-	"\/_source\/js\/haje-nm-shop-quickview.js": {
-		"ft": 64,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/assets\/js\/haje-nm-shop-quickview.js",
-		"oF": 2,
-		"sC": 0,
-		"tS": 0
-		},
-	"\/_source\/js\/haje-nm-shop-single-product.js": {
-		"ft": 64,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/assets\/js\/haje-nm-shop-single-product.js",
-		"oF": 2,
-		"sC": 0,
-		"tS": 0
-		},
 	"\/_source\/js\/haje.coffee": {
 		"ft": 32,
 		"ma": 1,
@@ -2097,6 +2149,42 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/assets\/js\/modernizr.js",
+		"oF": 2,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/_source\/js\/nm\/nm-core.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/assets\/js\/nm\/nm-core.js",
+		"oF": 2,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/_source\/js\/nm\/nm-shop-filters.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/assets\/js\/nm\/nm-shop-filters.js",
+		"oF": 2,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/_source\/js\/nm\/nm-shop-quickview.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/assets\/js\/nm\/nm-shop-quickview.js",
+		"oF": 2,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/_source\/js\/nm\/nm-shop-single-product.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/assets\/js\/nm\/nm-shop-single-product.js",
 		"oF": 2,
 		"sC": 0,
 		"tS": 0
@@ -9819,6 +9907,12 @@
 		"oO": 0,
 		"oS": 1
 		},
+	"\/bower_components\/velocity\/.editorconfig": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/assets\/bower_components\/velocity\/.editorconfig",
+		"oF": 1
+		},
 	"\/bower_components\/velocity\/.gitignore": {
 		"ft": 8192,
 		"oA": 1,
@@ -9857,20 +9951,11 @@
 		"oAP": "\/assets\/bower_components\/velocity\/test\/index.html",
 		"oF": 1
 		},
-	"\/bower_components\/velocity\/test\/jquery-1.11.1.js": {
+	"\/bower_components\/velocity\/test\/jquery-1.12.4.js": {
 		"ft": 64,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/assets\/bower_components\/velocity\/test\/jquery-1.11.1.js",
-		"oF": 1,
-		"sC": 1,
-		"tS": 0
-		},
-	"\/bower_components\/velocity\/test\/jquery-1.4.3.js": {
-		"ft": 64,
-		"mi": 1,
-		"oA": 1,
-		"oAP": "\/assets\/bower_components\/velocity\/test\/jquery-1.4.3.js",
+		"oAP": "\/assets\/bower_components\/velocity\/test\/jquery-1.12.4.js",
 		"oF": 1,
 		"sC": 1,
 		"tS": 0
@@ -9899,6 +9984,25 @@
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/assets\/bower_components\/velocity\/test\/qunit-1.14.0.js",
+		"oF": 1,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/bower_components\/velocity\/test\/qunit-2.0.1.css": {
+		"aP": 0,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/bower_components\/velocity\/test\/qunit-2.0.1.css",
+		"oF": 1,
+		"oS": 0
+		},
+	"\/bower_components\/velocity\/test\/qunit-2.0.1.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/assets\/bower_components\/velocity\/test\/qunit-2.0.1.js",
 		"oF": 1,
 		"sC": 1,
 		"tS": 0
@@ -9959,9 +10063,9 @@
 		},
 	"\/bower_components\/vivus\/.bower.json": {
 		"ft": 524288,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "\/assets\/bower_components\/vivus\/.bower.json",
-		"oF": 0,
+		"oF": 1,
 		"oO": 0,
 		"oS": 1
 		},
@@ -9973,9 +10077,9 @@
 		"ema": 1,
 		"eSQ": 1,
 		"ft": 4096,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "\/assets\/bower_components\/vivus\/.github\/ISSUE_TEMPLATE.md",
-		"oF": 0,
+		"oF": 1,
 		"oFM": 0,
 		"oS": 0,
 		"pHT": 0,
@@ -9985,21 +10089,21 @@
 		},
 	"\/bower_components\/vivus\/.npmignore": {
 		"ft": 8192,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "\/assets\/bower_components\/vivus\/.npmignore",
-		"oF": 0
+		"oF": 1
 		},
 	"\/bower_components\/vivus\/.spmignore": {
 		"ft": 8192,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "\/assets\/bower_components\/vivus\/.spmignore",
-		"oF": 0
+		"oF": 1
 		},
 	"\/bower_components\/vivus\/bower.json": {
 		"ft": 524288,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "\/assets\/bower_components\/vivus\/bower.json",
-		"oF": 0,
+		"oF": 1,
 		"oO": 0,
 		"oS": 1
 		},
@@ -10011,9 +10115,9 @@
 		"ema": 1,
 		"eSQ": 1,
 		"ft": 4096,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "\/assets\/bower_components\/vivus\/CONTRIBUTING.md",
-		"oF": 0,
+		"oF": 1,
 		"oFM": 0,
 		"oS": 0,
 		"pHT": 0,
@@ -10026,16 +10130,16 @@
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/assets\/bower_components\/vivus\/dist\/vivus.js",
-		"oF": 0,
+		"oF": 1,
 		"sC": 1,
 		"tS": 0
 		},
 	"\/bower_components\/vivus\/dist\/vivus.min.js": {
 		"ft": 64,
 		"mi": 1,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "\/assets\/bower_components\/vivus\/dist\/vivus.min.js",
-		"oF": 0,
+		"oF": 1,
 		"sC": 1,
 		"tS": 0
 		},
@@ -10047,9 +10151,9 @@
 		"ema": 1,
 		"eSQ": 1,
 		"ft": 4096,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "\/assets\/bower_components\/vivus\/hacks.md",
-		"oF": 0,
+		"oF": 1,
 		"oFM": 0,
 		"oS": 0,
 		"pHT": 0,
@@ -10059,9 +10163,9 @@
 		},
 	"\/bower_components\/vivus\/LICENSE": {
 		"ft": 8192,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "\/assets\/bower_components\/vivus\/LICENSE",
-		"oF": 0
+		"oF": 1
 		},
 	"\/bower_components\/vivus\/readme.md": {
 		"cS": 0,
@@ -10071,9 +10175,9 @@
 		"ema": 1,
 		"eSQ": 1,
 		"ft": 4096,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "\/assets\/bower_components\/vivus\/readme.md",
-		"oF": 0,
+		"oF": 1,
 		"oFM": 0,
 		"oS": 0,
 		"pHT": 0,
@@ -10153,12 +10257,6 @@
 		"oAP": "\/assets\/element-templates\/vc_toggle.php",
 		"oF": 1
 		},
-	"\/follow-up-emails\/checkout\/email-subscribe---.php": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/assets\/follow-up-emails\/checkout\/email-subscribe---.php",
-		"oF": 1
-		},
 	"\/footer-widgets.php": {
 		"ft": 8192,
 		"oA": 1,
@@ -10219,6 +10317,12 @@
 		"oAP": "\/assets\/includes\/functions.php",
 		"oF": 1
 		},
+	"\/includes\/gforms.php": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/assets\/includes\/gforms.php",
+		"oF": 1
+		},
 	"\/includes\/haje.php": {
 		"ft": 8192,
 		"oA": 1,
@@ -10235,6 +10339,12 @@
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/assets\/includes\/shortcodes.php",
+		"oF": 1
+		},
+	"\/includes\/um.php": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/assets\/includes\/um.php",
 		"oF": 1
 		},
 	"\/includes\/userpro.php": {
@@ -10308,6 +10418,20 @@
 		"oA": 1,
 		"oAP": "\/assets\/languages\/savoy-haje.pot",
 		"oF": 1
+		},
+	"\/node_modules": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/assets\/node_modules",
+		"oF": 1
+		},
+	"\/package.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/assets\/package-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
 		},
 	"\/page-blank.php": {
 		"ft": 8192,
@@ -10405,6 +10529,12 @@
 		"oAP": "\/assets\/woocommerce\/cart\/cart-item-data.php",
 		"oF": 1
 		},
+	"\/woocommerce\/cart\/cross-sells.php": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/assets\/woocommerce\/cart\/cross-sells.php",
+		"oF": 1
+		},
 	"\/woocommerce\/checkout\/thankyou.php": {
 		"ft": 8192,
 		"oA": 1,
@@ -10437,9 +10567,9 @@
 		},
 	"\/woocommerce\/myaccount\/downloads.php": {
 		"ft": 8192,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "\/assets\/woocommerce\/myaccount\/downloads.php",
-		"oF": 0
+		"oF": 1
 		},
 	"\/woocommerce\/myaccount\/form-login-2.php": {
 		"ft": 8192,
@@ -10455,15 +10585,15 @@
 		},
 	"\/woocommerce\/myaccount\/my-address.php": {
 		"ft": 8192,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "\/assets\/woocommerce\/myaccount\/my-address.php",
-		"oF": 0
+		"oF": 1
 		},
 	"\/woocommerce\/myaccount\/orders.php": {
 		"ft": 8192,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "\/assets\/woocommerce\/myaccount\/orders.php",
-		"oF": 0
+		"oF": 1
 		},
 	"\/woocommerce\/single-product\/add-to-cart\/variable.php": {
 		"ft": 8192,
@@ -10471,11 +10601,23 @@
 		"oAP": "\/assets\/woocommerce\/single-product\/add-to-cart\/variable.php",
 		"oF": 1
 		},
+	"\/woocommerce\/single-product\/related.php": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/assets\/woocommerce\/single-product\/related.php",
+		"oF": 1
+		},
 	"\/woocommerce\/single-product\/sale-flash.php": {
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/assets\/woocommerce\/single-product\/sale-flash.php",
 		"oF": 1
+		},
+	"\/wp-html-mail\/template-2.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/wp-html-mail\/template-2.html",
+		"oF": 0
 		},
 	"\/wp-html-mail\/template.html": {
 		"ft": 8192,
@@ -10493,7 +10635,7 @@
 	"displayValue": "savoy-haje",
 	"displayValueWasSetByUser": 1,
 	"iconImageName": "brackets_teal",
-	"lastBuiltDate": 501993706
+	"lastBuiltDate": 502864742
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
@@ -12387,7 +12529,7 @@
 	"languageDefaultsUserDefined": [
 		],
 	"previewPathAddition": "",
-	"skippedFoldersString": "log, _logs, logs, _cache, cache, \/storage\/framework\/sessions, node_modules, \/vendor",
+	"skippedFoldersString": "log, _logs, logs, _cache, cache, \/storage\/framework\/sessions, \/vendor, \/node_modules",
 	"sourceFolderName": "_source",
 	"uglifyDefinesString": "",
 	"uglifyFlags2": {

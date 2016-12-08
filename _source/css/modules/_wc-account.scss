@@ -382,7 +382,7 @@
 }
 
 #wc-haje-edar {
-  margin-top: 4em;
+  // margin-top: 4em;
   padding: 3em;
   border-radius: 5px;
   background: #CBF9DA;
@@ -436,6 +436,11 @@
     // }
   }
 
+  p {
+    line-height: 1.4;
+    margin-bottom: 2em !important;
+  }
+
   .discount-wrapper {
     display: flex;
     flex-flow: row wrap;
@@ -444,7 +449,7 @@
       // width: 25%;
       flex: 1 0 200px;
 
-      padding: 3em 1em;
+      padding: 4em 1em;
       margin: 10px;
       background: #122D42;
       color: #fff;
@@ -454,6 +459,7 @@
       .quantity {
         font-size: 1.4em;
         font-weight: 300;
+        line-height: 1.2;
 
         // &:before {
         //   content: "Quantity";
@@ -467,8 +473,9 @@
       }
 
       .percent {
-        font-size: 2.4em;
+        font-size: 3em;
         font-weight: 300;
+        line-height: 1.2;
         color: #20d4cd;
       }
     }

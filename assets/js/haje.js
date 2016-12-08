@@ -143,12 +143,12 @@
     };
 
     Forms.prototype.gforms = function() {
-      $('.ginput_container').find('input, textarea, select, label').focus(function() {
+      $('.ginput_container .gfield:not(.gf_readonly)').find('input, textarea, select, label').focus(function() {
         return $(this).closest('.gfield').addClass('focus');
       }).blur(function() {
         return $(this).closest('.gfield').removeClass('focus');
       });
-      return $("li.gf_readonly input").attr("readonly", "readonly");
+      return $(".gfield.gf_readonly input").attr("readonly", "readonly");
     };
 
     Forms.prototype.wppb = function() {
@@ -185,50 +185,9 @@
 
   Haje.Home = (function() {
     function Home() {
-      var $gradient, $upright, tl;
       if (!$('body').hasClass('home')) {
         return;
       }
-      (function() {
-        return $('a[href*="#"]:not([href="#"])').click(function() {
-          var target;
-          if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
-            target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-            console.log(target);
-            if (target.length) {
-              TweenMax.to(window, .5, {
-                scrollTo: {
-                  y: target,
-                  offsetY: 0
-                },
-                ease: Power2.easeInOut
-              });
-              return false;
-            }
-          }
-        });
-      })();
-      TweenMax.to('#haje-logo', 1, {
-        delay: 2,
-        width: 300,
-        autoAlpha: 1,
-        ease: Back.easeOut.config(3)
-      });
-      tl = new TimelineMax({
-        repeat: -1
-      });
-      tl.staggerTo('.hexagon', 2, {
-        width: 340,
-        opacity: .3,
-        ease: Power3.easeInOut
-      }, 0.5).staggerTo('.hexagon', 1.5, {
-        width: 700,
-        opacity: 0,
-        ease: Power3.easeInOut
-      }, 0.2);
-      $gradient = $('#home-gradient');
-      $upright = $('#home-upright');
     }
 
     return Home;
@@ -446,16 +405,9 @@
         if ($('.size_guide_tab').length && isAttributeSize) {
           sizeguide = $('<button type="button" class="swatch size-guide">Size Guide</button>').appendTo(select.data('group'));
           return sizeguide.click(function() {
-            return TweenMax.to(window, .5, {
-              scrollTo: {
-                y: $('.wc-tabs'),
-                offsetY: 0
-              },
-              ease: Power2.easeInOut,
-              onComplete: function() {
-                return $('.wc-tabs .size_guide_tab a').trigger('click');
-              }
-            });
+            return $('html, body').animate({
+              scrollTop: $('.wc-tabs').offset().top
+            }, 300);
           });
         }
       });

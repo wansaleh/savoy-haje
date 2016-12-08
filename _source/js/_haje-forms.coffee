@@ -39,12 +39,11 @@ class Haje.Forms
 
   gforms: ->
     # GRAVITY FORMS
-    $('.ginput_container').find('input, textarea, select, label')
+    $('.ginput_container .gfield:not(.gf_readonly)').find('input, textarea, select, label')
       .focus -> $(this).closest('.gfield').addClass('focus')
       .blur -> $(this).closest('.gfield').removeClass('focus')
 
-    $("li.gf_readonly input").attr("readonly", "readonly");
-
+    $(".gfield.gf_readonly input").attr("readonly", "readonly")
 
   wppb: ->
     # PROFILE BUILDER

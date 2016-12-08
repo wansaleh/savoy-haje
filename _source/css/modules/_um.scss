@@ -7,7 +7,7 @@ body[class*="um-page-"] .nm-page-wrap-inner {
   font-size: 100%;
 }
 
-.um-button {
+.um-button:not(.um-button-social) {
   padding: .8em 1.2em !important;
   font-size: 1.4em !important;
   transition: all .3s ease  !important;
@@ -85,12 +85,77 @@ body[class*="um-page-"] .nm-page-wrap-inner {
   }
 }
 
-.um-form {
-  margin: 0 -30px;
+// .um-form {
+//   margin: 0 -30px;
+//
+//   @media (max-width: 560px) {
+//     margin: 0;
+//   }
+// }
 
-  @media (max-width: 560px) {
-    margin: 0;
+.um-account-side {
+  .um-account-name > a {
+    font-size: 1.8em;
+    font-weight: 300;
   }
+
+  ul {
+    border-radius: 5px;
+    overflow: hidden;
+
+    li {
+      a {
+        font-size: 1.1em;
+        font-weight: 300;
+        transition: background .2s ease;
+
+        span.um-account-icon {
+          border: 0 !important;
+        }
+
+        span.um-account-title {
+          padding-left: 0;
+        }
+
+        &[data-tab="edar"] {
+          background: #CBF9DA;
+          color: #122D42;
+
+          span.um-account-icon {
+            color: inherit;
+          }
+
+          span.um-account-title {
+            color: inherit;
+          }
+
+          &.current span.um-account-icon {
+            color: #0e5a94 !important;
+          }
+
+          div.uimob800 & {
+            color: #122D42 !important;
+
+            &.current {
+              background: #122D42;
+              color: #fff !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.um-account-nav {
+  a {
+    font-weight: 300;
+  }
+}
+
+.um-woo-form table {
+  display: table;
+  width: 100%;
 }
 
 div.uimob800 .um-account-side {
