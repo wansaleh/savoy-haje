@@ -627,19 +627,6 @@
 		"oAP": "\/assets\/css\/.sass-cache\/d51e1b68c6d7725b2488aa2d6b908123631ca6c1\/_visibility.scssc",
 		"oF": 0
 		},
-	"\/_source\/css\/_base-old.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "\/assets\/css\/_base-old.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
 	"\/_source\/css\/_base.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -653,22 +640,9 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"\/_source\/css\/editor-style.scss": {
-		"aP": 1,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 1,
-		"oA": 0,
-		"oAP": "\/assets\/css\/editor-style.css",
-		"oF": 2,
-		"oS": 3,
-		"uL": 1
-		},
 	"\/_source\/css\/haje.scss": {
 		"aP": 1,
-		"bl": 1,
+		"bl": 0,
 		"dP": 10,
 		"dS": 0,
 		"ft": 4,
@@ -1015,19 +989,6 @@
 		"oAP": "\/assets\/css\/css\/_profile.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
-		},
-	"\/_source\/css\/userpro.scss": {
-		"aP": 1,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 1,
-		"oA": 0,
-		"oAP": "\/assets\/css\/userpro.css",
-		"oF": 3,
-		"oS": 3,
 		"uL": 1
 		},
 	"\/_source\/fonts\/.sass-cache\/d60cecdca9661097dd49ab9ebae5e557d004ef50\/myriad-pro-apple.scssc": {
@@ -10269,6 +10230,12 @@
 		"oAP": "\/assets\/footer.php",
 		"oF": 1
 		},
+	"\/footer__.php": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/assets\/footer__.php",
+		"oF": 1
+		},
 	"\/functions.php": {
 		"ft": 8192,
 		"oA": 1,
@@ -10615,9 +10582,9 @@
 		},
 	"\/wp-html-mail\/template-2.html": {
 		"ft": 8192,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "\/assets\/wp-html-mail\/template-2.html",
-		"oF": 0
+		"oF": 1
 		},
 	"\/wp-html-mail\/template.html": {
 		"ft": 8192,
@@ -10635,7 +10602,7 @@
 	"displayValue": "savoy-haje",
 	"displayValueWasSetByUser": 1,
 	"iconImageName": "brackets_teal",
-	"lastBuiltDate": 502864742
+	"lastBuiltDate": 502995051
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,

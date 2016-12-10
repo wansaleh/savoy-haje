@@ -462,7 +462,9 @@ class Haje.WC.VariationSwatches
 
           $('html, body').animate({
             scrollTop: $('.wc-tabs').offset().top
-          }, 300)
+          }, 300, ->
+            $('.wc-tabs .size_guide_tab a').trigger('click')
+          )
 
   colorizeSwatch: (swatches) ->
     _this = this

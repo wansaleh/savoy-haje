@@ -58,11 +58,11 @@ $preorder: $clr-cyan-a700;
 
 #shop-hero {
   @extend .text-xs-center, .jumbo;
-  padding-top: 6em;
-  padding-bottom: 6em;
+  padding-top: 2em;
+  // padding-bottom: 0;
   // background: linear-gradient(to bottom right, $clr-blue-a200, $clr-blue-900 100%);
-  background: url(../images/wavy.jpg) no-repeat center top;
-  background-size: cover;
+  // background: url(../images/wavy.jpg) no-repeat center top;
+  // background-size: cover;
 }
 
 // TYPOGRAPHY

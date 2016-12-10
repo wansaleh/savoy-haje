@@ -129,7 +129,10 @@ $clr-nav-hover: <?php echo esc_attr( $nm_theme_options['header_navigation_highli
 $clr-saleflash-bg: <?php echo esc_attr( $nm_theme_options['sale_flash_background_color'] ); ?>;
 $clr-saleflash-font: <?php echo esc_attr( $nm_theme_options['sale_flash_font_color'] ); ?>;
 $clr-single-bg: <?php echo esc_attr( $nm_theme_options['single_product_background_color'] ); ?>;
-$clr-grey-bg: <?php echo esc_attr( $nm_theme_options['footer_widgets_background_color'] ); ?>;
+$clr-footer-bg: <?php echo esc_attr( $nm_theme_options['footer_widgets_background_color'] ); ?>;
+$clr-footer-text: <?php echo esc_attr( $nm_theme_options['footer_widgets_font_color'] ); ?>;
+$clr-footer-title: <?php echo esc_attr( $nm_theme_options['footer_widgets_title_font_color'] ); ?>;
+$clr-footer-highlight: <?php echo esc_attr( $nm_theme_options['footer_widgets_highlight_font_color'] ); ?>;
 
 <?php
   if ( $nm_theme_options['main_font_source'] == 1 && $nm_theme_options['main_font']['font-family'] != '' ) : ?>

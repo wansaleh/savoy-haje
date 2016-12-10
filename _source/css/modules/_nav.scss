@@ -55,14 +55,8 @@
   }
 }
 
-// .nm-menu > li > a,
-// .ubermenu-skin-none .ubermenu-item-level-0 > .ubermenu-target {
-//   font-weight: 600;
-// }
-
 .header-light:not(.header-on-scroll) .nm-header {
-  .nm-menu > li > a,
-  .ubermenu-skin-none .ubermenu-item-level-0 > .ubermenu-target {
+  .nm-menu > li > a {
     color: #fff;
     // text-shadow: 0 1px 1px rgba(#000, .05);
     mix-blend-mode: overlay;
@@ -71,12 +65,6 @@
       opacity: .7;
       color: #fff !important;
     }
-  }
-
-  .ubermenu-skin-none .ubermenu-item-level-0:hover > .ubermenu-target,
-  .ubermenu-skin-none .ubermenu-item-level-0.ubermenu-active > .ubermenu-target {
-    color: #fff;
-    opacity: .6;
   }
 
   .nm-header-logo {

@@ -24,25 +24,34 @@ function show_guest_content( $atts, $content = null ) {
   return $content;
 }
 
+add_shortcode( 'svg_haje_logo', 'svg_haje_logo' );
+function svg_haje_logo() {
+  ob_start();
+  ?>
+<svg viewBox="0 0 512 512"><path d="M477.3 146.1v-10L256.3 4 35.4 135.5v10.6h-.3v45l221.2 127.7 221.2-127.7v-45h-.2zm-27.6 92.5v125.6L256.3 475.8 63 364.2V238.6l-27.9-16.1v157.8L256.3 508l221.2-127.7V222.5l-27.8 16.1z"/></svg>
+<?php
+  return ob_get_clean();
+}
+
 add_shortcode( 'svg_curve_divider', 'svg_curve_divider' );
 function svg_curve_divider() {
-  $output = ob_start();
+  ob_start();
   ?>
   <svg viewBox="0 0 1280 110" preserveAspectRatio="none" class="header-curve-shadow"><path d="M1280 3.9V110H0C194 71.33 662-19.9 1280 3.9z"></path></svg>
   <svg viewBox="0 0 1280 110" preserveAspectRatio="none" class="header-curve"><path d="M1280 3.9V110H0C194 71.33 662-19.9 1280 3.9z"></path></svg>
-  <?php
+<?php
   return ob_get_clean();
 }
 
 add_shortcode( 'svg_hexagons', 'svg_hexagons' );
 function svg_hexagons() {
-  $output = ob_start();
+  ob_start();
   ?>
-  <svg class="hexagon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 848.2 979.5"><polygon points="843.2,731.7 424.1,973.7 5,731.7 5,247.8 424.1,5.8 843.2,247.8 "/></svg>
-  <svg class="hexagon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 848.2 979.5"><polygon points="843.2,731.7 424.1,973.7 5,731.7 5,247.8 424.1,5.8 843.2,247.8 "/></svg>
-  <svg class="hexagon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 848.2 979.5"><polygon points="843.2,731.7 424.1,973.7 5,731.7 5,247.8 424.1,5.8 843.2,247.8 "/></svg>
-  <svg class="hexagon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 848.2 979.5"><polygon points="843.2,731.7 424.1,973.7 5,731.7 5,247.8 424.1,5.8 843.2,247.8 "/></svg>
-  <?php
+  <svg class="hexagon" viewBox="0 0 848.2 979.5"><polygon points="843.2,731.7 424.1,973.7 5,731.7 5,247.8 424.1,5.8 843.2,247.8 "/></svg>
+  <svg class="hexagon" viewBox="0 0 848.2 979.5"><polygon points="843.2,731.7 424.1,973.7 5,731.7 5,247.8 424.1,5.8 843.2,247.8 "/></svg>
+  <svg class="hexagon" viewBox="0 0 848.2 979.5"><polygon points="843.2,731.7 424.1,973.7 5,731.7 5,247.8 424.1,5.8 843.2,247.8 "/></svg>
+  <svg class="hexagon" viewBox="0 0 848.2 979.5"><polygon points="843.2,731.7 424.1,973.7 5,731.7 5,247.8 424.1,5.8 843.2,247.8 "/></svg>
+<?php
   return ob_get_clean();
 }
 
@@ -61,11 +70,16 @@ function hj_address( $atts ) {
   if ($a['phone_email'])
     $phone_email = "<p><i class='fa fa-paper-plane'></i> <a href='/contact'>hello@haje.my</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;<i class='fa fa-phone'></i> +603 7733 1297</p>";
 
-  return "
+  ob_start();
+  ?>
   <address>
-    <p><b>Mikraj Concept Sdn. Bhd.</b><br>Company Reg. No. 1110211-K</p>
+    <p>
+      <b>Mikraj Concept Sdn. Bhd.</b><br>Company Reg. No. 1110211-K<br>
+      <small>One of <a href='https://arteffects.international' target='_blank'>Arteffects International's</a> holdings.</small>
+    </p>
   </address>
-  ";
+  <?php
+  return ob_get_clean();
 
   // return "
   // <address>
@@ -100,19 +114,16 @@ function hj_kurta_cta( $atts ) {
     $out .= "</ul>";
   }
 
-  // $can_be_preordered = WC_Pre_Orders_Product::product_can_be_pre_ordered( $product );
-  // $action = !$can_be_preordered ? "Buy" : "Pre-Order";
+  // $can_preorder = WC_Pre_Orders_Product::product_can_be_pre_ordered( $product );
+  // $action = !$can_preorder ? "Buy" : "Pre-Order";
   // $preorder_timestamp = WC_Pre_Orders_Product::get_localized_availability_datetime_timestamp( $product );
 
-  $can_be_preordered = true;
-  $action = !$can_be_preordered ? "Buy" : "Pre-Order";
-  $preorder_timestamp = strtotime('20 December 2016');
+  $can_preorder = HJPO::can_preorder( $product );
+  $action = !$can_preorder ? "Buy" : "Pre-Order";
 
-  $td = human_time_diff( current_time('timestamp'), $preorder_timestamp );
-  preg_match('/(\d+)\s(weeks|days)/i', $td, $matches);
-  $newtd = $matches[1] . '&ndash;' . ($matches[1] + 1) . ' ' . $matches[2];
+  $newtd = HJPO::preorder_date_diff( $product );
 
-  $preorder_info = !$can_be_preordered ? '' :
+  $preorder_info = !$can_preorder ? '' :
     '<div class="home-pre-order">' .
     'Ready to ship in ' .
     $newtd . '.</div>';

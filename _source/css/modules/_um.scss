@@ -222,3 +222,18 @@ body[class*="um-page-"] {
     color: #eee !important;
   }
 }
+
+.um-popup {
+  width: 640px;
+  margin-left: -320px;
+
+  @include media-breakpoint-down(sm) {
+    width: 94%;
+    margin-left: 3%;
+  }
+}
+
+.um-woo-customer span {
+  font-size: 1.3em;
+  font-weight: 300;
+}

@@ -43,8 +43,7 @@
   $footer_bar_logo_src = ( is_ssl() ) ? str_replace( 'http://', 'https://', $nm_theme_options['footer_bar_logo']['url'] ) : $nm_theme_options['footer_bar_logo']['url'];
   ?>
                                 <div class="nm-footer-bar-logo">
-                                    <?php echo do_shortcode( '[svg_haje_logo]' ); ?>
-                                    <!-- <img src="<?php echo esc_url( $footer_bar_logo_src ); ?>" alt="<?php bloginfo( 'name' ); ?>"> -->
+                                    <img src="<?php echo esc_url( $footer_bar_logo_src ); ?>" alt="<?php bloginfo( 'name' ); ?>">
                                 </div>
                                 <?php endif; ?>
 

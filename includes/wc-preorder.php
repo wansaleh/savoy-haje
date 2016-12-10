@@ -24,7 +24,7 @@ class HJPO {
 
     $timestamp = HJPO::preorder_date( $product );
     $td = human_time_diff( current_time('timestamp'), $timestamp );
-    preg_match('/(\d+)\s(weeks|days)/i', $td, $matches);
+    preg_match('/(\d+)\s(weeks?|days?)/i', $td, $matches);
     $newtd = $matches[1] . '&ndash;' . ($matches[1] + 1) . ' ' . $matches[2];
 
     return $newtd;

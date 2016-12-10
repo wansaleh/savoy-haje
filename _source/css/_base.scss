@@ -1,5 +1,6 @@
 @import "includes/savoy-settings";
 @import "includes/colors";
+$clr-grey-bg: #f3f3f3;
 
 // SCUT
 $scut-rem-base: 10;
@@ -17,18 +18,18 @@ $scut-rem-base: 10;
 // @import "../../node_modules/tachyons/css/tachyons";
 
 // HAMBURGER.CSS
-$hamburger-padding-x                       : 0;
-$hamburger-padding-y                       : 0;
-$hamburger-layer-width                     : 28px;
-$hamburger-layer-height                    : 2px;
-$hamburger-layer-spacing                   : 6px;
-$hamburger-layer-color                     : $clr-heading;
-$hamburger-layer-border-radius             : 3px;
+$hamburger-padding-x           : 0;
+$hamburger-padding-y           : 0;
+$hamburger-layer-width         : 28px;
+$hamburger-layer-height        : 2px;
+$hamburger-layer-spacing       : 6px;
+$hamburger-layer-color         : $clr-heading;
+$hamburger-layer-border-radius : 3px;
 // Types (Remove or comment out what you don’t need)
-// $hamburger-types: (
-//   arrow,
-//   spin
-// );
-@import "../../bower_components/css-hamburgers/_sass/hamburgers/hamburgers";
+// $hamburger-types: ( arrow, spin );
+@import "../../node_modules/hamburgers/_sass/hamburgers/hamburgers";
 
-// @import "../../bower_components/css-spaces/source/spaces";
+// GRID SETTINGS
+// $max-width: 1280px;
+$max-width: 1170px;
+$gutter: 15px;

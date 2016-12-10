@@ -19,6 +19,7 @@
   "devDependencies": {
     "basscss": "^8.0.3",
     "bootstrap": "^4.0.0-alpha.5",
+    "hamburgers": "^0.7.0",
     "scut": "^1.4.0",
     "tachyons": "^4.5.6"
   }
