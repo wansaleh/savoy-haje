@@ -143,7 +143,7 @@
     };
 
     Forms.prototype.gforms = function() {
-      $('.ginput_container .gfield:not(.gf_readonly)').find('input, textarea, select, label').focus(function() {
+      $('.gfield:not(.gf_readonly)').find('input, textarea, select, label').focus(function() {
         return $(this).closest('.gfield').addClass('focus');
       }).blur(function() {
         return $(this).closest('.gfield').removeClass('focus');

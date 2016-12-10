@@ -134,7 +134,7 @@ class Haje.Forms
 
   gforms: ->
     # GRAVITY FORMS
-    $('.ginput_container .gfield:not(.gf_readonly)').find('input, textarea, select, label')
+    $('.gfield:not(.gf_readonly)').find('input, textarea, select, label')
       .focus -> $(this).closest('.gfield').addClass('focus')
       .blur -> $(this).closest('.gfield').removeClass('focus')
 
