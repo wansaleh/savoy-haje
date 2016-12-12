@@ -939,19 +939,6 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"\/_source\/css\/pages\/_home-old.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "\/assets\/css\/css\/_home-old.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
 	"\/_source\/css\/pages\/_home.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -2070,8 +2057,8 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/assets\/js\/haje-wc.js",
-		"oF": 3,
+		"oAP": "\/assets\/js\/_haje-wc.js",
+		"oF": 0,
 		"oS": 0,
 		"sC": 1
 		},
@@ -2087,13 +2074,13 @@
 		},
 	"\/_source\/js\/haje.coffee": {
 		"ft": 32,
-		"ma": 1,
-		"mi": 0,
+		"ma": 0,
+		"mi": 1,
 		"oA": 0,
 		"oAP": "\/assets\/js\/haje.js",
-		"oF": 2,
+		"oF": 0,
 		"oS": 0,
-		"sC": 0
+		"sC": 1
 		},
 	"\/_source\/js\/login.coffee": {
 		"ft": 32,
@@ -2148,15 +2135,6 @@
 		"oAP": "\/assets\/js\/nm\/nm-shop-single-product.js",
 		"oF": 2,
 		"sC": 0,
-		"tS": 0
-		},
-	"\/_source\/js\/select-togglebutton.custom.js": {
-		"ft": 64,
-		"mi": 1,
-		"oA": 2,
-		"oAP": "\/assets\/js\/vendor\/select-togglebutton.custom-min.js",
-		"oF": 3,
-		"sC": 1,
 		"tS": 0
 		},
 	"\/_source\/js\/vendor.js": {
@@ -2227,6 +2205,15 @@
 		"mi": 1,
 		"oA": 2,
 		"oAP": "\/assets\/js\/vendor\/ntc-min.js",
+		"oF": 3,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/_source\/js\/vendor\/select-togglebutton.custom.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 2,
+		"oAP": "\/assets\/js\/vendor\/select-togglebutton.custom-min.js",
 		"oF": 3,
 		"sC": 1,
 		"tS": 0
@@ -10999,8 +10986,8 @@
 			}
 		},
 	"esLintConfigFileHandlingType": 1,
-	"esLintECMAVersion": 7,
-	"esLintEnvironmentsMask": 1,
+	"esLintECMAVersion": 6,
+	"esLintEnvironmentsMask": 19,
 	"esLintRules": {
 		"accessor-pairs": {
 			"active": 0,
@@ -11911,7 +11898,7 @@
 			"optionString": "'never', {'exceptRange': false, 'onlyEquality': false}"
 			}
 		},
-	"esLintSourceType": 0,
+	"esLintSourceType": 1,
 	"externalServerAddress": "http:\/\/haje-savoy.dev",
 	"gitIgnoreBuildFolder": 1,
 	"hideConfigFile": 0,

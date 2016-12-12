@@ -1,20 +1,17 @@
 "use strict"
 
-debounce = (func, wait, immediate) ->
-  timeout = undefined
-  ->
-    context = this
-    args = arguments
+$ = jQuery.noConflict()
 
-    later = ->
-      timeout = null
-      if !immediate
-        func.apply context, args
-      return
+$.fn.bgOverlay = (css = {}) ->
+  @each ->
+    overlay = $('<div class="bg-overlay"></div>').css(css)
+    $(this).prepend(overlay).css({position: 'relative'})
+    overlay
 
-    callNow = immediate and !timeout
-    clearTimeout timeout
-    timeout = setTimeout(later, wait)
-    if callNow
-      func.apply context, args
-    return
+findKey = (obj, keyToFind) ->
+  result = null
+  $.each obj, (key, val) ->
+    if key.toLowerCase() == keyToFind.toLowerCase()
+      result = val
+      return false
+  result

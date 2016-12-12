@@ -1,13 +1,13 @@
 // @codekit-prepend "../../bower_components/tinycolor/tinycolor.js"
 // @codekit-prepend "vendor/ntc.js"
-// @codekit-prepend "select-togglebutton.custom.js"
+// @codekit-prepend "vendor/select-togglebutton.custom.js"
 // @codekit-prepend "../../bower_components/jquery-storage-api/jquery.storageapi.js"
-// @codekit-prepend "vendor/imagesloaded.pkgd.js"
-// @   codekit-prepend "../../bower_components/gsap/src/uncompressed/TweenMax.js"
-// @   codekit-prepend "../../bower_components/gsap/src/uncompressed/easing/EasePack.js"
-// @   codekit-prepend "../../bower_components/gsap/src/uncompressed/plugins/ScrollToPlugin.js"
-// @   codekit-prepend "../../bower_components/matchHeight/dist/jquery.matchHeight.js"
-// @   codekit-prepend "vendor/headroom.js"
+// @  codekit-prepend "vendor/imagesloaded.pkgd.js"
+// @  codekit-prepend "../../bower_components/gsap/src/uncompressed/TweenMax.js"
+// @  codekit-prepend "../../bower_components/gsap/src/uncompressed/easing/EasePack.js"
+// @  codekit-prepend "../../bower_components/gsap/src/uncompressed/plugins/ScrollToPlugin.js"
+// @  codekit-prepend "../../bower_components/matchHeight/dist/jquery.matchHeight.js"
+// @  codekit-prepend "vendor/headroom.js"
 
 jQuery.debounce = function(func, wait, immediate) {
   var timeout;

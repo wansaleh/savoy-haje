@@ -130,14 +130,15 @@ $preorder: $clr-cyan-a700;
     .shop-loop-wrapper {
       // border-color: #f4f4f4;
       box-shadow: 0 5px 30px rgba(#000, .1), 0 0 5px rgba(#000, .1);
-      // transform: translateY(-5px);
+      transform: translateY(-3px);
+      z-index: 1100;
     }
   }
 
   .nm-shop-loop-thumbnail {
     // border-radius: 4px;
     overflow: hidden;
-    z-index: 100;
+    // z-index: 100;
     margin: -21px -21px 0;
 
     > a > img {

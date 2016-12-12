@@ -119,7 +119,7 @@ function hj_kurta_cta( $atts ) {
   // $preorder_timestamp = WC_Pre_Orders_Product::get_localized_availability_datetime_timestamp( $product );
 
   $can_preorder = HJPO::can_preorder( $product );
-  $action = !$can_preorder ? "Buy" : "Pre-Order";
+  $action = !$can_preorder ? "Buy" : "Pre Order";
 
   $newtd = HJPO::preorder_date_diff( $product );
 

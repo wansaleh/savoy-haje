@@ -21,8 +21,8 @@ class Haje.WC.Filters
 
     $(color_widget).find('.wc-layered-nav-term a').each ->
       $(this).hover(
-        => widget_title.text($(this).children('i')[0].nextSibling.nodeValue)
-        => widget_title.text(color_widget.data('original-title'))
+        -> widget_title.text($(this).children('i')[0].nextSibling.nodeValue)
+        -> widget_title.text(color_widget.data('original-title'))
       )
 
 class Haje.WC.Tabs
@@ -115,7 +115,7 @@ class Haje.WC.VariationSwatches
 
       highlightColor = (hex) ->
         if isAttributeColor
-          variation_label_display.removeClass('dark light');
+          variation_label_display.removeClass('dark light')
 
           color = String hex
           color2 = null
