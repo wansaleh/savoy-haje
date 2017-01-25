@@ -62,8 +62,8 @@
     mix-blend-mode: overlay;
 
     &:hover {
-      opacity: .7;
-      color: #fff !important;
+      // opacity: .7;
+      color: rgba(#fff, .7) !important;
     }
   }
 
@@ -75,6 +75,33 @@
       opacity: 1;
     }
   }
+}
+
+.nm-header .nm-menu > li:not(.nm-menu-offscreen) > a {
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    left: 12px;
+    // transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: $clr-highlight;
+    transition: all .15s ease;
+  }
+
+  &:hover:after {
+    width: 12px;
+  }
+}
+
+// CURRENT MENU ITEM
+.nm-header .nm-menu > li.current-menu-item > a:after {
+  width: 12px;
+}
+
+.header-light:not(.header-on-scroll) .nm-header .nm-menu > li > a:after {
+  background: #fff;
 }
 
 .nm-header .nm-menu > li {

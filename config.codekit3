@@ -7,7 +7,7 @@
 		"uuidString": "59ED6E37-D09D-408F-AC7B-C9248AC6CAF8"
 		}
 	],
-"creatorBuild": "25444",
+"creatorBuild": "25504",
 "files": {
 	"\/.bowerrc": {
 		"ft": 8192,
@@ -870,6 +870,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/assets\/css\/css\/_wc-account.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/_source\/css\/modules\/_wc-checkout.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/css\/css\/_wc-checkout.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -2074,7 +2087,7 @@
 		},
 	"\/_source\/js\/haje.coffee": {
 		"ft": 32,
-		"ma": 0,
+		"ma": 1,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/assets\/js\/haje.js",
@@ -2099,6 +2112,15 @@
 		"oAP": "\/assets\/js\/modernizr.js",
 		"oF": 2,
 		"sC": 0,
+		"tS": 0
+		},
+	"\/_source\/js\/nm\/nm-core-156.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/assets\/js\/nm\/min\/nm-core-156-min.js",
+		"oF": 0,
+		"sC": 1,
 		"tS": 0
 		},
 	"\/_source\/js\/nm\/nm-core.js": {
@@ -11033,6 +11055,10 @@
 			"active": 0,
 			"optionString": "{'properties': 'always'}"
 			},
+		"capitalized-comments": {
+			"active": 0,
+			"optionString": "'always', {'ignoreInlineComments': false, 'ignoreConsecutiveComments': false}"
+			},
 		"class-methods-use-this": {
 			"active": 0,
 			"optionString": "{'exceptMethods': []}"
@@ -11197,6 +11223,10 @@
 			"active": 0,
 			"optionString": "{'max': 10}, {'ignoreTopLevelFunctions': true}"
 			},
+		"max-statements-per-line": {
+			"active": 0,
+			"optionString": "{'max': 1}"
+			},
 		"multiline-ternary": {
 			"active": 0,
 			"optionString": "'always'"
@@ -11226,6 +11256,10 @@
 			"optionString": ""
 			},
 		"no-array-constructor": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-await-in-loop": {
 			"active": 0,
 			"optionString": ""
 			},
@@ -11561,6 +11595,10 @@
 			"active": 0,
 			"optionString": "'except-parens'"
 			},
+		"no-return-await": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-script-url": {
 			"active": 0,
 			"optionString": ""
@@ -11765,6 +11803,10 @@
 			"active": 0,
 			"optionString": "{'destructuring': 'any', 'ignoreReadBeforeAssign': false}"
 			},
+		"prefer-destructuring": {
+			"active": 0,
+			"optionString": "{'array': true, 'object': true}, {'enforceForRenamedProperties': false}"
+			},
 		"prefer-numeric-literals": {
 			"active": 0,
 			"optionString": ""
@@ -11792,6 +11834,10 @@
 		"radix": {
 			"active": 0,
 			"optionString": "'always'"
+			},
+		"require-await": {
+			"active": 0,
+			"optionString": ""
 			},
 		"require-jsdoc": {
 			"active": 0,
@@ -12625,6 +12671,10 @@
 			},
 		"space-colon": {
 			"active": 1,
+			"flagValue": -1
+			},
+		"support-ie8": {
+			"active": 0,
 			"flagValue": -1
 			},
 		"toplevel": {

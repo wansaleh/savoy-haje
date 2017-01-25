@@ -1,0 +1,151 @@
+.woocommerce-checkout {
+  #wizard {
+    padding: 0 0 4em;
+
+    > .steps {
+      li a {
+        font-family: $body-fonts;
+        font-weight: 600;
+
+        span.number {
+          border: 0;
+          height: 30px;
+          width: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+
+      li.current a {
+        background: $clr-highlight;
+
+        &:before {
+          border-top-color: $clr-highlight;
+          border-bottom-color: $clr-highlight;
+        }
+
+        &:after {
+          border-left-color: $clr-highlight;
+        }
+      }
+
+      li.current.error a {
+        background: $error;
+
+        &:before {
+          border-top-color: $error;
+          border-bottom-color: $error;
+        }
+
+        &:after {
+          border-left-color: $error;
+        }
+
+        span.number {
+          color: $error;
+        }
+      }
+
+      li.done a {
+        background: tint($clr-highlight, 50);
+
+        &:before {
+          border-top-color: tint($clr-highlight, 50);
+          border-bottom-color: tint($clr-highlight, 50);
+        }
+
+        &:after {
+          border-left-color: tint($clr-highlight, 50);
+        }
+      }
+    }
+
+    > .content {
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 2em 0;
+
+      > .body {
+        input.button {
+          font-size: 1.4em;
+          line-height: 2;
+        }
+
+        input.error {
+          background: #fff;
+          border-color: #ccc;
+          border-bottom-color: $error;
+        }
+
+        label.error {
+          margin-top: 0;
+          margin-left: 0;
+          color: $error;
+          font-size: .8em;
+        }
+
+        &.login-step form.login,
+        &.coupon-step form.checkout_coupon {
+          max-width: 500px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+    }
+
+    > .actions {
+      // max-width: 600px;
+      // margin-left: auto;
+      // margin-right: auto;
+
+      > ul {
+        // margin-left: -5px !important;
+        // margin-right: -5px !important;
+      }
+
+      li a {
+        padding: .8em 1.6em;
+        border-radius: 4px;
+        font-size: 1.4em;
+        line-height: 1;
+      }
+    }
+  }
+}
+
+#wizard .checkout_coupon .button,
+#wizard form.login input.button {
+  background: $clr-footer-bg;
+
+  &:hover {
+    opacity: .7;
+  }
+}
+
+#wizard > .actions a,
+#wizard > .actions a:active,
+#wizard > .actions a:hover {
+  background: $clr-highlight;
+  border: 1px solid $clr-highlight;
+  transition: all .2s ease;
+
+  &:hover {
+    opacity: .7;
+  }
+}
+
+#wizard > .actions {
+  a[href="#previous"] {
+    background: #fff;
+    border: 1px solid $clr-main-font;
+    color: $clr-main-font;
+  }
+}
+
+.wizard.wizard > .actions,
+.wizard.wizard > .actions > ul,
+.wizard > .actions > ul {
+  text-align: center;
+}

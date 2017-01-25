@@ -400,6 +400,15 @@
   font-weight: 300;
   line-height: 1;
   padding-top: 1em;
+
+  del {
+    color: #aaa !important;
+    font-size: .8em;
+  }
+
+  ins {
+    background: none !important;
+  }
 }
 
 .home-kurta-cta {

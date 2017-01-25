@@ -41,13 +41,18 @@ class Haje.WC.Tabs
 
 class Haje.WC.VariationNumberGuide
   constructor: ->
-    # $('#nm-product-summary table.variations .nm-variation-row .label').each (index, row) ->
-    #   $(row).prepend("<div class='big-number'>#{index + 1}</div>")
+    $('#nm-product-summary table.variations .nm-variation-row .label').each (index, row) ->
+      $(row).prepend("<div class='big-number'>#{index + 1}</div>")
 
 class Haje.WC.VariationSwatches
   constructor: ->
     @init('#nm-product-summary')
     Haje.WC_Variation_Swatches = this
+
+    # select first image if changing variation
+    $(document).ajaxSuccess (event, xhr, options) ->
+      if options.url.indexOf('wc-ajax=get_variation') > -1
+        $('#nm-product-thumbnails-slider .slick-track .slick-slide:eq(0)').click()
 
   init: (parent) ->
     return if !$(parent).find('table.variations .nm-variation-row').length
@@ -62,17 +67,13 @@ class Haje.WC.VariationSwatches
   #   $('a.reset_variations').detach().insertBefore('table.variations')
 
   colorFromName: (compare) ->
-    if (haje_hex?)
-      hex = findKey(haje_hex, compare)
-
+    if (window.haje_hex_qv?)
+      hex = findKey(window.haje_hex_qv, compare)
       return hex
 
-      # if hex.indexOf(',') > -1
-      #   hex = hex.split(',')
-      #   return [tinycolor(hex[0]).toHex(), tinycolor(hex[1]).toHex()]
-      #
-      # else
-      #   return tinycolor(hex).toHex()
+    else if (window.haje_hex?)
+      hex = findKey(window.haje_hex, compare)
+      return hex
 
     else
       for name in ntc.names

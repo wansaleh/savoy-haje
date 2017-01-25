@@ -1102,8 +1102,10 @@
 
 
 				/* VC element: Banner */
-        if (self.$pageIncludes.hasClass('banner')) {
-					var $banners = $('.nm-banner');
+				if (self.$pageIncludes.hasClass('banner')) {
+					var $banners = $('.nm-banner'),
+						$bannerAltImages = $banners.find('.nm-banner-alt-image');
+
 
 					/* Bind: Banner shop links (AJAX) */
 					if (self.isShop && self.filtersEnableAjax) {
@@ -1115,6 +1117,38 @@
 							}
 						});
 					}
+
+
+					/* Helper: Load alternative/smaller banner images */
+					var _bannersLoadAltImage = function() {
+						if (self.$window.width() <= 768) {
+							var $image, imageSrc;
+
+							for (var i = 0; i < $bannerAltImages.length; i++) {
+								$image = $($bannerAltImages[i]);
+								imageSrc = $($bannerAltImages[i]).data('src');
+
+								if ($image.hasClass('img')) {
+									$image.attr('src', imageSrc);
+								} else {
+									$image.css('background-image', 'url('+imageSrc+')');
+								}
+							}
+
+							// Unbind resize event after images are loaded
+							self.$window.unbind('resize.banners');
+						}
+					};
+
+					/* Bind: Window resize event for loading alternative/smaller banner images */
+					var timer = null;
+					self.$window.bind('resize.banners', function() {
+						if (timer) { clearTimeout(timer); }
+						timer = setTimeout(function() { _bannersLoadAltImage(); }, 250);
+					});
+
+					// Run function on page load (keep below the 'resize.bannerslider' event)
+					_bannersLoadAltImage();
 				}
 
 

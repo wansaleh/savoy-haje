@@ -131,7 +131,7 @@ $preorder: $clr-cyan-a700;
       // border-color: #f4f4f4;
       box-shadow: 0 5px 30px rgba(#000, .1), 0 0 5px rgba(#000, .1);
       transform: translateY(-3px);
-      z-index: 1100;
+      // z-index: 1100;
     }
   }
 
@@ -218,7 +218,7 @@ $preorder: $clr-cyan-a700;
 
     .nm-shop-loop-wishlist-button {
       top: auto;
-      bottom: 20px;
+      bottom: 16px;
       z-index: 10;
     }
 
@@ -227,6 +227,7 @@ $preorder: $clr-cyan-a700;
       transform: translateX(20px);
       transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       overflow: visible;
+      background: #fff;
 
       &:before {
         content: "Wishlist";
@@ -235,6 +236,8 @@ $preorder: $clr-cyan-a700;
         white-space: nowrap;
         position: absolute;
         right: 22px;
+        padding-left: 5px;
+        background: #fff;
         text-shadow: 0 0 10px rgba(#fff, .9);
         opacity: 0;
         transform: translateX(10px);
@@ -317,7 +320,7 @@ $preorder: $clr-cyan-a700;
     .nm-shop-loop-actions {
       position: absolute;
       top: auto;
-      bottom: 0;
+      bottom: -3px;
       left: auto;
       right: 0;
       // background-image: linear-gradient(to right, rgba(#fff, 0) 0, #fff 40px);
@@ -329,17 +332,12 @@ $preorder: $clr-cyan-a700;
 
     .nm-shop-loop-actions > a {
       display: block;
-      // border: 2px solid #e1e1e1;
       border: 0;
       color: #8c8c8c;
       border-radius: 4px;
       background: #fff;
-      // padding: .3em .5em;
-      // font-size: .7em;
       font-size: 16px;
-      // font-weight: 700;
       line-height: 1;
-      // text-transform: uppercase;
       transition: all .2s ease;
 
       &:before {
@@ -349,6 +347,8 @@ $preorder: $clr-cyan-a700;
         white-space: nowrap;
         position: absolute;
         right: 22px;
+        padding-left: 5px;
+        background: #fff;
         text-shadow: 0 0 10px rgba(#fff, .9);
         opacity: 0;
         transform: translateX(10px);
@@ -557,30 +557,38 @@ $preorder: $clr-cyan-a700;
   }
 
   .preorder-notice {
-    margin-bottom: 2em;
-    font-size: 1em;
-    line-height: 1.4;
-    padding: 1em;
-    border: 2px solid $preorder;
-    border-radius: 3px;
-    color: $preorder;
+    display: none;
   }
 
-  .woocommerce-variation.single_variation {
-    padding-top: 0 !important;
-
-    .woocommerce-variation-availability {
-      padding-bottom: 0;
-
-      .stock.in-stock {
-        display: none;
-      }
+  .stock.out-of-stock {
+    &:before {
+      @include font-awesome;
+      content: "\f119";
+      padding-right: .4em;
     }
+
+    background: $clr-orange-a700;
   }
+
+  // .woocommerce-variation.single_variation {
+  //   padding-top: 0 !important;
+  //
+  //   .woocommerce-variation-availability {
+  //     padding-bottom: 0;
+  //
+  //     .stock.in-stock {
+  //       display: none;
+  //     }
+  //   }
+  // }
 
   .quantity .nm-qty-minus,
   .quantity .nm-qty-plus {
     color: #282828 !important;
+  }
+
+  .nm-product-share-wrap {
+    padding: 21px 0;
   }
 
   .nm-product-share-wrap.has-share-buttons {
@@ -626,6 +634,17 @@ $preorder: $clr-cyan-a700;
   //     font-size: .9em;
   //   }
   // }
+}
+
+.nm-single-product .product-summary .preorder-notice {
+  display: block;
+  margin-bottom: 2em;
+  font-size: 1em;
+  line-height: 1.4;
+  padding: 1em;
+  border: 2px solid $preorder;
+  border-radius: 3px;
+  color: $preorder;
 }
 
 .nm-single-product-showcase,
@@ -2035,6 +2054,27 @@ a.size-guide {
 
       td, th {
         padding: 1em;
+      }
+    }
+  }
+}
+
+// Currency Switcher
+.woocommerce-currency-switcher-form {
+  .dd-select {
+    border: 0;
+  }
+
+  ul.dd-options {
+    box-shadow: none;
+    border: 0;
+
+    a.dd-option {
+      border: 0;
+      background: #f7f7f7;
+
+      .dd-option-text {
+        font-weight: 300;
       }
     }
   }

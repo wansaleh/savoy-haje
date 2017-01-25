@@ -139,10 +139,10 @@
 					},
 					callbacks: {
 						open: function() {
-							$qvOverlay.removeClass('nm-loader'); // Hide 'loader'
-
 							// WAN
 							Haje.WC_Variation_Swatches.init('#nm-qv-product-summary');
+
+							$qvOverlay.removeClass('nm-loader'); // Hide 'loader'
 
 							_qvInitSlider();
 

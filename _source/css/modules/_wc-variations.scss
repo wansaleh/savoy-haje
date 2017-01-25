@@ -55,18 +55,19 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      opacity: .5;
-      border: 2px solid #aaa;
+      opacity: .2;
+      // border: 2px solid #aaa;
       color: #aaa;
-      border-radius: 50%;
-      width: 36px;
-      height: 36px;
-      font-size: 20px;
+      // border-radius: 50%;
+      // width: 36px;
+      // height: 36px;
+      // font-size: 20px;
+      font-size: 70px;
       line-height: 36px;
-      font-weight: 600;
+      font-weight: 900;
 
-      top: 4px;
-      left: -44px;
+      top: 0px;
+      left: -24px;
     }
 
     &:before {

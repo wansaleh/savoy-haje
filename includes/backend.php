@@ -29,6 +29,24 @@ function haje_admin_style() {
 <?php
 }
 
+
+
+// add_action( 'wc_shipment_tracking_get_providers' , 'wc_shipment_tracking_add_custom_provider' );
+// /**
+//  * wc_shipment_tracking_add_custom_provider
+//  *
+//  * Adds custom provider to shipment tracking
+//  * Change the country name, the provider name, and the URL (it must include the %1$s)
+//  * Add one provider per line
+// */
+// function wc_shipment_tracking_add_custom_provider( $providers ) {
+//   $providers['Malaysia']['Pos Laju'] = 'http://url.com?id=%1$s';
+//
+//   return $providers;
+// }
+
+
+
 // add_action( 'admin_init', 'clean_unwanted_caps' );
 // function clean_unwanted_caps(){
 //   $delete_caps = array(

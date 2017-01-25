@@ -142,6 +142,10 @@ body[class*="um-page-"] .nm-page-wrap-inner {
             }
           }
         }
+
+        &[data-tab="delete"].current span.um-account-icon {
+          color: $clr-red;
+        }
       }
     }
   }
@@ -236,4 +240,12 @@ body[class*="um-page-"] {
 .um-woo-customer span {
   font-size: 1.3em;
   font-weight: 300;
+}
+
+.um-account-tab-delete input[type=submit].um-button {
+  background: $clr-red !important;
+
+  &:hover {
+    background: $clr-red-700 !important;
+  }
 }

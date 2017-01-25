@@ -11,7 +11,6 @@
 ?>
 
 	<div class="nm-footer-widgets<?php echo esc_attr( $border_class ); ?> clearfix light">
-			<div class="bg-overlay"></div>
     	<div class="nm-footer-widgets-inner">
             <div class="nm-row <?php echo esc_attr( $row_class ); ?>">
                 <div class="col-xs-12">
