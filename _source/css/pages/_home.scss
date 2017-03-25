@@ -396,6 +396,7 @@
 }
 
 .home-kurta-price {
+  position: relative;
   font-size: 2em;
   font-weight: 300;
   line-height: 1;
@@ -408,6 +409,13 @@
 
   ins {
     background: none !important;
+  }
+
+  .onsale {
+    position: static;
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 600;
   }
 }
 
@@ -443,7 +451,7 @@
   @extend .text-xs-center, .text-md-left;
 
   // margin-top: -2em;
-  padding-top: 2em;
+  padding-top: 4em;
   padding-bottom: 6em;
 
   // background: #fff url(../images/waves4.svg) no-repeat right;

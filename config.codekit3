@@ -7,7 +7,7 @@
 		"uuidString": "59ED6E37-D09D-408F-AC7B-C9248AC6CAF8"
 		}
 	],
-"creatorBuild": "25504",
+"creatorBuild": "25704",
 "files": {
 	"\/.bowerrc": {
 		"ft": 8192,
@@ -1280,10 +1280,12 @@
 	"\/_source\/images\/binding_dark.png": {
 		"ft": 32768,
 		"iS": 19846,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/assets\/images\/binding_dark.png",
 		"oF": 0,
-		"opt": 1
+		"opt": 1,
+		"q": 100
 		},
 	"\/_source\/images\/blind.svg": {
 		"ft": 2097152,
@@ -1368,10 +1370,12 @@
 	"\/_source\/images\/haje-gradient-admin.png": {
 		"ft": 32768,
 		"iS": 6904,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/assets\/images\/haje-gradient-admin.png",
 		"oF": 1,
-		"opt": 1
+		"opt": 1,
+		"q": 100
 		},
 	"\/_source\/images\/haje-gradient.svg": {
 		"ft": 2097152,
@@ -1386,10 +1390,12 @@
 	"\/_source\/images\/haje-letterhead.png": {
 		"ft": 32768,
 		"iS": 12509,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/assets\/images\/haje-letterhead.png",
 		"oF": 0,
-		"opt": 1
+		"opt": 1,
+		"q": 100
 		},
 	"\/_source\/images\/haje-stroke.svg": {
 		"ft": 2097152,
@@ -1404,10 +1410,12 @@
 	"\/_source\/images\/haje-watermark.png": {
 		"ft": 32768,
 		"iS": 1733,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/assets\/images\/haje-watermark.png",
 		"oF": 0,
-		"opt": 1
+		"opt": 1,
+		"q": 100
 		},
 	"\/_source\/images\/haje-watermark.svg": {
 		"ft": 2097152,
@@ -1422,10 +1430,12 @@
 	"\/_source\/images\/hearts.png": {
 		"ft": 32768,
 		"iS": 1695,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/assets\/images\/hearts.png",
 		"oF": 0,
-		"opt": 1
+		"opt": 1,
+		"q": 100
 		},
 	"\/_source\/images\/lace.svg": {
 		"ft": 2097152,
@@ -1440,18 +1450,22 @@
 	"\/_source\/images\/mailchimp-plus-gray.png": {
 		"ft": 32768,
 		"iS": 15411,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/assets\/images\/mailchimp-plus-gray.png",
 		"oF": 1,
-		"opt": 1
+		"opt": 1,
+		"q": 100
 		},
 	"\/_source\/images\/mailchimp-plus.png": {
 		"ft": 32768,
 		"iS": 1033,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/assets\/images\/mailchimp-plus.png",
 		"oF": 1,
-		"opt": 1
+		"opt": 1,
+		"q": 100
 		},
 	"\/_source\/images\/not-available.svg": {
 		"ft": 2097152,
@@ -1466,18 +1480,22 @@
 	"\/_source\/images\/payments-30-new.png": {
 		"ft": 32768,
 		"iS": 6297,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/assets\/images\/payments-30-new.png",
 		"oF": 1,
-		"opt": 1
+		"opt": 1,
+		"q": 100
 		},
 	"\/_source\/images\/poslaju.png": {
 		"ft": 32768,
 		"iS": 6266,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/assets\/images\/poslaju.png",
 		"oF": 1,
-		"opt": 1
+		"opt": 1,
+		"q": 100
 		},
 	"\/_source\/images\/raindrop.svg": {
 		"ft": 2097152,
@@ -1532,10 +1550,12 @@
 	"\/_source\/images\/sizeguide.png": {
 		"ft": 32768,
 		"iS": 24735,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/assets\/images\/sizeguide.png",
 		"oF": 0,
-		"opt": 1
+		"opt": 1,
+		"q": 100
 		},
 	"\/_source\/images\/sizeguide.svg": {
 		"ft": 2097152,
@@ -2043,7 +2063,8 @@
 		"oA": 0,
 		"oAP": "\/assets\/images\/wavy.jpg",
 		"oF": 0,
-		"opt": 1
+		"opt": 1,
+		"q": 100
 		},
 	"\/_source\/js\/_haje-forms.coffee": {
 		"ft": 32,
@@ -9192,18 +9213,22 @@
 	"\/bower_components\/tether\/examples\/chosen\/chosen-sprite.png": {
 		"ft": 32768,
 		"iS": 646,
+		"l": 1,
 		"oA": 1,
 		"oAP": "\/assets\/bower_components\/tether\/examples\/chosen\/chosen-sprite.png",
 		"oF": 1,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/bower_components\/tether\/examples\/chosen\/chosen-sprite@2x.png": {
 		"ft": 32768,
 		"iS": 738,
+		"l": 1,
 		"oA": 1,
 		"oAP": "\/assets\/bower_components\/tether\/examples\/chosen\/chosen-sprite@2x.png",
 		"oF": 1,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/bower_components\/tether\/examples\/chosen\/chosen.css": {
 		"aP": 0,
@@ -10418,10 +10443,12 @@
 	"\/screenshot.png": {
 		"ft": 32768,
 		"iS": 9192,
+		"l": 1,
 		"oA": 1,
 		"oAP": "\/assets\/screenshot.png",
 		"oF": 1,
-		"opt": 1
+		"opt": 1,
+		"q": 100
 		},
 	"\/style.css": {
 		"aP": 0,
@@ -11283,6 +11310,10 @@
 			"active": 1,
 			"optionString": ""
 			},
+		"no-compare-neg-zero": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-cond-assign": {
 			"active": 1,
 			"optionString": "'except-parens'"
@@ -11480,6 +11511,10 @@
 			"optionString": "{'grouping': false, 'allowCall': false }"
 			},
 		"no-mixed-spaces-and-tabs": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-multi-assign": {
 			"active": 0,
 			"optionString": ""
 			},
@@ -11759,6 +11794,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"nonblock-statement-body-position": {
+			"active": 0,
+			"optionString": "'beside'"
+			},
 		"object-curly-newline": {
 			"active": 0,
 			"optionString": "{'ObjectExpression': {'multiline': true}, 'ObjectPattern': {'multiline': true}}"
@@ -11810,6 +11849,10 @@
 		"prefer-numeric-literals": {
 			"active": 0,
 			"optionString": ""
+			},
+		"prefer-promise-reject-errors": {
+			"active": 0,
+			"optionString": "{'allowEmptyReject': false}"
 			},
 		"prefer-rest-params": {
 			"active": 0,
@@ -11904,6 +11947,10 @@
 			"optionString": ""
 			},
 		"template-curly-spacing": {
+			"active": 0,
+			"optionString": "'never'"
+			},
+		"template-tag-spacing": {
 			"active": 0,
 			"optionString": "'never'"
 			},
@@ -12350,7 +12397,8 @@
 		"autoOutputPathRelativePath": "",
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
-		"autoOutputPathStyle": 0
+		"autoOutputPathStyle": 0,
+		"quality": 100
 		},
 	"languageDefaultsJS": {
 		"autoOutputAction": 0,
@@ -12443,7 +12491,9 @@
 		"autoOutputPathRelativePath": "",
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
-		"autoOutputPathStyle": 0
+		"autoOutputPathStyle": 0,
+		"enableLossy": 1,
+		"quality": 100
 		},
 	"languageDefaultsPUG": {
 		"autoOutputAction": 0,

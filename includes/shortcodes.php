@@ -132,6 +132,14 @@ function hj_kurta_cta( $atts ) {
   ?>
   <div class="home-kurta-price">
     <?php echo $product->get_price_html(); ?>
+    <?php
+  if ( $product->is_on_sale() ) {
+    $sale_percent = nm_product_get_sale_percent( $product );
+
+    if ( $sale_percent > 0 ) {
+      echo '<span class="onsale"><span class="nm-onsale-before">On Sale </span>' . $sale_percent . '<span class="nm-onsale-after">%</span></span>';
+    }
+  } ?>
   </div>
   <div class="home-kurta-cta">
     <a href="<?php echo $permalink; ?>" class="nm_btn nm_btn_lg nm_btn_filled">

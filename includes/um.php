@@ -35,7 +35,7 @@ function um_account_content_hook_edar( $output ) {
     $context = Timber::get_context();
 
     $context['discounts'] = array(
-      array(1, 49, '15'),
+      array(1, 49, '10'),
       array(50, 99, '20'),
       array(100, 199, '25'),
       array(200, 500, '30'),

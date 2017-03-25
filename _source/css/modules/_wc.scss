@@ -497,7 +497,10 @@ $preorder: $clr-cyan-a700;
     // position: relative;
     // top: -.5em;
     // display: inline-block;
-    margin-left: .5em;
+    // margin-left: .5em;
+
+    margin-bottom: 1em;
+
     line-height: 1;
     vertical-align: middle;
     // float: right;
@@ -507,6 +510,7 @@ $preorder: $clr-cyan-a700;
     .haje-edar,
     .preorder {
       @include label;
+      font-size: 1em;
       line-height: 1;
       margin: 0 2px;
     }
